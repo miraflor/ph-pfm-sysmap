@@ -1,0 +1,54 @@
+@startuml
+title UC-PR Procure up to the award (cohort P, E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "BAC, its Secretariat and tech…" as ROLE_BAC
+boundary "BAC and procurement unit" as B_UNIT_NGA_BAC
+control "check (not stated)" as C_not_stated_ROLE_BAC
+participant "GPPB online submission form" as N_SYS_GPPB_FORM
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+participant "PhilGEPS (modernized): Electr…" as N_MOD_PG_BB
+actor "Procurement Service of DBM" as ROLE_PSDBM
+boundary "PhilGEPS (modernized)" as B_SYS_PHILGEPS
+control "check (not stated)" as C_not_stated_ROLE_PSDBM
+participant "Suppliers and payees" as N_EXT_SUPPLIER
+participant "Any person" as N_UNIT_PUB_ANY
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "Suppliers and payees" as B_EXT_SUPPLIER
+control "check (not stated)" as C_not_stated_ROLE_SUPPLIER
+entity "PhilGEPS (modernized): Electr…" as E_MOD_PG_EBID
+actor "Head of agency or authorized…" as ROLE_HEAD
+boundary "Head of agency" as B_UNIT_NGA_HEAD
+control "check (not stated)" as C_not_stated_ROLE_HEAD
+entity "PhilGEPS (modernized)" as E_SYS_PHILGEPS
+== PR-01 Submit the procurement plan and monitoring report ==
+ROLE_BAC -> B_UNIT_NGA_BAC : System or office where the act takes place
+B_UNIT_NGA_BAC -> C_not_stated_ROLE_BAC : Submit the procurement plan and monitoring report
+C_not_stated_ROLE_BAC -> N_SYS_GPPB_FORM : F041 Annual Procurement Plan and monitoring report at the GPPB
+C_not_stated_ROLE_BAC -> E_SYS_AGENCY_OWN : read: Need ready: purchase request and a line in the procurement…
+== PR-02 Post the invitation to bid ==
+ROLE_BAC -> B_UNIT_NGA_BAC : System or office where the act takes place
+B_UNIT_NGA_BAC -> C_not_stated_ROLE_BAC : Post the invitation to bid
+C_not_stated_ROLE_BAC -> N_MOD_PG_BB : F013 Invitation to bid posted in PhilGEPS
+C_not_stated_ROLE_BAC -> E_SYS_AGENCY_OWN : read: Need ready: purchase request and a line in the procurement…
+== PR-03 Show the opportunity and publish open data ==
+ROLE_PSDBM -> B_SYS_PHILGEPS : System or office where the act takes place
+B_SYS_PHILGEPS -> C_not_stated_ROLE_PSDBM : Show the opportunity and publish open data
+C_not_stated_ROLE_PSDBM -> N_EXT_SUPPLIER : F014 Opportunity visible to registered suppliers
+C_not_stated_ROLE_PSDBM -> N_UNIT_PUB_ANY : F103 Notice and award in the open data of PhilGEPS
+== PR-04 Submit and open the bids ==
+ROLE_SUPPLIER -> B_EXT_SUPPLIER : System or office where the act takes place
+B_EXT_SUPPLIER -> C_not_stated_ROLE_SUPPLIER : Submit and open the bids
+C_not_stated_ROLE_SUPPLIER -> E_MOD_PG_EBID : write: Bids received and opened
+== PR-05 Evaluate, recommend and award ==
+ROLE_HEAD -> B_UNIT_NGA_HEAD : System or office where the act takes place
+B_UNIT_NGA_HEAD -> C_not_stated_ROLE_HEAD : Evaluate, recommend and award
+note right of C_not_stated_ROLE_HEAD : R-FUNDS-AWARD: No award before the funding is effective
+C_not_stated_ROLE_HEAD -> E_MOD_PG_EBID : use: Bids received and opened
+C_not_stated_ROLE_HEAD -> E_SYS_AGENCY_OWN : use: Need ready: purchase request and a line in the procurement…
+C_not_stated_ROLE_HEAD -> E_SYS_PHILGEPS : write: Award made
+C_not_stated_ROLE_HEAD -> N_MOD_PG_BB : F013 Award posted in PhilGEPS
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+title UC-RP Report on budget execution (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "DBM (bureaus and approving of…" as ROLE_DBM
+boundary "BTMS: 5 Accounting and reporting" as B_MOD_BTMS_ACC
+control "check (not stated)" as C_not_stated_ROLE_DBM
+participant "DBM" as N_INST_DBM
+participant "COA" as N_INST_COA
+participant "BTr" as N_INST_BTR
+entity "BTMS: 5 Accounting and report…" as E_MOD_BTMS_ACC
+entity "BTMS" as E_SYS_BTMS
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "Accounting unit" as B_UNIT_NGA_ACC
+control "check (not stated)" as C_not_stated_ROLE_ACCOUNTANT
+participant "AFR System" as N_SYS_AFRS
+actor "COA" as ROLE_COA
+boundary "Government Accountancy Sector" as B_UNIT_COA_GAS
+control "check (not stated)" as C_not_stated_ROLE_COA
+entity "Government Accountancy Sector" as E_UNIT_COA_GAS
+actor "Agency as a whole (central of…" as ROLE_AGENCY
+boundary "National agency" as B_INST_NGA
+control "check (not stated)" as C_not_stated_ROLE_AGENCY
+participant "COMPASS portal" as N_SYS_COMPASS
+boundary "BTMS" as B_SYS_BTMS
+boundary "COMPASS portal" as B_SYS_COMPASS
+participant "Any person" as N_UNIT_PUB_ANY
+== RP-03 Produce the reports from BTMS records ==
+ROLE_DBM -> B_MOD_BTMS_ACC : System or office where the act takes place
+B_MOD_BTMS_ACC -> C_not_stated_ROLE_DBM : Produce the reports from BTMS records
+C_not_stated_ROLE_DBM -> N_INST_DBM : F124 BTMS reports at DBM
+C_not_stated_ROLE_DBM -> N_INST_COA : F125 BTMS reports at COA
+C_not_stated_ROLE_DBM -> N_INST_BTR : F126 BTMS reports at BTr
+C_not_stated_ROLE_DBM -> E_MOD_BTMS_ACC : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+C_not_stated_ROLE_DBM -> E_SYS_BTMS : read: Payment posted in part C of the ORS and in the registry of…
+== RP-04 Submit the financial statements ==
+ROLE_ACCOUNTANT -> B_UNIT_NGA_ACC : System or office where the act takes place
+B_UNIT_NGA_ACC -> C_not_stated_ROLE_ACCOUNTANT : Submit the financial statements
+C_not_stated_ROLE_ACCOUNTANT -> N_SYS_AFRS : F022 Financial statements in the AFR System
+C_not_stated_ROLE_ACCOUNTANT -> E_MOD_BTMS_ACC : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+== RP-05 Prepare the Annual Financial Report ==
+ROLE_COA -> B_UNIT_COA_GAS : System or office where the act takes place
+B_UNIT_COA_GAS -> C_not_stated_ROLE_COA : Prepare the Annual Financial Report
+C_not_stated_ROLE_COA -> E_UNIT_COA_GAS : write: Annual Financial Report of the government prepared by COA
+== RP-06 Submit information to COMPASS ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Submit information to COMPASS
+C_not_stated_ROLE_AGENCY -> N_SYS_COMPASS : F029 Agency submission in COMPASS
+C_not_stated_ROLE_AGENCY -> E_SYS_BTMS : read: Payment posted in part C of the ORS and in the registry of…
+== RP-07 Pass BTMS data to COMPASS (described) ==
+ROLE_DBM -> B_SYS_BTMS : System or office where the act takes place
+B_SYS_BTMS -> C_not_stated_ROLE_DBM : Pass BTMS data to COMPASS (described)
+C_not_stated_ROLE_DBM -> N_SYS_COMPASS : F030 Data from BTMS in COMPASS
+C_not_stated_ROLE_DBM -> E_MOD_BTMS_ACC : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+== RP-08 Publish budget and spending figures ==
+ROLE_DBM -> B_SYS_COMPASS : System or office where the act takes place
+B_SYS_COMPASS -> C_not_stated_ROLE_DBM : Publish budget and spending figures
+C_not_stated_ROLE_DBM -> N_UNIT_PUB_ANY : F031 Budget and spending figures visible to any person
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+title UC-SP-2 Obligate and contract (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "BTMS: 1 Commitment and obligations" as B_MOD_BTMS_COM
+control "check by BTMS: 1 Commitment and obligations" as C_software_MOD_BTMS_COM
+entity "BTMS: 1 Commitment and obliga…" as E_MOD_BTMS_COM
+entity "PhilGEPS (modernized)" as E_SYS_PHILGEPS
+== SP-05 Obligate and sign the contract ==
+ROLE_BUDGET -> B_MOD_BTMS_COM : BTMS: purchase request, commitment, purchase order and obligation req…
+B_MOD_BTMS_COM -> C_software_MOD_BTMS_COM : Obligate and sign the contract
+note right of C_software_MOD_BTMS_COM : R-OBL-LIMIT: No obligation above the allotment available
+note right of C_software_MOD_BTMS_COM : R-FUNDS-CERT: No contract without a certificate of availability of funds
+C_software_MOD_BTMS_COM -> E_MOD_BTMS_COM : use: Allotment available, not yet obligated
+C_software_MOD_BTMS_COM -> E_SYS_PHILGEPS : use: Award made
+C_software_MOD_BTMS_COM -> E_MOD_BTMS_COM : write: Obligation recorded: ORS with Box A and Box B, entered in t…
+C_software_MOD_BTMS_COM -> E_MOD_BTMS_COM : write: Contract or purchase order in force
+@enduml

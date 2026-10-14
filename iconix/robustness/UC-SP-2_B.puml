@@ -1,0 +1,26 @@
+@startuml
+title UC-SP-2 Obligate and contract (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "BTMS: purchase request, commitment, purchase orde…" as B_SP_05
+control "SP-05 Obligate and sign the contract (by software)" as C_SP_05
+entity "SARO: Special Allotment Release Order [BTMS: 1 Commitment and obligations]" as E_R_SARO_MOD_BTMS_COM
+entity "GAAAO: GAA as allotment order [BTMS: 1 Commitment and obligations]" as E_R_GAAAO_MOD_BTMS_COM
+entity "RAOD, Registries of Allotments, Obligations… [BTMS: 1 Commitment and obligations]" as E_R_RAOD_MOD_BTMS_COM
+entity "Notice of award [PhilGEPS (modernized)]" as E_R_NOA_SYS_PHILGEPS
+entity "Resolution of the BAC recommending award [PhilGEPS (modernized)]" as E_R_BACRES_SYS_PHILGEPS
+entity "ORS: Obligation Request and Status [BTMS: 1 Commitment and obligations]" as E_R_ORS_MOD_BTMS_COM
+entity "Contract or Purchase Order [BTMS: 1 Commitment and obligations]" as E_R_PO_MOD_BTMS_COM
+ROLE_BUDGET -- B_SP_05
+B_SP_05 -- C_SP_05
+C_SP_05 -- E_R_SARO_MOD_BTMS_COM
+C_SP_05 -- E_R_GAAAO_MOD_BTMS_COM
+C_SP_05 -- E_R_RAOD_MOD_BTMS_COM
+C_SP_05 -- E_R_NOA_SYS_PHILGEPS
+C_SP_05 -- E_R_BACRES_SYS_PHILGEPS
+C_SP_05 -- E_R_ORS_MOD_BTMS_COM
+C_SP_05 -- E_R_PO_MOD_BTMS_COM
+@enduml

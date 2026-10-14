@@ -1,0 +1,95 @@
+@startuml
+title UC-TX Collect taxes and duties (cohort P, E, B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Taxpayer or importer" as ROLE_TAXPAYER
+boundary "Taxpayers and importers" as B_EXT_TAXPAYER
+control "check (not stated)" as C_not_stated_ROLE_TAXPAYER
+entity "record" as E_S_TAX_DUE
+participant "eFPS and eBIRForms" as N_SYS_BIR_EFILING
+entity "record" as E_S_TO_PAY
+participant "Agent banks and gateways" as N_INST_AAB
+actor "BIR office or approving offic…" as ROLE_BIR
+boundary "eFPS and eBIRForms" as B_SYS_BIR_EFILING
+control "check (not stated)" as C_not_stated_ROLE_BIR
+participant "BIR internal tax system" as N_SYS_BIR_ITS
+actor "Authorized agent bank or paym…" as ROLE_AAB
+boundary "Agent banks and gateways" as B_INST_AAB
+control "check (not stated)" as C_not_stated_ROLE_AAB
+participant "BIR" as N_INST_BIR
+entity "record" as E_S_AAB_COLL
+boundary "BIR internal tax system" as B_SYS_BIR_ITS
+entity "BIR internal tax system" as E_SYS_BIR_ITS
+participant "Treasury Single Account" as N_ACC_TSA
+actor "BSP" as ROLE_BSP
+boundary "Treasury Single Account" as B_ACC_TSA
+control "check (not stated)" as C_not_stated_ROLE_BSP
+entity "Treasury Single Account" as E_ACC_TSA
+entity "record" as E_S_IMPORT
+participant "E2M customs system" as N_SYS_E2M
+actor "BOC" as ROLE_BOC
+boundary "E2M customs system" as B_SYS_E2M
+control "check (not stated)" as C_not_stated_ROLE_BOC
+entity "E2M customs system" as E_SYS_E2M
+participant "BOC" as N_INST_BOC
+entity "record" as E_S_RELEASED
+== TX-01 File the return ==
+ROLE_TAXPAYER -> B_EXT_TAXPAYER : System or office where the act takes place
+B_EXT_TAXPAYER -> C_not_stated_ROLE_TAXPAYER : File the return
+C_not_stated_ROLE_TAXPAYER -> E_S_TAX_DUE : use: A tax return is due
+C_not_stated_ROLE_TAXPAYER -> N_SYS_BIR_EFILING : F042 Return filed in eFPS or eBIRForms
+C_not_stated_ROLE_TAXPAYER -> E_S_TO_PAY : write: Tax filed and to be paid
+== TX-02 Pay the tax ==
+ROLE_TAXPAYER -> B_EXT_TAXPAYER : System or office where the act takes place
+B_EXT_TAXPAYER -> C_not_stated_ROLE_TAXPAYER : Pay the tax
+C_not_stated_ROLE_TAXPAYER -> E_S_TO_PAY : use: Tax filed and to be paid
+C_not_stated_ROLE_TAXPAYER -> N_INST_AAB : F043 Tax paid at an agent bank or gateway
+== TX-03 Pass the return to the internal system ==
+ROLE_BIR -> B_SYS_BIR_EFILING : System or office where the act takes place
+B_SYS_BIR_EFILING -> C_not_stated_ROLE_BIR : Pass the return to the internal system
+C_not_stated_ROLE_BIR -> N_SYS_BIR_ITS : F044 Return in the internal system of BIR
+== TX-04 Confirm and report the payment ==
+ROLE_AAB -> B_INST_AAB : System or office where the act takes place
+B_INST_AAB -> C_not_stated_ROLE_AAB : Confirm and report the payment
+C_not_stated_ROLE_AAB -> N_INST_BIR : F045 Report of payments received, at BIR
+C_not_stated_ROLE_AAB -> E_S_AAB_COLL : write: Collections held by the agent bank before remittance
+== TX-05 Post the payment to the taxpayer account ==
+ROLE_BIR -> B_SYS_BIR_ITS : System or office where the act takes place
+B_SYS_BIR_ITS -> C_not_stated_ROLE_BIR : Post the payment to the taxpayer account
+C_not_stated_ROLE_BIR -> E_SYS_BIR_ITS : write: Payment posted to the account of the taxpayer
+== TX-06 Remit the collections to the TSA ==
+ROLE_AAB -> B_INST_AAB : System or office where the act takes place
+B_INST_AAB -> C_not_stated_ROLE_AAB : Remit the collections to the TSA
+C_not_stated_ROLE_AAB -> E_S_AAB_COLL : use: Collections held by the agent bank before remittance
+C_not_stated_ROLE_AAB -> N_ACC_TSA : F048 Collections on their way to the TSA
+== TX-07 Credit the TSA ==
+ROLE_BSP -> B_ACC_TSA : System or office where the act takes place
+B_ACC_TSA -> C_not_stated_ROLE_BSP : Credit the TSA
+C_not_stated_ROLE_BSP -> E_ACC_TSA : write: Cash in the Treasury Single Account
+== TX-11 Declare the goods ==
+ROLE_TAXPAYER -> B_EXT_TAXPAYER : System or office where the act takes place
+B_EXT_TAXPAYER -> C_not_stated_ROLE_TAXPAYER : Declare the goods
+C_not_stated_ROLE_TAXPAYER -> E_S_IMPORT : use: Goods arrive for import
+C_not_stated_ROLE_TAXPAYER -> N_SYS_E2M : F046 Goods declaration in E2M
+== TX-12 Assess duties and taxes ==
+ROLE_BOC -> B_SYS_E2M : System or office where the act takes place
+B_SYS_E2M -> C_not_stated_ROLE_BOC : Assess duties and taxes
+C_not_stated_ROLE_BOC -> E_SYS_E2M : write: Duties and taxes assessed
+== TX-13 Pay the assessed amount ==
+ROLE_TAXPAYER -> B_EXT_TAXPAYER : System or office where the act takes place
+B_EXT_TAXPAYER -> C_not_stated_ROLE_TAXPAYER : Pay the assessed amount
+C_not_stated_ROLE_TAXPAYER -> E_SYS_E2M : use: Duties and taxes assessed
+C_not_stated_ROLE_TAXPAYER -> N_INST_AAB : F043 Duties paid at an agent bank
+== TX-14 Send the abstract of collection through PAS ==
+ROLE_AAB -> B_INST_AAB : System or office where the act takes place
+B_INST_AAB -> C_not_stated_ROLE_AAB : Send the abstract of collection through PAS
+C_not_stated_ROLE_AAB -> N_INST_BOC : F047 Abstract of collection, through PAS, at BOC
+C_not_stated_ROLE_AAB -> E_S_AAB_COLL : write: Collections held by the agent bank before remittance
+== TX-15 Confirm the payment and release the goods ==
+ROLE_BOC -> B_SYS_E2M : System or office where the act takes place
+B_SYS_E2M -> C_not_stated_ROLE_BOC : Confirm the payment and release the goods
+C_not_stated_ROLE_BOC -> E_S_RELEASED : write: Goods released
+@enduml

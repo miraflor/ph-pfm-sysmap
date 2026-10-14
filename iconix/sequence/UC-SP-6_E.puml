@@ -1,0 +1,50 @@
+@startuml
+title UC-SP-6 Record, report and audit the payment (cohort E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "Paper forms: validated LDDAP-ADA,…" as B_SP_16
+control "check by Cashier or disbursing off…" as C_person_ROLE_CASHIER
+participant "Accounting unit" as N_UNIT_NGA_ACC
+participant "Agency website" as N_SYS_AGENCY_WEB
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "eNGAS" as B_SYS_ENGAS
+control "check by Chief accountant (head of…" as C_person_ROLE_ACCOUNTANT
+entity "eNGAS" as E_SYS_ENGAS
+participant "Budget unit" as N_UNIT_NGA_BUD
+participant "COA audit team" as N_UNIT_COA_AUDIT
+participant "eFPS and eBIRForms" as N_SYS_BIR_EFILING
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "eBudget (COA)" as B_SYS_EBUDGET_COA
+control "check by Head of the budget unit" as C_person_ROLE_BUDGET
+entity "eBudget (COA)" as E_SYS_EBUDGET_COA
+actor "COA audit team" as ROLE_COA_AUDIT
+boundary "Paid vouchers and their documents…" as B_SP_19
+control "check by COA audit team" as C_person_ROLE_COA_AUDIT
+entity "COA audit team" as E_UNIT_COA_AUDIT
+== SP-16 Receive the validated copy and prepare the daily… ==
+ROLE_CASHIER -> B_SP_16 : Paper forms: validated LDDAP-ADA, official receipt of the payee, repo…
+B_SP_16 -> C_person_ROLE_CASHIER : Receive the validated copy and prepare the daily report
+C_person_ROLE_CASHIER -> N_UNIT_NGA_ACC : F068 Daily report of payment orders issued, with the vouchers an…
+C_person_ROLE_CASHIER -> N_SYS_AGENCY_WEB : F040 Daily report of payment orders, on the website of the agency
+== SP-17 Record the payment in the books ==
+ROLE_ACCOUNTANT -> B_SYS_ENGAS : eNGAS: journal entry; eFPS for taxes withheld
+B_SYS_ENGAS -> C_person_ROLE_ACCOUNTANT : Record the payment in the books
+note right of C_person_ROLE_ACCOUNTANT : R-TAX-REMIT: Taxes withheld are remitted by the 10th day of the next mon…
+C_person_ROLE_ACCOUNTANT -> E_SYS_ENGAS : write: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+C_person_ROLE_ACCOUNTANT -> N_UNIT_NGA_BUD : F069 Copy of the daily report and JEV of the payment, at the bud…
+C_person_ROLE_ACCOUNTANT -> N_UNIT_COA_AUDIT : F023 Paid vouchers with the daily report and JEV, at the COA aud…
+C_person_ROLE_ACCOUNTANT -> N_SYS_BIR_EFILING : F035 Returns of taxes withheld and the electronic Tax Remittance…
+== SP-18 Post the payment in the ORS and the registry ==
+ROLE_BUDGET -> B_SYS_EBUDGET_COA : eBudget of COA
+B_SYS_EBUDGET_COA -> C_person_ROLE_BUDGET : Post the payment in the ORS and the registry
+C_person_ROLE_BUDGET -> E_SYS_EBUDGET_COA : write: Payment posted in part C of the ORS and in the registry of…
+== SP-19 Audit the paid transaction ==
+ROLE_COA_AUDIT -> B_SP_19 : Paid vouchers and their documents, on paper
+B_SP_19 -> C_person_ROLE_COA_AUDIT : Audit the paid transaction
+note right of C_person_ROLE_COA_AUDIT : R-AUDIT-POST: Paid vouchers with their documents go to the auditor
+C_person_ROLE_COA_AUDIT -> E_UNIT_COA_AUDIT : write: Audit result: no finding, or an observation, suspension, di…
+@enduml

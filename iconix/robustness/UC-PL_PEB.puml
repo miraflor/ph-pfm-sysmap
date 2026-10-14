@@ -1,0 +1,76 @@
+@startuml
+title UC-PL From the investment program to the enacted budget (cohort P, E, B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Planning and budget officer of the agen…" as ROLE_PLANNER
+boundary "System or office where the act takes place" as B_PL_01
+control "PL-01 Encode and endorse programs and projects in PIPOL…" as C_PL_01
+entity "Entry of a program or project in PIPOL" as E_R_PIPOL_ENTRY_
+actor "DEPDev PIP and TRIP secretariats" as ROLE_DEPDEV
+boundary "System or office where the act takes place" as B_PL_02
+control "PL-02 Validate the entries against the PIP criteria (ch…" as C_PL_02
+entity "PIP: Public Investment Program 2023-2028 [PIPOL]" as E_R_PIP_SYS_PIPOL
+entity "TRIP: Three-Year Rolling Infrastructure Pro… [PIPOL]" as E_R_TRIP_SYS_PIPOL
+boundary "System or office where the act takes place" as B_PL_03
+control "PL-03 Enter the budget proposal in OSBPS (check not sta…" as C_PL_03
+entity "Budget Call (National Budget Memorandum)" as E_R_BUDGETCALL_
+entity "BP: Budget Preparation forms" as E_R_BPFORMS_
+actor "Personnel officer" as ROLE_PERSONNEL
+boundary "System or office where the act takes place" as B_PL_04
+control "PL-04 Update the positions in GMIS (check not stated)" as C_PL_04
+entity "PSIPOP: Monthly update of positions in GMIS" as E_R_PSIPOP_UPDATE_
+actor "DBM (bureaus and approving officials)" as ROLE_DBM
+boundary "System or office where the act takes place" as B_PL_05
+control "PL-05 Build the proposed budget (check not stated)" as C_PL_05
+actor "Congress" as ROLE_CONGRESS
+boundary "System or office where the act takes place" as B_PL_06
+control "PL-06 Enact the budget (check not stated)" as C_PL_06
+entity "NEP: National Expenditure Program [BPMS]" as E_R_NEP_SYS_BPMS
+boundary "System or office where the act takes place" as B_PL_07
+control "PL-07 Load the enacted budget in the e-Budget of DBM (c…" as C_PL_07
+entity "GAA: General Appropriations Act" as E_R_GAA_
+boundary "System or office where the act takes place" as B_PL_08
+control "PL-08 Make the appropriation available for release (che…" as C_PL_08
+ROLE_PLANNER -- B_PL_01
+B_PL_01 -- C_PL_01
+C_PL_01 -- E_R_PIPOL_ENTRY_
+ROLE_DEPDEV -- B_PL_02
+B_PL_02 -- C_PL_02
+C_PL_01 -- C_PL_02
+C_PL_02 -- E_R_PIPOL_ENTRY_
+C_PL_02 -- E_R_PIP_SYS_PIPOL
+C_PL_02 -- E_R_TRIP_SYS_PIPOL
+ROLE_PLANNER -- B_PL_03
+B_PL_03 -- C_PL_03
+C_PL_02 -- C_PL_03
+C_PL_03 -- E_R_BUDGETCALL_
+C_PL_03 -- E_R_BPFORMS_
+C_PL_03 -- E_R_PIP_SYS_PIPOL
+C_PL_03 -- E_R_TRIP_SYS_PIPOL
+ROLE_PERSONNEL -- B_PL_04
+B_PL_04 -- C_PL_04
+C_PL_03 -- C_PL_04
+C_PL_04 -- E_R_PSIPOP_UPDATE_
+ROLE_DBM -- B_PL_05
+B_PL_05 -- C_PL_05
+C_PL_04 -- C_PL_05
+C_PL_05 -- E_R_BPFORMS_
+C_PL_05 -- E_R_PSIPOP_UPDATE_
+ROLE_CONGRESS -- B_PL_06
+B_PL_06 -- C_PL_06
+C_PL_05 -- C_PL_06
+C_PL_06 -- E_R_BPFORMS_
+C_PL_06 -- E_R_PSIPOP_UPDATE_
+C_PL_06 -- E_R_NEP_SYS_BPMS
+ROLE_DBM -- B_PL_07
+B_PL_07 -- C_PL_07
+C_PL_06 -- C_PL_07
+C_PL_07 -- E_R_NEP_SYS_BPMS
+C_PL_07 -- E_R_GAA_
+ROLE_DBM -- B_PL_08
+B_PL_08 -- C_PL_08
+C_PL_07 -- C_PL_08
+C_PL_08 -- E_R_GAA_
+@enduml

@@ -1,0 +1,21 @@
+link_id,from_record,to_record,relation,key,cardinality,basis,atlas_ref
+L01,R-GAA,R-APP,planned as,"text, no code",||--o{,Diagram 17c,Diagram 17c
+L02,R-APP,R-ITB,advertised as,,||--o{,GK,Diagram 17c
+L03,R-ITB,R-PO,awarded as,,||--o|,GK,Diagram 17c
+L04,R-PO,R-IAR,delivered under,order no.,||--o{,Diagram 17c,Diagram 17c
+L05,R-IAR,R-PC,recorded from,reference column,||--o|,Diagram 17c,Diagram 17c
+L06,R-JEV,R-PC,valued by,JEV no. as reference,||--o{,Diagram 17c,Diagram 17c
+L07,R-GAA,R-SARO,released as,UACS,||--o{,Diagram 17c,Diagram 17c
+L08,R-ORS,R-PO,funds certified on,ORS no.,||--o|,Diagram 17c,Diagram 17c
+L09,R-SARO,R-ORS,charged by,UACS,||--o{,Diagram 17c,Diagram 17c
+L10,R-IAR,R-DV,supports,attachment,||--o{,Diagram 17c,Diagram 17c
+L11,R-ORS,R-DV,claimed by,ORS no.,||--o{,Diagram 17c,Diagram 17c
+L12,R-DV,R-JEV,recorded by,JEV no.,||--|{,Diagram 17c,Diagram 17c
+L13,R-DV,R-AOM,examined in,,||--o{,GK,Diagram 17c
+L14,R-ORS,R-LDDAP-LINE,paid through,ORS no.,||--o{,Diagram 17c,Diagram 17c
+L15,R-NCA,R-LDDAP,drawn by,NCA no.,||--o{,Diagram 17c,Diagram 17c
+L16,R-LDDAP,R-LDDAP-LINE,contains,,||--|{,Diagram 17c,Diagram 17c
+L17,R-LDDAP,R-RADAI-LINE,listed in,ADA no.,||--o{,Diagram 17c,Diagram 17c
+L18,R-DV,R-RADAI-LINE,listed in,DV no.,||--o{,Diagram 17c,Diagram 17c
+L19,R-LDDAP,R-BANK-TXN,executed as,LDDAP-ADA no.,||--o{,Diagram 17c,Diagram 17c
+L20,R-GAA,R-FAR1,reported as,UACS,||--o{,Diagram 17c,Diagram 17c

@@ -1,0 +1,43 @@
+digraph D_integration {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Planned connections of the IFMIS core (9 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_INST-BTR" {
+label="BTr" style="rounded,filled" fillcolor="#fbe0c4" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of the Treasury"
+"ACC-TSA" [shape=cylinder style="filled" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Treasury Single\nAccount" tooltip="Treasury Single Account: accounts of BTr at the BSP"]
+"SYS-NGCDS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="NGCDS" tooltip="NGCDS, National Government Collection and Disbursement System"]
+}
+subgraph "cluster_INST-COA" {
+label="COA" style="rounded,filled" fillcolor="#e6e3fb" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Commission on Audit"
+"SYS-ENGAS" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eNGAS" tooltip="eNGAS, electronic New Government Accounting System"]
+}
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"SYS-ADRS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="ADRS" tooltip="ADRS, Action Document Releasing System"]
+"SYS-BPMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#888888" penwidth=1 fontname="Helvetica" fontsize=10 label="BPMS" tooltip="BPMS, Budget Preparation Management System"]
+"SYS-BTMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BTMS" tooltip="BTMS, Budget and Treasury Management System"]
+"SYS-DIME" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="DIME" tooltip="DIME"]
+"SYS-EBUDGET-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="e-Budget (DBM)" tooltip="e-Budget (DBM)"]
+"SYS-IFMIS-INT" [shape=box style="filled,rounded,dashed" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="IFMIS integration\nlayer" tooltip="Integration layer of the IFMIS"]
+"SYS-OSBPS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="OSBPS" tooltip="OSBPS version 2.0, Online Submission of Budget Proposals System"]
+"SYS-URS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="URS" tooltip="URS, Unified Reporting System"]
+}
+"SYS-ADRS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F110: Agreed records exchanged with the core (content not stated)" label="F110" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F110: Agreed records exchanged with the core (content not stated)" label="F110" fontsize=7 fontcolor="#666666"]
+"SYS-BPMS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F111: Agreed records exchanged with the core (content not stated)" label="F111" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F111: Agreed records exchanged with the core (content not stated)" label="F111" fontsize=7 fontcolor="#666666"]
+"SYS-DIME" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F112: Agreed records exchanged with the core (content not stated)" label="F112" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F112: Agreed records exchanged with the core (content not stated)" label="F112" fontsize=7 fontcolor="#666666"]
+"SYS-EBUDGET-DBM" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F113: Agreed records exchanged with the core (content not stated)" label="F113" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F113: Agreed records exchanged with the core (content not stated)" label="F113" fontsize=7 fontcolor="#666666"]
+"SYS-ENGAS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F114: Agreed records exchanged with the core (content not stated)" label="F114" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F114: Agreed records exchanged with the core (content not stated)" label="F114" fontsize=7 fontcolor="#666666"]
+"SYS-NGCDS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F115: Agreed records exchanged with the core (content not stated)" label="F115" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F115: Agreed records exchanged with the core (content not stated)" label="F115" fontsize=7 fontcolor="#666666"]
+"SYS-OSBPS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F116: Agreed records exchanged with the core (content not stated)" label="F116" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F116: Agreed records exchanged with the core (content not stated)" label="F116" fontsize=7 fontcolor="#666666"]
+"ACC-TSA" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F117: Agreed records exchanged with the core (content not stated)" label="F117" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F117: Agreed records exchanged with the core (content not stated)" label="F117" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "SYS-IFMIS-INT" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F118: Agreed records exchanged with the core (content not stated)" label="F118" fontsize=7 fontcolor="#666666"]
+"SYS-IFMIS-INT" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F118: Agreed records exchanged with the core (content not stated)" label="F118" fontsize=7 fontcolor="#666666"]
+}

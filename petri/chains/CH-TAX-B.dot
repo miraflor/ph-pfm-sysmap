@@ -1,0 +1,61 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-TAX-B: Tax and customs collections (cohort B)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-TAX-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="A tax return is due ●" tooltip="S-TAX-DUE"]
+"C-F042" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F042: Return filed in\neFPS or eBIRForms" tooltip="C-F042"]
+"S-TO-PAY" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Tax filed and to be paid" tooltip="S-TO-PAY"]
+"C-F043" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F043: Tax paid at an\nagent bank or gateway" tooltip="C-F043"]
+"C-F044" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F044: Return in the\ninternal system of BIR" tooltip="C-F044"]
+"C-F045" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F045: Report of payments\nreceived, at BIR" tooltip="C-F045"]
+"S-AAB-COLL" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections held by the\nagent bank before\nremittance" tooltip="S-AAB-COLL"]
+"S-TAX-POSTED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment posted to the\naccount of the taxpayer" tooltip="S-TAX-POSTED"]
+"C-F048" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F048: Collections on\ntheir way to the TSA" tooltip="C-F048"]
+"S-TSA" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Cash in the Treasury\nSingle Account ●" tooltip="S-TSA"]
+"S-IMPORT" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Goods arrive for import ●" tooltip="S-IMPORT"]
+"C-F046" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F046: Goods declaration\nin E2M" tooltip="C-F046"]
+"S-ASSESSED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Duties and taxes\nassessed" tooltip="S-ASSESSED"]
+"C-F043-CUSTOMS" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F043: Duties paid at an\nagent bank" tooltip="C-F043-CUSTOMS"]
+"C-F047" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F047: Abstract of\ncollection, through PAS,\nat BOC" tooltip="C-F047"]
+"S-RELEASED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Goods released" tooltip="S-RELEASED"]
+"TX-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-01\nFile the return" tooltip="Taxpayer or importer"]
+"TX-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-02\nPay the tax" tooltip="Taxpayer or importer"]
+"TX-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-03\nPass the return to the\ninternal system" tooltip="BIR office or approving official"]
+"TX-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-04\nConfirm and report the\npayment" tooltip="Authorized agent bank or payment gateway"]
+"TX-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-05\nPost the payment to the\ntaxpayer account" tooltip="BIR office or approving official"]
+"TX-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-06\nRemit the collections to\nthe TSA" tooltip="Authorized agent bank or payment gateway"]
+"TX-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-07\nCredit the TSA" tooltip="BSP"]
+"TX-11" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-11\nDeclare the goods" tooltip="Taxpayer or importer"]
+"TX-12" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-12\nAssess duties and taxes" tooltip="BOC"]
+"TX-13" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-13\nPay the assessed amount" tooltip="Taxpayer or importer"]
+"TX-14" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-14\nSend the abstract of\ncollection through PAS" tooltip="Authorized agent bank or payment gateway"]
+"TX-15" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-15\nConfirm the payment and\nrelease the goods" tooltip="BOC"]
+"S-TAX-DUE" -> "TX-01"
+"TX-01" -> "C-F042"
+"TX-01" -> "S-TO-PAY"
+"S-TO-PAY" -> "TX-02"
+"TX-02" -> "C-F043"
+"C-F042" -> "TX-03"
+"TX-03" -> "C-F044"
+"C-F043" -> "TX-04"
+"TX-04" -> "C-F045"
+"TX-04" -> "S-AAB-COLL"
+"C-F044" -> "TX-05"
+"C-F045" -> "TX-05"
+"TX-05" -> "S-TAX-POSTED"
+"S-AAB-COLL" -> "TX-06" [label="amount" fontsize=7]
+"TX-06" -> "C-F048"
+"C-F048" -> "TX-07"
+"TX-07" -> "S-TSA"
+"S-IMPORT" -> "TX-11"
+"TX-11" -> "C-F046"
+"C-F046" -> "TX-12"
+"TX-12" -> "S-ASSESSED"
+"S-ASSESSED" -> "TX-13"
+"TX-13" -> "C-F043-CUSTOMS"
+"C-F043-CUSTOMS" -> "TX-14"
+"TX-14" -> "C-F047"
+"TX-14" -> "S-AAB-COLL"
+"C-F047" -> "TX-15"
+"TX-15" -> "S-RELEASED"
+}

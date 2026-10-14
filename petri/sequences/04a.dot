@@ -1,0 +1,108 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="04a  Budget legislation: from the President's budget to the General Appropriations Act (GAA)" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p16" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p17" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p18" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p19" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p20" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p21" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p22" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p23" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p24" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p25" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"p26" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. President to House plenary: President's\nbudget: NEP, BESF, Budget Message, within 30\ndays from the opening of the regular session" tooltip="04a-01"]
+"t02" [shape=box style=rounded label="2. House plenary to House Appropriations: The\nNEP is filed as the General Appropriations\nBill (GAB) and referred to the committee" tooltip="04a-02"]
+"t03" [shape=box style=rounded label="3. DBCC to House Appropriations: Briefing on\nthe economy and the fiscal program" tooltip="04a-03"]
+"tau1" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="parallel split"]
+"tau2" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="parallel join"]
+"t04" [shape=box style=rounded label="4. House Appropriations to National agency:\nHearings, agency by agency: plans, past\nperformance" tooltip="04a-04"]
+"t05" [shape=box style=rounded label="5. National agency to House Appropriations:\nAnswers and documents" tooltip="04a-05"]
+"t06" [shape=box style=rounded label="6. Senate Finance to National agency:\nHearings, agency by agency" tooltip="04a-06"]
+"t07" [shape=box style=rounded label="7. National agency to Senate Finance: Answers\nand documents" tooltip="04a-07"]
+"t08" [shape=box style=rounded label="8. House Appropriations to House plenary:\nCommittee report on the GAB" tooltip="04a-08"]
+"t09" [shape=box style=rounded label="9. House plenary: Plenary debates and\namendments. Approval on second and third\nreading" tooltip="04a-09"]
+"t10" [shape=box style=rounded label="10. House plenary to Senate plenary: GAB as\napproved by the House" tooltip="04a-10"]
+"t11" [shape=box style=rounded label="11. Senate Finance to Senate plenary:\nCommittee report with Senate amendments" tooltip="04a-11"]
+"t12" [shape=box style=rounded label="12. Senate plenary: Plenary debates and\namendments. Approval on second and third\nreading" tooltip="04a-12"]
+"t13" [shape=box style=rounded label="13. House plenary to Bicameral committee:\nHouse conferees and House version" tooltip="04a-13"]
+"t14" [shape=box style=rounded label="14. Senate plenary to Bicameral committee:\nSenate conferees and Senate version" tooltip="04a-14"]
+"t15" [shape=box style=rounded label="15. Bicameral committee: Reconcile the two\nversions" tooltip="04a-15"]
+"t16" [shape=box style=rounded label="16. Bicameral committee to House plenary:\nConference report" tooltip="04a-16"]
+"t17" [shape=box style=rounded label="17. Bicameral committee to Senate plenary:\nConference report" tooltip="04a-17"]
+"t18" [shape=box style=rounded label="18. House plenary to President: Both chambers\nratify. The enrolled bill goes to the\nPresident" tooltip="04a-18"]
+"t19" [shape=box style=rounded label="19. President: Review. May veto particular\nitems. The items not vetoed become law" tooltip="04a-19"]
+"t20" [shape=box style=rounded label="20. President to DBM: Signed General\nAppropriations Act (GAA)" tooltip="04a-20"]
+"tau3" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="skip: Congress disagrees with a veto"]
+"t21" [shape=box style=rounded label="21. House plenary to President: Override by\ntwo thirds of each chamber" tooltip="04a-21"]
+"tau4" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Congress disagrees with a veto"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "tau1"
+"tau1" -> "p6"
+"p6" -> "t04"
+"t04" -> "p7"
+"p7" -> "t05"
+"t05" -> "p8"
+"p8" -> "tau2"
+"tau1" -> "p9"
+"p9" -> "t06"
+"t06" -> "p10"
+"p10" -> "t07"
+"t07" -> "p11"
+"p11" -> "tau2"
+"tau2" -> "p5"
+"p5" -> "t08"
+"t08" -> "p12"
+"p12" -> "t09"
+"t09" -> "p13"
+"p13" -> "t10"
+"t10" -> "p14"
+"p14" -> "t11"
+"t11" -> "p15"
+"p15" -> "t12"
+"t12" -> "p16"
+"p16" -> "t13"
+"t13" -> "p17"
+"p17" -> "t14"
+"t14" -> "p18"
+"p18" -> "t15"
+"t15" -> "p19"
+"p19" -> "t16"
+"t16" -> "p20"
+"p20" -> "t17"
+"t17" -> "p21"
+"p21" -> "t18"
+"t18" -> "p22"
+"p22" -> "t19"
+"t19" -> "p23"
+"p23" -> "t20"
+"t20" -> "p24"
+"p24" -> "tau3"
+"tau3" -> "p25"
+"p24" -> "t21"
+"t21" -> "p26"
+"p26" -> "tau4"
+"tau4" -> "p25"
+}

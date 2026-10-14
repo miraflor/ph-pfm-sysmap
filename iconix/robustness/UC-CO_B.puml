@@ -1,0 +1,83 @@
+@startuml
+title UC-CO Collect a fee and deposit it (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Collecting officer" as ROLE_COLLECTOR
+boundary "System or office where the act takes place" as B_CO_01
+control "CO-01 Pay the fee (check not stated)" as C_CO_01
+entity "Order of Payment" as E_R_OP_OR_
+entity "Fees paid to an agency (money)" as E_R_M_FEES_
+boundary "System or office where the act takes place" as B_CO_02
+control "CO-02 Issue the official receipt (check not stated)" as C_CO_02
+boundary "System or office where the act takes place" as B_CO_03
+control "CO-03 Deposit the collections in full (check not stated)" as C_CO_03
+entity "Deposit of agency collections (money)" as E_R_M_DEPOSIT_
+boundary "System or office where the act takes place" as B_CO_04
+control "CO-04 Report collections and deposits for the day (chec…" as C_CO_04
+entity "Order of Payment [BTMS: 3 Receipts]" as E_R_OP_OR_MOD_BTMS_REC
+entity "Report of Collections and Deposits" as E_R_RCD_
+actor "Authorized government depository bank" as ROLE_AGDB
+boundary "System or office where the act takes place" as B_CO_05
+control "CO-05 Credit the account and report (check not stated)" as C_CO_05
+entity "Daily and monthly collection reports of a d…" as E_R_COLL_REPORT_
+entity "Consolidated report of daily collections, w…" as E_R_CONSOL_COLL_
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "System or office where the act takes place" as B_CO_06
+control "CO-06 Record the collections (check not stated)" as C_CO_06
+entity "JEV: Journal Entry Voucher [BTMS: 3 Receipts]" as E_R_JEV_MOD_BTMS_REC
+boundary "System or office where the act takes place" as B_CO_07
+control "CO-07 Transfer the balances to the TSA (check not state…" as C_CO_07
+entity "Transfer of the balances of depository bank…" as E_R_M_BAL_TRANSFER_
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "System or office where the act takes place" as B_CO_08
+control "CO-08 Consolidate the collection reports (check not sta…" as C_CO_08
+boundary "System or office where the act takes place" as B_CO_09
+control "CO-09 Issue the certificate of deposited collections (c…" as C_CO_09
+entity "Certificate of deposited national collectio…" as E_R_CDNC_
+ROLE_COLLECTOR -- B_CO_01
+B_CO_01 -- C_CO_01
+C_CO_01 -- E_R_OP_OR_
+C_CO_01 -- E_R_M_FEES_
+ROLE_COLLECTOR -- B_CO_02
+B_CO_02 -- C_CO_02
+C_CO_01 -- C_CO_02
+C_CO_02 -- E_R_M_FEES_
+C_CO_02 -- E_R_OP_OR_
+ROLE_COLLECTOR -- B_CO_03
+B_CO_03 -- C_CO_03
+C_CO_02 -- C_CO_03
+C_CO_03 -- E_R_OP_OR_
+C_CO_03 -- E_R_M_DEPOSIT_
+ROLE_COLLECTOR -- B_CO_04
+B_CO_04 -- C_CO_04
+C_CO_03 -- C_CO_04
+C_CO_04 -- E_R_OP_OR_MOD_BTMS_REC
+C_CO_04 -- E_R_RCD_
+ROLE_AGDB -- B_CO_05
+B_CO_05 -- C_CO_05
+C_CO_04 -- C_CO_05
+C_CO_05 -- E_R_M_DEPOSIT_
+C_CO_05 -- E_R_COLL_REPORT_
+C_CO_05 -- E_R_CONSOL_COLL_
+ROLE_ACCOUNTANT -- B_CO_06
+B_CO_06 -- C_CO_06
+C_CO_05 -- C_CO_06
+C_CO_06 -- E_R_RCD_
+C_CO_06 -- E_R_CONSOL_COLL_
+C_CO_06 -- E_R_JEV_MOD_BTMS_REC
+ROLE_AGDB -- B_CO_07
+B_CO_07 -- C_CO_07
+C_CO_06 -- C_CO_07
+C_CO_07 -- E_R_M_BAL_TRANSFER_
+ROLE_BTR -- B_CO_08
+B_CO_08 -- C_CO_08
+C_CO_07 -- C_CO_08
+C_CO_08 -- E_R_COLL_REPORT_
+ROLE_BTR -- B_CO_09
+B_CO_09 -- C_CO_09
+C_CO_08 -- C_CO_09
+C_CO_09 -- E_R_COLL_REPORT_
+C_CO_09 -- E_R_CDNC_
+@enduml

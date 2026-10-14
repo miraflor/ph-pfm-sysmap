@@ -1,0 +1,31 @@
+@startuml
+title UC-SP-4 Examine and approve the claim (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "BTMS: disbursement voucher linked to an approved…" as B_SP_09
+control "SP-09 Prepare and examine the claim (by software)" as C_SP_09
+entity "ORS: Obligation Request and Status [BTMS: 1 Commitment and obligations]" as E_R_ORS_MOD_BTMS_COM
+entity "RAOD, Registries of Allotments, Obligations… [BTMS: 1 Commitment and obligations]" as E_R_RAOD_MOD_BTMS_COM
+entity "IAR: Inspection and Acceptance Report [BTMS: 2 Payments]" as E_R_IAR_MOD_BTMS_PAY
+entity "DV: Disbursement Voucher [BTMS: 2 Payments]" as E_R_DV_MOD_BTMS_PAY
+entity "Index of Payments [BTMS: 2 Payments]" as E_R_INDEXPAY_MOD_BTMS_PAY
+boundary "BTMS: approval of the voucher" as B_SP_10
+control "SP-10 Certify cash available and approve (by software)" as C_SP_10
+entity "RANCA, Registry of Allotments and Notice of… [BTMS]" as E_R_RANCA_SYS_BTMS
+ROLE_ACCOUNTANT -- B_SP_09
+B_SP_09 -- C_SP_09
+C_SP_09 -- E_R_ORS_MOD_BTMS_COM
+C_SP_09 -- E_R_RAOD_MOD_BTMS_COM
+C_SP_09 -- E_R_IAR_MOD_BTMS_PAY
+C_SP_09 -- E_R_DV_MOD_BTMS_PAY
+C_SP_09 -- E_R_INDEXPAY_MOD_BTMS_PAY
+ROLE_ACCOUNTANT -- B_SP_10
+B_SP_10 -- C_SP_10
+C_SP_09 -- C_SP_10
+C_SP_10 -- E_R_DV_MOD_BTMS_PAY
+C_SP_10 -- E_R_INDEXPAY_MOD_BTMS_PAY
+C_SP_10 -- E_R_RANCA_SYS_BTMS
+@enduml

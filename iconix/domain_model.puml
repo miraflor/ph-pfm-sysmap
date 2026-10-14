@@ -1,0 +1,178 @@
+@startuml
+title Domain model: the records of diagram 17c of the atlas and their links
+hide methods
+hide circle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #555555
+}
+left to right direction
+class "Audit Observation Memorandum" as R_AOM <<document>> {
+  notice_no : string <<PK>> (general knowledge)
+  dv_no : string <<FK>> (general knowledge)
+  persons_liable : text (general knowledge)
+  amount : money (general knowledge)
+  rule_violated : text (general knowledge)
+}
+class "Annual Procurement Plan (APP), indicative and f…" as R_APP <<document>> {
+  app_line : string <<PK>>
+  source_of_funds : text
+  end_user_unit : text
+  mode_of_procurement : text
+  start_and_end_of_procurement : text
+  estimated_budget : money
+}
+class "Bank transaction (debit of the sub-account, cre…" as R_BANK_TXN <<data>> {
+  bank_reference : string <<PK>> (general knowledge)
+  lddap_ada_no : string <<FK>> (general knowledge)
+  mds_sub_account : string (general knowledge)
+  payee_account : string (general knowledge)
+  amount : money (general knowledge)
+  value_date : date (general knowledge)
+}
+class "Disbursement Voucher (DV), App.32" as R_DV <<document>> {
+  dv_no : string <<PK>>
+  ors_no : string <<FK>>
+  fund_cluster : code
+  responsibility_center : code
+  uacs_pap : code
+  uacs_object : code
+  payee_tin : string
+  mode_of_payment : text
+  amount : money
+  jev_no : string <<FK>>
+  check_or_ada_no : string <<FK>>
+  official_receipt_no : string
+}
+class "FAR 1, Statement of Appropriations, Allotments,…" as R_FAR1 <<report>> {
+  uacs_pap : code <<FK>>
+  allotment_class : code
+  period : string
+  appropriation : money
+  allotment : money
+  obligation : money
+  disbursement : money
+}
+class "General Appropriations Act (GAA)" as R_GAA <<authority>> {
+  uacs_funding_source : code
+  uacs_organization : code
+  uacs_location : code
+  uacs_pap : code <<PK>>
+  uacs_object : code
+  amount : money
+  special_provision : text
+}
+class "Inspection and Acceptance Report (IAR), App.62" as R_IAR <<document>> {
+  iar_no : string <<PK>>
+  order_no : string <<FK>>
+  invoice_no : string
+  responsibility_center : code
+  date_inspected : date
+  date_received : date
+  complete_or_partial : text
+}
+class "Invitation to bid and bidding documents" as R_ITB <<document>> {
+  philgeps_reference_no : string <<PK>> (general knowledge)
+  app_line : string <<FK>> (general knowledge)
+  approved_budget_for_contract : money (general knowledge)
+  bids_received : text (general knowledge)
+}
+class "Journal Entry Voucher (JEV), App.36" as R_JEV <<document>> {
+  jev_no : string <<PK>>
+  fund_cluster : code
+  responsibility_center : code
+  uacs_object : code
+  debit : money
+  credit : money
+}
+class "List of Due and Demandable Accounts Payable wit…" as R_LDDAP <<document>> {
+  lddap_ada_no : string <<PK>>
+  nca_no : string <<FK>>
+  mds_sub_account : string
+  fund_cluster : code
+}
+class "Line of a payment order (one payee)" as R_LDDAP_LINE <<data>> {
+  lddap_ada_no : string <<FK>>
+  ors_no : string <<FK>>
+  allotment_class : code
+  creditor_name : string
+  creditor_bank_account : string
+  gross : money
+  tax_withheld : money
+  net : money
+}
+class "Notice of Cash Allocation (NCA)" as R_NCA <<authority>> {
+  nca_no : string <<PK>>
+  uacs_funding_source : code
+  uacs_organization : code
+  mds_sub_account : string
+  amount_per_month : money
+  valid_until : date
+}
+class "Obligation Request and Status (ORS), App.11" as R_ORS <<document>> {
+  ors_no : string <<PK>>
+  fund_cluster : code
+  responsibility_center : code
+  uacs_pap : code <<FK>>
+  uacs_object : code
+  payee : string
+  particulars : text
+  obligation : money
+  payable : money
+  payment : money
+}
+class "Property Card, App.69, and Property, Plant and…" as R_PC <<register>> {
+  property_no : string <<PK>>
+  reference : string
+  uacs_object : code
+  cost : money
+}
+class "Contract or Purchase Order, App.61" as R_PO <<document>> {
+  order_no : string <<PK>>
+  philgeps_reference_no : string <<FK>> (general knowledge)
+  ors_no : string <<FK>>
+  supplier_tin : string
+  mode_of_procurement : text
+  fund_cluster : code
+  amount : money
+}
+class "Line of the daily report of payment orders issu…" as R_RADAI_LINE <<data>> {
+  check_or_ada_no : string <<FK>>
+  dv_no : string <<FK>>
+  ors_no : string <<FK>>
+  responsibility_center : code
+  payee : string
+  uacs_object : code
+  amount : money
+}
+class "Special Allotment Release Order (SARO)" as R_SARO <<authority>> {
+  saro_no : string <<PK>>
+  uacs_funding_source : code
+  uacs_organization : code
+  uacs_pap : code <<FK>>
+  allotment_class : code
+  amount : money
+}
+R_GAA "1" -- "0..*" R_APP : planned as [text, no code]
+R_APP "1" -- "0..*" R_ITB : advertised as (general knowledge)
+R_ITB "1" -- "0..1" R_PO : awarded as (general knowledge)
+R_PO "1" -- "0..*" R_IAR : delivered under [order no.]
+R_IAR "1" -- "0..1" R_PC : recorded from [reference column]
+R_JEV "1" -- "0..*" R_PC : valued by [JEV no. as reference]
+R_GAA "1" -- "0..*" R_SARO : released as [UACS]
+R_ORS "1" -- "0..1" R_PO : funds certified on [ORS no.]
+R_SARO "1" -- "0..*" R_ORS : charged by [UACS]
+R_IAR "1" -- "0..*" R_DV : supports [attachment]
+R_ORS "1" -- "0..*" R_DV : claimed by [ORS no.]
+R_DV "1" -- "1..*" R_JEV : recorded by [JEV no.]
+R_DV "1" -- "0..*" R_AOM : examined in (general knowledge)
+R_ORS "1" -- "0..*" R_LDDAP_LINE : paid through [ORS no.]
+R_NCA "1" -- "0..*" R_LDDAP : drawn by [NCA no.]
+R_LDDAP "1" -- "1..*" R_LDDAP_LINE : contains
+R_LDDAP "1" -- "0..*" R_RADAI_LINE : listed in [ADA no.]
+R_DV "1" -- "0..*" R_RADAI_LINE : listed in [DV no.]
+R_LDDAP "1" -- "0..*" R_BANK_TXN : executed as [LDDAP-ADA no.]
+R_GAA "1" -- "0..*" R_FAR1 : reported as [UACS]
+@enduml

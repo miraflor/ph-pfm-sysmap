@@ -1,0 +1,29 @@
+@startuml
+title UC-SP-7 Reconcile with the bank (cohort P)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Servicing bank" as ROLE_GSB
+boundary "Paper bank statement with paid ch…" as B_SP_20
+control "check by the bank" as C_bank_ROLE_GSB
+participant "Accounting unit" as N_UNIT_NGA_ACC
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "Bank reconciliation statement (pa…" as B_SP_21
+control "check by Chief accountant (head of…" as C_person_ROLE_ACCOUNTANT
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+== SP-20 Send the monthly bank statement ==
+ROLE_GSB -> B_SP_20 : Paper bank statement with paid checks and memoranda
+B_SP_20 -> C_bank_ROLE_GSB : Send the monthly bank statement
+C_bank_ROLE_GSB -> N_UNIT_NGA_ACC : F034 Monthly bank statement, at accounting
+== SP-21 Reconcile books, registries and bank for the month ==
+ROLE_ACCOUNTANT -> B_SP_21 : Bank reconciliation statement (paper or spreadsheet)
+B_SP_21 -> C_person_ROLE_ACCOUNTANT : Reconcile books, registries and bank for the month
+note right of C_person_ROLE_ACCOUNTANT : R-BOOKS-BANK: The books agree with the bank
+note right of C_person_ROLE_ACCOUNTANT : R-NCA-EQUAL: Reconciliation objective: the NCA balances in agency accoun…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: Books, registries and bank agree for the period
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : read: NCA balance as recorded by the agency (registry of the acco…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : read: NCA balance per the record of checks and payment orders of…
+@enduml

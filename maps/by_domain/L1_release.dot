@@ -1,0 +1,28 @@
+digraph D_release {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Release of allotments and cash authority (6 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_EXT-PUBLIC" {
+label="Public" style="rounded,filled" fillcolor="#ffffff" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Any person: citizens, civil society, observers, journalists"
+"UNIT-PUB-ANY" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Any person" tooltip="Any person, including citizens and journalists"]
+}
+"INST-BTR" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="BTr" tooltip="Bureau of the Treasury"]
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"INST-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="DBM" tooltip="Department of Budget and Management" label="DBM (as a whole)" fillcolor="#ffffff"]
+"SYS-ADRS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="ADRS" tooltip="ADRS, Action Document Releasing System"]
+"SYS-DOCVERIFY" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Document\nverification\n(blockchain)" tooltip="Document verification on a blockchain"]
+"SYS-EBUDGET-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="e-Budget (DBM)" tooltip="e-Budget (DBM)"]
+}
+subgraph "cluster_INST-GSB" {
+label="Servicing banks" style="rounded,filled" fillcolor="#fdf0d5" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Government servicing banks: Land Bank of the Philippines, Development Bank of the Philippines, Philippine Veterans Bank"
+"ACC-MDS" [shape=cylinder style="filled" fillcolor="#fdf0d5" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="MDS sub-accounts" tooltip="Modified Disbursement System (MDS) sub-accounts of agencies at the servicing banks"]
+}
+"INST-NGA" [shape=box style="filled,rounded" fillcolor="#eef6e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="National agency" tooltip="A department or agency of the national government"]
+"SYS-EBUDGET-DBM" -> "SYS-ADRS" [color="#2e6b2ebb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F007: Approved release documents" label="F007" fontsize=7 fontcolor="#666666"]
+"SYS-ADRS" -> "INST-NGA" [color="#1f4e8c" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F008: SARO, GARO, advice of NCA issued" label="F008" fontsize=7 fontcolor="#666666"]
+"SYS-ADRS" -> "SYS-DOCVERIFY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F009: A record of each issued document" label="F009" fontsize=7 fontcolor="#666666"]
+"SYS-DOCVERIFY" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F010: Result of a check by QR code" label="F010" fontsize=7 fontcolor="#666666"]
+"INST-DBM" -> "ACC-MDS" [color="#1f4e8c" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F011: Notice of Cash Allocation" label="F011" fontsize=7 fontcolor="#666666"]
+"INST-BTR" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F128: Cash position of the national government, before NCAs are issued" label="F128" fontsize=7 fontcolor="#666666"]
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-15b" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>15b Transfer of funds from one agency to another body that will implement</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. National agency to Implementing body: Memorandum of agreement: purpose, amount (enough for three months, or the total project cost), period, reports</text></name></transition>
+      <transition id="t02"><name><text>2. National agency: Obligation recorded against its own allotment</text></name></transition>
+      <transition id="t03"><name><text>3. National agency to Implementing body: Check in the name of the implementing body. The receiver issues an official receipt</text></name></transition>
+      <transition id="t04"><name><text>4. National agency: Books: Due from National Government Agencies (a receivable). Not yet an expense, not yet a disbursement in the budget reports</text></name></transition>
+      <transition id="t05"><name><text>5. Implementing body: Trust fund books: Due to NGAs (a liability). The money goes to a trust account, or to the Treasury, from which DBM gives an NCA for trust</text></name></transition>
+      <transition id="t06"><name><text>6. Implementing body to Suppliers and payees: Procurement, contract</text></name></transition>
+      <transition id="t07"><name><text>7. Suppliers and payees to Implementing body: Delivery, inspected and accepted</text></name></transition>
+      <transition id="t08"><name><text>8. Implementing body to Suppliers and payees: Payment from the trust account or under the NCA for trust</text></name></transition>
+      <transition id="t09"><name><text>9. Implementing body to National agency: Within ten days after each month: reports of checks issued and of cash disbursements, approved by the head of the implementing body</text></name></transition>
+      <transition id="t10"><name><text>10. National agency: Books: expense recorded, receivable reduced. Now reported as disbursed. The implementing body reduces its liability by the same expenses</text></name></transition>
+      <transition id="tau1"><name><text>skip: Money remains at the end of the project or of the validity period</text></name></transition>
+      <transition id="t11"><name><text>11. Implementing body to National agency: Unused balance returned, if the agreement says so</text></name></transition>
+      <transition id="tau2"><name><text>end of: Money remains at the end of the project or of the validity period</text></name></transition>
+      <transition id="t12"><name><text>12. National agency to DBM: FAR 1-C each quarter: obligations, disbursements, liquidations and balances of fund transfers</text></name></transition>
+      <transition id="t13"><name><text>13. COA to National agency: The auditor of the implementing body audits its payments. The auditor of the source agency audits the transfer</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="tau1"/>
+      <arc id="a22" source="tau1" target="p12"/>
+      <arc id="a23" source="p11" target="t11"/>
+      <arc id="a24" source="t11" target="p13"/>
+      <arc id="a25" source="p13" target="tau2"/>
+      <arc id="a26" source="tau2" target="p12"/>
+      <arc id="a27" source="p12" target="t12"/>
+      <arc id="a28" source="t12" target="p14"/>
+      <arc id="a29" source="p14" target="t13"/>
+      <arc id="a30" source="t13" target="p15"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,41 @@
+@startuml
+title UC-SP-1 Receive the cash authority (NCA) (cohort P)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "DBM (bureaus and approving of…" as ROLE_DBM
+boundary "ADRS" as B_SYS_ADRS
+control "check by DBM (bureaus and approvin…" as C_person_ROLE_DBM
+entity "URS: Budget execution documen…" as E_MOD_URS_BED
+participant "MDS sub-accounts" as N_ACC_MDS
+participant "National agency" as N_INST_NGA
+entity "Treasury Single Account" as E_ACC_TSA
+actor "Servicing bank" as ROLE_GSB
+boundary "MDS sub-accounts" as B_ACC_MDS
+control "check by the bank" as C_bank_ROLE_GSB
+entity "MDS sub-accounts" as E_ACC_MDS
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "Paper forms: journal entry vouche…" as B_SP_03
+control "check by Chief accountant (head of…" as C_person_ROLE_ACCOUNTANT
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+== SP-01 Issue the NCA ==
+ROLE_DBM -> B_SYS_ADRS : NCA prepared by DBM; advice of NCA issued in ADRS
+B_SYS_ADRS -> C_person_ROLE_DBM : Issue the NCA
+note right of C_person_ROLE_DBM : R-NCA-PROGRAM: NCAs follow the monthly disbursement program, subject to sp…
+C_person_ROLE_DBM -> E_MOD_URS_BED : use: Monthly disbursement program of the agency (BED 3)
+C_person_ROLE_DBM -> N_ACC_MDS : F011 NCA on its way to the bank
+C_person_ROLE_DBM -> N_INST_NGA : F008 Advice of NCA issued, for download in ADRS
+C_person_ROLE_DBM -> E_MOD_URS_BED : write: Monthly disbursement program of the agency (BED 3)
+C_person_ROLE_DBM -> E_ACC_TSA : read: Cash in the Treasury Single Account
+== SP-02 Credit the NCA to the MDS sub-account ==
+ROLE_GSB -> B_ACC_MDS : Records of the bank
+B_ACC_MDS -> C_bank_ROLE_GSB : Credit the NCA to the MDS sub-account
+C_bank_ROLE_GSB -> E_ACC_MDS : write: NCA balance in the MDS sub-account at the servicing bank (a…
+== SP-03 Record the NCA received ==
+ROLE_ACCOUNTANT -> B_SP_03 : Paper forms: journal entry voucher, registry of the NCA
+B_SP_03 -> C_person_ROLE_ACCOUNTANT : Record the NCA received
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: NCA balance as recorded by the agency (registry of the acco…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: NCA balance per the record of checks and payment orders of…
+@enduml

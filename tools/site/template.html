@@ -1,0 +1,88 @@
+<title>Philippine PFM Systems Map</title>
+<meta name="color-scheme" content="light dark">
+<script>/* The light palette is the default, even on dark-system devices. */
+try { if (localStorage.getItem("pfm-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+</script>
+<meta name="description" content="Interactive map of the information systems of Philippine public financial management, their flows, records and process nets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Semi+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>/*STYLE*/</style>
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <h1>Philippine PFM Systems Map</h1>
+      <p class="sub" id="sub">Systems, flows, records and process nets of public financial management.</p>
+    </div>
+    <button type="button" class="theme-button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">Dark mode</button>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button role="tab" id="t-map" aria-selected="true" aria-controls="tab-map">Map</button>
+      <button role="tab" id="t-nets" aria-selected="false" aria-controls="tab-nets">Process nets</button>
+      <button role="tab" id="t-lists" aria-selected="false" aria-controls="tab-lists">Lists</button>
+      <button role="tab" id="t-about" aria-selected="false" aria-controls="tab-about">How to read</button>
+    </nav>
+  </header>
+
+  <section class="view" id="tab-map" role="tabpanel" aria-labelledby="t-map">
+    <div class="toolbar">
+      <div class="tool"><span class="tlabel">Level</span>
+        <div class="seg" id="levels" role="group" aria-label="Level of detail">
+          <button id="lv0" aria-pressed="true" data-level="0">0 Institutions</button>
+          <button id="lv1" aria-pressed="false" data-level="1">1 Systems and units</button>
+          <button id="lv2" aria-pressed="false" data-level="2">2 Modules</button>
+        </div>
+      </div>
+      <div class="tool"><label class="tlabel" for="cohort">Cohort</label>
+        <select id="cohort">
+          <option value="all">All agencies</option>
+          <option value="P">P: paper and own registers</option>
+          <option value="E">E: COA eBudget and eNGAS</option>
+          <option value="B">B: BTMS</option>
+        </select>
+      </div>
+      <details class="filters" id="filters">
+        <summary>Filters</summary>
+        <div class="filterbox" id="filterbox"></div>
+      </details>
+      <label class="check"><input type="checkbox" id="showSteps"> Process steps</label>
+      <label class="check"><input type="checkbox" id="showAdjacent"> Adjacent systems</label>
+      <div class="tool"><label class="tlabel" for="q">Find</label><input type="search" id="q" placeholder="BTMS, NCA, F032, LDDAP" autocomplete="off" list="qlist"><datalist id="qlist"></datalist></div>
+    </div>
+    <div class="stage">
+      <div class="canvas" id="cy" aria-label="Map of institutions, systems and flows"></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint" id="hint">Click a box to read about it. Double-click a box to open or close it.</div>
+      <div class="zoom"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">&minus;</button><button id="zfit" aria-label="Fit the map">&#9633;</button></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </section>
+
+  <section class="view" id="tab-nets" role="tabpanel" aria-labelledby="t-nets" hidden>
+    <div class="toolbar">
+      <div class="tool"><label class="tlabel" for="netsel">Net</label><select id="netsel"></select></div>
+      <div class="tool"><span class="tlabel">Cohort</span>
+        <div class="seg" id="netcoh" role="group" aria-label="Cohort of the net">
+          <button aria-pressed="true" data-c="P">P</button><button aria-pressed="false" data-c="E">E</button><button aria-pressed="false" data-c="B">B</button>
+        </div>
+      </div>
+      <span class="netinfo" id="netinfo"></span>
+    </div>
+    <div class="stage">
+      <div class="canvas" id="cynet" aria-label="Petri net"></div>
+      <div class="legend" id="netlegend"></div>
+      <div class="zoom"><button id="nzin" aria-label="Zoom in">+</button><button id="nzout" aria-label="Zoom out">&minus;</button><button id="nzfit" aria-label="Fit the net">&#9633;</button></div>
+    </div>
+    <aside class="panel" id="netpanel" aria-live="polite"></aside>
+  </section>
+
+  <section class="view" id="tab-lists" role="tabpanel" aria-labelledby="t-lists" hidden>
+    <div class="lists" id="lists"></div>
+  </section>
+
+  <section class="view" id="tab-about" role="tabpanel" aria-labelledby="t-about" hidden>
+    <div class="about" id="about"></div>
+  </section>
+</div>
+<!--SCRIPTS-->
+<script>/*DATA*/</script>
+<script>/*APP*/</script>

@@ -1,0 +1,124 @@
+place_id,kind,name,line,records,flow_id,initial,cohorts,basis
+S-APPROP,balance,Appropriation available (a line of the GAA),authority,R-GAA,,1,all,NBC599
+S-ALLOT,balance,"Allotment available, not yet obligated",authority,R-SARO;R-GAAAO;R-RAOD,,1,all,"NBC599, GAM-V1 Ch.3 s.10"
+S-NEED,state,Need ready: purchase request and a line in the procurement plan,claim,R-PR;R-APP,,1,all,"GAM-V2 App.60, RA12009 s.7"
+S-AWARD,state,Award made,claim,R-NOA;R-BACRES,,,all,RA12009 s.66
+S-OBLIGATED,state,"Obligation recorded: ORS with Box A and Box B, entered in the registry",authority,R-ORS;R-RAOD,,,all,"GAM-V2 App.11, GAM-V1 Ch.3 s.15"
+S-CONTRACT,state,Contract or purchase order in force,claim,R-PO,,,all,GAM-V2 App.61
+S-DELIVERED,state,"Delivery made, with delivery receipt and invoice",claim,R-DR;R-INVOICE,,,all,GAM-V1 Ch.8 s.15
+S-ACCEPTED,state,Delivery inspected and accepted: the obligation is due and demandable,claim,R-IAR,,,all,"GAM-V1 Ch.8 s.15, GAM-V1 Ch.6 s.2"
+S-PAYABLE,state,"Payable recorded in the books (JEV: asset or expense, Accounts Payable)",records,R-JEV,,,P;E,"GAM-V1 Annex H, GAM-V2 App.36"
+S-ORS-PAYABLE,state,Payable posted in part C of the ORS,records,R-ORS,,,P;E,GAM-V2 App.11
+S-CLAIM-OK,state,Claim examined: voucher with Box A and the accounting entry,authority,R-DV;R-INDEXPAY,,,all,"GAM-V1 Ch.6 s.12, GAM-V2 App.32"
+S-CLAIM-APPROVED,state,Claim approved for payment: Box C certified and Box D approved,authority,R-DV,,,all,GAM-V2 App.32
+S-NCA-AGENCY,balance,NCA balance as recorded by the agency (registry of the accounting unit),cash,R-RANCA,,,all,"GAM-V2 App.30, GAM-V1 Ch.6 s.12, BTMS-SITE"
+S-NCA-CASH,balance,NCA balance per the record of checks and payment orders of the cash unit,cash,R-CADR,,,P;E,"GAM-V2 App.34, GAM-V1 Ch.6 s.52"
+S-NCA-BANK,balance,"NCA balance in the MDS sub-account at the servicing bank (a limit, not cash)",cash,R-NCA,,,all,"NBC599, GAM-V1 Ch.6 s.3"
+S-MDP,state,Monthly disbursement program of the agency (BED 3),cash,R-BED,,1,all,NBC599
+S-ORDER-SIGNED,state,"Payment order certified, approved, signed and countersigned, with its summary list",cash,R-LDDAP;R-SLIIE;R-CADR,,,P;E,"GAM-V1 Ch.6 s.51, s.56"
+S-BANK-CLAIM,state,"Payments made by the bank, to be replenished",cash,R-PAYMENTS-MADE,,,all,CL2013-16A
+S-TSA,balance,Cash in the Treasury Single Account,cash,,,1,all,"BTR-SITE, PRIMER"
+S-SETTLED,state,Bank replenished for the payments it made,cash,R-M-REPLENISH,,,all,CL2013-16A
+S-JEV-PAID,state,"Payment recorded in the books (JEV: Accounts Payable, Cash-MDS, Due to BIR)",records,R-JEV,,,all,"GAM-V1 Ch.6 s.54, s.57, BTMS-SITE"
+S-ORS-PAID,state,Payment posted in part C of the ORS and in the registry of disbursements,records,R-ORS;R-RAOD,,,all,GAM-V1 Ch.3 ss.16-17
+S-AUDITED,state,"Audit result: no finding, or an observation, suspension, disallowance or charge",records,R-AOM;R-NS;R-ND;R-NC,,,all,COA2009-006
+S-MONTH-END,clock,End of a month,records,,,1,all,GAM-V1 Ch.21 s.5
+S-RECONCILED,state,"Books, registries and bank agree for the period",records,R-BRS,,,all,"GAM-V1 Ch.21 s.4, s.7, BTMS-SITE"
+C-F011,channel,NCA on its way to the bank,cash,R-NCA,F011,,all,NBC599
+C-F008-NCA,channel,"Advice of NCA issued, for download in ADRS",cash,R-NCA-ADVICE,F008,,all,"ADRS, NBC599"
+C-F067,channel,"Copy of the acceptance report, with the purchase order and delivery receipt, at accounting",claim,R-IAR;R-PO;R-DR,F067,,P;E,GAM-V1 Ch.8 s.15
+C-F069-PAYABLE,channel,"JEV of the payable, at the budget unit for part C",records,R-JEV,F069,,P;E,GAM-V1 Ch.3 ss.16-17
+C-F032,channel,"Payment order and summary list at the bank, on paper",cash,R-LDDAP;R-SLIIE,F032,,P;E,GAM-V1 Ch.6 s.56
+C-F017,channel,"Payment order at the bank, through eMDS",cash,R-LDDAP,F017,,P;E,"eMDS, GAM-V1 Ch.6 s.58"
+C-F027,channel,"Instruction for an electronic payment from BTMS, through the bank",cash,R-EFT-INSTR,F027,,B,"CL2025-8, BTMS-SITE"
+C-F018,channel,Payee credited by the servicing bank,cash,R-M-PAYEE-CREDIT,F018,,P;E,CL2013-16A
+C-F127,channel,Payee credited through PESONet or InstaPay,cash,R-M-PAYEE-CREDIT,F127,,B,CL2025-8
+C-F019,channel,"Copy of the summary list and payment order at BTr, on the same day",cash,R-SLIIE;R-LDDAP,F019,,P;E,"GAM-V1 Ch.6 s.56, CL2013-16A"
+C-F061,channel,"Report of payments made, at eTRAMS of BTr",cash,R-PAYMENTS-MADE,F061,,all,CL2013-16A
+C-F020,channel,Replenishment on its way from the TSA to the bank,cash,R-M-REPLENISH,F020,,all,"CL2013-16A, PRIMER"
+C-F033,channel,"Validated copy of the payment order, back at the cash unit",cash,R-LDDAP,F033,,P;E,"GAM-V1 Ch.6 s.53, s.56"
+C-F028,channel,"Electronic bank statement, at BTMS",cash,R-EBANK-STMT,F028,,B,BTMS-SITE
+C-F068,channel,"Daily report of payment orders issued, with the vouchers and validated orders, at accounting",records,R-RADAI;R-DV;R-LDDAP,F068,,P;E,GAM-V1 Ch.6 s.56
+C-F040,channel,"Daily report of payment orders, on the website of the agency",records,R-RADAI,F040,,P;E,GAM-V1 Ch.6 s.56
+C-F069-PAYMENT,channel,"Copy of the daily report and JEV of the payment, at the budget unit",records,R-RADAI;R-JEV,F069,,P;E,"GAM-V1 Ch.6 s.56, Ch.3 ss.16-17"
+C-F023,channel,"Paid vouchers with the daily report and JEV, at the COA auditor",records,R-RADAI;R-DV;R-JEV;R-LDDAP,F023,,P;E,"GAM-V1 Ch.6 s.56, COA2011-002"
+C-F035,channel,"Returns of taxes withheld and the electronic Tax Remittance Advice, at BIR",records,R-TAX-RETURN;R-TRA,F035,,all,GAM-V1 Ch.6 ss.60-62
+C-F034,channel,"Monthly bank statement, at accounting",records,R-BANK-STMT,F034,,P;E,GAM-V1 Ch.21 s.5
+S-NBC,state,Release guidelines of the year issued (National Budget Circular),authority,R-NBC,,1,all,NBC599
+C-F012-BED,channel,Budget execution documents entered in URS,authority,R-BED,F012,,all,NBC599
+C-F021A-BED,channel,Budget execution documents at DBM for evaluation,authority,R-BED,F021A,,all,NBC599
+S-SBR,state,Special Budget Request submitted for an item that needs clearance,authority,R-SBR,,,all,NBC599
+S-SBR-CLEARED,state,Request ready for evaluation (approved by the Office of the President where the guidelines require it),authority,R-SBR,,,all,NBC599
+C-F007,channel,Approved release document passed to ADRS,authority,R-SARO;R-GARO,F007,,all,GK
+C-F008-SARO,channel,SARO or GARO available for download by the agency,authority,R-SARO;R-GARO,F008,,all,"ADRS, NBC599"
+C-F009,channel,Record of the issued document sent to the verification record,records,R-VERIFY-RECORD,F009,,all,DBM-BLOCKCHAIN
+S-VERIFIABLE,state,Fingerprint of the document stored; any copy can be checked,records,R-VERIFY-RECORD,,,all,DBM-BLOCKCHAIN
+C-F041,channel,Annual Procurement Plan and monitoring report at the GPPB,claim,R-APP;R-PMR,F041,,all,GPPB-TSO2026-2
+C-F013-ITB,channel,Invitation to bid posted in PhilGEPS,claim,R-ITB,F013,,all,RA12009 s.20
+C-F014,channel,Opportunity visible to registered suppliers,claim,R-ITB,F014,,all,RA12009 s.20
+C-F103,channel,Notice and award in the open data of PhilGEPS,claim,R-ITB;R-NOA,F103,,all,PHILGEPS-ODP
+S-BIDS,state,Bids received and opened,claim,R-BID,,,all,IRR12009 s.52.1
+C-F013-NOA,channel,Award posted in PhilGEPS,claim,R-NOA,F013,,all,RA12009 s.20
+C-F026,channel,Procurement data passed to BTMS,claim,R-PROC-DATA,F026,,B,CL2025-8
+S-FEE-DUE,state,A fee is due from a payer (order of payment issued),cash,R-OP-OR,,1,all,GAM-V1 Ch.5 s.40
+C-F064,channel,Fee paid to the collecting officer,cash,R-M-FEES,F064,,all,PD1445 s.68
+S-CASH-ON-HAND,balance,Collections in the hands of the collecting officer,cash,R-OP-OR,,,all,GAM-V1 Ch.5 s.40
+S-OR-ISSUED,state,Official receipt issued and listed,records,R-OP-OR,,,all,GAM-V1 Ch.5 s.39
+C-F049,channel,Collections deposited at the depository bank,cash,R-M-DEPOSIT,F049,,all,PD1445 s.69
+C-F050,channel,"Report of collections and deposits, at accounting",records,R-RCD,F050,,all,GAM-V1 Ch.5 s.39
+S-AGDB-BAL,balance,Collections in the account at the depository bank,cash,,,,all,"EO449, BTR-SYS"
+C-F051,channel,"Collection reports of the bank, at NGCDS",records,R-COLL-REPORT,F051,,all,BTR-SYS
+C-F065,channel,"Consolidated report of daily collections and credit memo, at accounting",records,R-CONSOL-COLL,F065,,all,GAM-V1 Ch.5 s.41
+C-F052,channel,Balances on their way to the TSA,cash,R-M-BAL-TRANSFER,F052,,all,BTR-SITE
+C-F053,channel,Collections data at eTRAMS,records,R-COLL-REPORT,F053,,all,GK
+C-F054,channel,"Certificate of deposited national collections, at the agency",records,R-CDNC,F054,,all,BTR-SYS
+S-JEV-COLL,state,Collections recorded in the books of the agency,records,R-JEV,,,all,GAM-V1 Ch.5 s.41
+C-F055,channel,"Quarterly report of revenue and other receipts (FAR 5), at BTr through URS",records,R-FAR5,F055,,P;E,JC2019-1
+S-TAX-DUE,state,A tax return is due,cash,,,1,all,BIR-PAY
+C-F042,channel,Return filed in eFPS or eBIRForms,records,R-TAX-RETURN,F042,,all,BIR-PAY
+S-TO-PAY,state,Tax filed and to be paid,cash,,,,all,BIR-PAY
+C-F043,channel,Tax paid at an agent bank or gateway,cash,R-M-TAX,F043,,all,BIR-PAY
+C-F044,channel,Return in the internal system of BIR,records,R-TAX-RETURN,F044,,all,GK
+C-F045,channel,"Report of payments received, at BIR",records,R-BIR-PAYREPORT,F045,,all,GK
+S-AAB-COLL,balance,Collections held by the agent bank before remittance,cash,,,,all,PEFA2025
+S-TAX-POSTED,state,Payment posted to the account of the taxpayer,records,,,,all,GK
+C-F048,channel,Collections on their way to the TSA,cash,R-M-REMIT-TSA,F048,,all,PEFA2025
+S-IMPORT,state,Goods arrive for import,cash,,,1,all,GK
+C-F046,channel,Goods declaration in E2M,records,R-GOODS-DECL,F046,,all,GK
+S-ASSESSED,state,Duties and taxes assessed,cash,,,,all,GK
+C-F043-CUSTOMS,channel,Duties paid at an agent bank,cash,R-M-TAX,F043,,all,PAS
+C-F047,channel,"Abstract of collection, through PAS, at BOC",records,R-CUSTOMS-ABSTRACT,F047,,all,PAS
+S-RELEASED,state,Goods released,cash,,,,all,GK
+S-FIN-NEED,state,Financing need in the borrowing program,cash,,,1,all,BTR-SITE
+C-F056,channel,Bids in NRoSS,cash,R-SEC-BID,F056,,all,NRoSS
+C-F057,channel,Settlement instruction at the BSP settlement system,cash,R-SETTLE-INSTR,F057,,all,NRoSS
+C-F058,channel,Proceeds on their way to the TSA,cash,R-M-PROCEEDS,F058,,all,NRoSS
+S-ISSUED,state,Securities registered to the buyers,cash,,,,all,NRoSS
+C-F059,channel,New debt passed to the debt and accounting systems of BTr,records,R-NEW-DEBT,F059,,all,GK
+S-DEBT-RECORDED,state,Debt recorded by BTr,records,,,,all,GK
+S-DEBT-DUE,clock,Interest or principal falls due,cash,,,,all,NBC599
+C-F060,channel,Interest and principal paid to holders,cash,R-M-DEBT-SERVICE,F060,,all,NBC599
+C-F012-REP,channel,Accountability reports entered in URS,records,R-BAR1;R-FAR1;R-FAR2;R-FAR3;R-FAR4;R-FAR5;R-FAR6,F012,,P;E,JC2019-1
+C-F021A,channel,Reports at DBM,records,R-FAR1,F021A,,P;E,JC2019-1
+C-F021B,channel,Reports at COA,records,R-FAR1,F021B,,P;E,JC2019-1
+C-F021C,channel,"FAR 3, 4 and 5 at BTr",records,R-FAR3;R-FAR4;R-FAR5,F021C,,P;E,JC2019-1
+C-F124,channel,BTMS reports at DBM,records,R-FAR1,F124,,B,CL2025-8
+C-F125,channel,BTMS reports at COA,records,R-FAR1,F125,,B,CL2025-8
+C-F126,channel,BTMS reports at BTr,records,R-FAR3;R-FAR4;R-FAR5,F126,,B,CL2025-8
+C-F022,channel,Financial statements in the AFR System,records,R-FS,F022,,all,COA-GAS
+S-AFR,state,Annual Financial Report of the government prepared by COA,records,R-AFR,,,all,COA-GAS
+C-F029,channel,Agency submission in COMPASS,records,R-COMPASS-ENTRY,F029,,all,EO126
+C-F030,channel,Data from BTMS in COMPASS,records,R-COMPASS-ENTRY,F030,,B,EO126
+C-F031,channel,Budget and spending figures visible to any person,records,R-COMPASS-ENTRY,F031,,all,COMPASS-LAUNCH
+S-PIP-CALL,state,Joint call for the PIP and TRIP issued,authority,,,1,all,PIP-MEMO
+C-F001,channel,Programs and projects encoded and endorsed in PIPOL,authority,R-PIPOL-ENTRY,F001,,all,PIP-MEMO
+S-PIP-ENTRY,state,Entry validated in the PIP or TRIP,authority,R-PIP;R-TRIP,,,all,PIP-MEMO
+S-BUDGET-CALL,state,Budget Call issued,authority,R-BUDGETCALL,,1,all,NBM156
+C-F003,channel,Budget proposal forms in OSBPS,authority,R-BPFORMS,F003,,all,NBM156
+S-POSITIONS,clock,Monthly update of positions due,authority,,,1,all,GMIS
+C-F004,channel,Updated positions in GMIS,authority,R-PSIPOP-UPDATE,F004,,all,GMIS
+C-F005A,channel,Proposals in BPMS,authority,R-BPFORMS,F005A,,all,GK
+C-F005B,channel,Filled positions in BPMS,authority,R-PSIPOP-UPDATE,F005B,,all,GK
+S-NEP,state,National Expenditure Program submitted to Congress,authority,R-NEP,,,all,PRIMER
+S-GAA,state,General Appropriations Act signed,authority,R-GAA,,,all,CONST VI.27(2)
+C-F006,channel,Enacted budget in the e-Budget of DBM,authority,R-GAA,F006,,all,GK

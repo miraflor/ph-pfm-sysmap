@@ -1,0 +1,79 @@
+@startuml
+title UC-SP-5 Pay the payee (cohort P)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "Paper forms: LDDAP-ADA in five co…" as B_SP_11
+control "check by Cashier or disbursing off…" as C_person_ROLE_CASHIER
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+boundary "Signed paper copies delivered to…" as B_SP_12A
+participant "Servicing banks" as N_INST_GSB
+boundary "eMDS (Land Bank): Payment of acco…" as B_MOD_EMDS_ADA
+participant "eMDS (Land Bank): Payment of…" as N_MOD_EMDS_ADA
+actor "Servicing bank" as ROLE_GSB
+boundary "MDS sub-accounts" as B_ACC_MDS
+control "check by the bank" as C_bank_ROLE_GSB
+entity "MDS sub-accounts" as E_ACC_MDS
+participant "Suppliers and payees" as N_EXT_SUPPLIER
+entity "Servicing banks" as E_INST_GSB
+participant "BTr" as N_INST_BTR
+participant "Cash unit" as N_UNIT_NGA_CASH
+participant "eTRAMS" as N_SYS_ETRAMS
+boundary "eMDS (Land Bank)" as B_SYS_EMDS
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "eTRAMS" as B_SYS_ETRAMS
+control "check by Bureau of the Treasury" as C_person_ROLE_BTR
+entity "Treasury Single Account" as E_ACC_TSA
+boundary "PhilPaSSplus" as B_SYS_PHILPASS
+== SP-11 Prepare and sign the payment order ==
+ROLE_CASHIER -> B_SP_11 : Paper forms: LDDAP-ADA in five copies, summary list (SLIIE), record o…
+B_SP_11 -> C_person_ROLE_CASHIER : Prepare and sign the payment order
+note right of C_person_ROLE_CASHIER : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_person_ROLE_CASHIER -> E_SYS_AGENCY_OWN : use: Claim approved for payment: Box C certified and Box D appro…
+C_person_ROLE_CASHIER -> E_SYS_AGENCY_OWN : use: NCA balance per the record of checks and payment orders of…
+C_person_ROLE_CASHIER -> E_SYS_AGENCY_OWN : write: Payment order certified, approved, signed and countersigned…
+== SP-12A Send the payment order on paper ==
+ROLE_CASHIER -> B_SP_12A : Signed paper copies delivered to the bank
+B_SP_12A -> C_person_ROLE_CASHIER : Send the payment order on paper
+C_person_ROLE_CASHIER -> E_SYS_AGENCY_OWN : use: Payment order certified, approved, signed and countersigned…
+C_person_ROLE_CASHIER -> N_INST_GSB : F032 Payment order and summary list at the bank, on paper
+== SP-12B Send the payment order through eMDS ==
+ROLE_CASHIER -> B_MOD_EMDS_ADA : eMDS internet banking facility of the Land Bank
+B_MOD_EMDS_ADA -> C_person_ROLE_CASHIER : Send the payment order through eMDS
+C_person_ROLE_CASHIER -> E_SYS_AGENCY_OWN : use: Payment order certified, approved, signed and countersigned…
+C_person_ROLE_CASHIER -> N_MOD_EMDS_ADA : F017 Payment order at the bank, through eMDS
+== SP-13A Check and pay the paper order ==
+ROLE_GSB -> B_ACC_MDS : Records of the bank
+B_ACC_MDS -> C_bank_ROLE_GSB : Check and pay the paper order
+note right of C_bank_ROLE_GSB : R-BANK-ACCOUNT: An entry is invalidated when branch, account name or number…
+note right of C_bank_ROLE_GSB : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_bank_ROLE_GSB -> E_ACC_MDS : use: NCA balance in the MDS sub-account at the servicing bank (a…
+C_bank_ROLE_GSB -> N_EXT_SUPPLIER : F018 Payee credited by the servicing bank
+C_bank_ROLE_GSB -> E_INST_GSB : write: Payments made by the bank, to be replenished
+C_bank_ROLE_GSB -> N_INST_BTR : F019 Copy of the summary list and payment order at BTr, on the s…
+C_bank_ROLE_GSB -> N_UNIT_NGA_CASH : F033 Validated copy of the payment order, back at the cash unit
+C_bank_ROLE_GSB -> N_SYS_ETRAMS : F061 Report of payments made, at eTRAMS of BTr
+== SP-13B Check and pay the eMDS order ==
+ROLE_GSB -> B_SYS_EMDS : eMDS and records of the bank
+B_SYS_EMDS -> C_bank_ROLE_GSB : Check and pay the eMDS order
+note right of C_bank_ROLE_GSB : R-BANK-ACCOUNT: An entry is invalidated when branch, account name or number…
+note right of C_bank_ROLE_GSB : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_bank_ROLE_GSB -> E_ACC_MDS : use: NCA balance in the MDS sub-account at the servicing bank (a…
+C_bank_ROLE_GSB -> N_EXT_SUPPLIER : F018 Payee credited by the servicing bank
+C_bank_ROLE_GSB -> E_INST_GSB : write: Payments made by the bank, to be replenished
+C_bank_ROLE_GSB -> N_SYS_ETRAMS : F061 Report of payments made, at eTRAMS of BTr
+== SP-14 Replenish the servicing bank ==
+ROLE_BTR -> B_SYS_ETRAMS : Report of payments in eTRAMS; paper copies (cohorts P and E); instruc…
+B_SYS_ETRAMS -> C_person_ROLE_BTR : Replenish the servicing bank
+note right of C_person_ROLE_BTR : R-REPLENISH: The bank is replenished for the payments it reported
+C_person_ROLE_BTR -> E_INST_GSB : use: Payments made by the bank, to be replenished
+C_person_ROLE_BTR -> E_ACC_TSA : use: Cash in the Treasury Single Account
+C_person_ROLE_BTR -> N_INST_GSB : F020 Replenishment on its way from the TSA to the bank
+== SP-15 Receive the replenishment ==
+ROLE_GSB -> B_SYS_PHILPASS : Records of the bank at the BSP
+B_SYS_PHILPASS -> C_bank_ROLE_GSB : Receive the replenishment
+C_bank_ROLE_GSB -> E_ACC_MDS : write: Bank replenished for the payments it made
+@enduml

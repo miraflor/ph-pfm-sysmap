@@ -1,0 +1,52 @@
+@startuml
+title UC-SP-5 Pay the payee (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "BTMS: payment by electronic funds transfer, payme…" as B_SP_12C
+control "SP-12C Pay through BTMS (by software)" as C_SP_12C
+entity "DV: Disbursement Voucher [BTMS: 2 Payments]" as E_R_DV_MOD_BTMS_PAY
+entity "Instruction for an electronic payment (cred…" as E_R_EFT_INSTR_
+entity "JEV: Journal Entry Voucher [BTMS: 5 Accounting and reporting]" as E_R_JEV_MOD_BTMS_ACC
+entity "ORS: Obligation Request and Status [BTMS]" as E_R_ORS_SYS_BTMS
+entity "RAOD, Registries of Allotments, Obligations… [BTMS]" as E_R_RAOD_SYS_BTMS
+actor "Servicing bank" as ROLE_GSB
+boundary "Records of the bank; ISO 20022 messages to PESONe…" as B_SP_13C
+control "SP-13C Debit the sub-account and pass the transfer to t…" as C_SP_13C
+entity "NCA: Notice of Cash Allocation [MDS sub-accounts]" as E_R_NCA_ACC_MDS
+entity "Credit to the account of a payee (money)" as E_R_M_PAYEE_CREDIT_
+entity "Report of payments made by a servicing bank [Servicing banks]" as E_R_PAYMENTS_MADE_INST_GSB
+entity "Electronic bank statement" as E_R_EBANK_STMT_
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "Report of payments in eTRAMS; paper copies (cohor…" as B_SP_14
+control "SP-14 Replenish the servicing bank (by a person)" as C_SP_14
+entity "Replenishment of a servicing bank from the…" as E_R_M_REPLENISH_
+boundary "Records of the bank at the BSP" as B_SP_15
+control "SP-15 Receive the replenishment (by the bank)" as C_SP_15
+ROLE_CASHIER -- B_SP_12C
+B_SP_12C -- C_SP_12C
+C_SP_12C -- E_R_DV_MOD_BTMS_PAY
+C_SP_12C -- E_R_EFT_INSTR_
+C_SP_12C -- E_R_JEV_MOD_BTMS_ACC
+C_SP_12C -- E_R_ORS_SYS_BTMS
+C_SP_12C -- E_R_RAOD_SYS_BTMS
+ROLE_GSB -- B_SP_13C
+B_SP_13C -- C_SP_13C
+C_SP_12C -- C_SP_13C
+C_SP_13C -- E_R_EFT_INSTR_
+C_SP_13C -- E_R_NCA_ACC_MDS
+C_SP_13C -- E_R_M_PAYEE_CREDIT_
+C_SP_13C -- E_R_PAYMENTS_MADE_INST_GSB
+C_SP_13C -- E_R_EBANK_STMT_
+ROLE_BTR -- B_SP_14
+B_SP_14 -- C_SP_14
+C_SP_13C -- C_SP_14
+C_SP_14 -- E_R_PAYMENTS_MADE_INST_GSB
+C_SP_14 -- E_R_M_REPLENISH_
+ROLE_GSB -- B_SP_15
+B_SP_15 -- C_SP_15
+C_SP_14 -- C_SP_15
+C_SP_15 -- E_R_M_REPLENISH_
+@enduml

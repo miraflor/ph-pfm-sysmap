@@ -1,0 +1,78 @@
+@startuml
+title UC-SP-5 Pay the payee (cohort E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "Paper forms: LDDAP-ADA, summary list, record of c…" as B_SP_11
+control "SP-11 Prepare and sign the payment order (by a person)" as C_SP_11
+entity "DV: Disbursement Voucher [Agency own systems]" as E_R_DV_SYS_AGENCY_OWN
+entity "Checks and ADA Disbursements Record [Agency own systems]" as E_R_CADR_SYS_AGENCY_OWN
+entity "LDDAP-ADA: List of Due and Demandable Accou… [Agency own systems]" as E_R_LDDAP_SYS_AGENCY_OWN
+entity "SLIIE: Summary of LDDAP-ADAs Issued and Inv… [Agency own systems]" as E_R_SLIIE_SYS_AGENCY_OWN
+boundary "Signed paper copies delivered to the bank" as B_SP_12A
+control "SP-12A Send the payment order on paper (by a person)" as C_SP_12A
+boundary "eMDS internet banking facility of the Land Bank" as B_SP_12B
+control "SP-12B Send the payment order through eMDS (by a person)" as C_SP_12B
+actor "Servicing bank" as ROLE_GSB
+boundary "Records of the bank" as B_SP_13A
+control "SP-13A Check and pay the paper order (by the bank)" as C_SP_13A
+entity "LDDAP-ADA: List of Due and Demandable Accou…" as E_R_LDDAP_
+entity "SLIIE: Summary of LDDAP-ADAs Issued and Inv…" as E_R_SLIIE_
+entity "NCA: Notice of Cash Allocation [MDS sub-accounts]" as E_R_NCA_ACC_MDS
+entity "Credit to the account of a payee (money)" as E_R_M_PAYEE_CREDIT_
+entity "Report of payments made by a servicing bank [Servicing banks]" as E_R_PAYMENTS_MADE_INST_GSB
+boundary "eMDS and records of the bank" as B_SP_13B
+control "SP-13B Check and pay the eMDS order (by the bank)" as C_SP_13B
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "Report of payments in eTRAMS; paper copies (cohor…" as B_SP_14
+control "SP-14 Replenish the servicing bank (by a person)" as C_SP_14
+entity "Replenishment of a servicing bank from the…" as E_R_M_REPLENISH_
+boundary "Records of the bank at the BSP" as B_SP_15
+control "SP-15 Receive the replenishment (by the bank)" as C_SP_15
+ROLE_CASHIER -- B_SP_11
+B_SP_11 -- C_SP_11
+C_SP_11 -- E_R_DV_SYS_AGENCY_OWN
+C_SP_11 -- E_R_CADR_SYS_AGENCY_OWN
+C_SP_11 -- E_R_LDDAP_SYS_AGENCY_OWN
+C_SP_11 -- E_R_SLIIE_SYS_AGENCY_OWN
+ROLE_CASHIER -- B_SP_12A
+B_SP_12A -- C_SP_12A
+C_SP_11 -- C_SP_12A
+C_SP_12A -- E_R_LDDAP_SYS_AGENCY_OWN
+C_SP_12A -- E_R_SLIIE_SYS_AGENCY_OWN
+C_SP_12A -- E_R_CADR_SYS_AGENCY_OWN
+ROLE_CASHIER -- B_SP_12B
+B_SP_12B -- C_SP_12B
+C_SP_12A -- C_SP_12B
+C_SP_12B -- E_R_LDDAP_SYS_AGENCY_OWN
+C_SP_12B -- E_R_SLIIE_SYS_AGENCY_OWN
+C_SP_12B -- E_R_CADR_SYS_AGENCY_OWN
+ROLE_GSB -- B_SP_13A
+B_SP_13A -- C_SP_13A
+C_SP_12B -- C_SP_13A
+C_SP_13A -- E_R_LDDAP_
+C_SP_13A -- E_R_SLIIE_
+C_SP_13A -- E_R_NCA_ACC_MDS
+C_SP_13A -- E_R_M_PAYEE_CREDIT_
+C_SP_13A -- E_R_PAYMENTS_MADE_INST_GSB
+ROLE_GSB -- B_SP_13B
+B_SP_13B -- C_SP_13B
+C_SP_13A -- C_SP_13B
+C_SP_13B -- E_R_LDDAP_
+C_SP_13B -- E_R_NCA_ACC_MDS
+C_SP_13B -- E_R_M_PAYEE_CREDIT_
+C_SP_13B -- E_R_PAYMENTS_MADE_INST_GSB
+ROLE_BTR -- B_SP_14
+B_SP_14 -- C_SP_14
+C_SP_13B -- C_SP_14
+C_SP_14 -- E_R_PAYMENTS_MADE_INST_GSB
+C_SP_14 -- E_R_M_REPLENISH_
+C_SP_14 -- E_R_SLIIE_
+C_SP_14 -- E_R_LDDAP_
+ROLE_GSB -- B_SP_15
+B_SP_15 -- C_SP_15
+C_SP_14 -- C_SP_15
+C_SP_15 -- E_R_M_REPLENISH_
+@enduml

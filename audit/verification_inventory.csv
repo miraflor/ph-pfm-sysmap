@@ -1,0 +1,267 @@
+type,id,description,claimed_status,best_source_type,has_web_reference,review_result,review_priority,source_codes,basis
+node,INST-DBM,"Issues the Budget Call, evaluates proposals, prepares the President's budget, releases allotments and cash authority, and owns most budget systems.",not_coded,rule,yes,not_individually_reviewed,low,NBM156;NBC599,"NBM156, NBC599"
+node,INST-PSDBM,Buys common-use supplies centrally and manages PhilGEPS with its Virtual Store and Electronic Marketplace.,not_coded,law,yes,not_individually_reviewed,low,RA12009;PS-FAQ,"RA12009 s.20, PS-FAQ"
+node,INST-GPPB,Sets procurement rules. Its Technical Support Office receives the procurement plans and monitoring reports of all procuring entities.,not_coded,law,yes,not_individually_reviewed,low,GPPB-TSO2026-2;RA12009,"RA12009 s.91, GPPB-TSO2026-2"
+node,INST-DOF,"Revenue and debt policy. Supervises BIR, BOC, BTr and BLGF. Coordinates the National Single Window (TradeNet).",not_coded,executive_issuance,yes,not_individually_reviewed,low,TRADENET;AO37,"AO37, TRADENET"
+node,INST-BTR,"Manages the cash of the national government and the Treasury Single Account, issues and services government securities, keeps the books of national cash and debt.",not_coded,executive_issuance,yes,not_individually_reviewed,low,BTR-SITE;BTR-SYS;EO449,"EO449, BTR-SITE, BTR-SYS"
+node,INST-BIR,"Assesses and collects internal revenue taxes, paid through authorized agent banks, electronic gateways and revenue collection officers.",not_coded,press,yes,not_individually_reviewed,low,BIR-PAY,BIR-PAY
+node,INST-BOC,Assesses and collects duties and taxes on imports. Banks send abstracts of collection to BOC through Payment Application Secure.,not_coded,owner_statement,yes,not_individually_reviewed,low,BOC-MOD;PAS,"PAS, BOC-MOD"
+node,INST-BLGF,Receives the statements of receipts and expenditures of local governments and maintains eSRE.,not_coded,owner_statement,yes,not_individually_reviewed,low,eSRE,eSRE
+node,INST-COA,"Audits all accounts of the government, issues the accounting rules and the Government Accounting Manual, and gives agencies eNGAS and eBudget.",not_coded,law,yes,not_individually_reviewed,low,COA-GAS;CONST,"CONST IX-D.2, COA-GAS"
+node,INST-DEPDEV,"Coordinates the development plan and the Public Investment Program, and owns PIPOL.",not_coded,rule,yes,not_individually_reviewed,low,PIP-MEMO;NBM156,"PIP-MEMO, NBM156"
+node,INST-DICT,"Supports the IFMIS as resource institution, operates the national public key infrastructure, leads the planned eGovPay platform and, by the E-Governance Act, leads interoperability.",not_coded,law,yes,not_individually_reviewed,low,RA12254;PNPKI;EO29;SFA6,"EO29, SFA6, PNPKI, RA12254"
+node,INST-DILG,"Supervises local governments, is a member of the COMPASS Council, and runs the Full Disclosure Policy Portal for local government reports.",not_coded,owner_statement,yes,not_individually_reviewed,low,FDPP-ABOUT;EO126,"EO126, FDPP-ABOUT"
+node,INST-BSP,Holds the Treasury Single Account and operates the settlement system between banks and with the Treasury.,not_coded,plan,yes,not_individually_reviewed,low,ROADMAP2024;NRoSS,"ROADMAP2024, NRoSS"
+node,INST-GSB,"Hold the MDS sub-accounts of agencies, record each NCA as a limit, pay the payees named in agency payment orders, and report the payments.",not_coded,rule,yes,not_individually_reviewed,low,CL2013-16A;NBC599;eMDS,"NBC599, CL2013-16A, eMDS"
+node,INST-AAB,Receive tax and customs payments and remit them to the Treasury.,not_coded,owner_statement,yes,not_individually_reviewed,low,PEFA2025;BIR-PAY;PAS,"BIR-PAY, PAS, PEFA2025"
+node,INST-AGDB,"Receive the collections of agencies, upload collection reports to BTr, and hold accounts of revolving funds and retained income.",not_coded,executive_issuance,yes,not_individually_reviewed,low,BTR-SYS;EO449,"EO449, BTR-SYS"
+node,INST-PCHC,"Operates Payment Application Secure for the banks, by which abstracts of customs collections reach BOC.",not_coded,owner_statement,yes,not_individually_reviewed,low,PAS,PAS
+node,INST-RPS,"PESONet and InstaPay, the transfer systems between banks that BTMS uses for electronic payments.",not_coded,rule,yes,not_individually_reviewed,low,CL2025-8,CL2025-8
+node,INST-PAYAGENT,Pay the persons named in the list of beneficiaries of a cash aid program.,not_coded,law,yes,not_individually_reviewed,low,RA11310,RA11310 s.9
+node,INST-NGA,"Prepares budget proposals, receives allotments, procures, obligates, verifies, pays, records and reports. The units below are the units that the Manual names.",not_coded,rule,yes,not_individually_reviewed,low,NBM156;NBC599;GAM-V1,"NBM156, NBC599, GAM-V1 Ch.2 s.8"
+node,INST-IMPL,"Receives transferred funds, implements, and reports the use of the funds to the agency that gave them.",not_coded,rule,yes,not_individually_reviewed,low,JC2019-1;GAM-V1,"GAM-V1 Ch.6 s.63, JC2019-1"
+node,INST-GOCC,Spend under a corporate operating budget; some receive budgetary support; must submit information to COMPASS.,not_coded,budget_law,yes,not_individually_reviewed,low,BSGC2026;EO126;COB,"COB, BSGC2026, EO126"
+node,INST-LGU,"Have their own budgets, enacted by the sanggunian and executed by the local chief executive, treasurer, accountant and budget officer. Receive the National Tax Allotment.",not_coded,law,yes,not_individually_reviewed,low,ALGU2026;LGC,"LGC, ALGU2026"
+node,INST-CONGRESS,Enacts the General Appropriations Act and the revenue and borrowing laws.,not_coded,law,yes,not_individually_reviewed,low,INQ-GUIDE;CONST,"CONST VI.24, INQ-GUIDE"
+node,INST-EXEC,"Proposes the budget, signs or vetoes the GAA, approves some releases, and decides the fiscal program through the DBCC.",not_coded,law,yes,not_individually_reviewed,low,DBCC-PAGE;NBC599;CONST;AO37,"CONST VII.22, NBC599, DBCC-PAGE, AO37"
+node,INST-CSC,Rules on appointments and personnel.,not_coded,general_knowledge,no,not_individually_reviewed,low,GK,GK
+node,INST-DOJ,Gives the legal opinion on the authority of the borrower in a foreign loan.,not_coded,owner_statement,yes,not_individually_reviewed,low,ODA,ODA
+node,INST-GCG,Oversees the government corporations that the law places under it.,not_coded,owner_statement,yes,not_individually_reviewed,low,COB,COB
+node,INST-PFMC,Steers PFM reform and the Integrated Financial Management Information System. In this map it also holds planned systems whose lead the sources do not state.,not_coded,executive_issuance,yes,not_individually_reviewed,low,ROADMAP2024;EO29,"EO29, ROADMAP2024"
+node,INST-SSF,Receive the deductions that agencies withhold from salaries.,not_coded,rule,no,not_individually_reviewed,low,GAM-V2,GAM-V2 App.33
+node,EXT-SUPPLIER,"Register in PhilGEPS, bid, perform contracts and receive payment in their bank accounts.",not_coded,law,yes,not_individually_reviewed,low,IRR12009;RA12009,"RA12009, IRR12009 s.20.2.9"
+node,EXT-TAXPAYER,File returns and declarations and pay taxes and duties through banks.,not_coded,owner_statement,yes,not_individually_reviewed,low,BIR-PAY;PAS,"BIR-PAY, PAS"
+node,EXT-DEALER,"Bid in the auctions of BTr, or lend under loan agreements.",not_coded,executive_issuance,yes,not_individually_reviewed,low,NRoSS;MC51,"NRoSS, MC51"
+node,EXT-PAYER,Pay fees to the collecting officer of an agency against an official receipt.,not_coded,law,no,not_individually_reviewed,low,PD1445;GAM-V1,"PD1445 s.68, GAM-V1 Ch.5 s.40"
+node,EXT-PUBLIC,"Reads published budget and procurement data, checks release documents, observes procurement.",not_coded,law,yes,not_individually_reviewed,low,COMPASS-LAUNCH;DBM-BLOCKCHAIN;RA12009,"DBM-BLOCKCHAIN, COMPASS-LAUNCH, RA12009 s.43"
+node,EXT-BENEF,Are named in the list of beneficiaries of a program and are paid through a bank or remittance institution.,not_coded,law,yes,not_individually_reviewed,low,RA11310,RA11310 s.9
+node,EXT-EMPLOYEE,Receive salaries through payroll.,not_coded,rule,no,not_individually_reviewed,low,GAM-V2,GAM-V2 App.33
+node,UNIT-NGA-HEAD,Is immediately and primarily responsible for the funds and property of the agency. Approves vouchers (Box D) and payment orders.,not_coded,law,no,not_individually_reviewed,low,PD1445;GAM-V2,"PD1445 s.102, GAM-V2 App.32"
+node,UNIT-NGA-REQ,"States the need, prepares the purchase request, certifies Box A of the obligation request and of the voucher.",not_coded,rule,yes,not_individually_reviewed,low,IRR12009;GAM-V2,"IRR12009 s.7.7.1, GAM-V2 App.11, App.32"
+node,UNIT-NGA-PLAN,Enter programs and projects in PIPOL and budget proposals in OSBPS.,not_coded,rule,yes,not_individually_reviewed,low,PIP-MEMO;NBM156,"PIP-MEMO, NBM156"
+node,UNIT-NGA-BUD,"Keeps the registries of appropriations, allotments, obligations and disbursements. Assigns the ORS number and certifies Box B: allotment available.",not_coded,rule,no,not_individually_reviewed,low,GAM-V1,GAM-V1 Ch.3 ss.5-15
+node,UNIT-NGA-ACC,"Certifies funds available before a contract, keeps the registry of allotments and NCA, examines claims, certifies Box C of the voucher, keeps the books.",not_coded,law,no,not_individually_reviewed,low,PD1445;GAM-V1,"PD1445 s.86, GAM-V1 Ch.6 s.12"
+node,UNIT-NGA-CASH,Prepares checks and signs the advice to debit the account of the payment order. Records each check and payment order with the new NCA balance.,not_coded,rule,no,not_individually_reviewed,low,GAM-V1,"GAM-V1 Ch.6 s.10, ss.51-56"
+node,UNIT-NGA-COLL,Collects fees against official receipts and deposits the collections in full not later than the next banking day.,not_coded,law,no,not_individually_reviewed,low,PD1445;GAM-V1,"PD1445 s.69, GAM-V1 Ch.5 s.40"
+node,UNIT-NGA-BAC,"Conducts procurement, posts notices and awards in PhilGEPS, and sends the procurement plan and monitoring report to the GPPB.",not_coded,law,yes,not_individually_reviewed,low,GPPB-TSO2026-2;RA12009,"RA12009 ss.41-44, GPPB-TSO2026-2"
+node,UNIT-NGA-PROP,"Inspects and accepts deliveries (inspection and acceptance report), keeps property cards.",not_coded,rule,no,not_individually_reviewed,low,GAM-V1,"GAM-V1 Ch.8 s.15, Ch.10 s.42"
+node,UNIT-NGA-PERS,Keeps the list of positions in GMIS and prepares the payroll.,not_coded,rule,yes,not_individually_reviewed,low,GAM-V2;GMIS,"GMIS, GAM-V2 App.33"
+node,UNIT-NGA-OU,"Receive sub-allotments and shares of the NCA from the central office, or direct releases.",not_coded,rule,yes,not_individually_reviewed,low,NBC599,NBC599
+node,UNIT-NGA-PROJ,Supervise a works contract and certify the work accomplished.,not_coded,rule,yes,not_individually_reviewed,low,IRR12009;GAM-V1,"GAM-V1 Ch.6, IRR12009 s.71"
+node,UNIT-NGA-PROG,Selects the beneficiaries and prepares the list of beneficiaries.,not_coded,law,yes,not_individually_reviewed,low,RA11310,"RA11310 ss.5, 9"
+node,UNIT-COA-AUDIT,"Receives the paid vouchers and daily reports, audits after payment, issues observations and notices.",not_coded,rule,yes,not_individually_reviewed,low,COA2009-006;COA2011-002;GAM-V1,"GAM-V1 Ch.6 s.56, COA2011-002, COA2009-006"
+node,UNIT-COA-GAS,Receives the financial statements of agencies and prepares the Annual Financial Report. Owns the AFR System.,not_coded,owner_statement,yes,not_individually_reviewed,low,COA-GAS,COA-GAS
+node,UNIT-COA-DIR,Decides appeals of persons liable at the first level.,not_coded,rule,yes,not_individually_reviewed,low,COA2009-006,COA2009-006
+node,UNIT-COA-CP,Decides on petitions for review.,not_coded,rule,yes,not_individually_reviewed,low,COA2009-006,COA2009-006
+node,UNIT-DEPDEV-PIP,Issue the joint call for the PIP and TRIP and validate agency entries in PIPOL.,not_coded,rule,yes,not_individually_reviewed,low,PIP-MEMO,PIP-MEMO
+node,UNIT-RDC,Endorse regional priority programs and projects and give inputs on regional budget proposals.,not_coded,rule,yes,not_individually_reviewed,low,NBM156,NBM156
+node,UNIT-BSP-MB,Gives its opinion or concurrence on foreign loans and local government loans.,not_coded,law,yes,not_individually_reviewed,low,DOF-LGULOAN;CONST,"CONST VII.20, DOF-LGULOAN"
+node,UNIT-PRES,"Submits the budget, signs the GAA, may veto items.",not_coded,law,yes,not_individually_reviewed,low,CONST,"CONST VII.22, VI.27(2)"
+node,UNIT-OP,Approves releases that the guidelines reserve for it.,not_coded,rule,yes,not_individually_reviewed,low,NBC599,NBC599
+node,UNIT-DBCC,"Recommends the fiscal program, ceilings and revenue estimates.",not_coded,owner_statement,yes,not_individually_reviewed,low,DBCC-PAGE,DBCC-PAGE
+node,UNIT-EDC,Approves development plans and major projects.,not_coded,executive_issuance,yes,not_individually_reviewed,low,AO37,AO37
+node,UNIT-ICC,Appraises large projects before they are funded.,not_coded,executive_issuance,yes,not_individually_reviewed,low,ICC-NEWS;AO37,"ICC-NEWS, AO37"
+node,UNIT-CABINET,Reviews the proposed budget with the President.,not_coded,owner_statement,yes,not_individually_reviewed,low,PRIMER,PRIMER
+node,UNIT-HOUSE-COMM,Holds hearings on the budget bill.,not_coded,press,yes,not_individually_reviewed,low,INQ-GUIDE,INQ-GUIDE
+node,UNIT-HOUSE-PLEN,Debates and passes the General Appropriations Bill.,not_coded,press,yes,not_individually_reviewed,low,INQ-GUIDE,INQ-GUIDE
+node,UNIT-SENATE-COMM,Holds hearings at the same time as the House.,not_coded,press,yes,not_individually_reviewed,low,INQ-GUIDE,INQ-GUIDE
+node,UNIT-SENATE-PLEN,Debates and passes the bill with amendments.,not_coded,press,yes,not_individually_reviewed,low,INQ-GUIDE,INQ-GUIDE
+node,UNIT-BICAM,Reconciles the two versions of the bill.,not_coded,press,yes,not_individually_reviewed,low,INQ-GUIDE,INQ-GUIDE
+node,UNIT-GOCC-BOARD,Approves the corporate operating budget.,not_coded,owner_statement,yes,not_individually_reviewed,low,COB,COB
+node,UNIT-GOCC-MGMT,Prepares the corporate budget and reports.,not_coded,owner_statement,yes,not_individually_reviewed,low,COB,COB
+node,UNIT-LGU-LCE,Prepares the executive budget and executes it.,not_coded,law,yes,not_individually_reviewed,low,LGC,LGC s.318
+node,UNIT-LGU-SANG,Enacts the appropriation ordinance; the higher sanggunian reviews the budgets of component units.,not_coded,law,yes,not_individually_reviewed,low,LGC,"LGC s.319, s.327"
+node,UNIT-LGU-LFC,Estimates income and recommends spending ceilings.,not_coded,law,yes,not_individually_reviewed,low,LGC,LGC s.316
+node,UNIT-LGU-TREAS,"Collects local revenue, keeps cash, and reports receipts and expenditures in eSRE.",not_coded,law,yes,not_individually_reviewed,low,eSRE;LGC,"eSRE, LGC"
+node,UNIT-LGU-BRGY,"Prepare, enact and execute the barangay budget.",not_coded,owner_statement,yes,not_individually_reviewed,low,BB4,BB4
+node,UNIT-PUB-ANY,Reads public portals and checks release documents.,not_coded,owner_statement,yes,not_individually_reviewed,low,COMPASS-LAUNCH;DBM-BLOCKCHAIN,"DBM-BLOCKCHAIN, COMPASS-LAUNCH"
+node,UNIT-PUB-CSO,Are consulted in budget preparation and join selected audits.,not_coded,rule,yes,not_individually_reviewed,low,ROADMAP2024;NBM156,"NBM156, ROADMAP2024"
+node,UNIT-PUB-OBS,Attend procurement proceedings without a vote and report.,not_coded,law,yes,not_individually_reviewed,low,RA12009,RA12009 s.43
+node,SYS-PIPOL,"Priority programs and projects for the Public Investment Program and the Three-Year Rolling Infrastructure Program: yearly cost, physical and financial progress",in_use,rule,yes,not_individually_reviewed,high,PIP-MEMO,PIP-MEMO
+node,SYS-OSBPS,"Budget proposal forms of Tier 1 and Tier 2, with tags such as climate change expenditure",in_use,rule,yes,qualified,reviewed,NBM156,NBM156
+node,SYS-BPMS,Named by the Roadmap as a planning and budgeting system. What it does in detail: GK (DBM builds the proposed budget in it),described_not_verified,plan,yes,needs_evidence,reviewed,ROADMAP2024,ROADMAP2024
+node,SYS-GMIS,"Authorized positions, filled and vacant. Updated each month. Basis of the personnel budget A DBM summary of 2016 describes an Enhanced GMIS meant to expand and integrate manpower and payroll management [DBM-IPFM2016].",in_use,rule,yes,not_individually_reviewed,high,DBM-IPFM2016;GMIS,"GMIS, DBM-IPFM2016"
+node,SYS-EBUDGET-DBM,DBM maintains an eBudget system with an agency helpdesk access guide; its detailed internal data model and agency-wide use are not independently verified. This is distinct from the COA eBudget system.,in_use_part,owner_statement,yes,qualified,reviewed,DBM-EBUDGET-HELP;ROADMAP2024,"ROADMAP2024, DBM-EBUDGET-HELP"
+node,SYS-ADRS,"A web application that releases approved DBM action documents in digital form: SARO, GARO, advice of NCA issued, NCAA, CDC. Pilot from 1 October 2021",in_use,rule,yes,not_individually_reviewed,high,NBC599;ADRS,"ADRS, NBC599"
+node,SYS-DOCVERIFY,A record that allows any person to check that a copy of a release document is the one DBM issued. In operation since 30 July 2025,in_use,owner_statement,yes,not_individually_reviewed,high,DBM-BLOCKCHAIN,DBM-BLOCKCHAIN
+node,SYS-URS,"Budget execution documents (financial plan, physical plan, monthly disbursement program) and the Budget and Financial Accountability Reports. Only reports generated by URS are accepted",in_use,rule,yes,not_individually_reviewed,high,JC2019-1;NBC599,"NBC599, JC2019-1"
+node,SYS-BTMS,"Budget Execution Module with five functions: commitment and obligations, payments, receipts, property, accounting and financial reporting. See section 5 Status: DBM and BTr use it; five more pilot agencies prepare in 2026; plan of 110 agenc",in_use_part,rule,yes,qualified,reviewed,DBM-SPEECH26;OGA-BTMS2019;BTMS-SITE;FB-PR2024;CL2025-8;INQ-BTMS;FB-CASE;SFA6,"CL2025-8, BTMS-SITE, INQ-BTMS, SFA6, DBM-SPEECH26, FB-PR2024, FB-CASE, OGA-BTMS2019"
+node,SYS-COMPASS,"The proposed budget, the budget law, allotments, obligations and disbursements, by department, agency, purpose and fiscal year. By the order of 2026 also program and project performance and procurement information. In use since 26 June 2026",in_use,owner_statement,yes,not_individually_reviewed,high,COMPASS-LAUNCH;EO126,"COMPASS-LAUNCH, EO126"
+node,SYS-DIME,DBM publicly describes the revived Project DIME and its flood-control monitoring component; coverage of other infrastructure classes is not established here.,in_use_part,owner_statement,yes,qualified,reviewed,DBM-SPEECH26;ROADMAP-MID,"ROADMAP-MID, DBM-SPEECH26"
+node,SYS-BCA,"Named in a DBM summary of 2016: cross-comparison of UACS-based budget data, targets and accomplishments for analysis. Present state not verified.",described_not_verified,owner_statement,yes,not_individually_reviewed,medium,DBM-IPFM2016,DBM-IPFM2016
+node,SYS-IFMIS-INT,"A unified architecture for PFM systems integration and data: interfaces (APIs), one PFM data model, a metadata registry, data governance. Design in 2026 and 2027, rollout in 2027 and 2028",planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"SFA6, ROADMAP2024"
+node,SYS-IPBT,"Design, procurement and development in 2026, pilot in 2026 and 2027, wider use from 2027. The plan leaves open whether an existing system such as PIPOL is upgraded or a new system is built",planned,plan,yes,not_individually_reviewed,medium,SFA1,SFA1
+node,SYS-IPMRS,"Concept in 2026, procurement in 2026 and 2027, development in 2027 and 2028, pilot in 2028. PIPOL and DIME will be assessed for fit",planned,plan,yes,not_individually_reviewed,medium,SFA6,SFA6
+node,SYS-PHILGEPS,"By law the single electronic portal for procurement, from planning to payment. The rules list its features: bulletin board, electronic catalogue, virtual store, electronic marketplace, electronic bidding, electronic small value procurement,",in_use_part,law,yes,qualified,reviewed,PHILGEPS-ODP;ROADMAP2024;GPPB2025-09;GPPB2025-10;GPPB2025-11;IRR12009;RA12009;PS-FAQ,"RA12009 s.20, IRR12009 s.20, s.22.1, PS-FAQ, ROADMAP2024, GPPB2025-09, GPPB2025-10, GPPB2025-11, PHILGEPS-ODP"
+node,SYS-PHILGEPS15,"The earlier PhilGEPS 1.5 version existed alongside the modernized system. GPPB Resolution 09-2025 sets an indicative transition and decommissioning schedule, targeting completion in the first semester of 2026; actual completion has not been",retiring,rule,yes,qualified,reviewed,GPPB2025-09,GPPB2025-09
+node,SYS-GPPB-FORM,"Since 2026 a procuring entity submits its Annual Procurement Plan and its Procurement Monitoring Report through an online form, with a link to a folder of documents. Email is no longer accepted.",in_use,rule,yes,not_individually_reviewed,high,GPPB-TSO2026-2,GPPB-TSO2026-2
+node,SYS-PROC-DBLINK,"The board may make rules that connect PhilGEPS with the databases of the trade department, of the bodies that license and rate contractors, of local governments on permits, of BIR on tax returns and clearances, of the registries of companie",planned,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.23
+node,SYS-TRADENET,"Platform of the National Single Window for import and export permits, adopted in 2017. Aim at that time: 66 agencies and 10 economic zones, and a connection to the single window of the ASEAN countries. Present state: not verified",described_not_verified,owner_statement,yes,not_individually_reviewed,medium,TRADENET,TRADENET
+node,SYS-NGCDS,"Daily and monthly collection reports of these banks. Faster consolidation, and faster issue of certificates of deposited national collections to agencies. In use since May 2021",in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SYS,BTR-SYS
+node,SYS-ETRAMS,"Monitoring of the revenue collections (of BIR, BOC and agencies) and of the disbursements of the national government",in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SITE;BTR-SYS,"BTR-SYS, BTR-SITE"
+node,SYS-NROSS,"Auctions, electronic registry and settlement of government securities, linked to the BSP settlement system. It replaced two older systems",in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SYS;NRoSS,"NRoSS, BTR-SYS"
+node,SYS-NARS,"List of strategically important non-financial assets (land, buildings, roads, dams), for asset management and insurance. In March 2023 it held 359,689 assets of 40 agencies",in_use_part,owner_statement,yes,not_individually_reviewed,high,ROADMAP2024;BTR-SYS,"BTR-SYS, ROADMAP2024"
+node,SYS-BTR-NGAS,"Books of national government cash and receipts. The Roadmap names ""BTr NGAS"". What it does is not explained in the sources read.",described_not_verified,plan,yes,not_individually_reviewed,medium,ROADMAP2024;GK,ROADMAP2024. Description: GK
+node,SYS-OCPRS,Named by the Roadmap. What it does is not explained in the sources read.,described_not_verified,plan,yes,not_individually_reviewed,medium,ROADMAP2024,ROADMAP2024
+node,SYS-BTR-DEBT,"The system in which BTr records public debt. The sources read do not name it (Reference G, point 26).",not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+node,ACC-TSA,"The accounts of the national government at the BSP. Collections arrive here, and servicing banks are replenished from here for the payments they made.",in_use,executive_issuance,yes,not_individually_reviewed,high,CL2013-16A;BTR-SITE;PRIMER;EO55,"EO55, BTR-SITE, PRIMER, CL2013-16A"
+node,SYS-BIR-EFILING,Electronic filing of tax returns. An agency files there the returns of taxes withheld and the electronic Tax Remittance Advice,in_use,rule,yes,not_individually_reviewed,high,BIR-PAY;GAM-V1,"BIR-PAY, GAM-V1 Ch.6 ss.60-62"
+node,SYS-BIR-ITS,The internal system of BIR that receives the returns from the filing systems. The flow and the name are general knowledge in the atlas.,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+node,SYS-E2M,Goods declarations and assessment. BOC names E2M as the customs module in use,in_use,owner_statement,yes,not_individually_reviewed,high,BOC-MOD;GK,Name: BOC-MOD. Functions: GK
+node,SYS-CPS,"One system for all customs procedures, based on the E2M system, with support of the World Bank. The page states a target of 2024. Present state: not verified",planned,owner_statement,yes,not_individually_reviewed,medium,BOC-MOD,BOC-MOD
+node,SYS-ESRE,"Official fiscal and financial reports of local governments, quarterly and annual",in_use,owner_statement,yes,not_individually_reviewed,high,eSRE,eSRE
+node,SYS-RPIS,"An electronic database of real property transactions, which the law of 2024 on property valuation requires. Registers of deeds, BIR, notaries and others must send data to it. Present state: not verified",planned,law,yes,not_individually_reviewed,medium,RA12001,"RA12001 ss.22, 24"
+node,SYS-ENGAS,"Journal entries, ledgers, financial statements of the agency",in_use,owner_statement,yes,not_individually_reviewed,high,COA-GAS,COA-GAS
+node,SYS-EBUDGET-COA,Registries of allotments and obligations of the agency,in_use,owner_statement,yes,not_individually_reviewed,high,ROADMAP2024;COA-GAS,"COA-GAS, ROADMAP2024"
+node,SYS-AFRS,Online submission of financial statements and reports for the Annual Financial Report,in_use,owner_statement,yes,corroborated,reviewed,COA-GAS,COA-GAS
+node,SYS-PNPKI,Digital certificates to prove identity and to sign files electronically. Its use on PFM documents: not verified,in_use,press,yes,not_individually_reviewed,high,PNPKI,PNPKI
+node,SYS-EGOVPAY,"Assessment in 2026, phased rollout from 2026 to 2028",planned,plan,yes,not_individually_reviewed,medium,SFA6,SFA6
+node,SYS-EGOVPH,"Mobile application for services of the government. The DBM release on the COMPASS order names it among the systems with which COMPASS must be able to interface, and the eLGU system is integrated with it.",in_use,press,yes,not_individually_reviewed,high,GMA-ELGU;EO126,"EO126, GMA-ELGU"
+node,SYS-ELGU,"Online local government services: business permits, barangay clearance, building permits, community tax certificates and others. At least 838 local governments had integrated by December 2024. Its link with local treasury records is not sta",in_use_part,press,yes,not_individually_reviewed,high,GMA-ELGU,GMA-ELGU
+node,NET-IGN,The E-Governance Act requires agencies to interoperate with the Integrated Government Network and other national platforms. Its present state is not verified here.,required_by_law,law,yes,not_individually_reviewed,low,RA12254,RA12254
+node,STD-PGIF,A framework of interoperability standards that the E-Governance Act requires. This is where interface standards for PFM systems would be stated. Its text was not found.,required_by_law,law,yes,not_individually_reviewed,low,RA12254,RA12254
+node,SYS-FDPP,"Local governments post budget reports (annual budget report, statement of debt service, statement of receipts and expenditures, cash flow), procurement reports and reports of special funds, under DILG Memorandum Circular No. 2010-83.",in_use,owner_statement,yes,not_individually_reviewed,high,FDPP-ABOUT,FDPP-ABOUT
+node,SYS-PHILPASS,"Real-time settlement between banks and with the Treasury accounts. Securities and payment are exchanged at the same time. It settles InstaPay, PESONet, ATM and check transactions, and accepts only ISO 20022 messages.",in_use,vendor,yes,not_individually_reviewed,high,CMA-PHILPASS;NRoSS,"NRoSS, CMA-PHILPASS"
+node,SYS-EMDS,"A secured internet banking facility for MDS transactions: advice of checks issued and cancelled, payment of accounts payable to creditors, transfer of fund allocations, request for checkbooks. A joint order of DBM and DOF of 2015 adopted it",in_use_part,rule,yes,not_individually_reviewed,high,GAM-V1;eMDS,"eMDS, GAM-V1 Ch.6 s.58"
+node,ACC-MDS,"Each NCA is credited here as a limit, not as cash. The bank debits the sub-account when it pays a payment order, and BTr replenishes the bank from the Treasury Single Account.",in_use,rule,yes,not_individually_reviewed,high,CL2013-16A;NBC599;GAM-V1,"NBC599, CL2013-16A, GAM-V1 Ch.6 s.3"
+node,SYS-EPAY-GW,"Electronic payment of taxes (for example the portals of LBP, DBP and a private bank, and two payment providers)",in_use,press,yes,not_individually_reviewed,high,BIR-PAY,BIR-PAY
+node,SYS-LINKBIZ,"Online portal for payments to government and private merchants, built with the payments management body and PESONet. In December 2019, 349 government agencies were enrolled, BIR among them.",in_use,owner_statement,yes,not_individually_reviewed,high,LBP-EGOVPAY,LBP-EGOVPAY
+node,SYS-PAS,Encrypted and authenticated abstracts of customs collections. In operation since October 1996,in_use,owner_statement,yes,not_individually_reviewed,high,PAS,PAS
+node,SYS-PESONET,"Transfer system between banks, used for electronic payments from BTMS. Its participants have adopted ISO 20022, according to a press report on BSP Circular No. 1223.",in_use,rule,yes,not_individually_reviewed,high,BSP1223-NEWS;CL2025-8;GK,"CL2025-8, BSP1223-NEWS. Operation: GK"
+node,SYS-INSTAPAY,"Transfer system between banks, used for electronic payments from BTMS. Its participants have adopted ISO 20022, according to a press report on BSP Circular No. 1223.",in_use,rule,yes,not_individually_reviewed,high,BSP1223-NEWS;CL2025-8;GK,"CL2025-8, BSP1223-NEWS. Operation: GK"
+node,SYS-AGENCY-OWN,"Own accounting software or spreadsheets, own personnel and payroll system, own property records, own project systems. The Manual prescribes the forms of the records and prescribes no system for them In this map the node also stands for regi",in_use,rule,yes,not_individually_reviewed,high,ROADMAP2024;GAM-V2,"ROADMAP2024 (gaps: duplicate reports, manual processing, no integration), GAM-V2"
+node,SYS-AGENCY-WEB,The Manual requires the daily report of payment orders issued to be posted on the website of the agency.,described_not_verified,rule,no,not_individually_reviewed,medium,GAM-V1,GAM-V1 Ch.6 s.56
+node,SYS-LGU-OWN,"Own budget, treasury and accounting tools. Local governments are not users of UACS",in_use,owner_statement,yes,not_individually_reviewed,high,UACS-FAQ;GK,UACS-FAQ. Description: GK
+node,SYS-NGHRPS,One system for personnel and payroll,planned,plan,yes,not_individually_reviewed,medium,SFA6,SFA6
+node,SYS-UNIPORTAL,One place for fiscal documents. The COMPASS portal of section 2 is in use since June 2026. The sources that I read do not say that it is this planned portal,planned,plan,yes,not_individually_reviewed,medium,SFA6,SFA6
+node,SYS-LGUHUB,"The Roadmap figure names eBudget, eCAT, ePFMAT, National Tax Allotment and the National Wealth Portal. The functions of eCAT and ePFMAT are not explained in the sources I read",planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024,ROADMAP2024
+node,SYS-EUPS,"The procurement rules say that it ""shall be defined in the context of the Integrated Financial Management Information System to be developed by the DBM, COA, and Department of Finance""",planned,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.21
+node,SYS-DOCMGMT,The circular on BTMS foresees an interface with document management. It names neither the system nor its owner.,planned,rule,yes,not_individually_reviewed,medium,CL2025-8,CL2025-8
+node,MOD-BTMS-COM,"Purchase request, commitment, purchase order, obligation request. An obligation request is made manually, from a commitment, or from an approved purchase order. The system blocks commitments and obligations above the allotment.",in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+node,MOD-BTMS-PAY,"Goods received note, goods return note, disbursement voucher, payment by electronic funds transfer (PESONet, InstaPay) or check, payment extract, daily bank reconciliation from electronic bank statements. Payee details come from the supplie",in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+node,MOD-BTMS-REC,Revenue voucher and revenue receipt voucher.,in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+node,MOD-BTMS-PPE,Register of assets and asset transactions.,in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+node,MOD-BTMS-ACC,"Journal entry voucher created by the system from vouchers, revenue vouchers and asset transactions; ledgers; reports FAR 1 to 6, BAR 1, registry of allotments, NCA listings. Entries at the end of a period are made manually.",in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+node,MOD-BTMS-BM,A budget management module after the Budget Execution Module.,planned,rule,yes,not_individually_reviewed,medium,CL2025-8,CL2025-8
+node,MOD-BTMS-TRE,Treasury modules after the Budget Execution Module.,planned,rule,yes,not_individually_reviewed,medium,CL2025-8,CL2025-8
+node,MOD-BTMS-CFF,"An integrated cash flow forecasting module or tool, fed by automated exchange with e-Budget and URS, to replace fragmented tools and manual processes for the monthly cash program. Design from 2026, development and rollout from 2027.",planned,plan,yes,corroborated,reviewed,SFA2,SFA2
+node,MOD-BTMS-OBA,"Off-budget accounts to be recorded in BTMS, or in URS if that is not feasible. Feasibility report in the fourth quarter of 2026, pilot in 2028.",planned,plan,yes,not_individually_reviewed,medium,SFA6,SFA6
+node,MOD-PG-BB,"Posting of opportunities, notices and awards.",in_use,law,yes,not_individually_reviewed,high,IRR12009;RA12009,"RA12009 s.20, IRR12009 s.20"
+node,MOD-PG-ECAT,A feature that the rules list.,described_not_verified,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.20
+node,MOD-PG-VS,Facility for common-use supplies and equipment.,in_use,owner_statement,yes,not_individually_reviewed,high,PS-FAQ,PS-FAQ
+node,MOD-PG-EMKT,"First items: motor vehicles, airline tickets, software licences and cloud services. Payment by an eWallet issued by PhilGEPS, a Government Purchase Card or another authorized electronic mode; the Procurement Service pays the merchant after ",in_use,rule,yes,not_individually_reviewed,high,GPPB2025-10;PS-FAQ,"PS-FAQ, GPPB2025-10"
+node,MOD-PG-EBID,"As of 31 August 2025, 69 agencies used at least four modules of the electronic bidding facility of the modernized version.",in_use_part,rule,yes,not_individually_reviewed,high,GPPB2025-09,GPPB2025-09
+node,MOD-PG-ESVP,A feature that the rules list.,described_not_verified,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.20
+node,MOD-PG-ERA,A feature that the rules list.,described_not_verified,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.20
+node,MOD-PG-EPAY,The rules require a payment feature that can interface with the bank of the procuring entity. Its status is not stated.,described_not_verified,rule,yes,not_individually_reviewed,medium,GPPB2025-09;IRR12009,"IRR12009 s.20.2.8, GPPB2025-09"
+node,MOD-PG-REG,"Registration of suppliers, contractors and consultants.",in_use,law,yes,not_individually_reviewed,high,IRR12009;RA12009,"RA12009 s.20, IRR12009 s.20.2.9"
+node,MOD-PG-ODP,"Open data on notices, awards, agencies, merchants and observers in downloadable formats, launched on 21 October 2025.",in_use,rule,yes,not_individually_reviewed,high,PHILGEPS-ODP;IRR12009,"IRR12009 s.20, PHILGEPS-ODP"
+node,MOD-PG-BO,"Since October 2025 the registry of the beneficial owners of bidders is published through PhilGEPS, on an interim authority of the GPPB.",in_use,rule,yes,not_individually_reviewed,high,GPPB2025-11,GPPB2025-11
+node,MOD-URS-BED,"BED 1 financial plan, BED 2 physical plan, BED 3 monthly disbursement program.",in_use,rule,yes,not_individually_reviewed,high,NBC599,NBC599
+node,MOD-URS-BFAR,BAR 1 and FAR 1 to 6. Only reports generated by URS are accepted.,in_use,rule,yes,not_individually_reviewed,high,JC2019-1;NBC599,"JC2019-1, NBC599"
+node,MOD-OSBPS-T1,Forms for the cost of ongoing programs (forward estimates).,in_use,rule,yes,not_individually_reviewed,high,NBM156,NBM156
+node,MOD-OSBPS-T2,"Forms for new or expanded programs, with tags such as climate change expenditure.",in_use,rule,yes,not_individually_reviewed,high,NBM156,NBM156
+node,MOD-GMIS-PSIPOP,"List of positions and personnel: authorized positions, filled and vacant, updated each month.",in_use,rule,yes,not_individually_reviewed,high,GMIS,GMIS
+node,MOD-EMDS-ACIC,Advice of checks issued and cancelled.,in_use_part,owner_statement,yes,not_individually_reviewed,high,eMDS,eMDS
+node,MOD-EMDS-ADA,Payment of accounts payable to creditors (the LDDAP-ADA).,in_use_part,owner_statement,yes,not_individually_reviewed,high,eMDS,eMDS
+node,MOD-EMDS-TRF,Transfer of fund allocations.,in_use_part,owner_statement,yes,not_individually_reviewed,high,eMDS,eMDS
+node,MOD-EMDS-CHK,Request for checkbooks.,in_use_part,owner_statement,yes,not_individually_reviewed,high,eMDS,eMDS
+flow,F001,Programs and projects,in_use,rule,yes,not_individually_reviewed,high,PIP-MEMO,PIP-MEMO
+flow,F002,Programs and projects that enter the budget proposal,not_stated,plan,yes,qualified,reviewed,ROADMAP2024;SFA1,"SFA1, ROADMAP2024"
+flow,F003,Budget forms,in_use,rule,yes,not_individually_reviewed,high,NBM156,NBM156
+flow,F004,Monthly update of positions,in_use,rule,yes,not_individually_reviewed,high,GMIS,GMIS
+flow,F005A,Proposals that enter the proposed budget,not_stated,general_knowledge,no,needs_evidence,reviewed,GK,GK
+flow,F005B,"Filled positions, as the basis of the personnel budget",not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F006,The enacted budget,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F007,Approved release documents,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F008,"SARO, GARO, advice of NCA issued",in_use,rule,yes,not_individually_reviewed,high,NBC599;ADRS,"ADRS, NBC599"
+flow,F009,A record of each issued document,in_use,owner_statement,yes,not_individually_reviewed,high,DBM-BLOCKCHAIN,DBM-BLOCKCHAIN
+flow,F010,Result of a check by QR code,in_use,owner_statement,yes,not_individually_reviewed,high,DBM-BLOCKCHAIN,DBM-BLOCKCHAIN
+flow,F011,Notice of Cash Allocation,in_use,rule,yes,not_individually_reviewed,high,NBC599;GAM-V1,"NBC599, GAM-V1 Ch.21 s.8"
+flow,F012,"Execution plans, then accountability reports",in_use,rule,yes,not_individually_reviewed,high,JC2019-1;NBC599,"NBC599 s.3.9, JC2019-1"
+flow,F013,Notices and awards,in_use,law,yes,not_individually_reviewed,high,IRR12009;RA12009,"RA12009 s.20, IRR12009 s.20, s.22.1"
+flow,F014,Opportunities,in_use,law,yes,not_individually_reviewed,high,RA12009,RA12009 s.20
+flow,F015A,"Obligations, in the eBudget of COA",in_use,rule,yes,not_individually_reviewed,high,COA-GAS;GAM-V1,"GAM-V1 Ch.3 s.10, s.15, COA-GAS"
+flow,F015B,"Obligations, in a registry of the agency (paper or spreadsheet)",in_use,rule,yes,not_individually_reviewed,high,COA-GAS;GAM-V1,"GAM-V1 Ch.3 s.10, s.15, COA-GAS"
+flow,F016A,"Journal entries, in eNGAS",in_use,rule,yes,not_individually_reviewed,high,COA-GAS;GAM-V1;GAM-V2,"GAM-V2 App.36, GAM-V1 Ch.19 s.59, COA-GAS"
+flow,F016B,"Journal entries, in other software or on paper",in_use,rule,yes,not_individually_reviewed,high,COA-GAS;GAM-V1;GAM-V2,"GAM-V2 App.36, GAM-V1 Ch.19 s.59, COA-GAS"
+flow,F017,"Payment orders, advice of checks issued and cancelled, and other MDS transactions",in_use_part,rule,yes,not_individually_reviewed,high,GAM-V1;eMDS,"eMDS, GAM-V1 Ch.6 s.58"
+flow,F018,Payments,in_use,rule,yes,not_individually_reviewed,high,CL2013-16A;CL2018-14;GAM-V1,"CL2013-16A, CL2018-14, GAM-V1 Ch.6 s.53"
+flow,F019,"One copy of the summary list and of the payment order, on the day of receipt",in_use,rule,yes,not_individually_reviewed,high,CL2013-16A;GAM-V1,"CL2013-16A, GAM-V1 Ch.6 s.56"
+flow,F020,Replenishment for the payments made,in_use,rule,yes,not_individually_reviewed,high,CL2013-16A;PRIMER;GAM-V1,"CL2013-16A, PRIMER, GAM-V1 Ch.2 s.8"
+flow,F021A,The plans and reports,in_use,rule,yes,not_individually_reviewed,high,JC2019-1,JC2019-1
+flow,F021B,The reports,in_use,rule,yes,not_individually_reviewed,high,JC2019-1,JC2019-1
+flow,F021C,"FAR 3, 4 and 5",in_use,rule,yes,not_individually_reviewed,high,JC2019-1,JC2019-1
+flow,F022,Financial statements,in_use,owner_statement,yes,not_individually_reviewed,high,COA-GAS,COA-GAS
+flow,F023,"Daily reports of checks and of payment orders issued, with the paid vouchers, their documents and the journal entry vouchers",in_use,rule,yes,not_individually_reviewed,high,COA2011-002;GAM-V1,"GAM-V1 Ch.6 s.56, COA2011-002"
+flow,F024,Data on important assets,in_use_part,owner_statement,yes,not_individually_reviewed,high,PEFA2025;BTR-SYS,"BTR-SYS, PEFA2025"
+flow,F025,"Execution records: obligations, vouchers, receipts, assets",in_use_part,rule,yes,not_individually_reviewed,high,BTMS-SITE;CL2025-8;INQ-BTMS,"CL2025-8, BTMS-SITE, INQ-BTMS"
+flow,F026,Procurement data,planned,rule,yes,not_individually_reviewed,medium,CL2025-8,CL2025-8
+flow,F027,Instructions for electronic payments,in_use_part,rule,yes,qualified,reviewed,BTMS-SITE;CL2025-8,"CL2025-8, BTMS-SITE"
+flow,F028,Electronic bank statements for the daily reconciliation,described_not_verified,owner_statement,yes,not_individually_reviewed,medium,BTMS-SITE,BTMS-SITE
+flow,F029,"Financial and program performance, status of projects, procurement information",described_not_verified,press,no,not_individually_reviewed,medium,EO126,EO126
+flow,F030,Not stated,described_not_verified,press,no,not_individually_reviewed,medium,EO126,EO126
+flow,F031,"Budget, allotments, obligations and disbursements",in_use,owner_statement,yes,not_individually_reviewed,high,COMPASS-LAUNCH,COMPASS-LAUNCH
+flow,F032,"Payment order (LDDAP-ADA) with its summary list, and the advice of checks issued and cancelled",in_use,rule,no,qualified,reviewed,GAM-V1;GAM-V2,"GAM-V1 Ch.6 s.56, GAM-V2 App.39, App.53"
+flow,F033,Validated copy of the payment order. Items that could not be credited are marked as not paid,in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.6 s.53, s.56"
+flow,F034,"Monthly bank statement, with the paid checks and the debit and credit memoranda",in_use,law,no,not_individually_reviewed,high,PD1445;GAM-V1,"GAM-V1 Ch.21 s.5, s.7, PD1445 s.74"
+flow,F035,"Returns of taxes withheld, and the electronic Tax Remittance Advice",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.6 ss.60-62, Ch.5 s.38"
+flow,F036,Journal entry voucher for a payment that the lender made directly to the supplier,in_use,rule,no,not_individually_reviewed,high,GAM-V1,GAM-V1 Ch.6 ss.66-68
+flow,F037,"Copy of that journal entry voucher, and the list of suppliers paid",in_use,rule,no,not_individually_reviewed,high,GAM-V1,GAM-V1 Ch.6 ss.66-68
+flow,F038,"Reports of checks issued and of cash disbursements, within ten days after each month",in_use,rule,yes,not_individually_reviewed,high,JC2019-1;PEFA2025;GAM-V1,"GAM-V1 Ch.6 s.63, JC2019-1, PEFA2025"
+flow,F039A,"Requests for payment after delivery, to the bank of the procuring entity",described_not_verified,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.20.2.8
+flow,F039B,"Requests for payment after delivery, to merchants",described_not_verified,rule,yes,not_individually_reviewed,medium,IRR12009,IRR12009 s.20.2.8
+flow,F040,Daily report of payment orders issued,described_not_verified,rule,no,not_individually_reviewed,medium,GAM-V1,GAM-V1 Ch.6 s.56
+flow,F041,"The approved Annual Procurement Plan, its update after each semester, and the Procurement Monitoring Report of each semester",in_use,rule,yes,not_individually_reviewed,high,GPPB-TSO2026-2;IRR12009,"GPPB-TSO2026-2, IRR12009 s.7"
+flow,F042,Tax returns,in_use,press,yes,not_individually_reviewed,high,BIR-PAY,BIR-PAY
+flow,F043,Tax payments,in_use,press,yes,not_individually_reviewed,high,BIR-PAY,BIR-PAY
+flow,F044,Returns,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F045,Report of payments received,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F046,Goods declaration,not_stated,owner_statement,yes,not_individually_reviewed,medium,BOC-MOD;GK,Name of the system: BOC-MOD. The flow: GK
+flow,F047,"Abstracts of customs collections, encrypted and authenticated",in_use,owner_statement,yes,not_individually_reviewed,high,PAS,PAS
+flow,F048,"Collections of BIR and BOC, daily",in_use,assessment,yes,not_individually_reviewed,high,PEFA2025,PEFA2025
+flow,F049,"Collections, in full, not later than the following banking day",in_use,law,no,not_individually_reviewed,high,PD1445;GAM-V1,"PD1445 s.69, GAM-V1 Ch.5 s.40, Ch.21"
+flow,F050,"Report of collections and deposits, at the close of each business day",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.5 s.39, s.40"
+flow,F051,Daily and monthly collection reports,in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SYS,BTR-SYS
+flow,F052,Transfer of the balances,in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SITE,BTR-SITE
+flow,F053,Collections,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F054,Certificate of deposited national collections,in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SYS,BTR-SYS
+flow,F055,Quarterly report of revenue and other receipts (FAR 5),in_use,rule,yes,not_individually_reviewed,high,JC2019-1,JC2019-1
+flow,F056,Bids,in_use,owner_statement,yes,not_individually_reviewed,high,BTR-SYS;NRoSS,"NRoSS, BTR-SYS"
+flow,F057,Settlement instruction,in_use,press,yes,not_individually_reviewed,high,NRoSS,NRoSS
+flow,F058,Proceeds of securities and loans,in_use,rule,yes,not_individually_reviewed,high,NBC599;NRoSS,"NRoSS, NBC599"
+flow,F059,New debt,not_stated,general_knowledge,no,not_individually_reviewed,medium,GK,GK
+flow,F060,Interest and principal,in_use,rule,yes,not_individually_reviewed,high,NBC599;GK,NBC599 for interest. Principal: GK
+flow,F061,Report of payments made,in_use,rule,yes,not_individually_reviewed,high,CL2013-16A,CL2013-16A
+flow,F062,National Tax Allotment and other shares,in_use,budget_law,yes,not_individually_reviewed,high,ALGU2026,ALGU2026
+flow,F063,Statements of receipts and expenditures,in_use,owner_statement,yes,not_individually_reviewed,high,eSRE,eSRE
+flow,F064,"Fees, against an official receipt",in_use,law,no,not_individually_reviewed,high,PD1445;GAM-V1,"PD1445 s.68, GAM-V1 Ch.5 s.40"
+flow,F065,"Consolidated report of daily collections, and the credit memo or abstract of deposits",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.5 s.41, Ch.3 ss.6-7"
+flow,F066,"The obligation request with the claim documents, and a copy of each allotment release document",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.3 s.9, s.15, Ch.6 s.12"
+flow,F067,"Copy of the inspection and acceptance report, with the purchase order and the delivery receipt",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.8 s.15, s.9, Ch.10 s.42"
+flow,F068,"Daily reports of checks issued and of payment orders issued, with the paid vouchers and the validated payment orders",in_use,rule,no,not_individually_reviewed,high,GAM-V1,GAM-V1 Ch.6 s.56
+flow,F069,"Copy of the daily reports, of the Tax Remittance Advice and of journal entry vouchers, for posting the payable and the payment",in_use,rule,no,not_individually_reviewed,high,GAM-V1,"GAM-V1 Ch.3 ss.16-17, s.26"
+flow,F101,Budget data for cash flow forecasting,planned,plan,yes,not_individually_reviewed,medium,SFA2,SFA2
+flow,F102,Execution plans and disbursement programs for cash flow forecasting,planned,plan,yes,not_individually_reviewed,medium,SFA2,SFA2
+flow,F103,"Open data on notices, awards, agencies, merchants and observers",in_use,owner_statement,yes,not_individually_reviewed,high,PHILGEPS-ODP,PHILGEPS-ODP
+flow,F104,Procurement information (content not stated),described_not_verified,press,no,not_individually_reviewed,medium,EO126,EO126
+flow,F105,Project monitoring information (content not stated),described_not_verified,press,no,not_individually_reviewed,medium,EO126,EO126
+flow,F106,Budget and spending information (content not stated),described_not_verified,press,no,not_individually_reviewed,medium,EO126,EO126
+flow,F107,Documents (content not stated),planned,rule,yes,not_individually_reviewed,medium,CL2025-8,CL2025-8
+flow,F110,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F111,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F112,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F113,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F114,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F115,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F116,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F117,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F118,Agreed records exchanged with the core (content not stated),planned,plan,yes,not_individually_reviewed,medium,ROADMAP2024;SFA6,"ROADMAP2024, SFA6"
+flow,F124,"Reports produced from the records of BTMS: FAR 1 to 6, BAR 1, registry of allotments, NCA listings",in_use_part,rule,yes,not_individually_reviewed,high,CL2025-8;JC2019-1,"CL2025-8, JC2019-1"
+flow,F125,Reports produced from the records of BTMS,in_use_part,rule,yes,not_individually_reviewed,high,CL2025-8,CL2025-8
+flow,F126,Reports produced from the records of BTMS,in_use_part,rule,yes,not_individually_reviewed,high,CL2025-8,CL2025-8
+flow,F127,"Credit to the account of the payee, through the payee's bank",in_use_part,rule,yes,not_individually_reviewed,high,CL2025-8;GK,CL2025-8. The route through the clearing house: GK
+flow,F128,"Cash position of the national government, before NCAs are issued",in_use,rule,yes,not_individually_reviewed,high,NBC599,NBC599
+flow,F129,Payments of fees and taxes to enrolled government agencies,in_use,owner_statement,yes,not_individually_reviewed,high,LBP-EGOVPAY,LBP-EGOVPAY
+flow,F130,"Budget, procurement and fund reports of the local government",in_use,owner_statement,yes,not_individually_reviewed,high,FDPP-ABOUT,FDPP-ABOUT
+flow,F131,Published local government reports,in_use,owner_statement,yes,not_individually_reviewed,high,FDPP-ABOUT,FDPP-ABOUT

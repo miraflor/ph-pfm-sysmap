@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-COLLECT-P" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-COLLECT-P: Collections of an agency to the Treasury (cohort P)</text></name>
+    <page id="page1">
+      <place id="S-FEE-DUE"><name><text>A fee is due from a payer (order of payment issued)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F064"><name><text>Fee paid to the collecting officer</text></name></place>
+      <place id="S-CASH-ON-HAND"><name><text>Collections in the hands of the collecting officer</text></name></place>
+      <place id="S-OR-ISSUED"><name><text>Official receipt issued and listed</text></name></place>
+      <place id="C-F049"><name><text>Collections deposited at the depository bank</text></name></place>
+      <place id="C-F050"><name><text>Report of collections and deposits, at accounting</text></name></place>
+      <place id="S-AGDB-BAL"><name><text>Collections in the account at the depository bank</text></name></place>
+      <place id="C-F051"><name><text>Collection reports of the bank, at NGCDS</text></name></place>
+      <place id="C-F065"><name><text>Consolidated report of daily collections and credit memo, at accounting</text></name></place>
+      <place id="S-JEV-COLL"><name><text>Collections recorded in the books of the agency</text></name></place>
+      <place id="C-F052"><name><text>Balances on their way to the TSA</text></name></place>
+      <place id="C-F053"><name><text>Collections data at eTRAMS</text></name></place>
+      <place id="C-F054"><name><text>Certificate of deposited national collections, at the agency</text></name></place>
+      <place id="C-F055"><name><text>Quarterly report of revenue and other receipts (FAR 5), at BTr through URS</text></name></place>
+      <transition id="CO-01"><name><text>Pay the fee</text></name></transition>
+      <transition id="CO-02"><name><text>Issue the official receipt</text></name></transition>
+      <transition id="CO-03"><name><text>Deposit the collections in full</text></name></transition>
+      <transition id="CO-04"><name><text>Report collections and deposits for the day</text></name></transition>
+      <transition id="CO-05"><name><text>Credit the account and report</text></name></transition>
+      <transition id="CO-06"><name><text>Record the collections</text></name></transition>
+      <transition id="CO-07"><name><text>Transfer the balances to the TSA</text></name></transition>
+      <transition id="CO-08"><name><text>Consolidate the collection reports</text></name></transition>
+      <transition id="CO-09"><name><text>Issue the certificate of deposited collections</text></name></transition>
+      <transition id="CO-10"><name><text>Report revenue and other receipts (FAR 5)</text></name></transition>
+      <arc id="a1" source="S-FEE-DUE" target="CO-01"/>
+      <arc id="a2" source="CO-01" target="C-F064"/>
+      <arc id="a3" source="C-F064" target="CO-02"/>
+      <arc id="a4" source="CO-02" target="S-CASH-ON-HAND"/>
+      <arc id="a5" source="CO-02" target="S-OR-ISSUED"/>
+      <arc id="a6" source="S-CASH-ON-HAND" target="CO-03"/>
+      <arc id="a7" source="CO-03" target="C-F049"/>
+      <arc id="a8" source="S-OR-ISSUED" target="CO-04"/>
+      <arc id="a9" source="CO-04" target="C-F050"/>
+      <arc id="a10" source="C-F049" target="CO-05"/>
+      <arc id="a11" source="CO-05" target="S-AGDB-BAL"/>
+      <arc id="a12" source="CO-05" target="C-F051"/>
+      <arc id="a13" source="CO-05" target="C-F065"/>
+      <arc id="a14" source="C-F050" target="CO-06"/>
+      <arc id="a15" source="C-F065" target="CO-06"/>
+      <arc id="a16" source="CO-06" target="S-JEV-COLL"/>
+      <arc id="a17" source="S-AGDB-BAL" target="CO-07"/>
+      <arc id="a18" source="CO-07" target="C-F052"/>
+      <arc id="a19" source="C-F051" target="CO-08"/>
+      <arc id="a20" source="CO-08" target="C-F053"/>
+      <arc id="a21" source="C-F053" target="CO-09"/>
+      <arc id="a22" source="CO-09" target="C-F054"/>
+      <arc id="a23" source="S-JEV-COLL" target="CO-10"/>
+      <arc id="a24" source="CO-10" target="C-F055"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,20 @@
+no,from_record,to_record,linking_key,kind_of_key,field_read
+1,Entry in the investment program,Budget proposal line,The sources state none. No standard project identifier exists,None stated,Not stated
+2,Budget proposal line,Line of the budget law,UACS codes,Classification,Yes
+3,Line of the budget law,Allotment,UACS codes,Classification,Yes
+4,Line of the budget law,Line of the procurement plan,"Words that name the source of funds, and an amount. The form of 2025 has no column for a budget code",No coded key,No
+5,Line of the procurement plan,Procurement,Line of the plan,Document reference,Not read on a form
+6,Procurement,Purchase order or contract,PhilGEPS reference number,Document number,Not on a form of the Manual. The number as a link: GK
+7,Allotment,Obligation,UACS codes. The ORS number begins with the allotment class and the funding source code,Classification,Yes
+8,Obligation,Purchase order,"ORS number, written on the purchase order",Document number,"Yes, in one direction"
+9,Purchase order,Accepted delivery,"Number of the purchase order and of the invoice, written on the acceptance report",Document number,Yes
+10,Obligation,Voucher,ORS number,Document number,Yes
+11,Voucher,Audit finding,Voucher number,Document number,Not read on a form: GK
+12,Accepted delivery,Voucher,Attached paper,No coded key,No
+13,Voucher,Journal entry,"JEV number, written on the voucher",Document number,Yes
+14,Voucher,Payment order,"Number of the check or payment order, written in Box E of the voucher. A line of the payment order has the ORS number. A line of the daily report has both numbers",Document number,Yes
+15,Cash authority,Payment order,NCA number,Document number,In part: in the record of the cash unit and on the advice for checks. Not on the form of the payment order in the Manual
+16,Payment order,Bank transaction,Number of the payment order or of the check,Document number,Yes for the order. The reference of the bank: GK
+17,Accepted delivery,Asset record,A reference column on the property card,Reference filled by a person,In part
+18,Obligation,Report row,UACS codes,Classification,Yes
+19,Payment order,Report row,"Amount by code, through the line of the daily report",Classification,Yes

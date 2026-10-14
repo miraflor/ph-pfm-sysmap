@@ -1,0 +1,34 @@
+@startuml
+title UC-SP-1 Receive the cash authority (NCA) (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "DBM (bureaus and approving officials)" as ROLE_DBM
+boundary "NCA prepared by DBM; advice of NCA issued in ADRS" as B_SP_01
+control "SP-01 Issue the NCA (by a person)" as C_SP_01
+entity "Budget Execution Documents: BED 1 Financial… [URS: Budget execution documents]" as E_R_BED_MOD_URS_BED
+entity "NCA: Notice of Cash Allocation" as E_R_NCA_
+entity "Advice of NCA Issued" as E_R_NCA_ADVICE_
+actor "Servicing bank" as ROLE_GSB
+boundary "Records of the bank" as B_SP_02
+control "SP-02 Credit the NCA to the MDS sub-account (by the ban…" as C_SP_02
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "BTMS: the NCA is loaded into the system" as B_SP_03
+control "SP-03 Record the NCA received (by software)" as C_SP_03
+entity "RANCA, Registry of Allotments and Notice of… [BTMS]" as E_R_RANCA_SYS_BTMS
+ROLE_DBM -- B_SP_01
+B_SP_01 -- C_SP_01
+C_SP_01 -- E_R_BED_MOD_URS_BED
+C_SP_01 -- E_R_NCA_
+C_SP_01 -- E_R_NCA_ADVICE_
+ROLE_GSB -- B_SP_02
+B_SP_02 -- C_SP_02
+C_SP_01 -- C_SP_02
+C_SP_02 -- E_R_NCA_
+ROLE_ACCOUNTANT -- B_SP_03
+B_SP_03 -- C_SP_03
+C_SP_02 -- C_SP_03
+C_SP_03 -- E_R_NCA_ADVICE_
+C_SP_03 -- E_R_RANCA_SYS_BTMS
+@enduml

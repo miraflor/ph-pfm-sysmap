@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-REPORT-P" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-REPORT-P: Reporting (cohort P)</text></name>
+    <page id="page1">
+      <place id="C-F012-REP"><name><text>Accountability reports entered in URS</text></name></place>
+      <place id="S-ORS-PAID"><name><text>Payment posted in part C of the ORS and in the registry of disbursements</text></name></place>
+      <place id="S-JEV-PAID"><name><text>Payment recorded in the books (JEV: Accounts Payable, Cash-MDS, Due to BIR)</text></name></place>
+      <place id="C-F021A"><name><text>Reports at DBM</text></name></place>
+      <place id="C-F021B"><name><text>Reports at COA</text></name></place>
+      <place id="C-F021C"><name><text>FAR 3, 4 and 5 at BTr</text></name></place>
+      <place id="C-F022"><name><text>Financial statements in the AFR System</text></name></place>
+      <place id="S-AFR"><name><text>Annual Financial Report of the government prepared by COA</text></name></place>
+      <place id="C-F029"><name><text>Agency submission in COMPASS</text></name></place>
+      <place id="C-F031"><name><text>Budget and spending figures visible to any person</text></name></place>
+      <transition id="RP-01"><name><text>Prepare the accountability reports in URS</text></name></transition>
+      <transition id="RP-02"><name><text>Pass the reports to DBM, COA and BTr</text></name></transition>
+      <transition id="RP-04"><name><text>Submit the financial statements</text></name></transition>
+      <transition id="RP-05"><name><text>Prepare the Annual Financial Report</text></name></transition>
+      <transition id="RP-06"><name><text>Submit information to COMPASS</text></name></transition>
+      <transition id="RP-08"><name><text>Publish budget and spending figures</text></name></transition>
+      <arc id="a1" source="RP-01" target="C-F012-REP"/>
+      <arc id="a2" source="S-ORS-PAID" target="RP-01"/>
+      <arc id="a3" source="RP-01" target="S-ORS-PAID"/>
+      <arc id="a4" source="S-JEV-PAID" target="RP-01"/>
+      <arc id="a5" source="RP-01" target="S-JEV-PAID"/>
+      <arc id="a6" source="C-F012-REP" target="RP-02"/>
+      <arc id="a7" source="RP-02" target="C-F021A"/>
+      <arc id="a8" source="RP-02" target="C-F021B"/>
+      <arc id="a9" source="RP-02" target="C-F021C"/>
+      <arc id="a10" source="RP-04" target="C-F022"/>
+      <arc id="a11" source="S-JEV-PAID" target="RP-04"/>
+      <arc id="a12" source="RP-04" target="S-JEV-PAID"/>
+      <arc id="a13" source="C-F022" target="RP-05"/>
+      <arc id="a14" source="RP-05" target="S-AFR"/>
+      <arc id="a15" source="RP-06" target="C-F029"/>
+      <arc id="a16" source="S-ORS-PAID" target="RP-06"/>
+      <arc id="a17" source="RP-06" target="S-ORS-PAID"/>
+      <arc id="a18" source="C-F029" target="RP-08"/>
+      <arc id="a19" source="RP-08" target="C-F031"/>
+    </page>
+  </net>
+</pnml>

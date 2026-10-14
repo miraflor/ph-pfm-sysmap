@@ -1,0 +1,53 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-COLLECT-P: Collections of an agency to the Treasury (cohort P)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-FEE-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="A fee is due from a\npayer (order of payment\nissued) ●" tooltip="S-FEE-DUE"]
+"C-F064" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F064: Fee paid to the\ncollecting officer" tooltip="C-F064"]
+"S-CASH-ON-HAND" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections in the hands\nof the collecting\nofficer" tooltip="S-CASH-ON-HAND"]
+"S-OR-ISSUED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Official receipt issued\nand listed" tooltip="S-OR-ISSUED"]
+"C-F049" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F049: Collections\ndeposited at the\ndepository bank" tooltip="C-F049"]
+"C-F050" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F050: Report of\ncollections and\ndeposits, at accounting" tooltip="C-F050"]
+"S-AGDB-BAL" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections in the\naccount at the\ndepository bank" tooltip="S-AGDB-BAL"]
+"C-F051" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F051: Collection reports\nof the bank, at NGCDS" tooltip="C-F051"]
+"C-F065" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F065: Consolidated\nreport of daily\ncollections and credit\nmemo, at accounting" tooltip="C-F065"]
+"S-JEV-COLL" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Collections recorded in\nthe books of the agency" tooltip="S-JEV-COLL"]
+"C-F052" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F052: Balances on their\nway to the TSA" tooltip="C-F052"]
+"C-F053" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F053: Collections data\nat eTRAMS" tooltip="C-F053"]
+"C-F054" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F054: Certificate of\ndeposited national\ncollections, at the\nagency" tooltip="C-F054"]
+"C-F055" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F055: Quarterly report\nof revenue and other\nreceipts (FAR 5), at BTr\nthrough URS" tooltip="C-F055"]
+"CO-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-01\nPay the fee" tooltip="Collecting officer"]
+"CO-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-02\nIssue the official\nreceipt" tooltip="Collecting officer"]
+"CO-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-03\nDeposit the collections\nin full" tooltip="Collecting officer"]
+"CO-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-04\nReport collections and\ndeposits for the day" tooltip="Collecting officer"]
+"CO-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-05\nCredit the account and\nreport" tooltip="Authorized government depository bank"]
+"CO-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-06\nRecord the collections" tooltip="Chief accountant (head of the accounting unit)"]
+"CO-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-07\nTransfer the balances to\nthe TSA" tooltip="Authorized government depository bank"]
+"CO-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-08\nConsolidate the\ncollection reports" tooltip="Bureau of the Treasury"]
+"CO-09" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-09\nIssue the certificate of\ndeposited collections" tooltip="Bureau of the Treasury"]
+"CO-10" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-10\nReport revenue and other\nreceipts (FAR 5)" tooltip="Agency as a whole (central office)"]
+"S-FEE-DUE" -> "CO-01"
+"CO-01" -> "C-F064"
+"C-F064" -> "CO-02"
+"CO-02" -> "S-CASH-ON-HAND"
+"CO-02" -> "S-OR-ISSUED"
+"S-CASH-ON-HAND" -> "CO-03" [label="amount" fontsize=7]
+"CO-03" -> "C-F049"
+"S-OR-ISSUED" -> "CO-04"
+"CO-04" -> "C-F050"
+"C-F049" -> "CO-05"
+"CO-05" -> "S-AGDB-BAL"
+"CO-05" -> "C-F051"
+"CO-05" -> "C-F065"
+"C-F050" -> "CO-06"
+"C-F065" -> "CO-06"
+"CO-06" -> "S-JEV-COLL"
+"S-AGDB-BAL" -> "CO-07" [label="amount" fontsize=7]
+"CO-07" -> "C-F052"
+"C-F051" -> "CO-08"
+"CO-08" -> "C-F053"
+"C-F053" -> "CO-09"
+"CO-09" -> "C-F054"
+"S-JEV-COLL" -> "CO-10"
+"CO-10" -> "C-F055"
+}

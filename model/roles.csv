@@ -1,0 +1,67 @@
+role_id,name,node_id,kind,description,basis
+ROLE-HEAD,Head of agency or authorized official,UNIT-NGA-HEAD,person,"Approves the voucher (Box D), the payment order, contracts and plans.","PD1445 s.102, GAM-V2 App.32"
+ROLE-REQ,Head of the requesting office,UNIT-NGA-REQ,person,Certifies Box A of the obligation request and of the voucher.,"GAM-V2 App.11, App.32"
+ROLE-PLANNER,Planning and budget officer of the agency,UNIT-NGA-PLAN,person,"Enters programs, projects and budget proposals.","PIP-MEMO, NBM156"
+ROLE-BUDGET,Head of the budget unit,UNIT-NGA-BUD,person,"Checks the allotment, assigns the ORS number and certifies Box B of the ORS.",GAM-V1 Ch.3 s.15
+ROLE-ACCOUNTANT,Chief accountant (head of the accounting unit),UNIT-NGA-ACC,person,"Certifies funds available, examines claims, certifies Box C, keeps the books, certifies the payment order.","PD1445 s.86, GAM-V1 Ch.6 s.12"
+ROLE-CASHIER,Cashier or disbursing officer,UNIT-NGA-CASH,person,"Signs the advice to debit the account, records payment orders with the NCA balance, prepares the daily reports.",GAM-V1 Ch.6 ss.51-56
+ROLE-COLLECTOR,Collecting officer,UNIT-NGA-COLL,person,"Issues official receipts, deposits collections, prepares the report of collections and deposits.",GAM-V1 Ch.5 ss.39-40
+ROLE-BAC,"BAC, its Secretariat and technical working group",UNIT-NGA-BAC,committee,Conducts procurement and posts notices in PhilGEPS.,RA12009 ss.41-44
+ROLE-INSPECTOR,Inspection officer and property custodian,UNIT-NGA-PROP,person,Inspect and accept deliveries; keep property records.,GAM-V1 Ch.8 s.15
+ROLE-PERSONNEL,Personnel officer,UNIT-NGA-PERS,person,Updates positions in GMIS and prepares the payroll.,GMIS
+ROLE-OPUNIT,Regional office or operating unit,UNIT-NGA-OU,body,Receives sub-allotments and shares of the NCA.,NBC599
+ROLE-ENGINEER,Project unit and engineer,UNIT-NGA-PROJ,person,Supervises works and certifies accomplishment.,IRR12009 s.71
+ROLE-PROGRAM,Program office of an agency that pays cash aid,UNIT-NGA-PROG,body,Prepares the list of beneficiaries.,"RA11310 ss.5, 9"
+ROLE-AGENCY,Agency as a whole (central office),INST-NGA,body,The agency where the source does not name a unit.,NBC599
+ROLE-IMPL,Implementing body that receives transferred funds,INST-IMPL,body,Implements with funds of another agency and reports their use.,GAM-V1 Ch.6 s.63
+ROLE-DBM,DBM (bureaus and approving officials),INST-DBM,body,"Evaluates proposals, issues release documents and NCAs.",NBC599
+ROLE-PSDBM,Procurement Service of DBM,INST-PSDBM,body,Operates PhilGEPS.,RA12009 s.20
+ROLE-GPPB,GPPB and its Technical Support Office,INST-GPPB,body,Receives procurement plans and reports.,GPPB-TSO2026-2
+ROLE-DOF,Department of Finance,INST-DOF,body,"Revenue and debt policy, loans.","AO37, ODA"
+ROLE-BTR,Bureau of the Treasury,INST-BTR,body,"Cash, collections, securities and debt.",BTR-SITE
+ROLE-BIR,BIR office or approving official,INST-BIR,body,Assesses taxes and decides refund claims.,"BIR-PAY, TRIB-REFUND"
+ROLE-BOC,BOC,INST-BOC,body,Assesses duties.,BOC-MOD
+ROLE-BLGF,BLGF,INST-BLGF,body,Receives local fiscal reports.,eSRE
+ROLE-COA-AUDIT,COA audit team,UNIT-COA-AUDIT,body,Audits transactions and accounts after payment.,COA2011-002
+ROLE-COA,COA,INST-COA,body,Issues accounting rules and the annual reports.,PD1445
+ROLE-COA-DIR,COA Cluster or Regional Director,UNIT-COA-DIR,person,Decides first-level appeals.,COA2009-006
+ROLE-COA-CP,COA Commission Proper,UNIT-COA-CP,body,Decides petitions for review.,COA2009-006
+ROLE-DEPDEV,DEPDev PIP and TRIP secretariats,UNIT-DEPDEV-PIP,body,Issue the call for the investment program.,PIP-MEMO
+ROLE-RDC,Regional Development Council,UNIT-RDC,body,Endorses regional priorities.,NBM156
+ROLE-BSP,BSP,INST-BSP,body,Holds the TSA and settles payments.,ROADMAP2024
+ROLE-MB,Monetary Board,UNIT-BSP-MB,body,Gives its opinion on loans.,CONST VII.20
+ROLE-GSB,Servicing bank,INST-GSB,body,"Checks and pays payment orders, reports to BTr.",CL2013-16A
+ROLE-AAB,Authorized agent bank or payment gateway,INST-AAB,body,Receives tax payments.,BIR-PAY
+ROLE-AGDB,Authorized government depository bank,INST-AGDB,body,Receives agency collections.,BTR-SYS
+ROLE-PAYAGENT,Government bank or remittance institution,INST-PAYAGENT,body,Pays cash aid.,RA11310 s.9
+ROLE-PRESIDENT,President,UNIT-PRES,person,"Submits the budget, signs the GAA.",CONST VII.22
+ROLE-OP,Office of the President,UNIT-OP,body,Approves reserved releases.,NBC599
+ROLE-DBCC,DBCC,UNIT-DBCC,committee,Recommends the fiscal program.,DBCC-PAGE
+ROLE-EDC,ED Council,UNIT-EDC,committee,Approves plans and major projects.,AO37
+ROLE-ICC,ICC,UNIT-ICC,committee,Appraises large projects.,ICC-NEWS
+ROLE-CABINET,President and Cabinet,UNIT-CABINET,committee,Review the proposed budget.,PRIMER
+ROLE-HOUSE-COMM,House Committee on Appropriations,UNIT-HOUSE-COMM,committee,Budget hearings.,INQ-GUIDE
+ROLE-HOUSE-PLEN,House plenary,UNIT-HOUSE-PLEN,body,Passes the bill.,INQ-GUIDE
+ROLE-SENATE-COMM,Senate Committee on Finance,UNIT-SENATE-COMM,committee,Budget hearings.,INQ-GUIDE
+ROLE-SENATE-PLEN,Senate plenary,UNIT-SENATE-PLEN,body,Passes the bill with amendments.,INQ-GUIDE
+ROLE-BICAM,Bicameral Conference Committee,UNIT-BICAM,committee,Reconciles the versions.,INQ-GUIDE
+ROLE-CONGRESS,Congress,INST-CONGRESS,body,Enacts the GAA.,CONST VI.24
+ROLE-GOCC-BOARD,GOCC governing board,UNIT-GOCC-BOARD,body,Approves the corporate budget.,COB
+ROLE-GOCC-MGMT,GOCC management,UNIT-GOCC-MGMT,body,Prepares the corporate budget.,COB
+ROLE-GCG,GCG,INST-GCG,body,Oversees covered corporations.,COB
+ROLE-CSC,Civil Service Commission,INST-CSC,body,Rules on appointments.,GK
+ROLE-DOJ,Department of Justice,INST-DOJ,body,Opinion on loans.,ODA
+ROLE-LCE,Local chief executive,UNIT-LGU-LCE,person,Prepares and executes the local budget.,LGC s.318
+ROLE-SANG,Sanggunian,UNIT-LGU-SANG,body,Enacts or reviews local budgets.,LGC s.319
+ROLE-LFC,Local finance committee,UNIT-LGU-LFC,committee,Estimates income and ceilings.,LGC s.316
+ROLE-LGU-FIN,"Local treasurer, accountant and budget officer",UNIT-LGU-TREAS,person,Local finance officers.,"LGC, eSRE"
+ROLE-BRGY,Barangay officials,UNIT-LGU-BRGY,body,Barangay budget.,BB4
+ROLE-SUPPLIER,Supplier or contractor,EXT-SUPPLIER,external,"Delivers, bills and is paid.",RA12009
+ROLE-TAXPAYER,Taxpayer or importer,EXT-TAXPAYER,external,Files and pays.,BIR-PAY
+ROLE-DEALER,Dealer or lender,EXT-DEALER,external,Bids or lends.,NRoSS
+ROLE-PUBLIC,Any person,UNIT-PUB-ANY,external,"Reads published data, checks documents.",DBM-BLOCKCHAIN
+ROLE-CSO,Civil society organization,UNIT-PUB-CSO,external,Joins consultations and audits.,NBM156
+ROLE-OBSERVER,Observer in procurement,UNIT-PUB-OBS,external,Observes procurement.,RA12009 s.43
+ROLE-EMPLOYEE,Employee,EXT-EMPLOYEE,external,Receives salary.,GAM-V2 App.33
+ROLE-BENEF,Household or beneficiary,EXT-BENEF,external,Receives cash aid.,RA11310 s.9
+ROLE-SSF,"Remittance receivers: BIR, GSIS, PhilHealth, Pag-IBIG",INST-SSF,body,Receive payroll deductions.,GAM-V2 App.33

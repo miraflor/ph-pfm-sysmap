@@ -1,0 +1,28 @@
+digraph D_planning_budget {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Investment program and budget preparation (7 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"SYS-BPMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#888888" penwidth=1 fontname="Helvetica" fontsize=10 label="BPMS" tooltip="BPMS, Budget Preparation Management System"]
+"SYS-EBUDGET-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="e-Budget (DBM)" tooltip="e-Budget (DBM)"]
+"SYS-GMIS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="GMIS" tooltip="GMIS, Government Manpower Information System, with the PSIPOP (list of positions and personnel)"]
+"SYS-OSBPS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="OSBPS" tooltip="OSBPS version 2.0, Online Submission of Budget Proposals System"]
+}
+subgraph "cluster_INST-DEPDEV" {
+label="DEPDev" style="rounded,filled" fillcolor="#ece9df" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Economy, Planning, and Development"
+"SYS-PIPOL" [shape=box style="filled,rounded" fillcolor="#ece9df" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PIPOL" tooltip="PIPOL"]
+}
+subgraph "cluster_INST-NGA" {
+label="National agency" style="rounded,filled" fillcolor="#eef6e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="A department or agency of the national government"
+"UNIT-NGA-PERS" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Personnel unit" tooltip="Personnel unit of the agency"]
+"UNIT-NGA-PLAN" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Planning and\nbudget units" tooltip="Planning and budget units of the agency (budget preparation)"]
+}
+"UNIT-NGA-PLAN" -> "SYS-PIPOL" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F001: Programs and projects" label="F001" fontsize=7 fontcolor="#666666"]
+"SYS-PIPOL" -> "SYS-OSBPS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F002: Programs and projects that enter the budget proposal" label="F002" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-PLAN" -> "SYS-OSBPS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F003: Budget forms" label="F003" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-PERS" -> "SYS-GMIS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F004: Monthly update of positions" label="F004" fontsize=7 fontcolor="#666666"]
+"SYS-OSBPS" -> "SYS-BPMS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F005A: Proposals that enter the proposed budget" label="F005A" fontsize=7 fontcolor="#666666"]
+"SYS-GMIS" -> "SYS-BPMS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F005B: Filled positions, as the basis of the personnel budget" label="F005B" fontsize=7 fontcolor="#666666"]
+"SYS-BPMS" -> "SYS-EBUDGET-DBM" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F006: The enacted budget" label="F006" fontsize=7 fontcolor="#666666"]
+}

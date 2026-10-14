@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-SPEND-B" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-SPEND-B: Spending: from an allotment to a settled payment and its records (cohort B)</text></name>
+    <page id="page1">
+      <place id="S-MDP"><name><text>Monthly disbursement program of the agency (BED 3)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F011"><name><text>NCA on its way to the bank</text></name></place>
+      <place id="C-F008-NCA"><name><text>Advice of NCA issued, for download in ADRS</text></name></place>
+      <place id="S-TSA"><name><text>Cash in the Treasury Single Account</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-NCA-BANK"><name><text>NCA balance in the MDS sub-account at the servicing bank (a limit, not cash)</text></name></place>
+      <place id="S-NCA-AGENCY"><name><text>NCA balance as recorded by the agency (registry of the accounting unit)</text></name></place>
+      <place id="S-ALLOT"><name><text>Allotment available, not yet obligated</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-AWARD"><name><text>Award made</text></name></place>
+      <place id="S-OBLIGATED"><name><text>Obligation recorded: ORS with Box A and Box B, entered in the registry</text></name></place>
+      <place id="S-CONTRACT"><name><text>Contract or purchase order in force</text></name></place>
+      <place id="S-DELIVERED"><name><text>Delivery made, with delivery receipt and invoice</text></name></place>
+      <place id="S-ACCEPTED"><name><text>Delivery inspected and accepted: the obligation is due and demandable</text></name></place>
+      <place id="S-CLAIM-OK"><name><text>Claim examined: voucher with Box A and the accounting entry</text></name></place>
+      <place id="S-CLAIM-APPROVED"><name><text>Claim approved for payment: Box C certified and Box D approved</text></name></place>
+      <place id="C-F027"><name><text>Instruction for an electronic payment from BTMS, through the bank</text></name></place>
+      <place id="S-JEV-PAID"><name><text>Payment recorded in the books (JEV: Accounts Payable, Cash-MDS, Due to BIR)</text></name></place>
+      <place id="S-ORS-PAID"><name><text>Payment posted in part C of the ORS and in the registry of disbursements</text></name></place>
+      <place id="C-F127"><name><text>Payee credited through PESONet or InstaPay</text></name></place>
+      <place id="S-BANK-CLAIM"><name><text>Payments made by the bank, to be replenished</text></name></place>
+      <place id="C-F061"><name><text>Report of payments made, at eTRAMS of BTr</text></name></place>
+      <place id="C-F028"><name><text>Electronic bank statement, at BTMS</text></name></place>
+      <place id="C-F020"><name><text>Replenishment on its way from the TSA to the bank</text></name></place>
+      <place id="S-SETTLED"><name><text>Bank replenished for the payments it made</text></name></place>
+      <place id="S-RECONCILED"><name><text>Books, registries and bank agree for the period</text></name></place>
+      <transition id="SP-01"><name><text>Issue the NCA</text></name></transition>
+      <transition id="SP-02"><name><text>Credit the NCA to the MDS sub-account</text></name></transition>
+      <transition id="SP-03"><name><text>Record the NCA received</text></name></transition>
+      <transition id="SP-05"><name><text>Obligate and sign the contract</text></name></transition>
+      <transition id="SP-06"><name><text>Deliver</text></name></transition>
+      <transition id="SP-07"><name><text>Inspect and accept</text></name></transition>
+      <transition id="SP-09"><name><text>Prepare and examine the claim</text></name></transition>
+      <transition id="SP-10"><name><text>Certify cash available and approve</text></name></transition>
+      <transition id="SP-12C"><name><text>Pay through BTMS</text></name></transition>
+      <transition id="SP-13C"><name><text>Debit the sub-account and pass the transfer to the clearing house</text></name></transition>
+      <transition id="SP-14"><name><text>Replenish the servicing bank</text></name></transition>
+      <transition id="SP-15"><name><text>Receive the replenishment</text></name></transition>
+      <transition id="SP-21B"><name><text>Reconcile each day from electronic statements</text></name></transition>
+      <arc id="a1" source="S-MDP" target="SP-01"/>
+      <arc id="a2" source="SP-01" target="C-F011"/>
+      <arc id="a3" source="SP-01" target="C-F008-NCA"/>
+      <arc id="a4" source="SP-01" target="S-MDP"/>
+      <arc id="a5" source="S-TSA" target="SP-01"/>
+      <arc id="a6" source="SP-01" target="S-TSA"/>
+      <arc id="a7" source="C-F011" target="SP-02"/>
+      <arc id="a8" source="SP-02" target="S-NCA-BANK"/>
+      <arc id="a9" source="C-F008-NCA" target="SP-03"/>
+      <arc id="a10" source="SP-03" target="S-NCA-AGENCY"/>
+      <arc id="a11" source="S-ALLOT" target="SP-05"/>
+      <arc id="a12" source="S-AWARD" target="SP-05"/>
+      <arc id="a13" source="SP-05" target="S-OBLIGATED"/>
+      <arc id="a14" source="SP-05" target="S-CONTRACT"/>
+      <arc id="a15" source="S-CONTRACT" target="SP-06"/>
+      <arc id="a16" source="SP-06" target="S-DELIVERED"/>
+      <arc id="a17" source="S-DELIVERED" target="SP-07"/>
+      <arc id="a18" source="SP-07" target="S-ACCEPTED"/>
+      <arc id="a19" source="S-OBLIGATED" target="SP-09"/>
+      <arc id="a20" source="S-ACCEPTED" target="SP-09"/>
+      <arc id="a21" source="SP-09" target="S-CLAIM-OK"/>
+      <arc id="a22" source="S-CLAIM-OK" target="SP-10"/>
+      <arc id="a23" source="S-NCA-AGENCY" target="SP-10"/>
+      <arc id="a24" source="SP-10" target="S-CLAIM-APPROVED"/>
+      <arc id="a25" source="S-CLAIM-APPROVED" target="SP-12C"/>
+      <arc id="a26" source="SP-12C" target="C-F027"/>
+      <arc id="a27" source="SP-12C" target="S-JEV-PAID"/>
+      <arc id="a28" source="SP-12C" target="S-ORS-PAID"/>
+      <arc id="a29" source="C-F027" target="SP-13C"/>
+      <arc id="a30" source="S-NCA-BANK" target="SP-13C"/>
+      <arc id="a31" source="SP-13C" target="C-F127"/>
+      <arc id="a32" source="SP-13C" target="S-BANK-CLAIM"/>
+      <arc id="a33" source="SP-13C" target="C-F061"/>
+      <arc id="a34" source="SP-13C" target="C-F028"/>
+      <arc id="a35" source="S-BANK-CLAIM" target="SP-14"/>
+      <arc id="a36" source="C-F061" target="SP-14"/>
+      <arc id="a37" source="S-TSA" target="SP-14"/>
+      <arc id="a38" source="SP-14" target="C-F020"/>
+      <arc id="a39" source="C-F020" target="SP-15"/>
+      <arc id="a40" source="SP-15" target="S-SETTLED"/>
+      <arc id="a41" source="C-F028" target="SP-21B"/>
+      <arc id="a42" source="SP-21B" target="S-RECONCILED"/>
+      <arc id="a43" source="S-JEV-PAID" target="SP-21B"/>
+      <arc id="a44" source="SP-21B" target="S-JEV-PAID"/>
+      <arc id="a45" source="S-NCA-AGENCY" target="SP-21B"/>
+      <arc id="a46" source="SP-21B" target="S-NCA-AGENCY"/>
+    </page>
+  </net>
+</pnml>

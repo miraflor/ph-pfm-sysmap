@@ -1,0 +1,48 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-PLAN-B: From the investment program to the enacted budget in the systems (cohort B)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-PIP-CALL" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Joint call for the PIP\nand TRIP issued ●" tooltip="S-PIP-CALL"]
+"C-F001" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F001: Programs and\nprojects encoded and\nendorsed in PIPOL" tooltip="C-F001"]
+"S-PIP-ENTRY" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Entry validated in the\nPIP or TRIP" tooltip="S-PIP-ENTRY"]
+"S-BUDGET-CALL" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Budget Call issued ●" tooltip="S-BUDGET-CALL"]
+"C-F003" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F003: Budget proposal\nforms in OSBPS" tooltip="C-F003"]
+"S-POSITIONS" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Monthly update of\npositions due ●" tooltip="S-POSITIONS"]
+"C-F004" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F004: Updated positions\nin GMIS" tooltip="C-F004"]
+"C-F005A" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F005A: Proposals in BPMS" tooltip="C-F005A"]
+"C-F005B" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F005B: Filled positions\nin BPMS" tooltip="C-F005B"]
+"S-NEP" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="National Expenditure\nProgram submitted to\nCongress" tooltip="S-NEP"]
+"S-GAA" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="General Appropriations\nAct signed" tooltip="S-GAA"]
+"C-F006" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F006: Enacted budget in\nthe e-Budget of DBM" tooltip="C-F006"]
+"S-APPROP" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Appropriation available\n(a line of the GAA) ●" tooltip="S-APPROP"]
+"PL-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-01\nEncode and endorse\nprograms and projects in\nPIPOL" tooltip="Planning and budget officer of the agency"]
+"PL-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-02\nValidate the entries\nagainst the PIP criteria" tooltip="DEPDev PIP and TRIP secretariats"]
+"PL-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-03\nEnter the budget\nproposal in OSBPS" tooltip="Planning and budget officer of the agency"]
+"PL-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-04\nUpdate the positions in\nGMIS" tooltip="Personnel officer"]
+"PL-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-05\nBuild the proposed\nbudget" tooltip="DBM (bureaus and approving officials)"]
+"PL-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-06\nEnact the budget" tooltip="Congress"]
+"PL-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-07\nLoad the enacted budget\nin the e-Budget of DBM" tooltip="DBM (bureaus and approving officials)"]
+"PL-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-08\nMake the appropriation\navailable for release" tooltip="DBM (bureaus and approving officials)"]
+"S-PIP-CALL" -> "PL-01"
+"PL-01" -> "C-F001"
+"C-F001" -> "PL-02"
+"PL-02" -> "S-PIP-ENTRY"
+"S-BUDGET-CALL" -> "PL-03"
+"PL-03" -> "C-F003"
+"S-PIP-ENTRY" -> "PL-03" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-POSITIONS" -> "PL-04"
+"PL-04" -> "C-F004"
+"C-F003" -> "PL-05"
+"C-F004" -> "PL-05"
+"PL-05" -> "C-F005A"
+"PL-05" -> "C-F005B"
+"C-F005A" -> "PL-06"
+"C-F005B" -> "PL-06"
+"PL-06" -> "S-NEP"
+"S-NEP" -> "PL-07"
+"PL-07" -> "S-GAA"
+"PL-07" -> "C-F006"
+"C-F006" -> "PL-08"
+"S-GAA" -> "PL-08"
+"PL-08" -> "S-APPROP"
+}

@@ -1,0 +1,108 @@
+table,column,value,meaning
+nodes,level,0,An institution or an outside party. The coarsest level of the map
+nodes,level,1,"A system, a unit of an institution, an account, a network or a standard, inside an institution"
+nodes,level,2,"A module of a system, inside the system"
+nodes,type,institution,A public body or a group of bodies of the same kind
+nodes,type,external,A party outside government
+nodes,type,unit,A unit or office inside an institution
+nodes,type,system,An information system
+nodes,type,module,"A module, function or facility of a system"
+nodes,type,account,A bank account or a group of accounts
+nodes,type,network,A government network
+nodes,type,standard,A standard or framework that systems must follow
+nodes,type,website,A website that publishes documents
+nodes,status,in_use,A source describes it as existing today
+nodes,status,in_use_part,"It exists, but only some agencies, banks or local governments use it"
+nodes,status,described_not_verified,A rule or the owner describes it; no source confirms present use
+nodes,status,planned,A plan names it; it is not in production
+nodes,status,retiring,It is being closed according to a decision of its owner
+nodes,status,required_by_law,A law requires it; its present state is not verified
+nodes,status,not_stated,The sources read do not name or describe it; it exists by general knowledge
+nodes,scope,core,Part of the public financial management of the national government
+nodes,scope,adjacent,"Linked to PFM, but its flows with PFM systems are not described; hidden by default in the map"
+flows,kind,data,Figures or records
+flows,kind,document,"A signed paper, or a copy or file of it"
+flows,kind,authority,"A document that gives a right or sets a limit, for example an allotment or an NCA"
+flows,kind,money,Money moves between two accounts or persons
+flows,agent,program,"One program sends to another, and no person copies the content"
+flows,agent,sender_person,A person of the sending body enters or uploads the content in a system of the receiver or delivers signed copies
+flows,agent,receiver_person,A person of the receiving body takes the content from a system of the sender
+flows,agent,own_person,Staff enter the content in a record or system of their own body
+flows,agent,not_stated,The sources do not say who moves the content
+flows,agent,not_applicable,"Money, or a publication that any person reads"
+flows,medium,paper,Signed paper copies
+flows,medium,data_entry,A person types or uploads the content into a program (a portal or installed software)
+flows,medium,download,"A person of the receiving body downloads the content from a program of the sender (a file, or a page to print)"
+flows,medium,own_register,A person writes the content in a register of the own body: on paper or in a spreadsheet
+flows,medium,electronic_unspecified,"A source describes an electronic channel, not its kind"
+flows,medium,api,A program-to-program interface; for planned flows the plan names APIs
+flows,medium,payment_network,Messages through a payment or settlement network between banks
+flows,medium,bank_transfer,Money moves between bank accounts
+flows,medium,cash_or_check,Cash or check handed over
+flows,medium,public_website,Published on a website for any person
+flows,medium,not_stated,The sources do not say how the content passes
+flows,stage,in_use,A source describes the flow as existing today
+flows,stage,in_use_part,The flow exists for some agencies or banks only
+flows,stage,described_not_verified,A rule or the owner describes or requires it; no source confirms use
+flows,stage,planned,A plan names it
+flows,stage,not_stated,The sources do not say whether it is in use
+flows,domain,planning_budget,Investment program and budget preparation
+flows,domain,release,Release of allotments and cash authority
+flows,domain,procurement,Procurement
+flows,domain,execution,"Obligation, payment and their records"
+flows,domain,reporting,"Reports to DBM, COA, BTr and the public"
+flows,domain,assets,Assets
+flows,domain,revenue,"Taxes, customs and agency collections"
+flows,domain,treasury_debt,"Cash management, securities and debt"
+flows,domain,local,Local governments
+flows,domain,inside_agency,Between units of one agency
+flows,domain,integration,Planned connections of the IFMIS core
+cohorts,cohort_id,P,Paper and own registers
+cohorts,cohort_id,E,COA eBudget and eNGAS
+cohorts,cohort_id,B,BTMS
+cohorts,cohort_id,all,All cohorts
+records,kind,authority,A document that gives a right or sets a limit
+records,kind,document,A form or paper of the process
+records,kind,data,"Data held in a system, without a form of its own"
+records,kind,report,A periodic report or statement
+records,kind,register,A registry or ledger that is kept over time
+records,kind,money,A movement of money
+records,kind,message,A message between programs
+places,kind,state,A condition that is true or not yet true for one case
+places,kind,balance,"An amount that many cases share (allotment, NCA, cash)"
+places,kind,channel,A record on its way from one body to another: the place of one flow
+places,kind,clock,A moment of the calendar
+places,line,authority,The line of legal authority (blue in the atlas)
+places,line,claim,"The line of the claim: contract, work, acceptance (green)"
+places,line,cash,The line of cash (orange)
+places,line,records,"The line of records, reports and audit (grey)"
+arcs,direction,in,The transition consumes a token of the place
+arcs,direction,out,The transition produces a token in the place
+arcs,direction,read,"The transition needs a token of the place, and leaves it"
+bindings,controller_kind,person,A person makes the check and signs
+bindings,controller_kind,software,A program makes the check
+bindings,controller_kind,bank,The bank makes the check
+bindings,controller_kind,not_stated,The sources do not describe who checks
+rules,kind,guard,A condition that must hold before a transition fires
+rules,kind,invariant,A condition that must hold between places at the end of a period
+rules,kind,deadline,A time limit
+rules,kind,obligation,An act that must follow another act
+gaps,status,open,No source read settles it
+gaps,status,partly_settled,Some part is settled by a source
+gaps,status,sources_differ,Sources read disagree
+sources,type,law,A law or the Constitution
+sources,type,executive_issuance,An order or circular of the President
+sources,type,budget_law,A part of a General Appropriations Act
+sources,type,rule,"A circular, manual, implementing rule or form: it says what must happen"
+sources,type,owner_statement,"A page, release or publication of the body that owns the subject: it says what exists or is planned"
+sources,type,plan,A reform plan or action plan
+sources,type,assessment,An independent assessment
+sources,type,press,A press report or another secondary source
+sources,type,vendor,A statement of a vendor about its own product or client
+sources,type,record_instance,Real documents that agencies filled and published
+sources,type,general_knowledge,Not read in a source
+sources,type,inference,A reading of this repository; not stated in a source
+roles,kind,person,A person in a position
+roles,kind,body,A body or an office
+roles,kind,committee,A committee
+roles,kind,external,A party outside government

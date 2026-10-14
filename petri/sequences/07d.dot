@@ -1,0 +1,65 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="07d  Payment and settlement: how money moves from the Treasury Single Account to the payee (Modified Disbursement System)" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. DBM to Servicing banks: NCA: limit for the\nMDS sub-account of the agency" tooltip="07d-01"]
+"t02" [shape=box style=rounded label="2. Accounting unit: Books: debit Cash-MDS,\nRegular, credit Subsidy from National\nGovernment. Registry of the NCA. No official\nreceipt is issued for an NCA" tooltip="07d-02"]
+"t03" [shape=box style=rounded label="3. Cash unit to Servicing banks: Payment order\n(LDDAP-ADA) in three copies and summary list\n(SLIIE) in two, on paper or through the\nelectronic facility of the bank" tooltip="07d-03"]
+"t04" [shape=box style=rounded label="4. Accounting unit: Books, on the day of the\ndaily report: credit Cash-MDS, Regular" tooltip="07d-04"]
+"t05" [shape=box style=rounded label="5. Servicing banks: Check the payment order\nand the NCA balance. Debit the MDS sub-account\n(the NCA balance decreases)" tooltip="07d-05"]
+"t06" [shape=box style=rounded label="6. Servicing banks to Suppliers and payees:\nDirect credit, not earlier than 24 hours and\nnot later than 48 hours after receipt" tooltip="07d-06"]
+"tau1" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Payee has an account in the same bank"]
+"t07" [shape=box style=rounded label="7. Servicing banks to Suppliers and payees:\nBank transfer. The payee bears the bank charge" tooltip="07d-07"]
+"tau2" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Payee has an account in another bank"]
+"t08" [shape=box style=rounded label="8. Servicing banks to BTr: One copy of the\nsummary list and of the payment order on the\nsame day: notice of the amount to be\nreplenished" tooltip="07d-08"]
+"t09" [shape=box style=rounded label="9. BTr to BSP: Instruction to replenish the\nservicing bank" tooltip="07d-09"]
+"t10" [shape=box style=rounded label="10. Treasury Single Account to Servicing\nbanks: Debit the Treasury account, credit the\naccount of the bank at BSP" tooltip="07d-10"]
+"t11" [shape=box style=rounded label="11. BTr: Books of the Treasury: debit Subsidy\nto NGAs, credit Cash in Bank" tooltip="07d-11"]
+"t12" [shape=box style=rounded label="12. Servicing banks to Cash unit: Validated\ncopy of the payment order. Items that could\nnot be credited are marked" tooltip="07d-12"]
+"t13" [shape=box style=rounded label="13. Accounting unit: For an item not credited:\njournal entry to cancel it, and a new payment\norder. Each month: reconcile the books with\nthe bank statement of the sub-account" tooltip="07d-13"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p5"
+"p5" -> "t05"
+"t05" -> "p6"
+"p6" -> "t06"
+"t06" -> "p8"
+"p8" -> "tau1"
+"tau1" -> "p7"
+"p6" -> "t07"
+"t07" -> "p9"
+"p9" -> "tau2"
+"tau2" -> "p7"
+"p7" -> "t08"
+"t08" -> "p10"
+"p10" -> "t09"
+"t09" -> "p11"
+"p11" -> "t10"
+"t10" -> "p12"
+"p12" -> "t11"
+"t11" -> "p13"
+"p13" -> "t12"
+"t12" -> "p14"
+"p14" -> "t13"
+"t13" -> "p15"
+}

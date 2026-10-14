@@ -1,0 +1,28 @@
+@startuml
+title UC-SP-3 Accept the delivery and record the payable (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "Delivery receipt and invoice of t…" as B_SP_06
+control "check by Supplier or contractor" as C_person_ROLE_SUPPLIER
+entity "BTMS: 1 Commitment and obliga…" as E_MOD_BTMS_COM
+entity "record" as E_S_DELIVERED
+actor "Inspection officer and proper…" as ROLE_INSPECTOR
+boundary "BTMS: 2 Payments" as B_MOD_BTMS_PAY
+control "check by Inspection officer and pr…" as C_person_ROLE_INSPECTOR
+entity "BTMS: 2 Payments" as E_MOD_BTMS_PAY
+== SP-06 Deliver ==
+ROLE_SUPPLIER -> B_SP_06 : Delivery receipt and invoice of the supplier
+B_SP_06 -> C_person_ROLE_SUPPLIER : Deliver
+C_person_ROLE_SUPPLIER -> E_MOD_BTMS_COM : use: Contract or purchase order in force
+C_person_ROLE_SUPPLIER -> E_S_DELIVERED : write: Delivery made, with delivery receipt and invoice
+== SP-07 Inspect and accept ==
+ROLE_INSPECTOR -> B_MOD_BTMS_PAY : BTMS: goods received note (and goods return note)
+B_MOD_BTMS_PAY -> C_person_ROLE_INSPECTOR : Inspect and accept
+note right of C_person_ROLE_INSPECTOR : R-ACCEPT: Inspection and acceptance by two different signers
+C_person_ROLE_INSPECTOR -> E_S_DELIVERED : use: Delivery made, with delivery receipt and invoice
+C_person_ROLE_INSPECTOR -> E_MOD_BTMS_PAY : write: Delivery inspected and accepted: the obligation is due and…
+@enduml

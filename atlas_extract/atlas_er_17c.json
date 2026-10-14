@@ -1,0 +1,832 @@
+{
+ "entities": {
+  "GAA_LINE": [
+   {
+    "type": "code",
+    "name": "uacs_funding_source",
+    "key": "",
+    "note": "8 digits"
+   },
+   {
+    "type": "code",
+    "name": "uacs_organization",
+    "key": "",
+    "note": "12 digits"
+   },
+   {
+    "type": "code",
+    "name": "uacs_location",
+    "key": "",
+    "note": "9 digits, area of mandate of the operating unit, not the project site"
+   },
+   {
+    "type": "code",
+    "name": "uacs_pap",
+    "key": "PK",
+    "note": "15 digits, program, activity or project"
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": "10 digits, at expense class or object level"
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "special_provision",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "PROCUREMENT_PLAN_ITEM": [
+   {
+    "type": "string",
+    "name": "app_line",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "source_of_funds",
+    "key": "",
+    "note": "words, for example GAA 2026 - Current Appropriation. Not a code"
+   },
+   {
+    "type": "text",
+    "name": "end_user_unit",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "mode_of_procurement",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "start_and_end_of_procurement",
+    "key": "",
+    "note": "month and year"
+   },
+   {
+    "type": "money",
+    "name": "estimated_budget",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "PROCUREMENT": [
+   {
+    "type": "string",
+    "name": "philgeps_reference_no",
+    "key": "PK",
+    "note": "general knowledge"
+   },
+   {
+    "type": "string",
+    "name": "app_line",
+    "key": "FK",
+    "note": "general knowledge"
+   },
+   {
+    "type": "money",
+    "name": "approved_budget_for_contract",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "bids_received",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "PURCHASE_ORDER_OR_CONTRACT": [
+   {
+    "type": "string",
+    "name": "order_no",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "philgeps_reference_no",
+    "key": "FK",
+    "note": "general knowledge, not a field of the form"
+   },
+   {
+    "type": "string",
+    "name": "ors_no",
+    "key": "FK",
+    "note": "with date and amount, beside the words Funds Available"
+   },
+   {
+    "type": "string",
+    "name": "supplier_tin",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "mode_of_procurement",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "fund_cluster",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "DELIVERY_ACCEPTANCE": [
+   {
+    "type": "string",
+    "name": "iar_no",
+    "key": "PK",
+    "note": "inspection and acceptance report"
+   },
+   {
+    "type": "string",
+    "name": "order_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "invoice_no",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "responsibility_center",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "date",
+    "name": "date_inspected",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "date",
+    "name": "date_received",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "complete_or_partial",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "PHYSICAL_ASSET": [
+   {
+    "type": "string",
+    "name": "property_no",
+    "key": "PK",
+    "note": "assigned by the property unit"
+   },
+   {
+    "type": "string",
+    "name": "reference",
+    "key": "",
+    "note": "acceptance report, receipt of the user, or journal entry voucher"
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": "asset account, on the ledger card of accounting"
+   },
+   {
+    "type": "money",
+    "name": "cost",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "ALLOTMENT": [
+   {
+    "type": "string",
+    "name": "saro_no",
+    "key": "PK",
+    "note": "no document number when the GAA itself is the allotment order"
+   },
+   {
+    "type": "code",
+    "name": "uacs_funding_source",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_organization",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_pap",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "allotment_class",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "OBLIGATION": [
+   {
+    "type": "string",
+    "name": "ors_no",
+    "key": "PK",
+    "note": "allotment class, funding source code, year, month, serial number"
+   },
+   {
+    "type": "code",
+    "name": "fund_cluster",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "responsibility_center",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_pap",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "payee",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "particulars",
+    "key": "",
+    "note": "free text"
+   },
+   {
+    "type": "money",
+    "name": "obligation",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "payable",
+    "key": "",
+    "note": "part C, posted at the accepted delivery"
+   },
+   {
+    "type": "money",
+    "name": "payment",
+    "key": "",
+    "note": "part C, posted at payment"
+   }
+  ],
+  "DISBURSEMENT_VOUCHER": [
+   {
+    "type": "string",
+    "name": "dv_no",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "ors_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "fund_cluster",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "responsibility_center",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_pap",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": "in the accounting entry, box B"
+   },
+   {
+    "type": "string",
+    "name": "payee_tin",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "mode_of_payment",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "jev_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "check_or_ada_no",
+    "key": "FK",
+    "note": "written after payment"
+   },
+   {
+    "type": "string",
+    "name": "official_receipt_no",
+    "key": "",
+    "note": "of the payee"
+   }
+  ],
+  "JOURNAL_ENTRY": [
+   {
+    "type": "string",
+    "name": "jev_no",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "fund_cluster",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "responsibility_center",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": "Revised Chart of Accounts"
+   },
+   {
+    "type": "money",
+    "name": "debit",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "credit",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "AUDIT_FINDING": [
+   {
+    "type": "string",
+    "name": "notice_no",
+    "key": "PK",
+    "note": "audit observation, or notice of suspension, disallowance or charge"
+   },
+   {
+    "type": "string",
+    "name": "dv_no",
+    "key": "FK",
+    "note": "general knowledge"
+   },
+   {
+    "type": "text",
+    "name": "persons_liable",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "text",
+    "name": "rule_violated",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "CASH_AUTHORITY": [
+   {
+    "type": "string",
+    "name": "nca_no",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_funding_source",
+    "key": "",
+    "note": "fund cluster only"
+   },
+   {
+    "type": "code",
+    "name": "uacs_organization",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "mds_sub_account",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount_per_month",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "date",
+    "name": "valid_until",
+    "key": "",
+    "note": "end of the quarter for a regular NCA"
+   }
+  ],
+  "PAYMENT_ORDER": [
+   {
+    "type": "string",
+    "name": "lddap_ada_no",
+    "key": "PK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "nca_no",
+    "key": "FK",
+    "note": "on forms that agencies published, not on the form of the Manual"
+   },
+   {
+    "type": "string",
+    "name": "mds_sub_account",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "fund_cluster",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "PAYMENT_ORDER_LINE": [
+   {
+    "type": "string",
+    "name": "lddap_ada_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "ors_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "allotment_class",
+    "key": "",
+    "note": "per UACS"
+   },
+   {
+    "type": "string",
+    "name": "creditor_name",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "creditor_bank_account",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "gross",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "tax_withheld",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "net",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "DAILY_REPORT_LINE": [
+   {
+    "type": "string",
+    "name": "check_or_ada_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "dv_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "ors_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "responsibility_center",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "payee",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "uacs_object",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "BANK_TRANSACTION": [
+   {
+    "type": "string",
+    "name": "bank_reference",
+    "key": "PK",
+    "note": "general knowledge"
+   },
+   {
+    "type": "string",
+    "name": "lddap_ada_no",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "mds_sub_account",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "payee_account",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "amount",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "date",
+    "name": "value_date",
+    "key": "",
+    "note": ""
+   }
+  ],
+  "REPORT_ROW": [
+   {
+    "type": "code",
+    "name": "uacs_pap",
+    "key": "FK",
+    "note": ""
+   },
+   {
+    "type": "code",
+    "name": "allotment_class",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "string",
+    "name": "period",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "appropriation",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "allotment",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "obligation",
+    "key": "",
+    "note": ""
+   },
+   {
+    "type": "money",
+    "name": "disbursement",
+    "key": "",
+    "note": ""
+   }
+  ]
+ },
+ "relations": [
+  {
+   "from": "GAA_LINE",
+   "card": "||--o{",
+   "to": "PROCUREMENT_PLAN_ITEM",
+   "label": "planned as [text, no code]"
+  },
+  {
+   "from": "PROCUREMENT_PLAN_ITEM",
+   "card": "||--o{",
+   "to": "PROCUREMENT",
+   "label": "advertised as [general knowledge]"
+  },
+  {
+   "from": "PROCUREMENT",
+   "card": "||--o|",
+   "to": "PURCHASE_ORDER_OR_CONTRACT",
+   "label": "awarded as [general knowledge]"
+  },
+  {
+   "from": "PURCHASE_ORDER_OR_CONTRACT",
+   "card": "||--o{",
+   "to": "DELIVERY_ACCEPTANCE",
+   "label": "delivered under [order no.]"
+  },
+  {
+   "from": "DELIVERY_ACCEPTANCE",
+   "card": "||--o|",
+   "to": "PHYSICAL_ASSET",
+   "label": "recorded from [reference column]"
+  },
+  {
+   "from": "JOURNAL_ENTRY",
+   "card": "||--o{",
+   "to": "PHYSICAL_ASSET",
+   "label": "valued by [JEV no. as reference]"
+  },
+  {
+   "from": "GAA_LINE",
+   "card": "||--o{",
+   "to": "ALLOTMENT",
+   "label": "released as [UACS]"
+  },
+  {
+   "from": "OBLIGATION",
+   "card": "||--o|",
+   "to": "PURCHASE_ORDER_OR_CONTRACT",
+   "label": "funds certified on [ORS no.]"
+  },
+  {
+   "from": "ALLOTMENT",
+   "card": "||--o{",
+   "to": "OBLIGATION",
+   "label": "charged by [UACS]"
+  },
+  {
+   "from": "DELIVERY_ACCEPTANCE",
+   "card": "||--o{",
+   "to": "DISBURSEMENT_VOUCHER",
+   "label": "supports [attachment]"
+  },
+  {
+   "from": "OBLIGATION",
+   "card": "||--o{",
+   "to": "DISBURSEMENT_VOUCHER",
+   "label": "claimed by [ORS no.]"
+  },
+  {
+   "from": "DISBURSEMENT_VOUCHER",
+   "card": "||--|{",
+   "to": "JOURNAL_ENTRY",
+   "label": "recorded by [JEV no.]"
+  },
+  {
+   "from": "DISBURSEMENT_VOUCHER",
+   "card": "||--o{",
+   "to": "AUDIT_FINDING",
+   "label": "examined in [general knowledge]"
+  },
+  {
+   "from": "OBLIGATION",
+   "card": "||--o{",
+   "to": "PAYMENT_ORDER_LINE",
+   "label": "paid through [ORS no.]"
+  },
+  {
+   "from": "CASH_AUTHORITY",
+   "card": "||--o{",
+   "to": "PAYMENT_ORDER",
+   "label": "drawn by [NCA no.]"
+  },
+  {
+   "from": "PAYMENT_ORDER",
+   "card": "||--|{",
+   "to": "PAYMENT_ORDER_LINE",
+   "label": "contains"
+  },
+  {
+   "from": "PAYMENT_ORDER",
+   "card": "||--o{",
+   "to": "DAILY_REPORT_LINE",
+   "label": "listed in [ADA no.]"
+  },
+  {
+   "from": "DISBURSEMENT_VOUCHER",
+   "card": "||--o{",
+   "to": "DAILY_REPORT_LINE",
+   "label": "listed in [DV no.]"
+  },
+  {
+   "from": "PAYMENT_ORDER",
+   "card": "||--o{",
+   "to": "BANK_TRANSACTION",
+   "label": "executed as [LDDAP-ADA no.]"
+  },
+  {
+   "from": "GAA_LINE",
+   "card": "||--o{",
+   "to": "REPORT_ROW",
+   "label": "reported as [UACS]"
+  }
+ ]
+}

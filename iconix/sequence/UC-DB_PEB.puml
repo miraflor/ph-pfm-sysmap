@@ -1,0 +1,60 @@
+@startuml
+title UC-DB Borrow through government securities (cohort P, E, B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Dealer or lender" as ROLE_DEALER
+boundary "Dealers and lenders" as B_EXT_DEALER
+control "check (not stated)" as C_not_stated_ROLE_DEALER
+entity "record" as E_S_FIN_NEED
+participant "NRoSS" as N_SYS_NROSS
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "NRoSS" as B_SYS_NROSS
+control "check (not stated)" as C_not_stated_ROLE_BTR
+participant "PhilPaSSplus" as N_SYS_PHILPASS
+actor "BSP" as ROLE_BSP
+boundary "PhilPaSSplus" as B_SYS_PHILPASS
+control "check (not stated)" as C_not_stated_ROLE_BSP
+participant "Treasury Single Account" as N_ACC_TSA
+entity "NRoSS" as E_SYS_NROSS
+boundary "Treasury Single Account" as B_ACC_TSA
+entity "Treasury Single Account" as E_ACC_TSA
+boundary "BTr debt recording system" as B_SYS_BTR_DEBT
+participant "BTr debt recording system" as N_SYS_BTR_DEBT
+entity "BTr debt recording system" as E_SYS_BTR_DEBT
+boundary "BTr" as B_INST_BTR
+participant "Dealers and lenders" as N_EXT_DEALER
+== DB-01 Bid in the auction ==
+ROLE_DEALER -> B_EXT_DEALER : System or office where the act takes place
+B_EXT_DEALER -> C_not_stated_ROLE_DEALER : Bid in the auction
+C_not_stated_ROLE_DEALER -> E_S_FIN_NEED : use: Financing need in the borrowing program
+C_not_stated_ROLE_DEALER -> N_SYS_NROSS : F056 Bids in NRoSS
+== DB-02 Award and send the settlement instruction ==
+ROLE_BTR -> B_SYS_NROSS : System or office where the act takes place
+B_SYS_NROSS -> C_not_stated_ROLE_BTR : Award and send the settlement instruction
+C_not_stated_ROLE_BTR -> N_SYS_PHILPASS : F057 Settlement instruction at the BSP settlement system
+== DB-03 Settle securities against payment ==
+ROLE_BSP -> B_SYS_PHILPASS : System or office where the act takes place
+B_SYS_PHILPASS -> C_not_stated_ROLE_BSP : Settle securities against payment
+note right of C_not_stated_ROLE_BSP : R-DVP: Securities and payment are exchanged at the same time
+C_not_stated_ROLE_BSP -> N_ACC_TSA : F058 Proceeds on their way to the TSA
+C_not_stated_ROLE_BSP -> E_SYS_NROSS : write: Securities registered to the buyers
+== DB-04 Credit the proceeds to the TSA ==
+ROLE_BSP -> B_ACC_TSA : System or office where the act takes place
+B_ACC_TSA -> C_not_stated_ROLE_BSP : Credit the proceeds to the TSA
+C_not_stated_ROLE_BSP -> E_ACC_TSA : write: Cash in the Treasury Single Account
+== DB-05 Record the new debt ==
+ROLE_BTR -> B_SYS_BTR_DEBT : System or office where the act takes place
+B_SYS_BTR_DEBT -> C_not_stated_ROLE_BTR : Record the new debt
+C_not_stated_ROLE_BTR -> E_SYS_NROSS : use: Securities registered to the buyers
+C_not_stated_ROLE_BTR -> N_SYS_BTR_DEBT : F059 New debt passed to the debt and accounting systems of BTr
+C_not_stated_ROLE_BTR -> E_SYS_BTR_DEBT : write: Debt recorded by BTr
+== DB-06 Pay interest and principal ==
+ROLE_BTR -> B_INST_BTR : System or office where the act takes place
+B_INST_BTR -> C_not_stated_ROLE_BTR : Pay interest and principal
+C_not_stated_ROLE_BTR -> E_ACC_TSA : use: Cash in the Treasury Single Account
+C_not_stated_ROLE_BTR -> N_EXT_DEALER : F060 Interest and principal paid to holders
+C_not_stated_ROLE_BTR -> E_SYS_BTR_DEBT : read: Debt recorded by BTr
+@enduml

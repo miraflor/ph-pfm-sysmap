@@ -1,0 +1,40 @@
+﻿record_type_id,name,typical_primary_issuer_id,record_domain,per_instance_identifier,uacs_classification,field_mapping_verified
+DEVELOPMENT_PLAN,Development / regional plan,DEPDEV,policy,REQUIRED_FOR_LINEAGE,where_applicable,no
+INVESTMENT_ID,Investment project or proposed project identifier,DEPDEV,planning,REQUIRED_FOR_LINEAGE,where_applicable,no
+FISCAL_FRAME,Fiscal frame and aggregate recommendations,DBCC,policy,REQUIRED_FOR_LINEAGE,where_applicable,no
+BUDGET_CALL,Budget call and instructions,DBM,authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+BUDGET_PROPOSAL,Agency budget proposal and BP forms,AGENCY,proposal,REQUIRED_FOR_LINEAGE,where_applicable,no
+NEP,National Expenditure Program,PRES,proposal,REQUIRED_FOR_LINEAGE,where_applicable,no
+GAA_ITEM,Enacted appropriation item or statutory equivalent,CONGRESS,legal_authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+ALLOTMENT,Allotment instrument / registry line,DBM,authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+NCA,Notice of Cash Allocation or other applicable disbursement authority,DBM,cash_authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+PPMP_APP,Procurement plans,AGENCY,procurement,REQUIRED_FOR_LINEAGE,where_applicable,no
+BID,"Tender, bid and evaluation results",BAC,procurement,REQUIRED_FOR_LINEAGE,where_applicable,no
+AWARD,Notice of award or procurement decision,AGENCY,procurement,REQUIRED_FOR_LINEAGE,where_applicable,no
+CONTRACT,Contract and amendments,AGENCY,contract,REQUIRED_FOR_LINEAGE,where_applicable,no
+OBLIGATION,Obligation request / budget registry line,AGENCY,budgetary,REQUIRED_FOR_LINEAGE,where_applicable,no
+RECEIPT,Goods receipt / inspection / acceptance evidence,AGENCY,physical,REQUIRED_FOR_LINEAGE,where_applicable,no
+BILLING,Invoice / progress billing / entitlement,SUPPLIER,claim,REQUIRED_FOR_LINEAGE,where_applicable,no
+VOUCHER,Disbursement voucher / approved claim,AGENCY,claim,REQUIRED_FOR_LINEAGE,where_applicable,no
+PAYMENT_ORDER,Payment order / bank instruction,AGENCY,payment,REQUIRED_FOR_LINEAGE,where_applicable,no
+BANK_SETTLEMENT,Bank settlement and transaction reference,BANK,cash,REQUIRED_FOR_LINEAGE,where_applicable,no
+JOURNAL,Journal entry voucher / journal posting,AGENCY,accounting,REQUIRED_FOR_LINEAGE,where_applicable,no
+GENERAL_LEDGER,Ledger / subsidiary account balances,AGENCY,accounting,REQUIRED_FOR_LINEAGE,where_applicable,no
+BUDGET_REGISTER,RAPAL / RAAO / financial accountability source register,AGENCY,budgetary,REQUIRED_FOR_LINEAGE,where_applicable,no
+FIN_STATEMENT,Government financial statements and disclosures,AGENCY,accounting,REQUIRED_FOR_LINEAGE,where_applicable,no
+FAR_BAR,Budget and financial accountability reports,AGENCY,reporting,REQUIRED_FOR_LINEAGE,where_applicable,no
+BANK_RECON,Bank and agency reconciliation statement,AGENCY,control,REQUIRED_FOR_LINEAGE,where_applicable,no
+AUDIT_FINDING,COA observation / notice / audit report,COA,assurance,REQUIRED_FOR_LINEAGE,where_applicable,no
+TAX_DECLARATION,Taxpayer declaration / customs declaration,BIR,revenue,REQUIRED_FOR_LINEAGE,where_applicable,no
+TAX_ASSESSMENT,"Tax assessment, return or enforceable revenue claim",BIR,revenue,REQUIRED_FOR_LINEAGE,where_applicable,no
+COLLECTION,Tax / customs / fee collection transaction,BANK,revenue,REQUIRED_FOR_LINEAGE,where_applicable,no
+REFUND,Tax refund / credit / offset determination,BIR,revenue,REQUIRED_FOR_LINEAGE,where_applicable,no
+DEBT_INSTRUMENT,Government debt security / loan agreement,BTR,debt,REQUIRED_FOR_LINEAGE,where_applicable,no
+DEBT_SERVICE,Debt due schedule and payment instruction,BTR,debt,REQUIRED_FOR_LINEAGE,where_applicable,no
+ASSET_REGISTER,Property and inventory master data,AGENCY,assets,REQUIRED_FOR_LINEAGE,where_applicable,no
+LOCAL_ORDINANCE,LGU annual appropriation ordinance,SANG,legal_authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+LOCAL_REPORT,LGU cash and fiscal statement / eSRE submission,TREAS_LOCAL,reporting,REQUIRED_FOR_LINEAGE,where_applicable,no
+GOCC_COB,GOCC corporate operating budget,GOCC,authority,REQUIRED_FOR_LINEAGE,where_applicable,no
+TRANSFER,Interagency / recipient transfer agreement or schedule,AGENCY,transfer,REQUIRED_FOR_LINEAGE,where_applicable,no
+EVAL,Performance or evaluation report,AGENCY,performance,REQUIRED_FOR_LINEAGE,where_applicable,no
+FISCAL_RISK,Medium term fiscal risk / contingent liability record,DOF,risk,REQUIRED_FOR_LINEAGE,where_applicable,no

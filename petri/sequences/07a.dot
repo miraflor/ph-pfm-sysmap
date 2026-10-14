@@ -1,0 +1,134 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="07a  From obligation to payment: who certifies what, and which record each step writes (goods bought by a national agency, paid by payment order)" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p16" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p17" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p18" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p19" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p20" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p21" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p22" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p23" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p24" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p25" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p26" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p27" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p28" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p29" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p30" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p31" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p32" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p33" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. Requesting office to Budget unit:\nObligation Request and Status (ORS) with the\ncontract or purchase order. Box A: charges are\nnecessary, lawful and under my direct\nsupervision, and the supporting documents are\nvalid, proper and legal" tooltip="07a-01"]
+"t02" [shape=box style=rounded label="2. Budget unit: Check the allotment in the\nregistry. Assign the ORS number. Enter the\nobligation in the registry. Box B: allotment\navailable and obligated. No journal entry" tooltip="07a-02"]
+"t03" [shape=box style=rounded label="3. Accounting unit to Head of agency: Purchase\norder or contract with the certificate of the\nchief accountant: \"Funds Available\", and the\nnumber, date and amount of the ORS" tooltip="07a-03"]
+"t04" [shape=box style=rounded label="4. Head of agency to Suppliers and payees:\nSigned purchase order or contract" tooltip="07a-04"]
+"t05" [shape=box style=rounded label="5. Suppliers and payees to Property and\ninspection: Delivery, with delivery receipt\nand invoice" tooltip="07a-05"]
+"t06" [shape=box style=rounded label="6. Property and inspection: Inspection and\nacceptance report with the numbers of the\npurchase order and of the invoice. Inspection\nofficer: inspected, verified and found in\norder as to quantity and specifications.\nProperty custodian: accepted, complete or\npartial" tooltip="07a-06"]
+"t07" [shape=box style=rounded label="7. Property and inspection to Accounting unit:\nCopy of the acceptance report, with the\npurchase order and the delivery receipt" tooltip="07a-07"]
+"t08" [shape=box style=rounded label="8. Accounting unit to Budget unit: Journal\nentry voucher (JEV): debit the asset or\nexpense, credit Accounts Payable. The budget\nunit enters the payable in part C of the ORS" tooltip="07a-08"]
+"t09" [shape=box style=rounded label="9. Requesting office to Accounting unit: DV\nwith the original acceptance report, delivery\nreceipt, purchase order and a copy of the ORS.\nBox A: expenses necessary, lawful and incurred\nunder my direct supervision" tooltip="07a-09"]
+"t10" [shape=box style=rounded label="10. Accounting unit: Check the documents\nagainst a list. Assign the DV number. Look\ninto the index of payments: was this claim\npaid before? Compare the DV with the ORS. Box\nB: the accounting entry" tooltip="07a-10"]
+"t11" [shape=box style=rounded label="11. Accounting unit: Head of accounting looks\ninto the registry of the NCA. If the balance\nis enough: enter the amount as used, and sign\nBox C: cash available, supporting documents\ncomplete, amount claimed proper. If not: keep\nthe DV until cash is available" tooltip="07a-11"]
+"t12" [shape=box style=rounded label="12. Accounting unit to Head of agency: DV for\napproval" tooltip="07a-12"]
+"t13" [shape=box style=rounded label="13. Head of agency to Accounting unit: Box D:\napproved for payment" tooltip="07a-13"]
+"t14" [shape=box style=rounded label="14. Accounting unit to Head of agency: LDDAP-\nADA in five copies for the approved DVs. The\nchief accountant signs \"Certified Correct\"" tooltip="07a-14"]
+"t15" [shape=box style=rounded label="15. Head of agency to Cash unit: Signs\n\"Approved\"" tooltip="07a-15"]
+"t16" [shape=box style=rounded label="16. Cash unit: Enter it in the record of\nchecks and payment orders, with the new\nbalance of the NCA. The cashier signs the\nadvice to debit the account" tooltip="07a-16"]
+"t17" [shape=box style=rounded label="17. Cash unit to Head of agency: LDDAP-ADA for\nthe second signature" tooltip="07a-17"]
+"t18" [shape=box style=rounded label="18. Head of agency to Cash unit: Countersigns\nthe advice to debit the account" tooltip="07a-18"]
+"t19" [shape=box style=rounded label="19. Cash unit: Stamp \"PAID\" on the payment\norder, the DVs and the documents. Prepare the\nsummary list (SLIIE) in four copies. The\ncashier certifies it, the head of agency\napproves it" tooltip="07a-19"]
+"t20" [shape=box style=rounded label="20. Cash unit to Servicing banks: Summary list\nand LDDAP-ADA (paper copies, or through the\nelectronic facility of the bank)" tooltip="07a-20"]
+"t21" [shape=box style=rounded label="21. Servicing banks: Check the payment order\nand the NCA balance. Debit the MDS sub-account\nof the agency" tooltip="07a-21"]
+"t22" [shape=box style=rounded label="22. Servicing banks to Suppliers and payees:\nCredit the account of the payee with the net\namount, not earlier than 24 hours and not\nlater than 48 hours after receipt" tooltip="07a-22"]
+"t23" [shape=box style=rounded label="23. Servicing banks to BTr: One copy of the\nsummary list and of the LDDAP-ADA on the same\nday" tooltip="07a-23"]
+"t24" [shape=box style=rounded label="24. Treasury Single Account to Servicing\nbanks: Replenishment from the Treasury Single\nAccount" tooltip="07a-24"]
+"t25" [shape=box style=rounded label="25. Servicing banks to Cash unit: Validated\ncopy of the LDDAP-ADA. Items that could not be\ncredited are marked as not paid" tooltip="07a-25"]
+"t26" [shape=box style=rounded label="26. Suppliers and payees to Cash unit:\nOfficial receipt, or other evidence that the\npayment was received" tooltip="07a-26"]
+"t27" [shape=box style=rounded label="27. Cash unit to Accounting unit: Daily report\nof payment orders issued (RADAI) in four\ncopies, with the DVs and the validated LDDAP-\nADA" tooltip="07a-27"]
+"t28" [shape=box style=rounded label="28. Accounting unit: JEV for the payment:\ndebit Accounts Payable, credit Cash-MDS,\nRegular and Due to BIR. Enter it in the\njournal of payment orders" tooltip="07a-28"]
+"t29" [shape=box style=rounded label="29. Accounting unit to Budget unit: One copy\nof the RADAI. The budget unit enters the\npayment in part C of the ORS and the\ndisbursement in the registry" tooltip="07a-29"]
+"t30" [shape=box style=rounded label="30. Accounting unit to BIR: Tax withheld:\nreturns filed in the electronic system of BIR,\npaid by Tax Remittance Advice by the 10th day\nof the next month. No cash moves" tooltip="07a-30"]
+"t31" [shape=box style=rounded label="31. Accounting unit to COA audit team: First\ncopy of the RADAI and of the JEV, with the\noriginal DV, its documents and the validated\nLDDAP-ADA" tooltip="07a-31"]
+"t32" [shape=box style=rounded label="32. COA audit team to Head of agency: Audit\nobservations, or notices of suspension or\ndisallowance (chapter 09)" tooltip="07a-32"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p5"
+"p5" -> "t05"
+"t05" -> "p6"
+"p6" -> "t06"
+"t06" -> "p7"
+"p7" -> "t07"
+"t07" -> "p8"
+"p8" -> "t08"
+"t08" -> "p9"
+"p9" -> "t09"
+"t09" -> "p10"
+"p10" -> "t10"
+"t10" -> "p11"
+"p11" -> "t11"
+"t11" -> "p12"
+"p12" -> "t12"
+"t12" -> "p13"
+"p13" -> "t13"
+"t13" -> "p14"
+"p14" -> "t14"
+"t14" -> "p15"
+"p15" -> "t15"
+"t15" -> "p16"
+"p16" -> "t16"
+"t16" -> "p17"
+"p17" -> "t17"
+"t17" -> "p18"
+"p18" -> "t18"
+"t18" -> "p19"
+"p19" -> "t19"
+"t19" -> "p20"
+"p20" -> "t20"
+"t20" -> "p21"
+"p21" -> "t21"
+"t21" -> "p22"
+"p22" -> "t22"
+"t22" -> "p23"
+"p23" -> "t23"
+"t23" -> "p24"
+"p24" -> "t24"
+"t24" -> "p25"
+"p25" -> "t25"
+"t25" -> "p26"
+"p26" -> "t26"
+"t26" -> "p27"
+"p27" -> "t27"
+"t27" -> "p28"
+"p28" -> "t28"
+"t28" -> "p29"
+"p29" -> "t29"
+"t29" -> "p30"
+"p30" -> "t30"
+"t30" -> "p31"
+"p31" -> "t31"
+"t31" -> "p32"
+"p32" -> "t32"
+"t32" -> "p33"
+}

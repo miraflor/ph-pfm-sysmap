@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-RELEASE-B" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-RELEASE-B: Release of allotments (cohort B)</text></name>
+    <page id="page1">
+      <place id="C-F012-BED"><name><text>Budget execution documents entered in URS</text></name></place>
+      <place id="S-NBC"><name><text>Release guidelines of the year issued (National Budget Circular)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F021A-BED"><name><text>Budget execution documents at DBM for evaluation</text></name></place>
+      <place id="S-APPROP"><name><text>Appropriation available (a line of the GAA)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-ALLOT"><name><text>Allotment available, not yet obligated</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-SBR"><name><text>Special Budget Request submitted for an item that needs clearance</text></name></place>
+      <place id="S-SBR-CLEARED"><name><text>Request ready for evaluation (approved by the Office of the President where the guidelines require it)</text></name></place>
+      <place id="C-F007"><name><text>Approved release document passed to ADRS</text></name></place>
+      <place id="C-F008-SARO"><name><text>SARO or GARO available for download by the agency</text></name></place>
+      <place id="C-F009"><name><text>Record of the issued document sent to the verification record</text></name></place>
+      <place id="S-VERIFIABLE"><name><text>Fingerprint of the document stored; any copy can be checked</text></name></place>
+      <transition id="RL-01"><name><text>Submit the budget execution documents in URS</text></name></transition>
+      <transition id="RL-02"><name><text>Pass the documents to DBM</text></name></transition>
+      <transition id="RL-03A"><name><text>Release by the GAA as allotment order</text></name></transition>
+      <transition id="RL-03B"><name><text>Submit a Special Budget Request</text></name></transition>
+      <transition id="RL-04A"><name><text>Obtain the approval of the Office of the President</text></name></transition>
+      <transition id="RL-04B"><name><text>No approval of the President needed</text></name></transition>
+      <transition id="RL-05"><name><text>Evaluate and approve the SARO or GARO</text></name></transition>
+      <transition id="RL-06"><name><text>Release the document in ADRS</text></name></transition>
+      <transition id="RL-07"><name><text>Download and record the allotment</text></name></transition>
+      <transition id="RL-08"><name><text>Store the fingerprint of the document</text></name></transition>
+      <arc id="a1" source="RL-01" target="C-F012-BED"/>
+      <arc id="a2" source="S-NBC" target="RL-01"/>
+      <arc id="a3" source="RL-01" target="S-NBC"/>
+      <arc id="a4" source="C-F012-BED" target="RL-02"/>
+      <arc id="a5" source="RL-02" target="C-F021A-BED"/>
+      <arc id="a6" source="C-F021A-BED" target="RL-03A"/>
+      <arc id="a7" source="S-APPROP" target="RL-03A"/>
+      <arc id="a8" source="RL-03A" target="S-ALLOT"/>
+      <arc id="a9" source="C-F021A-BED" target="RL-03B"/>
+      <arc id="a10" source="RL-03B" target="S-SBR"/>
+      <arc id="a11" source="S-SBR" target="RL-04A"/>
+      <arc id="a12" source="RL-04A" target="S-SBR-CLEARED"/>
+      <arc id="a13" source="S-SBR" target="RL-04B"/>
+      <arc id="a14" source="RL-04B" target="S-SBR-CLEARED"/>
+      <arc id="a15" source="S-SBR-CLEARED" target="RL-05"/>
+      <arc id="a16" source="S-APPROP" target="RL-05"/>
+      <arc id="a17" source="RL-05" target="C-F007"/>
+      <arc id="a18" source="C-F007" target="RL-06"/>
+      <arc id="a19" source="RL-06" target="C-F008-SARO"/>
+      <arc id="a20" source="RL-06" target="C-F009"/>
+      <arc id="a21" source="C-F008-SARO" target="RL-07"/>
+      <arc id="a22" source="RL-07" target="S-ALLOT"/>
+      <arc id="a23" source="C-F009" target="RL-08"/>
+      <arc id="a24" source="RL-08" target="S-VERIFIABLE"/>
+    </page>
+  </net>
+</pnml>

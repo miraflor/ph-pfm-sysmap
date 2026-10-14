@@ -1,0 +1,92 @@
+@startuml
+title UC-TX Collect taxes and duties (cohort P, E, B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Taxpayer or importer" as ROLE_TAXPAYER
+boundary "System or office where the act takes place" as B_TX_01
+control "TX-01 File the return (check not stated)" as C_TX_01
+entity "Tax return (including returns of taxes with…" as E_R_TAX_RETURN_
+boundary "System or office where the act takes place" as B_TX_02
+control "TX-02 Pay the tax (check not stated)" as C_TX_02
+entity "Tax or duty payment (money)" as E_R_M_TAX_
+actor "BIR office or approving official" as ROLE_BIR
+boundary "System or office where the act takes place" as B_TX_03
+control "TX-03 Pass the return to the internal system (check not…" as C_TX_03
+actor "Authorized agent bank or payment gateway" as ROLE_AAB
+boundary "System or office where the act takes place" as B_TX_04
+control "TX-04 Confirm and report the payment (check not stated)" as C_TX_04
+entity "Report of tax payments received by a bank" as E_R_BIR_PAYREPORT_
+boundary "System or office where the act takes place" as B_TX_05
+control "TX-05 Post the payment to the taxpayer account (check n…" as C_TX_05
+boundary "System or office where the act takes place" as B_TX_06
+control "TX-06 Remit the collections to the TSA (check not state…" as C_TX_06
+entity "Remittance of tax and customs collections t…" as E_R_M_REMIT_TSA_
+actor "BSP" as ROLE_BSP
+boundary "System or office where the act takes place" as B_TX_07
+control "TX-07 Credit the TSA (check not stated)" as C_TX_07
+boundary "System or office where the act takes place" as B_TX_11
+control "TX-11 Declare the goods (check not stated)" as C_TX_11
+entity "Goods declaration (customs)" as E_R_GOODS_DECL_
+actor "BOC" as ROLE_BOC
+boundary "System or office where the act takes place" as B_TX_12
+control "TX-12 Assess duties and taxes (check not stated)" as C_TX_12
+boundary "System or office where the act takes place" as B_TX_13
+control "TX-13 Pay the assessed amount (check not stated)" as C_TX_13
+boundary "System or office where the act takes place" as B_TX_14
+control "TX-14 Send the abstract of collection through PAS (chec…" as C_TX_14
+entity "Abstract of customs collections" as E_R_CUSTOMS_ABSTRACT_
+boundary "System or office where the act takes place" as B_TX_15
+control "TX-15 Confirm the payment and release the goods (check…" as C_TX_15
+ROLE_TAXPAYER -- B_TX_01
+B_TX_01 -- C_TX_01
+C_TX_01 -- E_R_TAX_RETURN_
+ROLE_TAXPAYER -- B_TX_02
+B_TX_02 -- C_TX_02
+C_TX_01 -- C_TX_02
+C_TX_02 -- E_R_M_TAX_
+ROLE_BIR -- B_TX_03
+B_TX_03 -- C_TX_03
+C_TX_02 -- C_TX_03
+C_TX_03 -- E_R_TAX_RETURN_
+ROLE_AAB -- B_TX_04
+B_TX_04 -- C_TX_04
+C_TX_03 -- C_TX_04
+C_TX_04 -- E_R_M_TAX_
+C_TX_04 -- E_R_BIR_PAYREPORT_
+ROLE_BIR -- B_TX_05
+B_TX_05 -- C_TX_05
+C_TX_04 -- C_TX_05
+C_TX_05 -- E_R_TAX_RETURN_
+C_TX_05 -- E_R_BIR_PAYREPORT_
+ROLE_AAB -- B_TX_06
+B_TX_06 -- C_TX_06
+C_TX_05 -- C_TX_06
+C_TX_06 -- E_R_M_REMIT_TSA_
+ROLE_BSP -- B_TX_07
+B_TX_07 -- C_TX_07
+C_TX_06 -- C_TX_07
+C_TX_07 -- E_R_M_REMIT_TSA_
+ROLE_TAXPAYER -- B_TX_11
+B_TX_11 -- C_TX_11
+C_TX_07 -- C_TX_11
+C_TX_11 -- E_R_GOODS_DECL_
+ROLE_BOC -- B_TX_12
+B_TX_12 -- C_TX_12
+C_TX_11 -- C_TX_12
+C_TX_12 -- E_R_GOODS_DECL_
+ROLE_TAXPAYER -- B_TX_13
+B_TX_13 -- C_TX_13
+C_TX_12 -- C_TX_13
+C_TX_13 -- E_R_M_TAX_
+ROLE_AAB -- B_TX_14
+B_TX_14 -- C_TX_14
+C_TX_13 -- C_TX_14
+C_TX_14 -- E_R_M_TAX_
+C_TX_14 -- E_R_CUSTOMS_ABSTRACT_
+ROLE_BOC -- B_TX_15
+B_TX_15 -- C_TX_15
+C_TX_14 -- C_TX_15
+C_TX_15 -- E_R_CUSTOMS_ABSTRACT_
+@enduml

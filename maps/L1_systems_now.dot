@@ -1,0 +1,200 @@
+digraph L1now {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Systems and units, flows in use, in part or described (plans left out)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+"EXT-DEALER" [shape=box style="filled,rounded" fillcolor="#ffffff" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Dealers and\nlenders" tooltip="Dealers in government securities and other lenders"]
+"EXT-PAYER" [shape=box style="filled,rounded" fillcolor="#ffffff" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Payers of fees" tooltip="Persons and firms that pay fees and charges to agencies"]
+subgraph "cluster_EXT-PUBLIC" {
+label="Public" style="rounded,filled" fillcolor="#ffffff" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Any person: citizens, civil society, observers, journalists"
+"UNIT-PUB-ANY" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Any person" tooltip="Any person, including citizens and journalists"]
+}
+"EXT-SUPPLIER" [shape=box style="filled,rounded" fillcolor="#ffffff" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Suppliers and\npayees" tooltip="Suppliers, contractors, consultants and other payees of agencies"]
+"EXT-TAXPAYER" [shape=box style="filled,rounded" fillcolor="#ffffff" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Taxpayers and\nimporters" tooltip="Taxpayers, importers and customs brokers"]
+subgraph "cluster_INST-AAB" {
+label="Agent banks and gateways" style="rounded,filled" fillcolor="#fdf0d5" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Authorized agent banks and electronic payment gateways"
+"INST-AAB" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Agent banks and\ngateways" tooltip="Authorized agent banks and electronic payment gateways" label="Agent banks and\ngateways (as a\nwhole)" fillcolor="#ffffff"]
+"SYS-LINKBIZ" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Link.BizPortal\n(Land Bank)" tooltip="Link.BizPortal of the Land Bank of the Philippines"]
+}
+"INST-AGDB" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Depository banks" tooltip="Authorized government depository banks"]
+subgraph "cluster_INST-BIR" {
+label="BIR" style="rounded,filled" fillcolor="#f6dfe8" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of Internal Revenue"
+"INST-BIR" [shape=box style="filled,rounded" fillcolor="#f6dfe8" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="BIR" tooltip="Bureau of Internal Revenue" label="BIR (as a whole)" fillcolor="#ffffff"]
+"SYS-BIR-EFILING" [shape=box style="filled,rounded" fillcolor="#f6dfe8" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eFPS and eBIRForms" tooltip="eFPS and eBIRForms"]
+"SYS-BIR-ITS" [shape=box style="filled,rounded,dotted" fillcolor="#f6dfe8" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BIR internal tax\nsystem" tooltip="Internal tax system of BIR (name not stated)"]
+}
+subgraph "cluster_INST-BLGF" {
+label="BLGF" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of Local Government Finance"
+"SYS-ESRE" [shape=box style="filled,rounded" fillcolor="#d8f0e6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eSRE" tooltip="eSRE, electronic Statement of Receipts and Expenditures"]
+}
+subgraph "cluster_INST-BOC" {
+label="BOC" style="rounded,filled" fillcolor="#f6dfe8" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of Customs"
+"INST-BOC" [shape=box style="filled,rounded" fillcolor="#f6dfe8" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="BOC" tooltip="Bureau of Customs" label="BOC (as a whole)" fillcolor="#ffffff"]
+"SYS-E2M" [shape=box style="filled,rounded" fillcolor="#f6dfe8" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="E2M customs system" tooltip="E2M customs system"]
+}
+subgraph "cluster_INST-BSP" {
+label="BSP" style="rounded,filled" fillcolor="#fbe0c4" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bangko Sentral ng Pilipinas"
+"SYS-PHILPASS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PhilPaSSplus" tooltip="PhilPaSSplus, the peso real-time gross settlement system of the BSP"]
+}
+subgraph "cluster_INST-BTR" {
+label="BTr" style="rounded,filled" fillcolor="#fbe0c4" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of the Treasury"
+"INST-BTR" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="BTr" tooltip="Bureau of the Treasury" label="BTr (as a whole)" fillcolor="#ffffff"]
+"ACC-TSA" [shape=cylinder style="filled" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Treasury Single\nAccount" tooltip="Treasury Single Account: accounts of BTr at the BSP"]
+"SYS-BTR-DEBT" [shape=box style="filled,rounded,dotted" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BTr debt recording\nsystem" tooltip="Debt recording system of BTr (name not stated)"]
+"SYS-ETRAMS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eTRAMS" tooltip="eTRAMS, Treasury Single Account Reporting and Monitoring System"]
+"SYS-NARS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="NARS" tooltip="NARS, National Asset Registry System"]
+"SYS-NGCDS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="NGCDS" tooltip="NGCDS, National Government Collection and Disbursement System"]
+"SYS-NROSS" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="NRoSS" tooltip="NRoSS, National Registry of Scripless Securities"]
+}
+subgraph "cluster_INST-COA" {
+label="COA" style="rounded,filled" fillcolor="#e6e3fb" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Commission on Audit"
+"INST-COA" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="COA" tooltip="Commission on Audit" label="COA (as a whole)" fillcolor="#ffffff"]
+"SYS-AFRS" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="AFR System" tooltip="AFR System (AFRS)"]
+"SYS-EBUDGET-COA" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eBudget (COA)" tooltip="eBudget (COA)"]
+"SYS-ENGAS" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eNGAS" tooltip="eNGAS, electronic New Government Accounting System"]
+"UNIT-COA-AUDIT" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="COA audit team" tooltip="COA audit team of the agency (team leader, supervising auditor)"]
+}
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"INST-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="DBM" tooltip="Department of Budget and Management" label="DBM (as a whole)" fillcolor="#ffffff"]
+"SYS-ADRS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="ADRS" tooltip="ADRS, Action Document Releasing System"]
+"SYS-BPMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#888888" penwidth=1 fontname="Helvetica" fontsize=10 label="BPMS" tooltip="BPMS, Budget Preparation Management System"]
+"SYS-BTMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BTMS" tooltip="BTMS, Budget and Treasury Management System"]
+"SYS-COMPASS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="COMPASS portal" tooltip="COMPASS portal, Centralized Open Monitoring Platform for Appropriations and Spending Statistics"]
+"SYS-DIME" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="DIME" tooltip="DIME"]
+"SYS-DOCVERIFY" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Document\nverification\n(blockchain)" tooltip="Document verification on a blockchain"]
+"SYS-EBUDGET-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="e-Budget (DBM)" tooltip="e-Budget (DBM)"]
+"SYS-GMIS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="GMIS" tooltip="GMIS, Government Manpower Information System, with the PSIPOP (list of positions and personnel)"]
+"SYS-OSBPS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="OSBPS" tooltip="OSBPS version 2.0, Online Submission of Budget Proposals System"]
+"SYS-URS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="URS" tooltip="URS, Unified Reporting System"]
+}
+subgraph "cluster_INST-DEPDEV" {
+label="DEPDev" style="rounded,filled" fillcolor="#ece9df" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Economy, Planning, and Development"
+"SYS-PIPOL" [shape=box style="filled,rounded" fillcolor="#ece9df" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PIPOL" tooltip="PIPOL"]
+}
+subgraph "cluster_INST-GPPB" {
+label="GPPB and TSO" style="rounded,filled" fillcolor="#e2f0d6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Government Procurement Policy Board and its Technical Support Office"
+"SYS-GPPB-FORM" [shape=box style="filled,rounded" fillcolor="#e2f0d6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="GPPB online\nsubmission form" tooltip="Online form of the GPPB Technical Support Office for procurement plans and monitoring reports"]
+}
+subgraph "cluster_INST-GSB" {
+label="Servicing banks" style="rounded,filled" fillcolor="#fdf0d5" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Government servicing banks: Land Bank of the Philippines, Development Bank of the Philippines, Philippine Veterans Bank"
+"INST-GSB" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Servicing banks" tooltip="Government servicing banks: Land Bank of the Philippines, Development Bank of the Philippines, Philippine Veterans Bank" label="Servicing banks\n(as a whole)" fillcolor="#ffffff"]
+"ACC-MDS" [shape=cylinder style="filled" fillcolor="#fdf0d5" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="MDS sub-accounts" tooltip="Modified Disbursement System (MDS) sub-accounts of agencies at the servicing banks"]
+"SYS-EMDS" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eMDS (Land Bank)" tooltip="eMDS, Electronic Modified Disbursement System"]
+}
+"INST-IMPL" [shape=box style="filled,rounded" fillcolor="#eef6e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Implementing body" tooltip="An agency, corporation or local government that implements with funds transferred to it"]
+subgraph "cluster_INST-LGU" {
+label="Local government" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Local government units: provinces, cities, municipalities, barangays"
+"INST-LGU" [shape=box style="filled,rounded" fillcolor="#d8f0e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Local government" tooltip="Local government units: provinces, cities, municipalities, barangays" label="Local government\n(as a whole)" fillcolor="#ffffff"]
+"UNIT-LGU-TREAS" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Local treasurer" tooltip="Local treasurer (with the accountant and budget officer)"]
+}
+subgraph "cluster_INST-NGA" {
+label="National agency" style="rounded,filled" fillcolor="#eef6e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="A department or agency of the national government"
+"INST-NGA" [shape=box style="filled,rounded" fillcolor="#eef6e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="National agency" tooltip="A department or agency of the national government" label="National agency\n(as a whole)" fillcolor="#ffffff"]
+"SYS-AGENCY-OWN" [shape=box style="filled,rounded" fillcolor="#eef6e6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Agency own systems" tooltip="Agency systems: own software, spreadsheets and registries"]
+"SYS-AGENCY-WEB" [shape=tab style="filled" fillcolor="#eef6e6" color="#888888" penwidth=1 fontname="Helvetica" fontsize=10 label="Agency website" tooltip="Website of the agency"]
+"UNIT-NGA-ACC" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Accounting unit" tooltip="Accounting unit of the agency, headed by the chief accountant"]
+"UNIT-NGA-BAC" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BAC and\nprocurement unit" tooltip="Bids and Awards Committee with its Secretariat, and the procurement unit"]
+"UNIT-NGA-BUD" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Budget unit" tooltip="Budget unit of the agency"]
+"UNIT-NGA-CASH" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Cash unit" tooltip="Cash unit of the agency, with the cashier and disbursing officers"]
+"UNIT-NGA-COLL" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Collecting officer" tooltip="Collecting officer of the agency"]
+"UNIT-NGA-PERS" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Personnel unit" tooltip="Personnel unit of the agency"]
+"UNIT-NGA-PLAN" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Planning and\nbudget units" tooltip="Planning and budget units of the agency (budget preparation)"]
+"UNIT-NGA-PROP" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Property and\ninspection" tooltip="Property unit and inspection officer or committee"]
+}
+subgraph "cluster_INST-PCHC" {
+label="PCHC" style="rounded,filled" fillcolor="#fdf0d5" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Philippine Clearing House Corporation"
+"SYS-PAS" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Payment\nApplication Secure" tooltip="PAS, Payment Application Secure (now version 6)"]
+}
+subgraph "cluster_INST-PSDBM" {
+label="PS-DBM" style="rounded,filled" fillcolor="#e2f0d6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Procurement Service of DBM"
+"SYS-PHILGEPS" [shape=box style="filled,rounded" fillcolor="#e2f0d6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PhilGEPS\n(modernized)" tooltip="PhilGEPS, Philippine Government Electronic Procurement System, modernized version"]
+}
+"INST-RPS" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Retail payment\nsystem" tooltip="Automated clearing houses of the national retail payment system"]
+"UNIT-NGA-PLAN" -> "SYS-PIPOL" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F001: Programs and projects" label="F001" fontsize=7 fontcolor="#666666"]
+"SYS-PIPOL" -> "SYS-OSBPS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F002: Programs and projects that enter the budget proposal" label="F002" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-PLAN" -> "SYS-OSBPS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F003: Budget forms" label="F003" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-PERS" -> "SYS-GMIS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F004: Monthly update of positions" label="F004" fontsize=7 fontcolor="#666666"]
+"SYS-OSBPS" -> "SYS-BPMS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F005A: Proposals that enter the proposed budget" label="F005A" fontsize=7 fontcolor="#666666"]
+"SYS-GMIS" -> "SYS-BPMS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F005B: Filled positions, as the basis of the personnel budget" label="F005B" fontsize=7 fontcolor="#666666"]
+"SYS-BPMS" -> "SYS-EBUDGET-DBM" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F006: The enacted budget" label="F006" fontsize=7 fontcolor="#666666"]
+"SYS-EBUDGET-DBM" -> "SYS-ADRS" [color="#2e6b2ebb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F007: Approved release documents" label="F007" fontsize=7 fontcolor="#666666"]
+"SYS-ADRS" -> "INST-NGA" [color="#1f4e8c" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F008: SARO, GARO, advice of NCA issued" label="F008" fontsize=7 fontcolor="#666666"]
+"SYS-ADRS" -> "SYS-DOCVERIFY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F009: A record of each issued document" label="F009" fontsize=7 fontcolor="#666666"]
+"SYS-DOCVERIFY" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F010: Result of a check by QR code" label="F010" fontsize=7 fontcolor="#666666"]
+"INST-DBM" -> "ACC-MDS" [color="#1f4e8c" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F011: Notice of Cash Allocation" label="F011" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-URS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F012: Execution plans, then accountability reports" label="F012" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BAC" -> "SYS-PHILGEPS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F013: Notices and awards" label="F013" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "EXT-SUPPLIER" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F014: Opportunities" label="F014" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BUD" -> "SYS-EBUDGET-COA" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F015A: Obligations, in the eBudget of COA" label="F015A" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BUD" -> "SYS-AGENCY-OWN" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F015B: Obligations, in a registry of the agency (paper or spreadsheet)" label="F015B" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "SYS-ENGAS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F016A: Journal entries, in eNGAS" label="F016A" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "SYS-AGENCY-OWN" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F016B: Journal entries, in other software or on paper" label="F016B" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-CASH" -> "SYS-EMDS" [color="#2e6b2e" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F017: Payment orders, advice of checks issued and cancelled, and other MDS transactions" label="F017" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "EXT-SUPPLIER" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F018: Payments" label="F018" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "INST-BTR" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F019: One copy of the summary list and of the payment order, on the day of receipt" label="F019" fontsize=7 fontcolor="#666666"]
+"ACC-TSA" -> "INST-GSB" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F020: Replenishment for the payments made" label="F020" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021A: The plans and reports" label="F021A" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-COA" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021B: The reports" label="F021B" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-BTR" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021C: FAR 3, 4 and 5" label="F021C" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-AFRS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F022: Financial statements" label="F022" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "UNIT-COA-AUDIT" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F023: Daily reports of checks and of payment orders issued, with the paid vouchers, their documents and the journal entry vouchers" label="F023" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-NARS" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F024: Data on important assets" label="F024" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-BTMS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F025: Execution records: obligations, vouchers, receipts, assets" label="F025" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-GSB" [color="#555555" style="bold" penwidth=1.8 arrowhead=normal arrowsize=0.6 tooltip="F027: Instructions for electronic payments" label="F027" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "INST-RPS" [color="#555555" style="bold" penwidth=1.8 arrowhead=normal arrowsize=0.6 tooltip="F027: Instructions for electronic payments" label="F027" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "SYS-BTMS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F028: Electronic bank statements for the daily reconciliation" label="F028" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F029: Financial and program performance, status of projects, procurement information" label="F029" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F030: Not stated" label="F030" fontsize=7 fontcolor="#666666"]
+"SYS-COMPASS" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F031: Budget, allotments, obligations and disbursements" label="F031" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-CASH" -> "INST-GSB" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F032: Payment order (LDDAP-ADA) with its summary list, and the advice of checks issued and cancelled" label="F032" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "UNIT-NGA-CASH" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F033: Validated copy of the payment order. Items that could not be credited are marked as not paid" label="F033" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F034: Monthly bank statement, with the paid checks and the debit and credit memoranda" label="F034" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "SYS-BIR-EFILING" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F035: Returns of taxes withheld, and the electronic Tax Remittance Advice" label="F035" fontsize=7 fontcolor="#666666"]
+"INST-BTR" -> "INST-NGA" [color="#2e6b2e" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F036: Journal entry voucher for a payment that the lender made directly to the supplier" label="F036" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "INST-DBM" [color="#2e6b2e" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F037: Copy of that journal entry voucher, and the list of suppliers paid" label="F037" fontsize=7 fontcolor="#666666"]
+"INST-IMPL" -> "INST-NGA" [color="#2e6b2e" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F038: Reports of checks issued and of cash disbursements, within ten days after each month" label="F038" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "INST-GSB" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F039A: Requests for payment after delivery, to the bank of the procuring entity" label="F039A" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "EXT-SUPPLIER" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F039B: Requests for payment after delivery, to merchants" label="F039B" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-CASH" -> "SYS-AGENCY-WEB" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F040: Daily report of payment orders issued" label="F040" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BAC" -> "SYS-GPPB-FORM" [color="#2e6b2e" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F041: The approved Annual Procurement Plan, its update after each semester, and the Procurement Monitoring Report of each semester" label="F041" fontsize=7 fontcolor="#666666"]
+"EXT-TAXPAYER" -> "SYS-BIR-EFILING" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F042: Tax returns" label="F042" fontsize=7 fontcolor="#666666"]
+"EXT-TAXPAYER" -> "INST-AAB" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F043: Tax payments" label="F043" fontsize=7 fontcolor="#666666"]
+"SYS-BIR-EFILING" -> "SYS-BIR-ITS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F044: Returns" label="F044" fontsize=7 fontcolor="#666666"]
+"INST-AAB" -> "INST-BIR" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F045: Report of payments received" label="F045" fontsize=7 fontcolor="#666666"]
+"EXT-TAXPAYER" -> "SYS-E2M" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F046: Goods declaration" label="F046" fontsize=7 fontcolor="#666666"]
+"INST-AAB" -> "SYS-PAS" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F047: Abstracts of customs collections, encrypted and authenticated" label="F047" fontsize=7 fontcolor="#666666"]
+"SYS-PAS" -> "INST-BOC" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F047: Abstracts of customs collections, encrypted and authenticated" label="F047" fontsize=7 fontcolor="#666666"]
+"INST-AAB" -> "ACC-TSA" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F048: Collections of BIR and BOC, daily" label="F048" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-COLL" -> "INST-AGDB" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F049: Collections, in full, not later than the following banking day" label="F049" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-COLL" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F050: Report of collections and deposits, at the close of each business day" label="F050" fontsize=7 fontcolor="#666666"]
+"INST-AGDB" -> "SYS-NGCDS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F051: Daily and monthly collection reports" label="F051" fontsize=7 fontcolor="#666666"]
+"INST-AGDB" -> "ACC-TSA" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F052: Transfer of the balances" label="F052" fontsize=7 fontcolor="#666666"]
+"SYS-NGCDS" -> "SYS-ETRAMS" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F053: Collections" label="F053" fontsize=7 fontcolor="#666666"]
+"INST-BTR" -> "INST-NGA" [color="#2e6b2e" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F054: Certificate of deposited national collections" label="F054" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-URS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F055: Quarterly report of revenue and other receipts (FAR 5)" label="F055" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-BTR" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F055: Quarterly report of revenue and other receipts (FAR 5)" label="F055" fontsize=7 fontcolor="#666666"]
+"EXT-DEALER" -> "SYS-NROSS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F056: Bids" label="F056" fontsize=7 fontcolor="#666666"]
+"SYS-NROSS" -> "SYS-PHILPASS" [color="#555555" style="bold" penwidth=1.8 arrowhead=normal arrowsize=0.6 tooltip="F057: Settlement instruction" label="F057" fontsize=7 fontcolor="#666666"]
+"EXT-DEALER" -> "ACC-TSA" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F058: Proceeds of securities and loans" label="F058" fontsize=7 fontcolor="#666666"]
+"SYS-NROSS" -> "SYS-BTR-DEBT" [color="#555555bb" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F059: New debt" label="F059" fontsize=7 fontcolor="#666666"]
+"ACC-TSA" -> "EXT-DEALER" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F060: Interest and principal" label="F060" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "SYS-ETRAMS" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F061: Report of payments made" label="F061" fontsize=7 fontcolor="#666666"]
+"ACC-TSA" -> "INST-GSB" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F062: National Tax Allotment and other shares" label="F062" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "INST-LGU" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F062: National Tax Allotment and other shares" label="F062" fontsize=7 fontcolor="#666666"]
+"UNIT-LGU-TREAS" -> "SYS-ESRE" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F063: Statements of receipts and expenditures" label="F063" fontsize=7 fontcolor="#666666"]
+"EXT-PAYER" -> "UNIT-NGA-COLL" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F064: Fees, against an official receipt" label="F064" fontsize=7 fontcolor="#666666"]
+"INST-AGDB" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F065: Consolidated report of daily collections, and the credit memo or abstract of deposits" label="F065" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BUD" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F066: The obligation request with the claim documents, and a copy of each allotment release document" label="F066" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-PROP" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F067: Copy of the inspection and acceptance report, with the purchase order and the delivery receipt" label="F067" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-CASH" -> "UNIT-NGA-ACC" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F068: Daily reports of checks issued and of payment orders issued, with the paid vouchers and the validated payment orders" label="F068" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "UNIT-NGA-BUD" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F069: Copy of the daily reports, of the Tax Remittance Advice and of journal entry vouchers, for posting the payable and the payment" label="F069" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F103: Open data on notices, awards, agencies, merchants and observers" label="F103" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F104: Procurement information (content not stated)" label="F104" fontsize=7 fontcolor="#666666"]
+"SYS-DIME" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F105: Project monitoring information (content not stated)" label="F105" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F124: Reports produced from the records of BTMS: FAR 1 to 6, BAR 1, registry of allotments, NCA listings" label="F124" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-COA" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F125: Reports produced from the records of BTMS" label="F125" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-BTR" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F126: Reports produced from the records of BTMS" label="F126" fontsize=7 fontcolor="#666666"]
+"INST-RPS" -> "EXT-SUPPLIER" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F127: Credit to the account of the payee, through the payee's bank" label="F127" fontsize=7 fontcolor="#666666"]
+"INST-BTR" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F128: Cash position of the national government, before NCAs are issued" label="F128" fontsize=7 fontcolor="#666666"]
+"EXT-PAYER" -> "SYS-LINKBIZ" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F129: Payments of fees and taxes to enrolled government agencies" label="F129" fontsize=7 fontcolor="#666666"]
+}

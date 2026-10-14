@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-PROC-P" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-PROC-P: Procurement in PhilGEPS up to the award (cohort P)</text></name>
+    <page id="page1">
+      <place id="C-F041"><name><text>Annual Procurement Plan and monitoring report at the GPPB</text></name></place>
+      <place id="S-NEED"><name><text>Need ready: purchase request and a line in the procurement plan</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F013-ITB"><name><text>Invitation to bid posted in PhilGEPS</text></name></place>
+      <place id="C-F014"><name><text>Opportunity visible to registered suppliers</text></name></place>
+      <place id="C-F103"><name><text>Notice and award in the open data of PhilGEPS</text></name></place>
+      <place id="S-BIDS"><name><text>Bids received and opened</text></name></place>
+      <place id="S-AWARD"><name><text>Award made</text></name></place>
+      <place id="C-F013-NOA"><name><text>Award posted in PhilGEPS</text></name></place>
+      <transition id="PR-01"><name><text>Submit the procurement plan and monitoring report</text></name></transition>
+      <transition id="PR-02"><name><text>Post the invitation to bid</text></name></transition>
+      <transition id="PR-03"><name><text>Show the opportunity and publish open data</text></name></transition>
+      <transition id="PR-04"><name><text>Submit and open the bids</text></name></transition>
+      <transition id="PR-05"><name><text>Evaluate, recommend and award</text></name></transition>
+      <arc id="a1" source="PR-01" target="C-F041"/>
+      <arc id="a2" source="S-NEED" target="PR-01"/>
+      <arc id="a3" source="PR-01" target="S-NEED"/>
+      <arc id="a4" source="PR-02" target="C-F013-ITB"/>
+      <arc id="a5" source="S-NEED" target="PR-02"/>
+      <arc id="a6" source="PR-02" target="S-NEED"/>
+      <arc id="a7" source="C-F013-ITB" target="PR-03"/>
+      <arc id="a8" source="PR-03" target="C-F014"/>
+      <arc id="a9" source="PR-03" target="C-F103"/>
+      <arc id="a10" source="C-F014" target="PR-04"/>
+      <arc id="a11" source="PR-04" target="S-BIDS"/>
+      <arc id="a12" source="S-BIDS" target="PR-05"/>
+      <arc id="a13" source="S-NEED" target="PR-05"/>
+      <arc id="a14" source="PR-05" target="S-AWARD"/>
+      <arc id="a15" source="PR-05" target="C-F013-NOA"/>
+    </page>
+  </net>
+</pnml>

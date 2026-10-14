@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-12a" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>12a Personnel spending: from an authorized position to the monthly payroll and the remittances</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>p15</text></name></place>
+      <place id="p16"><name><text>p16</text></name></place>
+      <place id="p17"><name><text>end</text></name></place>
+      <place id="p18"><name><text>p18</text></name></place>
+      <transition id="t01"><name><text>1. GMIS to Personnel unit: Approved staffing pattern: positions, classification, salary grades</text></name></transition>
+      <transition id="t02"><name><text>2. Personnel unit to GMIS: Monthly update of the plantilla of personnel in GMIS (PSIPOP): filled and vacant positions</text></name></transition>
+      <transition id="t03"><name><text>3. Head of agency to GMIS: Approval of the update in GMIS (second approver)</text></name></transition>
+      <transition id="t04"><name><text>4. GMIS: Personnel budget of the next year computed from the FILLED positions in GMIS</text></name></transition>
+      <transition id="t05"><name><text>5. Head of agency to Employees: Appointment to a vacant, funded position</text></name></transition>
+      <transition id="t06"><name><text>6. Personnel unit to CSC: Appointment papers for attestation</text></name></transition>
+      <transition id="t07"><name><text>7. CSC to Personnel unit: Attested appointment</text></name></transition>
+      <transition id="t08"><name><text>8. Personnel unit to Budget unit: Payroll, prepared in advance: gross pay, deductions and net pay of each employee. An authorized official certifies: services duly rendered (Box A)</text></name></transition>
+      <transition id="t09"><name><text>9. Budget unit: Budget unit: obligation request. Head of accounting certifies: documents complete, cash available (Box B). Journal entry: salary expense, and the amounts due to BIR, to the insurance bodies and to the employees</text></name></transition>
+      <transition id="t10"><name><text>10. Budget unit to Head of agency: Payroll for approval</text></name></transition>
+      <transition id="t11"><name><text>11. Head of agency to Budget unit: Approved for payment (Box C)</text></name></transition>
+      <transition id="t12"><name><text>12. Accounting unit to Servicing banks: Payment order for the net pay: to the accounts of the employees, or as an advance to the disbursing officer who pays in cash</text></name></transition>
+      <transition id="t13"><name><text>13. Servicing banks to Employees: Net pay. For cash: each employee signs the payroll, and the disbursing officer certifies that each one was paid (Box D)</text></name></transition>
+      <transition id="t14"><name><text>14. Employees to Personnel unit: Reports of attendance, after the payroll. An overpayment for an absence without pay is demanded back</text></name></transition>
+      <transition id="t15"><name><text>15. Budget unit to GSIS, PhilHealth, Pag-IBIG: Tax withheld (by Tax Remittance Advice), premiums and contributions of employee and government</text></name></transition>
+      <transition id="tau1"><name><text>skip: Shortage in one personnel benefit</text></name></transition>
+      <transition id="t16"><name><text>16. Head of agency to Budget unit: Advice for use of PS Allotment (APSA)</text></name></transition>
+      <transition id="tau2"><name><text>end of: Shortage in one personnel benefit</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="t11"/>
+      <arc id="a22" source="t11" target="p12"/>
+      <arc id="a23" source="p12" target="t12"/>
+      <arc id="a24" source="t12" target="p13"/>
+      <arc id="a25" source="p13" target="t13"/>
+      <arc id="a26" source="t13" target="p14"/>
+      <arc id="a27" source="p14" target="t14"/>
+      <arc id="a28" source="t14" target="p15"/>
+      <arc id="a29" source="p15" target="t15"/>
+      <arc id="a30" source="t15" target="p16"/>
+      <arc id="a31" source="p16" target="tau1"/>
+      <arc id="a32" source="tau1" target="p17"/>
+      <arc id="a33" source="p16" target="t16"/>
+      <arc id="a34" source="t16" target="p18"/>
+      <arc id="a35" source="p18" target="tau2"/>
+      <arc id="a36" source="tau2" target="p17"/>
+    </page>
+  </net>
+</pnml>

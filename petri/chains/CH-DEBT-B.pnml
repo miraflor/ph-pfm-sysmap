@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-DEBT-B" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-DEBT-B: Borrowing through government securities (cohort B)</text></name>
+    <page id="page1">
+      <place id="S-FIN-NEED"><name><text>Financing need in the borrowing program</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F056"><name><text>Bids in NRoSS</text></name></place>
+      <place id="C-F057"><name><text>Settlement instruction at the BSP settlement system</text></name></place>
+      <place id="C-F058"><name><text>Proceeds on their way to the TSA</text></name></place>
+      <place id="S-ISSUED"><name><text>Securities registered to the buyers</text></name></place>
+      <place id="S-TSA"><name><text>Cash in the Treasury Single Account</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F059"><name><text>New debt passed to the debt and accounting systems of BTr</text></name></place>
+      <place id="S-DEBT-RECORDED"><name><text>Debt recorded by BTr</text></name></place>
+      <place id="S-DEBT-DUE"><name><text>Interest or principal falls due</text></name></place>
+      <place id="C-F060"><name><text>Interest and principal paid to holders</text></name></place>
+      <transition id="DB-01"><name><text>Bid in the auction</text></name></transition>
+      <transition id="DB-02"><name><text>Award and send the settlement instruction</text></name></transition>
+      <transition id="DB-03"><name><text>Settle securities against payment</text></name></transition>
+      <transition id="DB-04"><name><text>Credit the proceeds to the TSA</text></name></transition>
+      <transition id="DB-05"><name><text>Record the new debt</text></name></transition>
+      <transition id="DB-06"><name><text>Pay interest and principal</text></name></transition>
+      <arc id="a1" source="S-FIN-NEED" target="DB-01"/>
+      <arc id="a2" source="DB-01" target="C-F056"/>
+      <arc id="a3" source="C-F056" target="DB-02"/>
+      <arc id="a4" source="DB-02" target="C-F057"/>
+      <arc id="a5" source="C-F057" target="DB-03"/>
+      <arc id="a6" source="DB-03" target="C-F058"/>
+      <arc id="a7" source="DB-03" target="S-ISSUED"/>
+      <arc id="a8" source="C-F058" target="DB-04"/>
+      <arc id="a9" source="DB-04" target="S-TSA"/>
+      <arc id="a10" source="S-ISSUED" target="DB-05"/>
+      <arc id="a11" source="DB-05" target="C-F059"/>
+      <arc id="a12" source="DB-05" target="S-DEBT-RECORDED"/>
+      <arc id="a13" source="S-DEBT-DUE" target="DB-06"/>
+      <arc id="a14" source="S-TSA" target="DB-06"/>
+      <arc id="a15" source="DB-06" target="C-F060"/>
+      <arc id="a16" source="S-DEBT-RECORDED" target="DB-06"/>
+      <arc id="a17" source="DB-06" target="S-DEBT-RECORDED"/>
+    </page>
+  </net>
+</pnml>

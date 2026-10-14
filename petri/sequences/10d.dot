@@ -1,0 +1,50 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="10d  A tax refund: how money collected as tax is paid back" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. Taxpayers and importers to BIR: Claim for\nrefund with documents. Kinds: input VAT on\nzero-rated sales, tax collected by error,\nexcess creditable withholding tax, conversion\nof a tax credit certificate into cash" tooltip="10d-01"]
+"t02" [shape=box style=rounded label="2. BIR: Verify the claim within the time limit\n(180 days for regular claims, 90 days for VAT\nclaims)" tooltip="10d-02"]
+"t03" [shape=box style=rounded label="3. BIR to BIR: Recommendation" tooltip="10d-03"]
+"t04" [shape=box style=rounded label="4. BIR to Taxpayers and importers: Decision:\ngrant in full, grant in part, or deny. A\ndenied claim may go to the tax court" tooltip="10d-04"]
+"t05" [shape=box style=rounded label="5. BIR to DBM: Request for release against the\namount for tax refunds. VAT refunds: not more\nthan 5 percent of last year's VAT collections\nof BIR. Other refunds: from the collections of\nthe current year" tooltip="10d-05"]
+"t06" [shape=box style=rounded label="6. DBM to BTr: Release. The amount is treated\nas trust receipts" tooltip="10d-06"]
+"t07" [shape=box style=rounded label="7. BTr to Taxpayers and importers: Refund paid" tooltip="10d-07"]
+"t08" [shape=box style=rounded label="8. BIR: Collection report adjusted for the\nrefunds of the current year and of earlier\nyears (net collections)" tooltip="10d-08"]
+"t09" [shape=box style=rounded label="9. BIR to DBM: Quarterly financial and\nphysical reports through URS" tooltip="10d-09"]
+"t10" [shape=box style=rounded label="10. COA to BIR: Audit of the refunds" tooltip="10d-10"]
+"t11" [shape=box style=rounded label="11. BIR to BTr: End of year: the unused\nbalance reverts to the unappropriated surplus\nof the General Fund" tooltip="10d-11"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p5"
+"p5" -> "t05"
+"t05" -> "p6"
+"p6" -> "t06"
+"t06" -> "p7"
+"p7" -> "t07"
+"t07" -> "p8"
+"p8" -> "t08"
+"t08" -> "p9"
+"p9" -> "t09"
+"t09" -> "p10"
+"p10" -> "t10"
+"t10" -> "p11"
+"p11" -> "t11"
+"t11" -> "p12"
+}

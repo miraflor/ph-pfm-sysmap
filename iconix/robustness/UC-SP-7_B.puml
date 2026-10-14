@@ -1,0 +1,20 @@
+@startuml
+title UC-SP-7 Reconcile with the bank (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "BTMS: bank reconciliation from electronic bank st…" as B_SP_21B
+control "SP-21B Reconcile each day from electronic statements (b…" as C_SP_21B
+entity "Electronic bank statement" as E_R_EBANK_STMT_
+entity "Bank Reconciliation Statement [BTMS: 2 Payments]" as E_R_BRS_MOD_BTMS_PAY
+entity "JEV: Journal Entry Voucher [BTMS: 5 Accounting and reporting]" as E_R_JEV_MOD_BTMS_ACC
+entity "RANCA, Registry of Allotments and Notice of… [BTMS]" as E_R_RANCA_SYS_BTMS
+ROLE_ACCOUNTANT -- B_SP_21B
+B_SP_21B -- C_SP_21B
+C_SP_21B -- E_R_EBANK_STMT_
+C_SP_21B -- E_R_BRS_MOD_BTMS_PAY
+C_SP_21B -- E_R_JEV_MOD_BTMS_ACC
+C_SP_21B -- E_R_RANCA_SYS_BTMS
+@enduml

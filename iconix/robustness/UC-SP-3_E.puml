@@ -1,0 +1,52 @@
+@startuml
+title UC-SP-3 Accept the delivery and record the payable (cohort E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "Delivery receipt and invoice of the supplier" as B_SP_06
+control "SP-06 Deliver (by a person)" as C_SP_06
+entity "Contract or Purchase Order [Agency own systems]" as E_R_PO_SYS_AGENCY_OWN
+entity "Delivery receipt" as E_R_DR_
+entity "Invoice, billing, statement of work accompl…" as E_R_INVOICE_
+actor "Inspection officer and property custodi…" as ROLE_INSPECTOR
+boundary "Paper form: inspection and acceptance report" as B_SP_07
+control "SP-07 Inspect and accept (by a person)" as C_SP_07
+entity "IAR: Inspection and Acceptance Report [Agency own systems]" as E_R_IAR_SYS_AGENCY_OWN
+entity "Contract or Purchase Order" as E_R_PO_
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "eNGAS: journal entry" as B_SP_08
+control "SP-08 Record the payable (by a person)" as C_SP_08
+entity "IAR: Inspection and Acceptance Report" as E_R_IAR_
+entity "JEV: Journal Entry Voucher [eNGAS]" as E_R_JEV_SYS_ENGAS
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "eBudget of COA" as B_SP_08B
+control "SP-08B Post the payable in part C of the ORS (by a pers…" as C_SP_08B
+entity "JEV: Journal Entry Voucher" as E_R_JEV_
+entity "ORS: Obligation Request and Status [eBudget (COA)]" as E_R_ORS_SYS_EBUDGET_COA
+ROLE_SUPPLIER -- B_SP_06
+B_SP_06 -- C_SP_06
+C_SP_06 -- E_R_PO_SYS_AGENCY_OWN
+C_SP_06 -- E_R_DR_
+C_SP_06 -- E_R_INVOICE_
+ROLE_INSPECTOR -- B_SP_07
+B_SP_07 -- C_SP_07
+C_SP_06 -- C_SP_07
+C_SP_07 -- E_R_DR_
+C_SP_07 -- E_R_INVOICE_
+C_SP_07 -- E_R_IAR_SYS_AGENCY_OWN
+C_SP_07 -- E_R_PO_
+ROLE_ACCOUNTANT -- B_SP_08
+B_SP_08 -- C_SP_08
+C_SP_07 -- C_SP_08
+C_SP_08 -- E_R_IAR_
+C_SP_08 -- E_R_PO_
+C_SP_08 -- E_R_DR_
+C_SP_08 -- E_R_JEV_SYS_ENGAS
+ROLE_BUDGET -- B_SP_08B
+B_SP_08B -- C_SP_08B
+C_SP_08 -- C_SP_08B
+C_SP_08B -- E_R_JEV_
+C_SP_08B -- E_R_ORS_SYS_EBUDGET_COA
+@enduml

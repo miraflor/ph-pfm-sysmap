@@ -1,0 +1,103 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="05a  Release of funds: two separate authorities, allotment (to commit) and cash authority (to pay). Example: FY 2026" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p16" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p17" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p18" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p19" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p20" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p21" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p22" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p23" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. DBM to National agency: Release guidelines\nfor the year (National Budget Circular)" tooltip="05a-01"]
+"t02" [shape=box style=rounded label="2. National agency to URS: Budget execution\ndocuments: BED 1 Financial Plan, BED 2\nPhysical Plan, BED 3 Monthly Disbursement\nProgram" tooltip="05a-02"]
+"t03" [shape=box style=rounded label="3. URS to DBM: Documents for evaluation" tooltip="05a-03"]
+"t04" [shape=box style=rounded label="4. DBM to Operating units: No separate\ndocument. The GAA itself is the allotment\norder (GAAAO). Items appropriated to a\nregional office or operating unit go directly\nto it" tooltip="05a-04"]
+"tau1" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Item without pre-conditions (Schedule I). Example: salaries of filled positions"]
+"t05" [shape=box style=rounded label="5. National agency to DBM: Special Budget\nRequest with details: project profile,\nlocation, cost, certifications" tooltip="05a-05"]
+"tau2" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="skip: Item for which the guidelines require it"]
+"t06" [shape=box style=rounded label="6. DBM to Office of the President: Request for\napproval" tooltip="05a-06"]
+"t07" [shape=box style=rounded label="7. Office of the President to DBM: Approval" tooltip="05a-07"]
+"tau3" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Item for which the guidelines require it"]
+"t08" [shape=box style=rounded label="8. DBM: Evaluate: conditions of the GAA,\nreadiness, past spending capacity of the\nagency" tooltip="05a-08"]
+"t09" [shape=box style=rounded label="9. DBM to ADRS: Approved SARO (Special\nAllotment Release Order) or GARO (General\nAllotment Release Order)" tooltip="05a-09"]
+"t10" [shape=box style=rounded label="10. ADRS to National agency: Authorized users\nof the agency download the document" tooltip="05a-10"]
+"tau4" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Item that needs clearance (Schedule II). Examples: lump sums, new items, special purpose funds"]
+"t11" [shape=box style=rounded label="11. National agency to Operating units: Sub-\nallotment to lower units, where the central\noffice holds the allotment" tooltip="05a-11"]
+"t12" [shape=box style=rounded label="12. BTr to DBM: Cash position of the national\ngovernment" tooltip="05a-12"]
+"t13" [shape=box style=rounded label="13. DBM to Servicing banks: Notice of Cash\nAllocation (NCA). First NCA covers the first\nquarter. Later NCAs follow the Monthly\nDisbursement Program, subject to spending\nperformance and the fiscal position" tooltip="05a-13"]
+"t14" [shape=box style=rounded label="14. Servicing banks: Credit the limit to the\nMDS sub-account of the unit: regular, special\naccounts, trust, or foreign-assisted projects" tooltip="05a-14"]
+"t15" [shape=box style=rounded label="15. DBM to ADRS: Advice of NCA Issued" tooltip="05a-15"]
+"t16" [shape=box style=rounded label="16. ADRS to Operating units: Agency downloads\nthe advice" tooltip="05a-16"]
+"tau5" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="skip: Cash need above the program"]
+"t17" [shape=box style=rounded label="17. National agency to DBM: Request for\nadditional NCA" tooltip="05a-17"]
+"t18" [shape=box style=rounded label="18. DBM to Servicing banks: Additional NCA" tooltip="05a-18"]
+"tau6" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Cash need above the program"]
+"t19" [shape=box style=rounded label="19. National agency to Operating units: Notice\nof Transfer of Allocation, where the central\noffice shares its own NCA with a lower unit" tooltip="05a-19"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p6"
+"p6" -> "tau1"
+"tau1" -> "p5"
+"p4" -> "t05"
+"t05" -> "p7"
+"p7" -> "tau2"
+"tau2" -> "p8"
+"p7" -> "t06"
+"t06" -> "p9"
+"p9" -> "t07"
+"t07" -> "p10"
+"p10" -> "tau3"
+"tau3" -> "p8"
+"p8" -> "t08"
+"t08" -> "p11"
+"p11" -> "t09"
+"t09" -> "p12"
+"p12" -> "t10"
+"t10" -> "p13"
+"p13" -> "tau4"
+"tau4" -> "p5"
+"p5" -> "t11"
+"t11" -> "p14"
+"p14" -> "t12"
+"t12" -> "p15"
+"p15" -> "t13"
+"t13" -> "p16"
+"p16" -> "t14"
+"t14" -> "p17"
+"p17" -> "t15"
+"t15" -> "p18"
+"p18" -> "t16"
+"t16" -> "p19"
+"p19" -> "tau5"
+"tau5" -> "p20"
+"p19" -> "t17"
+"t17" -> "p21"
+"p21" -> "t18"
+"t18" -> "p22"
+"p22" -> "tau6"
+"tau6" -> "p20"
+"p20" -> "t19"
+"t19" -> "p23"
+}

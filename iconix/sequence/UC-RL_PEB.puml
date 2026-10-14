@@ -1,0 +1,83 @@
+@startuml
+title UC-RL Release an allotment (cohort P, E, B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Agency as a whole (central of…" as ROLE_AGENCY
+boundary "National agency" as B_INST_NGA
+control "check (not stated)" as C_not_stated_ROLE_AGENCY
+participant "URS" as N_SYS_URS
+entity "record" as E_S_NBC
+actor "DBM (bureaus and approving of…" as ROLE_DBM
+boundary "URS" as B_SYS_URS
+control "check (not stated)" as C_not_stated_ROLE_DBM
+participant "DBM" as N_INST_DBM
+boundary "DBM" as B_INST_DBM
+entity "e-Budget (DBM)" as E_SYS_EBUDGET_DBM
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+entity "DBM" as E_INST_DBM
+actor "Office of the President" as ROLE_OP
+boundary "Office of the President" as B_UNIT_OP
+control "check (not stated)" as C_not_stated_ROLE_OP
+entity "record" as E_S_SBR_CLEARED
+participant "ADRS" as N_SYS_ADRS
+boundary "ADRS" as B_SYS_ADRS
+participant "National agency" as N_INST_NGA
+participant "Document verification (blockc…" as N_SYS_DOCVERIFY
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "Budget unit" as B_UNIT_NGA_BUD
+control "check (not stated)" as C_not_stated_ROLE_BUDGET
+boundary "Document verification (blockchain)" as B_SYS_DOCVERIFY
+entity "Document verification (blockc…" as E_SYS_DOCVERIFY
+== RL-01 Submit the budget execution documents in URS ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Submit the budget execution documents in URS
+C_not_stated_ROLE_AGENCY -> N_SYS_URS : F012 Budget execution documents entered in URS
+C_not_stated_ROLE_AGENCY -> E_S_NBC : read: Release guidelines of the year issued (National Budget Circ…
+== RL-02 Pass the documents to DBM ==
+ROLE_DBM -> B_SYS_URS : System or office where the act takes place
+B_SYS_URS -> C_not_stated_ROLE_DBM : Pass the documents to DBM
+C_not_stated_ROLE_DBM -> N_INST_DBM : F021A Budget execution documents at DBM for evaluation
+== RL-03A Release by the GAA as allotment order ==
+ROLE_DBM -> B_INST_DBM : System or office where the act takes place
+B_INST_DBM -> C_not_stated_ROLE_DBM : Release by the GAA as allotment order
+note right of C_not_stated_ROLE_DBM : R-APPROP-LIMIT: No allotment above the appropriation of the item
+C_not_stated_ROLE_DBM -> E_SYS_EBUDGET_DBM : use: Appropriation available (a line of the GAA)
+C_not_stated_ROLE_DBM -> E_SYS_AGENCY_OWN : write: Allotment available, not yet obligated
+== RL-03B Submit a Special Budget Request ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Submit a Special Budget Request
+C_not_stated_ROLE_AGENCY -> E_INST_DBM : write: Special Budget Request submitted for an item that needs cle…
+== RL-04A Obtain the approval of the Office of the President ==
+ROLE_OP -> B_UNIT_OP : System or office where the act takes place
+B_UNIT_OP -> C_not_stated_ROLE_OP : Obtain the approval of the Office of the President
+C_not_stated_ROLE_OP -> E_INST_DBM : use: Special Budget Request submitted for an item that needs cle…
+C_not_stated_ROLE_OP -> E_S_SBR_CLEARED : write: Request ready for evaluation (approved by the Office of the…
+== RL-04B No approval of the President needed ==
+ROLE_DBM -> B_INST_DBM : System or office where the act takes place
+B_INST_DBM -> C_not_stated_ROLE_DBM : No approval of the President needed
+C_not_stated_ROLE_DBM -> E_INST_DBM : use: Special Budget Request submitted for an item that needs cle…
+C_not_stated_ROLE_DBM -> E_S_SBR_CLEARED : write: Request ready for evaluation (approved by the Office of the…
+== RL-05 Evaluate and approve the SARO or GARO ==
+ROLE_DBM -> B_INST_DBM : System or office where the act takes place
+B_INST_DBM -> C_not_stated_ROLE_DBM : Evaluate and approve the SARO or GARO
+note right of C_not_stated_ROLE_DBM : R-APPROP-LIMIT: No allotment above the appropriation of the item
+C_not_stated_ROLE_DBM -> E_S_SBR_CLEARED : use: Request ready for evaluation (approved by the Office of the…
+C_not_stated_ROLE_DBM -> E_SYS_EBUDGET_DBM : use: Appropriation available (a line of the GAA)
+C_not_stated_ROLE_DBM -> N_SYS_ADRS : F007 Approved release document passed to ADRS
+== RL-06 Release the document in ADRS ==
+ROLE_DBM -> B_SYS_ADRS : System or office where the act takes place
+B_SYS_ADRS -> C_not_stated_ROLE_DBM : Release the document in ADRS
+C_not_stated_ROLE_DBM -> N_INST_NGA : F008 SARO or GARO available for download by the agency
+C_not_stated_ROLE_DBM -> N_SYS_DOCVERIFY : F009 Record of the issued document sent to the verification reco…
+== RL-07 Download and record the allotment ==
+ROLE_BUDGET -> B_UNIT_NGA_BUD : System or office where the act takes place
+B_UNIT_NGA_BUD -> C_not_stated_ROLE_BUDGET : Download and record the allotment
+C_not_stated_ROLE_BUDGET -> E_SYS_AGENCY_OWN : write: Allotment available, not yet obligated
+== RL-08 Store the fingerprint of the document ==
+ROLE_DBM -> B_SYS_DOCVERIFY : System or office where the act takes place
+B_SYS_DOCVERIFY -> C_not_stated_ROLE_DBM : Store the fingerprint of the document
+C_not_stated_ROLE_DBM -> E_SYS_DOCVERIFY : write: Fingerprint of the document stored; any copy can be checked
+@enduml

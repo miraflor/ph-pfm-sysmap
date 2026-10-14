@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-11d" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>11d One foreign project loan: approvals, signing, use of the loan and repayment</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>p15</text></name></place>
+      <place id="p16"><name><text>p16</text></name></place>
+      <place id="p17"><name><text>p17</text></name></place>
+      <place id="p18"><name><text>p18</text></name></place>
+      <place id="p19"><name><text>p19</text></name></place>
+      <place id="p20"><name><text>p20</text></name></place>
+      <place id="p21"><name><text>p21</text></name></place>
+      <place id="p22"><name><text>p22</text></name></place>
+      <place id="p23"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. National agency to ICC: Project proposal for ICC review</text></name></transition>
+      <transition id="t02"><name><text>2. ICC to National agency: ICC recommendation, ED Council approval</text></name></transition>
+      <transition id="t03"><name><text>3. National agency to DBM: Request to provide for the project in the budget</text></name></transition>
+      <transition id="t04"><name><text>4. DBM to DOF: Forward Obligational Authority (project loan)</text></name></transition>
+      <transition id="t05"><name><text>5. DOF to Monetary Board: Request for approval in principle of the loan terms</text></name></transition>
+      <transition id="t06"><name><text>6. Monetary Board to DOF: Approval in principle</text></name></transition>
+      <transition id="t07"><name><text>7. DOF to Office of the President: Request for Special Authority, at least 10 working days before the date needed, with: agency letter, draft loan agreement, Monetary Board concurrence, statement of compliance with laws, Forward Obligational Authority</text></name></transition>
+      <transition id="t08"><name><text>8. Office of the President to DOF: Special Authority (or Full Powers) to negotiate and sign</text></name></transition>
+      <transition id="t09"><name><text>9. DOF to Dealers and lenders: Negotiation. Loan documents cleared by the inter-agency committee that reviews foreign loan documents</text></name></transition>
+      <transition id="t10"><name><text>10. DOF to Dealers and lenders: Loan agreement signed</text></name></transition>
+      <transition id="t11"><name><text>11. Monetary Board to DOF: Final approval of the loan terms</text></name></transition>
+      <transition id="t12"><name><text>12. DOJ to DOF: Legal opinion on the authority of the borrower</text></name></transition>
+      <transition id="t13"><name><text>13. Dealers and lenders to DOF: Loan declared effective</text></name></transition>
+      <transition id="t14"><name><text>14. National agency to Dealers and lenders: Withdrawal application, after the delivery is accepted and the bill is approved. The agency records the asset and a payable</text></name></transition>
+      <transition id="t15"><name><text>15. Dealers and lenders: Pays the supplier directly</text></name></transition>
+      <transition id="t16"><name><text>16. BTr to National agency: Journal entry voucher of BTr: the lender has paid. BTr records the subsidy to the agency and the loan</text></name></transition>
+      <transition id="t17"><name><text>17. National agency to DBM: Copy of that voucher and the list of suppliers paid</text></name></transition>
+      <transition id="t18"><name><text>18. DBM to National agency: Non-Cash Availment Authority. The agency closes the payable against Subsidy from National Government</text></name></transition>
+      <transition id="tau1"><name><text>end of: Direct payment</text></name></transition>
+      <transition id="t19"><name><text>19. Dealers and lenders to BTr: Loan proceeds to the Treasury. BTr records cash and Loans Payable-Foreign on the credit advice of BSP</text></name></transition>
+      <transition id="t20"><name><text>20. DBM to National agency: NCA under the MDS sub-account for foreign-assisted projects</text></name></transition>
+      <transition id="tau2"><name><text>end of: Cash through the Treasury</text></name></transition>
+      <transition id="t21"><name><text>21. BTr to Dealers and lenders: Interest and principal on the due dates, from the Treasury Single Account. Only the books of BTr record them: principal reduces the loan payable, interest is an expense</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="t11"/>
+      <arc id="a22" source="t11" target="p12"/>
+      <arc id="a23" source="p12" target="t12"/>
+      <arc id="a24" source="t12" target="p13"/>
+      <arc id="a25" source="p13" target="t13"/>
+      <arc id="a26" source="t13" target="p14"/>
+      <arc id="a27" source="p14" target="t14"/>
+      <arc id="a28" source="t14" target="p16"/>
+      <arc id="a29" source="p16" target="t15"/>
+      <arc id="a30" source="t15" target="p17"/>
+      <arc id="a31" source="p17" target="t16"/>
+      <arc id="a32" source="t16" target="p18"/>
+      <arc id="a33" source="p18" target="t17"/>
+      <arc id="a34" source="t17" target="p19"/>
+      <arc id="a35" source="p19" target="t18"/>
+      <arc id="a36" source="t18" target="p20"/>
+      <arc id="a37" source="p20" target="tau1"/>
+      <arc id="a38" source="tau1" target="p15"/>
+      <arc id="a39" source="p14" target="t19"/>
+      <arc id="a40" source="t19" target="p21"/>
+      <arc id="a41" source="p21" target="t20"/>
+      <arc id="a42" source="t20" target="p22"/>
+      <arc id="a43" source="p22" target="tau2"/>
+      <arc id="a44" source="tau2" target="p15"/>
+      <arc id="a45" source="p15" target="t21"/>
+      <arc id="a46" source="t21" target="p23"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-TAX-E" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-TAX-E: Tax and customs collections (cohort E)</text></name>
+    <page id="page1">
+      <place id="S-TAX-DUE"><name><text>A tax return is due</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F042"><name><text>Return filed in eFPS or eBIRForms</text></name></place>
+      <place id="S-TO-PAY"><name><text>Tax filed and to be paid</text></name></place>
+      <place id="C-F043"><name><text>Tax paid at an agent bank or gateway</text></name></place>
+      <place id="C-F044"><name><text>Return in the internal system of BIR</text></name></place>
+      <place id="C-F045"><name><text>Report of payments received, at BIR</text></name></place>
+      <place id="S-AAB-COLL"><name><text>Collections held by the agent bank before remittance</text></name></place>
+      <place id="S-TAX-POSTED"><name><text>Payment posted to the account of the taxpayer</text></name></place>
+      <place id="C-F048"><name><text>Collections on their way to the TSA</text></name></place>
+      <place id="S-TSA"><name><text>Cash in the Treasury Single Account</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-IMPORT"><name><text>Goods arrive for import</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F046"><name><text>Goods declaration in E2M</text></name></place>
+      <place id="S-ASSESSED"><name><text>Duties and taxes assessed</text></name></place>
+      <place id="C-F043-CUSTOMS"><name><text>Duties paid at an agent bank</text></name></place>
+      <place id="C-F047"><name><text>Abstract of collection, through PAS, at BOC</text></name></place>
+      <place id="S-RELEASED"><name><text>Goods released</text></name></place>
+      <transition id="TX-01"><name><text>File the return</text></name></transition>
+      <transition id="TX-02"><name><text>Pay the tax</text></name></transition>
+      <transition id="TX-03"><name><text>Pass the return to the internal system</text></name></transition>
+      <transition id="TX-04"><name><text>Confirm and report the payment</text></name></transition>
+      <transition id="TX-05"><name><text>Post the payment to the taxpayer account</text></name></transition>
+      <transition id="TX-06"><name><text>Remit the collections to the TSA</text></name></transition>
+      <transition id="TX-07"><name><text>Credit the TSA</text></name></transition>
+      <transition id="TX-11"><name><text>Declare the goods</text></name></transition>
+      <transition id="TX-12"><name><text>Assess duties and taxes</text></name></transition>
+      <transition id="TX-13"><name><text>Pay the assessed amount</text></name></transition>
+      <transition id="TX-14"><name><text>Send the abstract of collection through PAS</text></name></transition>
+      <transition id="TX-15"><name><text>Confirm the payment and release the goods</text></name></transition>
+      <arc id="a1" source="S-TAX-DUE" target="TX-01"/>
+      <arc id="a2" source="TX-01" target="C-F042"/>
+      <arc id="a3" source="TX-01" target="S-TO-PAY"/>
+      <arc id="a4" source="S-TO-PAY" target="TX-02"/>
+      <arc id="a5" source="TX-02" target="C-F043"/>
+      <arc id="a6" source="C-F042" target="TX-03"/>
+      <arc id="a7" source="TX-03" target="C-F044"/>
+      <arc id="a8" source="C-F043" target="TX-04"/>
+      <arc id="a9" source="TX-04" target="C-F045"/>
+      <arc id="a10" source="TX-04" target="S-AAB-COLL"/>
+      <arc id="a11" source="C-F044" target="TX-05"/>
+      <arc id="a12" source="C-F045" target="TX-05"/>
+      <arc id="a13" source="TX-05" target="S-TAX-POSTED"/>
+      <arc id="a14" source="S-AAB-COLL" target="TX-06"/>
+      <arc id="a15" source="TX-06" target="C-F048"/>
+      <arc id="a16" source="C-F048" target="TX-07"/>
+      <arc id="a17" source="TX-07" target="S-TSA"/>
+      <arc id="a18" source="S-IMPORT" target="TX-11"/>
+      <arc id="a19" source="TX-11" target="C-F046"/>
+      <arc id="a20" source="C-F046" target="TX-12"/>
+      <arc id="a21" source="TX-12" target="S-ASSESSED"/>
+      <arc id="a22" source="S-ASSESSED" target="TX-13"/>
+      <arc id="a23" source="TX-13" target="C-F043-CUSTOMS"/>
+      <arc id="a24" source="C-F043-CUSTOMS" target="TX-14"/>
+      <arc id="a25" source="TX-14" target="C-F047"/>
+      <arc id="a26" source="TX-14" target="S-AAB-COLL"/>
+      <arc id="a27" source="C-F047" target="TX-15"/>
+      <arc id="a28" source="TX-15" target="S-RELEASED"/>
+    </page>
+  </net>
+</pnml>

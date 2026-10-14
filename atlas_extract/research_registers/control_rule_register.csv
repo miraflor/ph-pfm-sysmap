@@ -1,0 +1,23 @@
+﻿control_id,name,gate_event,evidence_record_type,responsible_authority_id,source_code,legal_sufficiency,requires_actual_issuance_check
+AUTH_APPRO,Valid appropriation/legal basis,pre_commitment,GAA_ITEM,AGENCY,NBC599,illustrative_not_exhaustive,yes
+AUTH_ALLOT,Allotment availability for eligible amount and period,commitment,ALLOTMENT,AGENCY,NBC599,illustrative_not_exhaustive,yes
+AUTH_AWARD,Funding/effectivity conditions before award,procurement_award,AWARD,AGENCY,RA12009,illustrative_not_exhaustive,yes
+AUTH_GUARD,Authorized official and delegation,every_authorization,GAA_ITEM,AGENCY,PD1445,illustrative_not_exhaustive,yes
+PROC_PLAN,Procurement plan / mode conditions,procurement,PPMP_APP,BAC,RA12009,illustrative_not_exhaustive,yes
+PROC_COMP,"Bid, award, contract implementation controls",procurement,CONTRACT,BAC,RA12009,illustrative_not_exhaustive,yes
+OBL_VALID,Obligation / reservation no more than available allotment,obligation,OBLIGATION,AGENCY,NBC599,illustrative_not_exhaustive,yes
+PROG_BILL,Evidence appropriate to progress billing,progress_claim,BILLING,AGENCY,RA12009,illustrative_not_exhaustive,yes
+ADV_ALLOWED,Lawful advance authorized and guarantees/liquidation tracked,advance,CONTRACT,AGENCY,RA12009,illustrative_not_exhaustive,yes
+DELIVERY,Evidence of delivery/acceptance for relevant claims,invoice_claim,RECEIPT,AGENCY,GAM,illustrative_not_exhaustive,yes
+PAY_DOC,Appropriate voucher certifications and approval,payment,VOUCHER,AGENCY,GAM,illustrative_not_exhaustive,yes
+CASH_AUTH,Cash/disbursement authority valid for payment route,payment,NCA,DBM,NBC599,illustrative_not_exhaustive,yes
+BANK_FUND,Servicing bank valid instruction and available channel balance,payment,PAYMENT_ORDER,BANK,CL2013-16A,illustrative_not_exhaustive,yes
+RECON,Cash/book/budget reconciliation and unmatched-item resolution,periodic,BANK_RECON,AGENCY,GAM,illustrative_not_exhaustive,yes
+RECOGNITION,Recognition and measurement follow applicable COA standards,journal_posting,JOURNAL,AGENCY,COA-GAS,illustrative_not_exhaustive,yes
+UACS_VER,"UACS version, source classification and crosswalk",data_exchange,BUDGET_REGISTER,AGENCY,ROADMAP2024,illustrative_not_exhaustive,yes
+REV_MATCH,Revenue bank / taxpayer / BTr reconciliation,revenue_collection,COLLECTION,BTR,PEFA2025,illustrative_not_exhaustive,yes
+REFUND_CHECK,Statutory refund entitlement and original transaction,refund,REFUND,BIR,GAM,illustrative_not_exhaustive,yes
+DEBT_DUE,Debt schedule and authorization checked,debt_payment,DEBT_SERVICE,BTR,BTR-SITE,illustrative_not_exhaustive,yes
+LGU_LAW,Local ordinance and local treasury validity,local_payment,LOCAL_ORDINANCE,LOCAL_EXEC,LGC,illustrative_not_exhaustive,yes
+AUDIT_REMED,Audit exception response and tracking,follow_up,AUDIT_FINDING,AGENCY,PD1445,illustrative_not_exhaustive,yes
+FISCAL_TIME,"Fiscal-year funding validity, multi-year authority and commitment",future_year,FISCAL_RISK,DBM,ROADMAP2024,illustrative_not_exhaustive,yes

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-07a" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>07a From obligation to payment: who certifies what, and which record each step writes (goods bought by a national agency, paid by payment order)</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>p15</text></name></place>
+      <place id="p16"><name><text>p16</text></name></place>
+      <place id="p17"><name><text>p17</text></name></place>
+      <place id="p18"><name><text>p18</text></name></place>
+      <place id="p19"><name><text>p19</text></name></place>
+      <place id="p20"><name><text>p20</text></name></place>
+      <place id="p21"><name><text>p21</text></name></place>
+      <place id="p22"><name><text>p22</text></name></place>
+      <place id="p23"><name><text>p23</text></name></place>
+      <place id="p24"><name><text>p24</text></name></place>
+      <place id="p25"><name><text>p25</text></name></place>
+      <place id="p26"><name><text>p26</text></name></place>
+      <place id="p27"><name><text>p27</text></name></place>
+      <place id="p28"><name><text>p28</text></name></place>
+      <place id="p29"><name><text>p29</text></name></place>
+      <place id="p30"><name><text>p30</text></name></place>
+      <place id="p31"><name><text>p31</text></name></place>
+      <place id="p32"><name><text>p32</text></name></place>
+      <place id="p33"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. Requesting office to Budget unit: Obligation Request and Status (ORS) with the contract or purchase order. Box A: charges are necessary, lawful and under my direct supervision, and the supporting documents are valid, proper and legal</text></name></transition>
+      <transition id="t02"><name><text>2. Budget unit: Check the allotment in the registry. Assign the ORS number. Enter the obligation in the registry. Box B: allotment available and obligated. No journal entry</text></name></transition>
+      <transition id="t03"><name><text>3. Accounting unit to Head of agency: Purchase order or contract with the certificate of the chief accountant: "Funds Available", and the number, date and amount of the ORS</text></name></transition>
+      <transition id="t04"><name><text>4. Head of agency to Suppliers and payees: Signed purchase order or contract</text></name></transition>
+      <transition id="t05"><name><text>5. Suppliers and payees to Property and inspection: Delivery, with delivery receipt and invoice</text></name></transition>
+      <transition id="t06"><name><text>6. Property and inspection: Inspection and acceptance report with the numbers of the purchase order and of the invoice. Inspection officer: inspected, verified and found in order as to quantity and specifications. Property custodian: accepted, complete or partial</text></name></transition>
+      <transition id="t07"><name><text>7. Property and inspection to Accounting unit: Copy of the acceptance report, with the purchase order and the delivery receipt</text></name></transition>
+      <transition id="t08"><name><text>8. Accounting unit to Budget unit: Journal entry voucher (JEV): debit the asset or expense, credit Accounts Payable. The budget unit enters the payable in part C of the ORS</text></name></transition>
+      <transition id="t09"><name><text>9. Requesting office to Accounting unit: DV with the original acceptance report, delivery receipt, purchase order and a copy of the ORS. Box A: expenses necessary, lawful and incurred under my direct supervision</text></name></transition>
+      <transition id="t10"><name><text>10. Accounting unit: Check the documents against a list. Assign the DV number. Look into the index of payments: was this claim paid before? Compare the DV with the ORS. Box B: the accounting entry</text></name></transition>
+      <transition id="t11"><name><text>11. Accounting unit: Head of accounting looks into the registry of the NCA. If the balance is enough: enter the amount as used, and sign Box C: cash available, supporting documents complete, amount claimed proper. If not: keep the DV until cash is available</text></name></transition>
+      <transition id="t12"><name><text>12. Accounting unit to Head of agency: DV for approval</text></name></transition>
+      <transition id="t13"><name><text>13. Head of agency to Accounting unit: Box D: approved for payment</text></name></transition>
+      <transition id="t14"><name><text>14. Accounting unit to Head of agency: LDDAP-ADA in five copies for the approved DVs. The chief accountant signs "Certified Correct"</text></name></transition>
+      <transition id="t15"><name><text>15. Head of agency to Cash unit: Signs "Approved"</text></name></transition>
+      <transition id="t16"><name><text>16. Cash unit: Enter it in the record of checks and payment orders, with the new balance of the NCA. The cashier signs the advice to debit the account</text></name></transition>
+      <transition id="t17"><name><text>17. Cash unit to Head of agency: LDDAP-ADA for the second signature</text></name></transition>
+      <transition id="t18"><name><text>18. Head of agency to Cash unit: Countersigns the advice to debit the account</text></name></transition>
+      <transition id="t19"><name><text>19. Cash unit: Stamp "PAID" on the payment order, the DVs and the documents. Prepare the summary list (SLIIE) in four copies. The cashier certifies it, the head of agency approves it</text></name></transition>
+      <transition id="t20"><name><text>20. Cash unit to Servicing banks: Summary list and LDDAP-ADA (paper copies, or through the electronic facility of the bank)</text></name></transition>
+      <transition id="t21"><name><text>21. Servicing banks: Check the payment order and the NCA balance. Debit the MDS sub-account of the agency</text></name></transition>
+      <transition id="t22"><name><text>22. Servicing banks to Suppliers and payees: Credit the account of the payee with the net amount, not earlier than 24 hours and not later than 48 hours after receipt</text></name></transition>
+      <transition id="t23"><name><text>23. Servicing banks to BTr: One copy of the summary list and of the LDDAP-ADA on the same day</text></name></transition>
+      <transition id="t24"><name><text>24. Treasury Single Account to Servicing banks: Replenishment from the Treasury Single Account</text></name></transition>
+      <transition id="t25"><name><text>25. Servicing banks to Cash unit: Validated copy of the LDDAP-ADA. Items that could not be credited are marked as not paid</text></name></transition>
+      <transition id="t26"><name><text>26. Suppliers and payees to Cash unit: Official receipt, or other evidence that the payment was received</text></name></transition>
+      <transition id="t27"><name><text>27. Cash unit to Accounting unit: Daily report of payment orders issued (RADAI) in four copies, with the DVs and the validated LDDAP-ADA</text></name></transition>
+      <transition id="t28"><name><text>28. Accounting unit: JEV for the payment: debit Accounts Payable, credit Cash-MDS, Regular and Due to BIR. Enter it in the journal of payment orders</text></name></transition>
+      <transition id="t29"><name><text>29. Accounting unit to Budget unit: One copy of the RADAI. The budget unit enters the payment in part C of the ORS and the disbursement in the registry</text></name></transition>
+      <transition id="t30"><name><text>30. Accounting unit to BIR: Tax withheld: returns filed in the electronic system of BIR, paid by Tax Remittance Advice by the 10th day of the next month. No cash moves</text></name></transition>
+      <transition id="t31"><name><text>31. Accounting unit to COA audit team: First copy of the RADAI and of the JEV, with the original DV, its documents and the validated LDDAP-ADA</text></name></transition>
+      <transition id="t32"><name><text>32. COA audit team to Head of agency: Audit observations, or notices of suspension or disallowance (chapter 09)</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="t11"/>
+      <arc id="a22" source="t11" target="p12"/>
+      <arc id="a23" source="p12" target="t12"/>
+      <arc id="a24" source="t12" target="p13"/>
+      <arc id="a25" source="p13" target="t13"/>
+      <arc id="a26" source="t13" target="p14"/>
+      <arc id="a27" source="p14" target="t14"/>
+      <arc id="a28" source="t14" target="p15"/>
+      <arc id="a29" source="p15" target="t15"/>
+      <arc id="a30" source="t15" target="p16"/>
+      <arc id="a31" source="p16" target="t16"/>
+      <arc id="a32" source="t16" target="p17"/>
+      <arc id="a33" source="p17" target="t17"/>
+      <arc id="a34" source="t17" target="p18"/>
+      <arc id="a35" source="p18" target="t18"/>
+      <arc id="a36" source="t18" target="p19"/>
+      <arc id="a37" source="p19" target="t19"/>
+      <arc id="a38" source="t19" target="p20"/>
+      <arc id="a39" source="p20" target="t20"/>
+      <arc id="a40" source="t20" target="p21"/>
+      <arc id="a41" source="p21" target="t21"/>
+      <arc id="a42" source="t21" target="p22"/>
+      <arc id="a43" source="p22" target="t22"/>
+      <arc id="a44" source="t22" target="p23"/>
+      <arc id="a45" source="p23" target="t23"/>
+      <arc id="a46" source="t23" target="p24"/>
+      <arc id="a47" source="p24" target="t24"/>
+      <arc id="a48" source="t24" target="p25"/>
+      <arc id="a49" source="p25" target="t25"/>
+      <arc id="a50" source="t25" target="p26"/>
+      <arc id="a51" source="p26" target="t26"/>
+      <arc id="a52" source="t26" target="p27"/>
+      <arc id="a53" source="p27" target="t27"/>
+      <arc id="a54" source="t27" target="p28"/>
+      <arc id="a55" source="p28" target="t28"/>
+      <arc id="a56" source="t28" target="p29"/>
+      <arc id="a57" source="p29" target="t29"/>
+      <arc id="a58" source="t29" target="p30"/>
+      <arc id="a59" source="p30" target="t30"/>
+      <arc id="a60" source="t30" target="p31"/>
+      <arc id="a61" source="p31" target="t31"/>
+      <arc id="a62" source="t31" target="p32"/>
+      <arc id="a63" source="p32" target="t32"/>
+      <arc id="a64" source="t32" target="p33"/>
+    </page>
+  </net>
+</pnml>

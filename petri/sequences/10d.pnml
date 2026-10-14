@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-10d" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>10d A tax refund: how money collected as tax is paid back</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. Taxpayers and importers to BIR: Claim for refund with documents. Kinds: input VAT on zero-rated sales, tax collected by error, excess creditable withholding tax, conversion of a tax credit certificate into cash</text></name></transition>
+      <transition id="t02"><name><text>2. BIR: Verify the claim within the time limit (180 days for regular claims, 90 days for VAT claims)</text></name></transition>
+      <transition id="t03"><name><text>3. BIR to BIR: Recommendation</text></name></transition>
+      <transition id="t04"><name><text>4. BIR to Taxpayers and importers: Decision: grant in full, grant in part, or deny. A denied claim may go to the tax court</text></name></transition>
+      <transition id="t05"><name><text>5. BIR to DBM: Request for release against the amount for tax refunds. VAT refunds: not more than 5 percent of last year's VAT collections of BIR. Other refunds: from the collections of the current year</text></name></transition>
+      <transition id="t06"><name><text>6. DBM to BTr: Release. The amount is treated as trust receipts</text></name></transition>
+      <transition id="t07"><name><text>7. BTr to Taxpayers and importers: Refund paid</text></name></transition>
+      <transition id="t08"><name><text>8. BIR: Collection report adjusted for the refunds of the current year and of earlier years (net collections)</text></name></transition>
+      <transition id="t09"><name><text>9. BIR to DBM: Quarterly financial and physical reports through URS</text></name></transition>
+      <transition id="t10"><name><text>10. COA to BIR: Audit of the refunds</text></name></transition>
+      <transition id="t11"><name><text>11. BIR to BTr: End of year: the unused balance reverts to the unappropriated surplus of the General Fund</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="t11"/>
+      <arc id="a22" source="t11" target="p12"/>
+    </page>
+  </net>
+</pnml>

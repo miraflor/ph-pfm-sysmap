@@ -1,0 +1,87 @@
+transition_id,chain_id,name,role_id,node_id,steps,rules,cohorts,basis,note
+SP-01,CH-SPEND,Issue the NCA,ROLE-DBM,INST-DBM,05a-13;05a-15;07d-01;11b-08,R-NCA-PROGRAM,all,NBC599,"Atlas diagram 00d, t9. The cash position of BTr is read, not consumed."
+SP-02,CH-SPEND,Credit the NCA to the MDS sub-account,ROLE-GSB,INST-GSB,05a-14,,all,NBC599,
+SP-03,CH-SPEND,Record the NCA received,ROLE-ACCOUNTANT,UNIT-NGA-ACC,05a-16;07d-02,,all,"GAM-V1 Ch.5 s.38, Ch.6 s.3, GAM-V2 App.30, App.34",Journal entry Cash-MDS and Subsidy from National Government; registry of the NCA. In BTMS the NCA is loaded into the system (atlas diagram 16c).
+SP-05,CH-SPEND,Obligate and sign the contract,ROLE-BUDGET,UNIT-NGA-BUD,07a-01;07a-02;07a-03;07a-04,R-OBL-LIMIT;R-FUNDS-CERT,all,"GAM-V1 Ch.3 s.15, PD1445 s.86, GAM-V2 App.11, App.61","Atlas diagram 00d, t3: the allotment meets the award."
+SP-06,CH-SPEND,Deliver,ROLE-SUPPLIER,EXT-SUPPLIER,07a-05,,all,GAM-V1 Ch.8 s.15,One delivery. A contract may have several.
+SP-07,CH-SPEND,Inspect and accept,ROLE-INSPECTOR,UNIT-NGA-PROP,07a-06;07a-07,R-ACCEPT,all,"GAM-V1 Ch.8 s.15, GAM-V2 App.62",
+SP-08,CH-SPEND,Record the payable,ROLE-ACCOUNTANT,UNIT-NGA-ACC,07a-08,,P;E,"GAM-V1 Annex H, GAM-V2 App.36",In BTMS the system creates journal entries from vouchers; when it recognizes the payable is not stated.
+SP-08B,CH-SPEND,Post the payable in part C of the ORS,ROLE-BUDGET,UNIT-NGA-BUD,07a-08,,P;E,GAM-V2 App.11,
+SP-09,CH-SPEND,Prepare and examine the claim,ROLE-ACCOUNTANT,UNIT-NGA-ACC,07a-09;07a-10,R-DV-ORS;R-PAYABLE-ACCEPT;R-NO-DOUBLE,all,"GAM-V1 Ch.6 s.12, GAM-V2 App.32","Atlas diagram 00d, t6: the obligation meets the accepted delivery. The requesting office prepares the voucher and certifies Box A."
+SP-10,CH-SPEND,Certify cash available and approve,ROLE-ACCOUNTANT,UNIT-NGA-ACC,07a-11;07a-12;07a-13,R-CASH-LIMIT,all,"GAM-V1 Ch.6 s.12, GAM-V2 App.32, BTMS-SITE","Atlas diagram 00d, t6c: the claim meets the cash authority. If the balance is not enough, the voucher is kept until cash is available."
+SP-11,CH-SPEND,Prepare and sign the payment order,ROLE-CASHIER,UNIT-NGA-CASH,07a-14;07a-15;07a-16;07a-17;07a-18;07a-19,R-CASH-LIMIT,P;E,"GAM-V1 Ch.6 s.51, s.56","The chief accountant certifies, the head of agency approves, the cashier signs the advice, the head countersigns."
+SP-12A,CH-SPEND,Send the payment order on paper,ROLE-CASHIER,UNIT-NGA-CASH,07a-20;07d-03,,P;E,GAM-V1 Ch.6 s.56,
+SP-12B,CH-SPEND,Send the payment order through eMDS,ROLE-CASHIER,UNIT-NGA-CASH,07a-20;07d-03,,P;E,"eMDS, GAM-V1 Ch.6 s.58",Only agencies with MDS sub-accounts at the Land Bank.
+SP-12C,CH-SPEND,Pay through BTMS,ROLE-CASHIER,MOD-BTMS-PAY,,R-CASH-LIMIT,B,"CL2025-8, BTMS-SITE","The system records the payment, creates the journal entry and updates the obligation. The role that releases the payment in BTMS is not stated; the cashier is assumed (INFERENCE)."
+SP-13A,CH-SPEND,Check and pay the paper order,ROLE-GSB,INST-GSB,07a-21;07a-22;07a-23;07d-05;07d-06;07d-08,R-BANK-ACCOUNT;R-CASH-LIMIT,P;E,"CL2013-16A, GAM-V1 Ch.6 s.2, s.54, s.56",What the bank checks besides the account details is general knowledge (gap GAP-BANK-CHECKS).
+SP-13B,CH-SPEND,Check and pay the eMDS order,ROLE-GSB,SYS-EMDS,07a-21;07a-22,R-BANK-ACCOUNT;R-CASH-LIMIT,P;E,"eMDS, CL2013-16A",Whether paper copies to BTr and back to the agency also follow is not stated.
+SP-13C,CH-SPEND,Debit the sub-account and pass the transfer to the clearing house,ROLE-GSB,INST-GSB,,R-CASH-LIMIT,B,"CL2025-8, BTMS-SITE, BSP1223-NEWS",Route through the clearing house: general knowledge.
+SP-14,CH-SPEND,Replenish the servicing bank,ROLE-BTR,INST-BTR,07a-23;07a-24;07d-08;07d-09;07d-10;11b-10,R-REPLENISH,all,"CL2013-16A, PRIMER","Atlas diagram 00d, t12."
+SP-15,CH-SPEND,Receive the replenishment,ROLE-GSB,INST-GSB,07d-10,,all,CL2013-16A,
+SP-16,CH-SPEND,Receive the validated copy and prepare the daily report,ROLE-CASHIER,UNIT-NGA-CASH,07a-25;07a-26;07a-27,,P;E,"GAM-V1 Ch.6 s.52, s.53, s.56",
+SP-17,CH-SPEND,Record the payment in the books,ROLE-ACCOUNTANT,UNIT-NGA-ACC,07a-28;07a-29;07a-30;07a-31;07d-04,R-TAX-REMIT,P;E,"GAM-V1 Ch.6 s.54, s.56, s.57, ss.60-62",
+SP-18,CH-SPEND,Post the payment in the ORS and the registry,ROLE-BUDGET,UNIT-NGA-BUD,07a-29,,P;E,GAM-V1 Ch.3 ss.16-17,
+SP-19,CH-SPEND,Audit the paid transaction,ROLE-COA-AUDIT,UNIT-COA-AUDIT,07a-31;07a-32;09a-01,R-AUDIT-POST,P;E,"COA2011-002, COA2009-006","For cohort B, how the auditor receives the records is not stated (gap GAP-BTMS-PAPER)."
+SP-20,CH-SPEND,Send the monthly bank statement,ROLE-GSB,INST-GSB,,,P;E,GAM-V1 Ch.21 s.5,
+SP-21,CH-SPEND,"Reconcile books, registries and bank for the month",ROLE-ACCOUNTANT,UNIT-NGA-ACC,07d-13,R-BOOKS-BANK;R-NCA-EQUAL,P;E,"GAM-V1 Ch.21 s.4, s.7, s.8, PD1445 s.74","Prepared within ten days, sent to the auditor within twenty days."
+SP-21B,CH-SPEND,Reconcile each day from electronic statements,ROLE-ACCOUNTANT,MOD-BTMS-PAY,,R-BOOKS-BANK;R-NCA-EQUAL,B,BTMS-SITE,Described by the BTMS website; daily use not verified.
+RL-01,CH-RELEASE,Submit the budget execution documents in URS,ROLE-AGENCY,INST-NGA,05a-02,,all,NBC599,
+RL-02,CH-RELEASE,Pass the documents to DBM,ROLE-DBM,SYS-URS,05a-03,,all,NBC599,
+RL-03A,CH-RELEASE,Release by the GAA as allotment order,ROLE-DBM,INST-DBM,05a-04,R-APPROP-LIMIT,all,NBC599 s.3.7,Items without pre-conditions (Schedule I): no separate document.
+RL-03B,CH-RELEASE,Submit a Special Budget Request,ROLE-AGENCY,INST-NGA,05a-05,,all,NBC599,Items that need clearance (Schedule II).
+RL-04A,CH-RELEASE,Obtain the approval of the Office of the President,ROLE-OP,UNIT-OP,05a-06;05a-07,,all,NBC599,Only for items for which the guidelines require it.
+RL-04B,CH-RELEASE,No approval of the President needed,ROLE-DBM,INST-DBM,,,all,NBC599,A silent step: the optional block of diagram 05a is skipped.
+RL-05,CH-RELEASE,Evaluate and approve the SARO or GARO,ROLE-DBM,INST-DBM,05a-08;05a-09;16f-01,R-APPROP-LIMIT,all,NBC599,
+RL-06,CH-RELEASE,Release the document in ADRS,ROLE-DBM,SYS-ADRS,05a-09;16f-02;16f-04,,all,"ADRS, DBM-BLOCKCHAIN",
+RL-07,CH-RELEASE,Download and record the allotment,ROLE-BUDGET,UNIT-NGA-BUD,05a-10;05a-11,,all,"ADRS, GAM-V1 Ch.3 s.8",
+RL-08,CH-RELEASE,Store the fingerprint of the document,ROLE-DBM,SYS-DOCVERIFY,16f-03,,all,DBM-BLOCKCHAIN,
+PR-01,CH-PROC,Submit the procurement plan and monitoring report,ROLE-BAC,UNIT-NGA-BAC,,,all,GPPB-TSO2026-2,
+PR-02,CH-PROC,Post the invitation to bid,ROLE-BAC,UNIT-NGA-BAC,06b-05,,all,"RA12009 s.20, IRR12009 s.47",
+PR-03,CH-PROC,Show the opportunity and publish open data,ROLE-PSDBM,SYS-PHILGEPS,06b-06,,all,"RA12009 s.20, PHILGEPS-ODP",
+PR-04,CH-PROC,Submit and open the bids,ROLE-SUPPLIER,EXT-SUPPLIER,,,all,"IRR12009 s.52.1, GPPB2025-09",Through the electronic bidding facility (69 agencies in August 2025) or on paper.
+PR-05,CH-PROC,"Evaluate, recommend and award",ROLE-HEAD,UNIT-NGA-HEAD,,R-FUNDS-AWARD,all,"RA12009 s.12, s.66, IRR12009 s.66.1",
+PR-06,CH-PROC,Pass procurement data to BTMS (planned),ROLE-PSDBM,SYS-PHILGEPS,,,B,CL2025-8,Planned interface.
+CO-01,CH-COLLECT,Pay the fee,ROLE-COLLECTOR,UNIT-NGA-COLL,,,all,PD1445 s.68,The payer pays against the order of payment.
+CO-02,CH-COLLECT,Issue the official receipt,ROLE-COLLECTOR,UNIT-NGA-COLL,,R-OR-IMMEDIATE,all,GAM-V1 Ch.5 s.40,
+CO-03,CH-COLLECT,Deposit the collections in full,ROLE-COLLECTOR,UNIT-NGA-COLL,,R-DEPOSIT-NEXT-DAY,all,PD1445 s.69,
+CO-04,CH-COLLECT,Report collections and deposits for the day,ROLE-COLLECTOR,UNIT-NGA-COLL,,,all,GAM-V1 Ch.5 s.39,
+CO-05,CH-COLLECT,Credit the account and report,ROLE-AGDB,INST-AGDB,,,all,"BTR-SYS, GAM-V1 Ch.5 s.41",
+CO-06,CH-COLLECT,Record the collections,ROLE-ACCOUNTANT,UNIT-NGA-ACC,,,all,"GAM-V1 Ch.5 s.41, Ch.3 ss.6-7",
+CO-07,CH-COLLECT,Transfer the balances to the TSA,ROLE-AGDB,INST-AGDB,,,all,BTR-SITE,How and when: not described.
+CO-08,CH-COLLECT,Consolidate the collection reports,ROLE-BTR,SYS-NGCDS,,,all,BTR-SYS,The flow from NGCDS to eTRAMS is general knowledge.
+CO-09,CH-COLLECT,Issue the certificate of deposited collections,ROLE-BTR,INST-BTR,,,all,BTR-SYS,
+CO-10,CH-COLLECT,Report revenue and other receipts (FAR 5),ROLE-AGENCY,INST-NGA,,,P;E,JC2019-1,
+TX-01,CH-TAX,File the return,ROLE-TAXPAYER,EXT-TAXPAYER,10b-01,,all,BIR-PAY,
+TX-02,CH-TAX,Pay the tax,ROLE-TAXPAYER,EXT-TAXPAYER,10b-02,,all,BIR-PAY,
+TX-03,CH-TAX,Pass the return to the internal system,ROLE-BIR,SYS-BIR-EFILING,,,all,GK,
+TX-04,CH-TAX,Confirm and report the payment,ROLE-AAB,INST-AAB,10b-03;10b-04,,all,BIR-PAY. Report to BIR: GK,
+TX-05,CH-TAX,Post the payment to the taxpayer account,ROLE-BIR,SYS-BIR-ITS,10b-05,,all,GK,
+TX-06,CH-TAX,Remit the collections to the TSA,ROLE-AAB,INST-AAB,10b-12;11b-11,,all,PEFA2025,Daily.
+TX-07,CH-TAX,Credit the TSA,ROLE-BSP,ACC-TSA,10b-12,,all,PEFA2025,
+TX-11,CH-TAX,Declare the goods,ROLE-TAXPAYER,EXT-TAXPAYER,10b-06,,all,GK,
+TX-12,CH-TAX,Assess duties and taxes,ROLE-BOC,SYS-E2M,10b-07,,all,GK,
+TX-13,CH-TAX,Pay the assessed amount,ROLE-TAXPAYER,EXT-TAXPAYER,10b-08,,all,PAS,
+TX-14,CH-TAX,Send the abstract of collection through PAS,ROLE-AAB,INST-AAB,10b-09,,all,PAS,
+TX-15,CH-TAX,Confirm the payment and release the goods,ROLE-BOC,SYS-E2M,10b-10;10b-11,,all,PAS. Release: GK,
+DB-01,CH-DEBT,Bid in the auction,ROLE-DEALER,EXT-DEALER,,,all,NRoSS,
+DB-02,CH-DEBT,Award and send the settlement instruction,ROLE-BTR,SYS-NROSS,,,all,NRoSS,
+DB-03,CH-DEBT,Settle securities against payment,ROLE-BSP,SYS-PHILPASS,,R-DVP,all,"NRoSS, CMA-PHILPASS",Securities and payment are exchanged at the same time.
+DB-04,CH-DEBT,Credit the proceeds to the TSA,ROLE-BSP,ACC-TSA,11d-19,,all,"NRoSS, NBC599",
+DB-05,CH-DEBT,Record the new debt,ROLE-BTR,SYS-BTR-DEBT,,,all,GK,
+DB-06,CH-DEBT,Pay interest and principal,ROLE-BTR,INST-BTR,11d-21,,all,NBC599. Principal: GK,
+RP-01,CH-REPORT,Prepare the accountability reports in URS,ROLE-AGENCY,INST-NGA,11b-13;15b-12,,P;E,"JC2019-1, NBC599",Only reports generated by URS and then signed are accepted.
+RP-02,CH-REPORT,"Pass the reports to DBM, COA and BTr",ROLE-DBM,SYS-URS,,,P;E,JC2019-1,
+RP-03,CH-REPORT,Produce the reports from BTMS records,ROLE-DBM,MOD-BTMS-ACC,,,B,CL2025-8,"How DBM, COA and BTr receive them is not stated."
+RP-04,CH-REPORT,Submit the financial statements,ROLE-ACCOUNTANT,UNIT-NGA-ACC,09a-01,,all,COA-GAS,
+RP-05,CH-REPORT,Prepare the Annual Financial Report,ROLE-COA,UNIT-COA-GAS,,,all,COA-GAS,
+RP-06,CH-REPORT,Submit information to COMPASS,ROLE-AGENCY,INST-NGA,,,all,EO126,The agency is responsible for accuracy; no check by another body is described.
+RP-07,CH-REPORT,Pass BTMS data to COMPASS (described),ROLE-DBM,SYS-BTMS,,,B,EO126,
+RP-08,CH-REPORT,Publish budget and spending figures,ROLE-DBM,SYS-COMPASS,,,all,COMPASS-LAUNCH,
+PL-01,CH-PLAN,Encode and endorse programs and projects in PIPOL,ROLE-PLANNER,UNIT-NGA-PLAN,01b-04;01b-05,,all,PIP-MEMO,
+PL-02,CH-PLAN,Validate the entries against the PIP criteria,ROLE-DEPDEV,UNIT-DEPDEV-PIP,01b-06;01b-07,,all,PIP-MEMO,
+PL-03,CH-PLAN,Enter the budget proposal in OSBPS,ROLE-PLANNER,UNIT-NGA-PLAN,01b-14;03a-09;03a-10,,all,NBM156,"The validated PIP entry is read, not consumed. No project identifier links the two systems (gap GAP-PIPOL-OSBPS)."
+PL-04,CH-PLAN,Update the positions in GMIS,ROLE-PERSONNEL,UNIT-NGA-PERS,12a-02;12a-03,,all,GMIS,
+PL-05,CH-PLAN,Build the proposed budget,ROLE-DBM,SYS-BPMS,03a-12,,all,ROADMAP2024. Detail: GK,
+PL-06,CH-PLAN,Enact the budget,ROLE-CONGRESS,INST-CONGRESS,04a-20,,all,"CONST VI.24, VI.27(2)",The legislative steps are in diagram 04a; they use no system named in the sources.
+PL-07,CH-PLAN,Load the enacted budget in the e-Budget of DBM,ROLE-DBM,SYS-EBUDGET-DBM,,,all,GK,Gap GAP-GAA-ENTRY.
+PL-08,CH-PLAN,Make the appropriation available for release,ROLE-DBM,SYS-EBUDGET-DBM,,,all,GK,

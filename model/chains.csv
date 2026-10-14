@@ -1,0 +1,9 @@
+chain_id,name,question,atlas_ref
+CH-SPEND,Spending: from an allotment to a settled payment and its records,"Which acts, records, systems and balances take part in one purchase paid by a national agency, and how do they differ between cohorts P, E and B?","Diagrams 00d, 07a, 07d and 16c of the atlas"
+CH-RELEASE,Release of allotments,"How does an allotment reach the agency, and which systems carry the release documents?",Diagram 05a and 16f of the atlas
+CH-PROC,Procurement in PhilGEPS up to the award,"Which procurement records pass through PhilGEPS and the GPPB before the contract, and which links to BTMS are planned?",Diagram 06b and chapter 06 of the atlas
+CH-COLLECT,Collections of an agency to the Treasury,"How do fees collected by an agency reach the Treasury Single Account, and which reports follow them?",Diagram 10c and chapter 10 of the atlas
+CH-TAX,Tax and customs collections,"How do returns, payments and abstracts of collection pass between taxpayers, banks, BIR, BOC and the Treasury?",Diagram 10b of the atlas
+CH-DEBT,Borrowing through government securities,"How do bids, settlement and new debt pass between dealers, NRoSS, the BSP settlement system and BTr?",Chapter 11 of the atlas
+CH-REPORT,Reporting,"How do the records of agencies become reports for DBM, COA, BTr and the public, with and without BTMS?",Chapters 08 and 16 of the atlas
+CH-PLAN,From the investment program to the enacted budget in the systems,"How do programs, proposals, positions and the enacted budget pass between PIPOL, OSBPS, GMIS, BPMS and the e-Budget of DBM?",Diagrams 01b and 03a of the atlas

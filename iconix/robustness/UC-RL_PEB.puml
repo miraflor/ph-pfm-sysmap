@@ -1,0 +1,95 @@
+@startuml
+title UC-RL Release an allotment (cohort P, E, B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Agency as a whole (central office)" as ROLE_AGENCY
+boundary "System or office where the act takes place" as B_RL_01
+control "RL-01 Submit the budget execution documents in URS (che…" as C_RL_01
+entity "Budget Execution Documents: BED 1 Financial…" as E_R_BED_
+entity "Release guidelines (National Budget Circula…" as E_R_NBC_
+actor "DBM (bureaus and approving officials)" as ROLE_DBM
+boundary "System or office where the act takes place" as B_RL_02
+control "RL-02 Pass the documents to DBM (check not stated)" as C_RL_02
+boundary "System or office where the act takes place" as B_RL_03A
+control "RL-03A Release by the GAA as allotment order (check not…" as C_RL_03A
+entity "GAA: General Appropriations Act [e-Budget (DBM)]" as E_R_GAA_SYS_EBUDGET_DBM
+entity "SARO: Special Allotment Release Order [Agency own systems]" as E_R_SARO_SYS_AGENCY_OWN
+entity "GAAAO: GAA as allotment order [Agency own systems]" as E_R_GAAAO_SYS_AGENCY_OWN
+entity "RAOD, Registries of Allotments, Obligations… [Agency own systems]" as E_R_RAOD_SYS_AGENCY_OWN
+boundary "System or office where the act takes place" as B_RL_03B
+control "RL-03B Submit a Special Budget Request (check not state…" as C_RL_03B
+entity "SBR: Special Budget Request [DBM]" as E_R_SBR_INST_DBM
+actor "Office of the President" as ROLE_OP
+boundary "System or office where the act takes place" as B_RL_04A
+control "RL-04A Obtain the approval of the Office of the Preside…" as C_RL_04A
+boundary "System or office where the act takes place" as B_RL_04B
+control "RL-04B No approval of the President needed (check not s…" as C_RL_04B
+boundary "System or office where the act takes place" as B_RL_05
+control "RL-05 Evaluate and approve the SARO or GARO (check not…" as C_RL_05
+entity "SBR: Special Budget Request" as E_R_SBR_
+entity "SARO: Special Allotment Release Order" as E_R_SARO_
+entity "GARO: General Allotment Release Order" as E_R_GARO_
+boundary "System or office where the act takes place" as B_RL_06
+control "RL-06 Release the document in ADRS (check not stated)" as C_RL_06
+entity "Verification record of an issued release do…" as E_R_VERIFY_RECORD_
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "System or office where the act takes place" as B_RL_07
+control "RL-07 Download and record the allotment (check not stat…" as C_RL_07
+boundary "System or office where the act takes place" as B_RL_08
+control "RL-08 Store the fingerprint of the document (check not…" as C_RL_08
+ROLE_AGENCY -- B_RL_01
+B_RL_01 -- C_RL_01
+C_RL_01 -- E_R_BED_
+C_RL_01 -- E_R_NBC_
+ROLE_DBM -- B_RL_02
+B_RL_02 -- C_RL_02
+C_RL_01 -- C_RL_02
+C_RL_02 -- E_R_BED_
+ROLE_DBM -- B_RL_03A
+B_RL_03A -- C_RL_03A
+C_RL_02 -- C_RL_03A
+C_RL_03A -- E_R_BED_
+C_RL_03A -- E_R_GAA_SYS_EBUDGET_DBM
+C_RL_03A -- E_R_SARO_SYS_AGENCY_OWN
+C_RL_03A -- E_R_GAAAO_SYS_AGENCY_OWN
+C_RL_03A -- E_R_RAOD_SYS_AGENCY_OWN
+ROLE_AGENCY -- B_RL_03B
+B_RL_03B -- C_RL_03B
+C_RL_03A -- C_RL_03B
+C_RL_03B -- E_R_BED_
+C_RL_03B -- E_R_SBR_INST_DBM
+ROLE_OP -- B_RL_04A
+B_RL_04A -- C_RL_04A
+C_RL_03B -- C_RL_04A
+C_RL_04A -- E_R_SBR_INST_DBM
+ROLE_DBM -- B_RL_04B
+B_RL_04B -- C_RL_04B
+C_RL_04A -- C_RL_04B
+C_RL_04B -- E_R_SBR_INST_DBM
+ROLE_DBM -- B_RL_05
+B_RL_05 -- C_RL_05
+C_RL_04B -- C_RL_05
+C_RL_05 -- E_R_SBR_
+C_RL_05 -- E_R_GAA_SYS_EBUDGET_DBM
+C_RL_05 -- E_R_SARO_
+C_RL_05 -- E_R_GARO_
+ROLE_DBM -- B_RL_06
+B_RL_06 -- C_RL_06
+C_RL_05 -- C_RL_06
+C_RL_06 -- E_R_SARO_
+C_RL_06 -- E_R_GARO_
+C_RL_06 -- E_R_VERIFY_RECORD_
+ROLE_BUDGET -- B_RL_07
+B_RL_07 -- C_RL_07
+C_RL_06 -- C_RL_07
+C_RL_07 -- E_R_SARO_
+C_RL_07 -- E_R_GARO_
+C_RL_07 -- E_R_GAAAO_SYS_AGENCY_OWN
+C_RL_07 -- E_R_RAOD_SYS_AGENCY_OWN
+ROLE_DBM -- B_RL_08
+B_RL_08 -- C_RL_08
+C_RL_07 -- C_RL_08
+C_RL_08 -- E_R_VERIFY_RECORD_
+@enduml

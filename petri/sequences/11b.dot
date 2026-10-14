@@ -1,0 +1,99 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="11b  Cash programming: how the amount of cash authority for a period is decided" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p16" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p17" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p18" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p19" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p20" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p21" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p22" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. DBCC to DBM: Fiscal program of the year:\nrevenue, disbursements, deficit, financing" tooltip="11b-01"]
+"t02" [shape=box style=rounded label="2. DBCC to BTr: Same fiscal program, with the\nfinancing program" tooltip="11b-02"]
+"t03" [shape=box style=rounded label="3. National agency to DBM: Monthly\nDisbursement Program (BED 3) through URS" tooltip="11b-03"]
+"t04" [shape=box style=rounded label="4. DBM to BTr: Disbursement program of the\ngovernment, by month" tooltip="11b-04"]
+"t05" [shape=box style=rounded label="5. DOF to BTr: Revenue forecast, by month" tooltip="11b-05"]
+"t06" [shape=box style=rounded label="6. BTr: Cash forecast for the next three\nmonths, updated regularly" tooltip="11b-06"]
+"t07" [shape=box style=rounded label="7. BTr: Plan the borrowing schedule and the\nplacement of surplus cash" tooltip="11b-07"]
+"t08" [shape=box style=rounded label="8. DBM to Servicing banks: NCA for the\nquarter, per agency, by month" tooltip="11b-08"]
+"tau1" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="enter: Every working day"]
+"t09" [shape=box style=rounded label="9. Servicing banks to BTr: Payments made on\nagency orders" tooltip="11b-09"]
+"t10" [shape=box style=rounded label="10. BTr to Treasury Single Account: Replenish\nthe servicing banks" tooltip="11b-10"]
+"t11" [shape=box style=rounded label="11. Agent banks and gateways to Treasury\nSingle Account: Collections of BIR and BOC\narrive through collecting banks" tooltip="11b-11"]
+"t12" [shape=box style=rounded label="12. BTr: Check the cash balance against the\nforecast" tooltip="11b-12"]
+"tau2" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="repeat"]
+"tau3" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="exit the loop"]
+"t13" [shape=box style=rounded label="13. National agency to DBM: Monthly Report of\nDisbursements (FAR 4)" tooltip="11b-13"]
+"t14" [shape=box style=rounded label="14. DBM: Compare actual payments with the\nprogram" tooltip="11b-14"]
+"tau4" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="skip: Agency spends slower than its program, or cash is not sufficient"]
+"t15" [shape=box style=rounded label="15. DBM to National agency: Later NCAs\nadjusted to spending performance and to the\nfiscal position" tooltip="11b-15"]
+"tau5" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Agency spends slower than its program, or cash is not sufficient"]
+"tau6" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="skip: Agency needs more cash than its program"]
+"t16" [shape=box style=rounded label="16. National agency to DBM: Request for\nadditional NCA, with justification" tooltip="11b-16"]
+"tau7" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Agency needs more cash than its program"]
+"t17" [shape=box style=rounded label="17. BTr to DBCC: Monthly Cash Operations\nReport: revenue, disbursements, surplus or\ndeficit, financing" tooltip="11b-17"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p5"
+"p5" -> "t05"
+"t05" -> "p6"
+"p6" -> "t06"
+"t06" -> "p7"
+"p7" -> "t07"
+"t07" -> "p8"
+"p8" -> "t08"
+"t08" -> "p9"
+"p9" -> "tau1"
+"tau1" -> "p11"
+"p11" -> "t09"
+"t09" -> "p12"
+"p12" -> "t10"
+"t10" -> "p13"
+"p13" -> "t11"
+"t11" -> "p14"
+"p14" -> "t12"
+"t12" -> "p15"
+"p15" -> "tau2"
+"tau2" -> "p11"
+"p15" -> "tau3"
+"tau3" -> "p10"
+"p10" -> "t13"
+"t13" -> "p16"
+"p16" -> "t14"
+"t14" -> "p17"
+"p17" -> "tau4"
+"tau4" -> "p18"
+"p17" -> "t15"
+"t15" -> "p19"
+"p19" -> "tau5"
+"tau5" -> "p18"
+"p18" -> "tau6"
+"tau6" -> "p20"
+"p18" -> "t16"
+"t16" -> "p21"
+"p21" -> "tau7"
+"tau7" -> "p20"
+"p20" -> "t17"
+"t17" -> "p22"
+}

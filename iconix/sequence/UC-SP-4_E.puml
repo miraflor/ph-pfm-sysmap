@@ -1,0 +1,30 @@
+@startuml
+title UC-SP-4 Examine and approve the claim (cohort E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "eBudget (COA)" as B_SYS_EBUDGET_COA
+control "check by Chief accountant (head of…" as C_person_ROLE_ACCOUNTANT
+entity "eBudget (COA)" as E_SYS_EBUDGET_COA
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+boundary "Paper voucher, Box C and Box D; r…" as B_SP_10
+== SP-09 Prepare and examine the claim ==
+ROLE_ACCOUNTANT -> B_SYS_EBUDGET_COA : Paper voucher; the obligation is looked up in the eBudget of COA
+B_SYS_EBUDGET_COA -> C_person_ROLE_ACCOUNTANT : Prepare and examine the claim
+note right of C_person_ROLE_ACCOUNTANT : R-DV-ORS: A voucher belongs to an obligation
+note right of C_person_ROLE_ACCOUNTANT : R-PAYABLE-ACCEPT: No payment without inspected and accepted delivery, except…
+note right of C_person_ROLE_ACCOUNTANT : R-NO-DOUBLE: A claim is not paid twice
+C_person_ROLE_ACCOUNTANT -> E_SYS_EBUDGET_COA : use: Obligation recorded: ORS with Box A and Box B, entered in t…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : use: Delivery inspected and accepted: the obligation is due and…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: Claim examined: voucher with Box A and the accounting entry
+== SP-10 Certify cash available and approve ==
+ROLE_ACCOUNTANT -> B_SP_10 : Paper voucher, Box C and Box D; registry of the NCA
+B_SP_10 -> C_person_ROLE_ACCOUNTANT : Certify cash available and approve
+note right of C_person_ROLE_ACCOUNTANT : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : use: Claim examined: voucher with Box A and the accounting entry
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : use: NCA balance as recorded by the agency (registry of the acco…
+C_person_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: Claim approved for payment: Box C certified and Box D appro…
+@enduml

@@ -1,0 +1,36 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-REPORT-E: Reporting (cohort E)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"C-F012-REP" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F012: Accountability\nreports entered in URS" tooltip="C-F012-REP"]
+"S-ORS-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment posted in part C\nof the ORS and in the\nregistry of\ndisbursements" tooltip="S-ORS-PAID"]
+"S-JEV-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment recorded in the\nbooks (JEV: Accounts\nPayable, Cash-MDS, Due\nto BIR)" tooltip="S-JEV-PAID"]
+"C-F021A" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F021A: Reports at DBM" tooltip="C-F021A"]
+"C-F021B" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F021B: Reports at COA" tooltip="C-F021B"]
+"C-F021C" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F021C: FAR 3, 4 and 5 at\nBTr" tooltip="C-F021C"]
+"C-F022" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F022: Financial\nstatements in the AFR\nSystem" tooltip="C-F022"]
+"S-AFR" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Annual Financial Report\nof the government\nprepared by COA" tooltip="S-AFR"]
+"C-F029" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F029: Agency submission\nin COMPASS" tooltip="C-F029"]
+"C-F031" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F031: Budget and\nspending figures visible\nto any person" tooltip="C-F031"]
+"RP-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-01\nPrepare the\naccountability reports\nin URS" tooltip="Agency as a whole (central office)"]
+"RP-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-02\nPass the reports to DBM,\nCOA and BTr" tooltip="DBM (bureaus and approving officials)"]
+"RP-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-04\nSubmit the financial\nstatements" tooltip="Chief accountant (head of the accounting unit)"]
+"RP-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-05\nPrepare the Annual\nFinancial Report" tooltip="COA"]
+"RP-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-06\nSubmit information to\nCOMPASS" tooltip="Agency as a whole (central office)"]
+"RP-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-08\nPublish budget and\nspending figures" tooltip="DBM (bureaus and approving officials)"]
+"RP-01" -> "C-F012-REP"
+"S-ORS-PAID" -> "RP-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-JEV-PAID" -> "RP-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F012-REP" -> "RP-02"
+"RP-02" -> "C-F021A"
+"RP-02" -> "C-F021B"
+"RP-02" -> "C-F021C"
+"RP-04" -> "C-F022"
+"S-JEV-PAID" -> "RP-04" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F022" -> "RP-05"
+"RP-05" -> "S-AFR"
+"RP-06" -> "C-F029"
+"S-ORS-PAID" -> "RP-06" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F029" -> "RP-08"
+"RP-08" -> "C-F031"
+}

@@ -1,0 +1,22 @@
+digraph D_local {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Local governments (2 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_INST-BLGF" {
+label="BLGF" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of Local Government Finance"
+"SYS-ESRE" [shape=box style="filled,rounded" fillcolor="#d8f0e6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eSRE" tooltip="eSRE, electronic Statement of Receipts and Expenditures"]
+}
+subgraph "cluster_INST-BTR" {
+label="BTr" style="rounded,filled" fillcolor="#fbe0c4" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Bureau of the Treasury"
+"ACC-TSA" [shape=cylinder style="filled" fillcolor="#fbe0c4" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Treasury Single\nAccount" tooltip="Treasury Single Account: accounts of BTr at the BSP"]
+}
+"INST-GSB" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Servicing banks" tooltip="Government servicing banks: Land Bank of the Philippines, Development Bank of the Philippines, Philippine Veterans Bank"]
+subgraph "cluster_INST-LGU" {
+label="Local government" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Local government units: provinces, cities, municipalities, barangays"
+"INST-LGU" [shape=box style="filled,rounded" fillcolor="#d8f0e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Local government" tooltip="Local government units: provinces, cities, municipalities, barangays" label="Local government\n(as a whole)" fillcolor="#ffffff"]
+"UNIT-LGU-TREAS" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Local treasurer" tooltip="Local treasurer (with the accountant and budget officer)"]
+}
+"ACC-TSA" -> "INST-GSB" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F062: National Tax Allotment and other shares" label="F062" fontsize=7 fontcolor="#666666"]
+"INST-GSB" -> "INST-LGU" [color="#a35200" style="solid" penwidth=1.3 arrowhead=normal arrowsize=0.6 tooltip="F062: National Tax Allotment and other shares" label="F062" fontsize=7 fontcolor="#666666"]
+"UNIT-LGU-TREAS" -> "SYS-ESRE" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F063: Statements of receipts and expenditures" label="F063" fontsize=7 fontcolor="#666666"]
+}

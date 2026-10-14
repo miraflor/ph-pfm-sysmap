@@ -1,0 +1,57 @@
+@startuml
+title UC-SP-5 Pay the payee (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "BTMS: 2 Payments" as B_MOD_BTMS_PAY
+control "check by BTMS: 2 Payments" as C_software_MOD_BTMS_PAY
+entity "BTMS: 2 Payments" as E_MOD_BTMS_PAY
+participant "Retail payment system" as N_INST_RPS
+entity "BTMS: 5 Accounting and report…" as E_MOD_BTMS_ACC
+entity "BTMS" as E_SYS_BTMS
+actor "Servicing bank" as ROLE_GSB
+boundary "Retail payment system" as B_INST_RPS
+control "check by the bank" as C_bank_ROLE_GSB
+entity "MDS sub-accounts" as E_ACC_MDS
+participant "Suppliers and payees" as N_EXT_SUPPLIER
+entity "Servicing banks" as E_INST_GSB
+participant "eTRAMS" as N_SYS_ETRAMS
+participant "BTMS: 2 Payments" as N_MOD_BTMS_PAY
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "eTRAMS" as B_SYS_ETRAMS
+control "check by Bureau of the Treasury" as C_person_ROLE_BTR
+entity "Treasury Single Account" as E_ACC_TSA
+participant "Servicing banks" as N_INST_GSB
+boundary "PhilPaSSplus" as B_SYS_PHILPASS
+== SP-12C Pay through BTMS ==
+ROLE_CASHIER -> B_MOD_BTMS_PAY : BTMS: payment by electronic funds transfer, payment extract
+B_MOD_BTMS_PAY -> C_software_MOD_BTMS_PAY : Pay through BTMS
+note right of C_software_MOD_BTMS_PAY : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : use: Claim approved for payment: Box C certified and Box D appro…
+C_software_MOD_BTMS_PAY -> N_INST_RPS : F027 Instruction for an electronic payment from BTMS, through th…
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_ACC : write: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+C_software_MOD_BTMS_PAY -> E_SYS_BTMS : write: Payment posted in part C of the ORS and in the registry of…
+== SP-13C Debit the sub-account and pass the transfer to th… ==
+ROLE_GSB -> B_INST_RPS : Records of the bank; ISO 20022 messages to PESONet or InstaPay
+B_INST_RPS -> C_bank_ROLE_GSB : Debit the sub-account and pass the transfer to the clearing…
+note right of C_bank_ROLE_GSB : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_bank_ROLE_GSB -> E_ACC_MDS : use: NCA balance in the MDS sub-account at the servicing bank (a…
+C_bank_ROLE_GSB -> N_EXT_SUPPLIER : F127 Payee credited through PESONet or InstaPay
+C_bank_ROLE_GSB -> E_INST_GSB : write: Payments made by the bank, to be replenished
+C_bank_ROLE_GSB -> N_SYS_ETRAMS : F061 Report of payments made, at eTRAMS of BTr
+C_bank_ROLE_GSB -> N_MOD_BTMS_PAY : F028 Electronic bank statement, at BTMS
+== SP-14 Replenish the servicing bank ==
+ROLE_BTR -> B_SYS_ETRAMS : Report of payments in eTRAMS; paper copies (cohorts P and E); instruc…
+B_SYS_ETRAMS -> C_person_ROLE_BTR : Replenish the servicing bank
+note right of C_person_ROLE_BTR : R-REPLENISH: The bank is replenished for the payments it reported
+C_person_ROLE_BTR -> E_INST_GSB : use: Payments made by the bank, to be replenished
+C_person_ROLE_BTR -> E_ACC_TSA : use: Cash in the Treasury Single Account
+C_person_ROLE_BTR -> N_INST_GSB : F020 Replenishment on its way from the TSA to the bank
+== SP-15 Receive the replenishment ==
+ROLE_GSB -> B_SYS_PHILPASS : Records of the bank at the BSP
+B_SYS_PHILPASS -> C_bank_ROLE_GSB : Receive the replenishment
+C_bank_ROLE_GSB -> E_ACC_MDS : write: Bank replenished for the payments it made
+@enduml

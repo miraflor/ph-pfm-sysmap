@@ -1,0 +1,4 @@
+cohort_id,name,description,basis,note
+P,Paper and own registers,"Agencies that keep their registries and books on paper, in spreadsheets or in their own software. Payment orders go to the bank on paper, or through eMDS where the sub-account is at the Land Bank.","GAM-V1 Ch.6 s.56, s.58, ROADMAP2024","The Manual prescribes forms, not systems. Which agencies belong here is not stated."
+E,COA eBudget and eNGAS,Agencies that keep their registries of allotments and obligations in the eBudget of COA and their books in eNGAS. Payment orders as in cohort P.,COA-GAS,How many agencies use these systems is not stated.
+B,BTMS,"Agencies in the BTMS rollout: obligation requests, purchase orders, goods received notes, vouchers, payments and journal entries are records in one system, and payments go by electronic transfer (PESONet, InstaPay) or check.","CL2025-8, BTMS-SITE, INQ-BTMS",The number of agencies in this cohort is uncertain (gap GAP-BTMS-SCALE).

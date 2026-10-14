@@ -1,0 +1,359 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-ALL-B: All chains together (cohort B)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-MDP" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Monthly disbursement\nprogram of the agency\n(BED 3) ●" tooltip="S-MDP"]
+"C-F011" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F011: NCA on its way to\nthe bank" tooltip="C-F011"]
+"C-F008-NCA" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F008: Advice of NCA\nissued, for download in\nADRS" tooltip="C-F008-NCA"]
+"S-TSA" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Cash in the Treasury\nSingle Account ●" tooltip="S-TSA"]
+"S-NCA-BANK" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="NCA balance in the MDS\nsub-account at the\nservicing bank (a limit,\nnot cash)" tooltip="S-NCA-BANK"]
+"S-NCA-AGENCY" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="NCA balance as recorded\nby the agency (registry\nof the accounting unit)" tooltip="S-NCA-AGENCY"]
+"S-ALLOT" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Allotment available, not\nyet obligated ●" tooltip="S-ALLOT"]
+"S-AWARD" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Award made" tooltip="S-AWARD"]
+"S-OBLIGATED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Obligation recorded: ORS\nwith Box A and Box B,\nentered in the registry" tooltip="S-OBLIGATED"]
+"S-CONTRACT" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Contract or purchase\norder in force" tooltip="S-CONTRACT"]
+"S-DELIVERED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Delivery made, with\ndelivery receipt and\ninvoice" tooltip="S-DELIVERED"]
+"S-ACCEPTED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Delivery inspected and\naccepted: the obligation\nis due and demandable" tooltip="S-ACCEPTED"]
+"S-CLAIM-OK" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Claim examined: voucher\nwith Box A and the\naccounting entry" tooltip="S-CLAIM-OK"]
+"S-CLAIM-APPROVED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Claim approved for\npayment: Box C certified\nand Box D approved" tooltip="S-CLAIM-APPROVED"]
+"C-F027" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F027: Instruction for an\nelectronic payment from\nBTMS, through the bank" tooltip="C-F027"]
+"S-JEV-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment recorded in the\nbooks (JEV: Accounts\nPayable, Cash-MDS, Due\nto BIR)" tooltip="S-JEV-PAID"]
+"S-ORS-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment posted in part C\nof the ORS and in the\nregistry of\ndisbursements" tooltip="S-ORS-PAID"]
+"C-F127" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F127: Payee credited\nthrough PESONet or\nInstaPay" tooltip="C-F127"]
+"S-BANK-CLAIM" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Payments made by the\nbank, to be replenished" tooltip="S-BANK-CLAIM"]
+"C-F061" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F061: Report of payments\nmade, at eTRAMS of BTr" tooltip="C-F061"]
+"C-F028" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F028: Electronic bank\nstatement, at BTMS" tooltip="C-F028"]
+"C-F020" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F020: Replenishment on\nits way from the TSA to\nthe bank" tooltip="C-F020"]
+"S-SETTLED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Bank replenished for the\npayments it made" tooltip="S-SETTLED"]
+"S-RECONCILED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Books, registries and\nbank agree for the\nperiod" tooltip="S-RECONCILED"]
+"C-F012-BED" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F012: Budget execution\ndocuments entered in URS" tooltip="C-F012-BED"]
+"S-NBC" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Release guidelines of\nthe year issued\n(National Budget\nCircular) ●" tooltip="S-NBC"]
+"C-F021A-BED" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F021A: Budget execution\ndocuments at DBM for\nevaluation" tooltip="C-F021A-BED"]
+"S-APPROP" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Appropriation available\n(a line of the GAA) ●" tooltip="S-APPROP"]
+"S-SBR" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Special Budget Request\nsubmitted for an item\nthat needs clearance" tooltip="S-SBR"]
+"S-SBR-CLEARED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Request ready for\nevaluation (approved by\nthe Office of the\nPresident where the\nguidelines require it)" tooltip="S-SBR-CLEARED"]
+"C-F007" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F007: Approved release\ndocument passed to ADRS" tooltip="C-F007"]
+"C-F008-SARO" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F008: SARO or GARO\navailable for download\nby the agency" tooltip="C-F008-SARO"]
+"C-F009" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F009: Record of the\nissued document sent to\nthe verification record" tooltip="C-F009"]
+"S-VERIFIABLE" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Fingerprint of the\ndocument stored; any\ncopy can be checked" tooltip="S-VERIFIABLE"]
+"C-F041" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F041: Annual Procurement\nPlan and monitoring\nreport at the GPPB" tooltip="C-F041"]
+"S-NEED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Need ready: purchase\nrequest and a line in\nthe procurement plan ●" tooltip="S-NEED"]
+"C-F013-ITB" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F013: Invitation to bid\nposted in PhilGEPS" tooltip="C-F013-ITB"]
+"C-F014" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F014: Opportunity\nvisible to registered\nsuppliers" tooltip="C-F014"]
+"C-F103" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F103: Notice and award\nin the open data of\nPhilGEPS" tooltip="C-F103"]
+"S-BIDS" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Bids received and opened" tooltip="S-BIDS"]
+"C-F013-NOA" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F013: Award posted in\nPhilGEPS" tooltip="C-F013-NOA"]
+"C-F026" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F026: Procurement data\npassed to BTMS" tooltip="C-F026"]
+"S-FEE-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="A fee is due from a\npayer (order of payment\nissued) ●" tooltip="S-FEE-DUE"]
+"C-F064" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F064: Fee paid to the\ncollecting officer" tooltip="C-F064"]
+"S-CASH-ON-HAND" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections in the hands\nof the collecting\nofficer" tooltip="S-CASH-ON-HAND"]
+"S-OR-ISSUED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Official receipt issued\nand listed" tooltip="S-OR-ISSUED"]
+"C-F049" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F049: Collections\ndeposited at the\ndepository bank" tooltip="C-F049"]
+"C-F050" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F050: Report of\ncollections and\ndeposits, at accounting" tooltip="C-F050"]
+"S-AGDB-BAL" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections in the\naccount at the\ndepository bank" tooltip="S-AGDB-BAL"]
+"C-F051" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F051: Collection reports\nof the bank, at NGCDS" tooltip="C-F051"]
+"C-F065" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F065: Consolidated\nreport of daily\ncollections and credit\nmemo, at accounting" tooltip="C-F065"]
+"S-JEV-COLL" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Collections recorded in\nthe books of the agency" tooltip="S-JEV-COLL"]
+"C-F052" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F052: Balances on their\nway to the TSA" tooltip="C-F052"]
+"C-F053" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F053: Collections data\nat eTRAMS" tooltip="C-F053"]
+"C-F054" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F054: Certificate of\ndeposited national\ncollections, at the\nagency" tooltip="C-F054"]
+"S-TAX-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="A tax return is due ●" tooltip="S-TAX-DUE"]
+"C-F042" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F042: Return filed in\neFPS or eBIRForms" tooltip="C-F042"]
+"S-TO-PAY" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Tax filed and to be paid" tooltip="S-TO-PAY"]
+"C-F043" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F043: Tax paid at an\nagent bank or gateway" tooltip="C-F043"]
+"C-F044" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F044: Return in the\ninternal system of BIR" tooltip="C-F044"]
+"C-F045" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F045: Report of payments\nreceived, at BIR" tooltip="C-F045"]
+"S-AAB-COLL" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Collections held by the\nagent bank before\nremittance" tooltip="S-AAB-COLL"]
+"S-TAX-POSTED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment posted to the\naccount of the taxpayer" tooltip="S-TAX-POSTED"]
+"C-F048" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F048: Collections on\ntheir way to the TSA" tooltip="C-F048"]
+"S-IMPORT" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Goods arrive for import ●" tooltip="S-IMPORT"]
+"C-F046" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F046: Goods declaration\nin E2M" tooltip="C-F046"]
+"S-ASSESSED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Duties and taxes\nassessed" tooltip="S-ASSESSED"]
+"C-F043-CUSTOMS" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F043: Duties paid at an\nagent bank" tooltip="C-F043-CUSTOMS"]
+"C-F047" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F047: Abstract of\ncollection, through PAS,\nat BOC" tooltip="C-F047"]
+"S-RELEASED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Goods released" tooltip="S-RELEASED"]
+"S-FIN-NEED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Financing need in the\nborrowing program ●" tooltip="S-FIN-NEED"]
+"C-F056" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F056: Bids in NRoSS" tooltip="C-F056"]
+"C-F057" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F057: Settlement\ninstruction at the BSP\nsettlement system" tooltip="C-F057"]
+"C-F058" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F058: Proceeds on their\nway to the TSA" tooltip="C-F058"]
+"S-ISSUED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Securities registered to\nthe buyers" tooltip="S-ISSUED"]
+"C-F059" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F059: New debt passed to\nthe debt and accounting\nsystems of BTr" tooltip="C-F059"]
+"S-DEBT-RECORDED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Debt recorded by BTr" tooltip="S-DEBT-RECORDED"]
+"S-DEBT-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Interest or principal\nfalls due" tooltip="S-DEBT-DUE"]
+"C-F060" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F060: Interest and\nprincipal paid to\nholders" tooltip="C-F060"]
+"C-F124" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F124: BTMS reports at\nDBM" tooltip="C-F124"]
+"C-F125" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F125: BTMS reports at\nCOA" tooltip="C-F125"]
+"C-F126" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F126: BTMS reports at\nBTr" tooltip="C-F126"]
+"C-F022" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F022: Financial\nstatements in the AFR\nSystem" tooltip="C-F022"]
+"S-AFR" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Annual Financial Report\nof the government\nprepared by COA" tooltip="S-AFR"]
+"C-F029" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F029: Agency submission\nin COMPASS" tooltip="C-F029"]
+"C-F030" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F030: Data from BTMS in\nCOMPASS" tooltip="C-F030"]
+"C-F031" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F031: Budget and\nspending figures visible\nto any person" tooltip="C-F031"]
+"S-PIP-CALL" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Joint call for the PIP\nand TRIP issued ●" tooltip="S-PIP-CALL"]
+"C-F001" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F001: Programs and\nprojects encoded and\nendorsed in PIPOL" tooltip="C-F001"]
+"S-PIP-ENTRY" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Entry validated in the\nPIP or TRIP" tooltip="S-PIP-ENTRY"]
+"S-BUDGET-CALL" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Budget Call issued ●" tooltip="S-BUDGET-CALL"]
+"C-F003" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F003: Budget proposal\nforms in OSBPS" tooltip="C-F003"]
+"S-POSITIONS" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Monthly update of\npositions due ●" tooltip="S-POSITIONS"]
+"C-F004" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F004: Updated positions\nin GMIS" tooltip="C-F004"]
+"C-F005A" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F005A: Proposals in BPMS" tooltip="C-F005A"]
+"C-F005B" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F005B: Filled positions\nin BPMS" tooltip="C-F005B"]
+"S-NEP" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="National Expenditure\nProgram submitted to\nCongress" tooltip="S-NEP"]
+"S-GAA" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="General Appropriations\nAct signed" tooltip="S-GAA"]
+"C-F006" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F006: Enacted budget in\nthe e-Budget of DBM" tooltip="C-F006"]
+"SP-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-01\nIssue the NCA" tooltip="DBM (bureaus and approving officials)"]
+"SP-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-02\nCredit the NCA to the\nMDS sub-account" tooltip="Servicing bank"]
+"SP-03" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-03\nRecord the NCA received" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-05" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-05\nObligate and sign the\ncontract" tooltip="Head of the budget unit"]
+"SP-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-06\nDeliver" tooltip="Supplier or contractor"]
+"SP-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-07\nInspect and accept" tooltip="Inspection officer and property custodian"]
+"SP-09" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-09\nPrepare and examine the\nclaim" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-10" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-10\nCertify cash available\nand approve" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-12C" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-12C\nPay through BTMS" tooltip="Cashier or disbursing officer"]
+"SP-13C" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-13C\nDebit the sub-account\nand pass the transfer to\nthe clearing house" tooltip="Servicing bank"]
+"SP-14" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-14\nReplenish the servicing\nbank" tooltip="Bureau of the Treasury"]
+"SP-15" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-15\nReceive the\nreplenishment" tooltip="Servicing bank"]
+"SP-21B" [shape=box style="filled" fillcolor="#eaeaea" penwidth=1.6 label="SP-21B\nReconcile each day from\nelectronic statements" tooltip="Chief accountant (head of the accounting unit)"]
+"RL-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-01\nSubmit the budget\nexecution documents in\nURS" tooltip="Agency as a whole (central office)"]
+"RL-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-02\nPass the documents to\nDBM" tooltip="DBM (bureaus and approving officials)"]
+"RL-03A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-03A\nRelease by the GAA as\nallotment order" tooltip="DBM (bureaus and approving officials)"]
+"RL-03B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-03B\nSubmit a Special Budget\nRequest" tooltip="Agency as a whole (central office)"]
+"RL-04A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-04A\nObtain the approval of\nthe Office of the\nPresident" tooltip="Office of the President"]
+"RL-04B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-04B\nNo approval of the\nPresident needed" tooltip="DBM (bureaus and approving officials)"]
+"RL-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-05\nEvaluate and approve the\nSARO or GARO" tooltip="DBM (bureaus and approving officials)"]
+"RL-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-06\nRelease the document in\nADRS" tooltip="DBM (bureaus and approving officials)"]
+"RL-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-07\nDownload and record the\nallotment" tooltip="Head of the budget unit"]
+"RL-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-08\nStore the fingerprint of\nthe document" tooltip="DBM (bureaus and approving officials)"]
+"PR-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-01\nSubmit the procurement\nplan and monitoring\nreport" tooltip="BAC, its Secretariat and technical working group"]
+"PR-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-02\nPost the invitation to\nbid" tooltip="BAC, its Secretariat and technical working group"]
+"PR-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-03\nShow the opportunity and\npublish open data" tooltip="Procurement Service of DBM"]
+"PR-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-04\nSubmit and open the bids" tooltip="Supplier or contractor"]
+"PR-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-05\nEvaluate, recommend and\naward" tooltip="Head of agency or authorized official"]
+"PR-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-06\nPass procurement data to\nBTMS (planned)" tooltip="Procurement Service of DBM"]
+"CO-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-01\nPay the fee" tooltip="Collecting officer"]
+"CO-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-02\nIssue the official\nreceipt" tooltip="Collecting officer"]
+"CO-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-03\nDeposit the collections\nin full" tooltip="Collecting officer"]
+"CO-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-04\nReport collections and\ndeposits for the day" tooltip="Collecting officer"]
+"CO-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-05\nCredit the account and\nreport" tooltip="Authorized government depository bank"]
+"CO-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-06\nRecord the collections" tooltip="Chief accountant (head of the accounting unit)"]
+"CO-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-07\nTransfer the balances to\nthe TSA" tooltip="Authorized government depository bank"]
+"CO-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-08\nConsolidate the\ncollection reports" tooltip="Bureau of the Treasury"]
+"CO-09" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="CO-09\nIssue the certificate of\ndeposited collections" tooltip="Bureau of the Treasury"]
+"TX-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-01\nFile the return" tooltip="Taxpayer or importer"]
+"TX-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-02\nPay the tax" tooltip="Taxpayer or importer"]
+"TX-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-03\nPass the return to the\ninternal system" tooltip="BIR office or approving official"]
+"TX-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-04\nConfirm and report the\npayment" tooltip="Authorized agent bank or payment gateway"]
+"TX-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-05\nPost the payment to the\ntaxpayer account" tooltip="BIR office or approving official"]
+"TX-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-06\nRemit the collections to\nthe TSA" tooltip="Authorized agent bank or payment gateway"]
+"TX-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-07\nCredit the TSA" tooltip="BSP"]
+"TX-11" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-11\nDeclare the goods" tooltip="Taxpayer or importer"]
+"TX-12" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-12\nAssess duties and taxes" tooltip="BOC"]
+"TX-13" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-13\nPay the assessed amount" tooltip="Taxpayer or importer"]
+"TX-14" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-14\nSend the abstract of\ncollection through PAS" tooltip="Authorized agent bank or payment gateway"]
+"TX-15" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="TX-15\nConfirm the payment and\nrelease the goods" tooltip="BOC"]
+"DB-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-01\nBid in the auction" tooltip="Dealer or lender"]
+"DB-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-02\nAward and send the\nsettlement instruction" tooltip="Bureau of the Treasury"]
+"DB-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-03\nSettle securities\nagainst payment" tooltip="BSP"]
+"DB-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-04\nCredit the proceeds to\nthe TSA" tooltip="BSP"]
+"DB-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-05\nRecord the new debt" tooltip="Bureau of the Treasury"]
+"DB-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-06\nPay interest and\nprincipal" tooltip="Bureau of the Treasury"]
+"RP-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-03\nProduce the reports from\nBTMS records" tooltip="DBM (bureaus and approving officials)"]
+"RP-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-04\nSubmit the financial\nstatements" tooltip="Chief accountant (head of the accounting unit)"]
+"RP-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-05\nPrepare the Annual\nFinancial Report" tooltip="COA"]
+"RP-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-06\nSubmit information to\nCOMPASS" tooltip="Agency as a whole (central office)"]
+"RP-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-07\nPass BTMS data to\nCOMPASS (described)" tooltip="DBM (bureaus and approving officials)"]
+"RP-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RP-08\nPublish budget and\nspending figures" tooltip="DBM (bureaus and approving officials)"]
+"PL-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-01\nEncode and endorse\nprograms and projects in\nPIPOL" tooltip="Planning and budget officer of the agency"]
+"PL-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-02\nValidate the entries\nagainst the PIP criteria" tooltip="DEPDev PIP and TRIP secretariats"]
+"PL-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-03\nEnter the budget\nproposal in OSBPS" tooltip="Planning and budget officer of the agency"]
+"PL-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-04\nUpdate the positions in\nGMIS" tooltip="Personnel officer"]
+"PL-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-05\nBuild the proposed\nbudget" tooltip="DBM (bureaus and approving officials)"]
+"PL-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-06\nEnact the budget" tooltip="Congress"]
+"PL-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-07\nLoad the enacted budget\nin the e-Budget of DBM" tooltip="DBM (bureaus and approving officials)"]
+"PL-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PL-08\nMake the appropriation\navailable for release" tooltip="DBM (bureaus and approving officials)"]
+"S-MDP" -> "SP-01"
+"SP-01" -> "C-F011"
+"SP-01" -> "C-F008-NCA"
+"SP-01" -> "S-MDP"
+"S-TSA" -> "SP-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F011" -> "SP-02"
+"SP-02" -> "S-NCA-BANK"
+"C-F008-NCA" -> "SP-03"
+"SP-03" -> "S-NCA-AGENCY"
+"S-ALLOT" -> "SP-05" [label="amount" fontsize=7]
+"S-AWARD" -> "SP-05"
+"SP-05" -> "S-OBLIGATED"
+"SP-05" -> "S-CONTRACT"
+"S-CONTRACT" -> "SP-06"
+"SP-06" -> "S-DELIVERED"
+"S-DELIVERED" -> "SP-07"
+"SP-07" -> "S-ACCEPTED"
+"S-OBLIGATED" -> "SP-09"
+"S-ACCEPTED" -> "SP-09"
+"SP-09" -> "S-CLAIM-OK"
+"S-CLAIM-OK" -> "SP-10"
+"S-NCA-AGENCY" -> "SP-10" [label="amount" fontsize=7]
+"SP-10" -> "S-CLAIM-APPROVED"
+"S-CLAIM-APPROVED" -> "SP-12C"
+"SP-12C" -> "C-F027"
+"SP-12C" -> "S-JEV-PAID"
+"SP-12C" -> "S-ORS-PAID"
+"C-F027" -> "SP-13C"
+"S-NCA-BANK" -> "SP-13C" [label="amount" fontsize=7]
+"SP-13C" -> "C-F127"
+"SP-13C" -> "S-BANK-CLAIM"
+"SP-13C" -> "C-F061"
+"SP-13C" -> "C-F028"
+"S-BANK-CLAIM" -> "SP-14"
+"C-F061" -> "SP-14"
+"S-TSA" -> "SP-14" [label="amount" fontsize=7]
+"SP-14" -> "C-F020"
+"C-F020" -> "SP-15"
+"SP-15" -> "S-SETTLED"
+"C-F028" -> "SP-21B"
+"SP-21B" -> "S-RECONCILED"
+"S-JEV-PAID" -> "SP-21B" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-NCA-AGENCY" -> "SP-21B" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"RL-01" -> "C-F012-BED"
+"S-NBC" -> "RL-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F012-BED" -> "RL-02"
+"RL-02" -> "C-F021A-BED"
+"C-F021A-BED" -> "RL-03A"
+"S-APPROP" -> "RL-03A" [label="amount" fontsize=7]
+"RL-03A" -> "S-ALLOT"
+"C-F021A-BED" -> "RL-03B"
+"RL-03B" -> "S-SBR"
+"S-SBR" -> "RL-04A"
+"RL-04A" -> "S-SBR-CLEARED"
+"S-SBR" -> "RL-04B"
+"RL-04B" -> "S-SBR-CLEARED"
+"S-SBR-CLEARED" -> "RL-05"
+"S-APPROP" -> "RL-05" [label="amount" fontsize=7]
+"RL-05" -> "C-F007"
+"C-F007" -> "RL-06"
+"RL-06" -> "C-F008-SARO"
+"RL-06" -> "C-F009"
+"C-F008-SARO" -> "RL-07"
+"RL-07" -> "S-ALLOT"
+"C-F009" -> "RL-08"
+"RL-08" -> "S-VERIFIABLE"
+"PR-01" -> "C-F041"
+"S-NEED" -> "PR-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"PR-02" -> "C-F013-ITB"
+"S-NEED" -> "PR-02" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F013-ITB" -> "PR-03"
+"PR-03" -> "C-F014"
+"PR-03" -> "C-F103"
+"C-F014" -> "PR-04"
+"PR-04" -> "S-BIDS"
+"S-BIDS" -> "PR-05"
+"S-NEED" -> "PR-05"
+"PR-05" -> "S-AWARD"
+"PR-05" -> "C-F013-NOA"
+"C-F013-NOA" -> "PR-06"
+"PR-06" -> "C-F026"
+"S-FEE-DUE" -> "CO-01"
+"CO-01" -> "C-F064"
+"C-F064" -> "CO-02"
+"CO-02" -> "S-CASH-ON-HAND"
+"CO-02" -> "S-OR-ISSUED"
+"S-CASH-ON-HAND" -> "CO-03" [label="amount" fontsize=7]
+"CO-03" -> "C-F049"
+"S-OR-ISSUED" -> "CO-04"
+"CO-04" -> "C-F050"
+"C-F049" -> "CO-05"
+"CO-05" -> "S-AGDB-BAL"
+"CO-05" -> "C-F051"
+"CO-05" -> "C-F065"
+"C-F050" -> "CO-06"
+"C-F065" -> "CO-06"
+"CO-06" -> "S-JEV-COLL"
+"S-AGDB-BAL" -> "CO-07" [label="amount" fontsize=7]
+"CO-07" -> "C-F052"
+"C-F051" -> "CO-08"
+"CO-08" -> "C-F053"
+"C-F053" -> "CO-09"
+"CO-09" -> "C-F054"
+"S-TAX-DUE" -> "TX-01"
+"TX-01" -> "C-F042"
+"TX-01" -> "S-TO-PAY"
+"S-TO-PAY" -> "TX-02"
+"TX-02" -> "C-F043"
+"C-F042" -> "TX-03"
+"TX-03" -> "C-F044"
+"C-F043" -> "TX-04"
+"TX-04" -> "C-F045"
+"TX-04" -> "S-AAB-COLL"
+"C-F044" -> "TX-05"
+"C-F045" -> "TX-05"
+"TX-05" -> "S-TAX-POSTED"
+"S-AAB-COLL" -> "TX-06" [label="amount" fontsize=7]
+"TX-06" -> "C-F048"
+"C-F048" -> "TX-07"
+"TX-07" -> "S-TSA"
+"S-IMPORT" -> "TX-11"
+"TX-11" -> "C-F046"
+"C-F046" -> "TX-12"
+"TX-12" -> "S-ASSESSED"
+"S-ASSESSED" -> "TX-13"
+"TX-13" -> "C-F043-CUSTOMS"
+"C-F043-CUSTOMS" -> "TX-14"
+"TX-14" -> "C-F047"
+"TX-14" -> "S-AAB-COLL"
+"C-F047" -> "TX-15"
+"TX-15" -> "S-RELEASED"
+"S-FIN-NEED" -> "DB-01"
+"DB-01" -> "C-F056"
+"C-F056" -> "DB-02"
+"DB-02" -> "C-F057"
+"C-F057" -> "DB-03"
+"DB-03" -> "C-F058"
+"DB-03" -> "S-ISSUED"
+"C-F058" -> "DB-04"
+"DB-04" -> "S-TSA"
+"S-ISSUED" -> "DB-05"
+"DB-05" -> "C-F059"
+"DB-05" -> "S-DEBT-RECORDED"
+"S-DEBT-DUE" -> "DB-06"
+"S-TSA" -> "DB-06" [label="amount" fontsize=7]
+"DB-06" -> "C-F060"
+"S-DEBT-RECORDED" -> "DB-06" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"RP-03" -> "C-F124"
+"RP-03" -> "C-F125"
+"RP-03" -> "C-F126"
+"S-JEV-PAID" -> "RP-03" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-ORS-PAID" -> "RP-03" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"RP-04" -> "C-F022"
+"S-JEV-PAID" -> "RP-04" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F022" -> "RP-05"
+"RP-05" -> "S-AFR"
+"RP-06" -> "C-F029"
+"S-ORS-PAID" -> "RP-06" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"RP-07" -> "C-F030"
+"S-JEV-PAID" -> "RP-07" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F029" -> "RP-08"
+"RP-08" -> "C-F031"
+"C-F030" -> "RP-08"
+"S-PIP-CALL" -> "PL-01"
+"PL-01" -> "C-F001"
+"C-F001" -> "PL-02"
+"PL-02" -> "S-PIP-ENTRY"
+"S-BUDGET-CALL" -> "PL-03"
+"PL-03" -> "C-F003"
+"S-PIP-ENTRY" -> "PL-03" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-POSITIONS" -> "PL-04"
+"PL-04" -> "C-F004"
+"C-F003" -> "PL-05"
+"C-F004" -> "PL-05"
+"PL-05" -> "C-F005A"
+"PL-05" -> "C-F005B"
+"C-F005A" -> "PL-06"
+"C-F005B" -> "PL-06"
+"PL-06" -> "S-NEP"
+"S-NEP" -> "PL-07"
+"PL-07" -> "S-GAA"
+"PL-07" -> "C-F006"
+"C-F006" -> "PL-08"
+"S-GAA" -> "PL-08"
+"PL-08" -> "S-APPROP"
+}

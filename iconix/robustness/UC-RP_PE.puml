@@ -1,0 +1,78 @@
+@startuml
+title UC-RP Report on budget execution (cohort P, E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Agency as a whole (central office)" as ROLE_AGENCY
+boundary "System or office where the act takes place" as B_RP_01
+control "RP-01 Prepare the accountability reports in URS (check…" as C_RP_01
+entity "BAR 1, Quarterly Physical Report of Operati…" as E_R_BAR1_
+entity "FAR 1, Statement of Appropriations, Allotme…" as E_R_FAR1_
+entity "FAR 2 and 2-A" as E_R_FAR2_
+entity "FAR 3, Aging of Due and Demandable Obligati…" as E_R_FAR3_
+entity "FAR 4, Monthly Report of Disbursements" as E_R_FAR4_
+entity "FAR 5, Quarterly Report of Revenue and Othe…" as E_R_FAR5_
+entity "FAR 6" as E_R_FAR6_
+entity "ORS: Obligation Request and Status [Agency own systems]" as E_R_ORS_SYS_AGENCY_OWN
+entity "RAOD, Registries of Allotments, Obligations… [Agency own systems]" as E_R_RAOD_SYS_AGENCY_OWN
+entity "JEV: Journal Entry Voucher [Agency own systems]" as E_R_JEV_SYS_AGENCY_OWN
+actor "DBM (bureaus and approving officials)" as ROLE_DBM
+boundary "System or office where the act takes place" as B_RP_02
+control "RP-02 Pass the reports to DBM, COA and BTr (check not s…" as C_RP_02
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "System or office where the act takes place" as B_RP_04
+control "RP-04 Submit the financial statements (check not stated)" as C_RP_04
+entity "Trial balance and the six financial stateme…" as E_R_FS_
+actor "COA" as ROLE_COA
+boundary "System or office where the act takes place" as B_RP_05
+control "RP-05 Prepare the Annual Financial Report (check not st…" as C_RP_05
+entity "Annual Financial Report [Government Accountancy Sector]" as E_R_AFR_UNIT_COA_GAS
+boundary "System or office where the act takes place" as B_RP_06
+control "RP-06 Submit information to COMPASS (check not stated)" as C_RP_06
+entity "Entry in the COMPASS portal" as E_R_COMPASS_ENTRY_
+boundary "System or office where the act takes place" as B_RP_08
+control "RP-08 Publish budget and spending figures (check not st…" as C_RP_08
+ROLE_AGENCY -- B_RP_01
+B_RP_01 -- C_RP_01
+C_RP_01 -- E_R_BAR1_
+C_RP_01 -- E_R_FAR1_
+C_RP_01 -- E_R_FAR2_
+C_RP_01 -- E_R_FAR3_
+C_RP_01 -- E_R_FAR4_
+C_RP_01 -- E_R_FAR5_
+C_RP_01 -- E_R_FAR6_
+C_RP_01 -- E_R_ORS_SYS_AGENCY_OWN
+C_RP_01 -- E_R_RAOD_SYS_AGENCY_OWN
+C_RP_01 -- E_R_JEV_SYS_AGENCY_OWN
+ROLE_DBM -- B_RP_02
+B_RP_02 -- C_RP_02
+C_RP_01 -- C_RP_02
+C_RP_02 -- E_R_BAR1_
+C_RP_02 -- E_R_FAR1_
+C_RP_02 -- E_R_FAR2_
+C_RP_02 -- E_R_FAR3_
+C_RP_02 -- E_R_FAR4_
+C_RP_02 -- E_R_FAR5_
+C_RP_02 -- E_R_FAR6_
+ROLE_ACCOUNTANT -- B_RP_04
+B_RP_04 -- C_RP_04
+C_RP_02 -- C_RP_04
+C_RP_04 -- E_R_FS_
+C_RP_04 -- E_R_JEV_SYS_AGENCY_OWN
+ROLE_COA -- B_RP_05
+B_RP_05 -- C_RP_05
+C_RP_04 -- C_RP_05
+C_RP_05 -- E_R_FS_
+C_RP_05 -- E_R_AFR_UNIT_COA_GAS
+ROLE_AGENCY -- B_RP_06
+B_RP_06 -- C_RP_06
+C_RP_05 -- C_RP_06
+C_RP_06 -- E_R_COMPASS_ENTRY_
+C_RP_06 -- E_R_ORS_SYS_AGENCY_OWN
+C_RP_06 -- E_R_RAOD_SYS_AGENCY_OWN
+ROLE_DBM -- B_RP_08
+B_RP_08 -- C_RP_08
+C_RP_06 -- C_RP_08
+C_RP_08 -- E_R_COMPASS_ENTRY_
+@enduml

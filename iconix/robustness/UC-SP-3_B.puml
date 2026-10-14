@@ -1,0 +1,28 @@
+@startuml
+title UC-SP-3 Accept the delivery and record the payable (cohort B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "Delivery receipt and invoice of the supplier" as B_SP_06
+control "SP-06 Deliver (by a person)" as C_SP_06
+entity "Contract or Purchase Order [BTMS: 1 Commitment and obligations]" as E_R_PO_MOD_BTMS_COM
+entity "Delivery receipt" as E_R_DR_
+entity "Invoice, billing, statement of work accompl…" as E_R_INVOICE_
+actor "Inspection officer and property custodi…" as ROLE_INSPECTOR
+boundary "BTMS: goods received note (and goods return note)" as B_SP_07
+control "SP-07 Inspect and accept (by a person)" as C_SP_07
+entity "IAR: Inspection and Acceptance Report [BTMS: 2 Payments]" as E_R_IAR_MOD_BTMS_PAY
+ROLE_SUPPLIER -- B_SP_06
+B_SP_06 -- C_SP_06
+C_SP_06 -- E_R_PO_MOD_BTMS_COM
+C_SP_06 -- E_R_DR_
+C_SP_06 -- E_R_INVOICE_
+ROLE_INSPECTOR -- B_SP_07
+B_SP_07 -- C_SP_07
+C_SP_06 -- C_SP_07
+C_SP_07 -- E_R_DR_
+C_SP_07 -- E_R_INVOICE_
+C_SP_07 -- E_R_IAR_MOD_BTMS_PAY
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+title UC-SP-4 Examine and approve the claim (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "BTMS: 2 Payments" as B_MOD_BTMS_PAY
+control "check by BTMS: 2 Payments" as C_software_MOD_BTMS_PAY
+entity "BTMS: 1 Commitment and obliga…" as E_MOD_BTMS_COM
+entity "BTMS: 2 Payments" as E_MOD_BTMS_PAY
+entity "BTMS" as E_SYS_BTMS
+== SP-09 Prepare and examine the claim ==
+ROLE_ACCOUNTANT -> B_MOD_BTMS_PAY : BTMS: disbursement voucher linked to an approved ORS, matched with th…
+B_MOD_BTMS_PAY -> C_software_MOD_BTMS_PAY : Prepare and examine the claim
+note right of C_software_MOD_BTMS_PAY : R-DV-ORS: A voucher belongs to an obligation
+note right of C_software_MOD_BTMS_PAY : R-PAYABLE-ACCEPT: No payment without inspected and accepted delivery, except…
+note right of C_software_MOD_BTMS_PAY : R-NO-DOUBLE: A claim is not paid twice
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_COM : use: Obligation recorded: ORS with Box A and Box B, entered in t…
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : use: Delivery inspected and accepted: the obligation is due and…
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : write: Claim examined: voucher with Box A and the accounting entry
+== SP-10 Certify cash available and approve ==
+ROLE_ACCOUNTANT -> B_MOD_BTMS_PAY : BTMS: approval of the voucher
+B_MOD_BTMS_PAY -> C_software_MOD_BTMS_PAY : Certify cash available and approve
+note right of C_software_MOD_BTMS_PAY : R-CASH-LIMIT: No payment above the cash authority (NCA balance)
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : use: Claim examined: voucher with Box A and the accounting entry
+C_software_MOD_BTMS_PAY -> E_SYS_BTMS : use: NCA balance as recorded by the agency (registry of the acco…
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : write: Claim approved for payment: Box C certified and Box D appro…
+@enduml

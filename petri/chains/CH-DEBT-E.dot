@@ -1,0 +1,37 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-DEBT-E: Borrowing through government securities (cohort E)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-FIN-NEED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Financing need in the\nborrowing program ●" tooltip="S-FIN-NEED"]
+"C-F056" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F056: Bids in NRoSS" tooltip="C-F056"]
+"C-F057" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F057: Settlement\ninstruction at the BSP\nsettlement system" tooltip="C-F057"]
+"C-F058" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F058: Proceeds on their\nway to the TSA" tooltip="C-F058"]
+"S-ISSUED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Securities registered to\nthe buyers" tooltip="S-ISSUED"]
+"S-TSA" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Cash in the Treasury\nSingle Account ●" tooltip="S-TSA"]
+"C-F059" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F059: New debt passed to\nthe debt and accounting\nsystems of BTr" tooltip="C-F059"]
+"S-DEBT-RECORDED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Debt recorded by BTr" tooltip="S-DEBT-RECORDED"]
+"S-DEBT-DUE" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Interest or principal\nfalls due" tooltip="S-DEBT-DUE"]
+"C-F060" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F060: Interest and\nprincipal paid to\nholders" tooltip="C-F060"]
+"DB-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-01\nBid in the auction" tooltip="Dealer or lender"]
+"DB-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-02\nAward and send the\nsettlement instruction" tooltip="Bureau of the Treasury"]
+"DB-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-03\nSettle securities\nagainst payment" tooltip="BSP"]
+"DB-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-04\nCredit the proceeds to\nthe TSA" tooltip="BSP"]
+"DB-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-05\nRecord the new debt" tooltip="Bureau of the Treasury"]
+"DB-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="DB-06\nPay interest and\nprincipal" tooltip="Bureau of the Treasury"]
+"S-FIN-NEED" -> "DB-01"
+"DB-01" -> "C-F056"
+"C-F056" -> "DB-02"
+"DB-02" -> "C-F057"
+"C-F057" -> "DB-03"
+"DB-03" -> "C-F058"
+"DB-03" -> "S-ISSUED"
+"C-F058" -> "DB-04"
+"DB-04" -> "S-TSA"
+"S-ISSUED" -> "DB-05"
+"DB-05" -> "C-F059"
+"DB-05" -> "S-DEBT-RECORDED"
+"S-DEBT-DUE" -> "DB-06"
+"S-TSA" -> "DB-06" [label="amount" fontsize=7]
+"DB-06" -> "C-F060"
+"S-DEBT-RECORDED" -> "DB-06" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+}

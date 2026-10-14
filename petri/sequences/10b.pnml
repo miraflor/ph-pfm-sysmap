@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-10b" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>10b Collection of taxes and customs duties: from the taxpayer to the Treasury Single Account</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>p15</text></name></place>
+      <place id="p16"><name><text>p16</text></name></place>
+      <place id="p17"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. Taxpayers and importers to eFPS and eBIRForms: File the return electronically</text></name></transition>
+      <transition id="t02"><name><text>2. Taxpayers and importers to Agent banks and gateways: Pay: bank debit, online gateway, at a bank branch, or to a revenue collection officer where there is no bank</text></name></transition>
+      <transition id="t03"><name><text>3. Agent banks and gateways to Taxpayers and importers: Payment confirmation</text></name></transition>
+      <transition id="t04"><name><text>4. Agent banks and gateways to eFPS and eBIRForms: Report of payments received</text></name></transition>
+      <transition id="t05"><name><text>5. eFPS and eBIRForms: Post the payment to the taxpayer account</text></name></transition>
+      <transition id="t06"><name><text>6. Taxpayers and importers to E2M customs system: Goods declaration</text></name></transition>
+      <transition id="t07"><name><text>7. E2M customs system to Taxpayers and importers: Assessment of duties and taxes</text></name></transition>
+      <transition id="t08"><name><text>8. Taxpayers and importers to Agent banks and gateways: Pay the assessed amount</text></name></transition>
+      <transition id="t09"><name><text>9. Agent banks and gateways to Payment Application Secure: Abstract of collection, encrypted and authenticated</text></name></transition>
+      <transition id="t10"><name><text>10. Payment Application Secure to E2M customs system: Confirmed payment</text></name></transition>
+      <transition id="t11"><name><text>11. E2M customs system to Taxpayers and importers: Release of the goods</text></name></transition>
+      <transition id="t12"><name><text>12. Agent banks and gateways to Treasury Single Account: Remit collections to the account of the Treasury, daily</text></name></transition>
+      <transition id="t13"><name><text>13. Agent banks and gateways to eTRAMS: Report of collections to BTr</text></name></transition>
+      <transition id="t14"><name><text>14. eTRAMS: Monitor collections and disbursements (eTRAMS)</text></name></transition>
+      <transition id="t15"><name><text>15. eTRAMS to eFPS and eBIRForms: Compare remittances with collection reports</text></name></transition>
+      <transition id="t16"><name><text>16. eTRAMS to E2M customs system: Compare remittances with collection reports</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="t05"/>
+      <arc id="a10" source="t05" target="p6"/>
+      <arc id="a11" source="p6" target="t06"/>
+      <arc id="a12" source="t06" target="p7"/>
+      <arc id="a13" source="p7" target="t07"/>
+      <arc id="a14" source="t07" target="p8"/>
+      <arc id="a15" source="p8" target="t08"/>
+      <arc id="a16" source="t08" target="p9"/>
+      <arc id="a17" source="p9" target="t09"/>
+      <arc id="a18" source="t09" target="p10"/>
+      <arc id="a19" source="p10" target="t10"/>
+      <arc id="a20" source="t10" target="p11"/>
+      <arc id="a21" source="p11" target="t11"/>
+      <arc id="a22" source="t11" target="p12"/>
+      <arc id="a23" source="p12" target="t12"/>
+      <arc id="a24" source="t12" target="p13"/>
+      <arc id="a25" source="p13" target="t13"/>
+      <arc id="a26" source="t13" target="p14"/>
+      <arc id="a27" source="p14" target="t14"/>
+      <arc id="a28" source="t14" target="p15"/>
+      <arc id="a29" source="p15" target="t15"/>
+      <arc id="a30" source="t15" target="p16"/>
+      <arc id="a31" source="p16" target="t16"/>
+      <arc id="a32" source="t16" target="p17"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-ALL-P" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-ALL-P: All chains together (cohort P)</text></name>
+    <page id="page1">
+      <place id="S-MDP"><name><text>Monthly disbursement program of the agency (BED 3)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F011"><name><text>NCA on its way to the bank</text></name></place>
+      <place id="C-F008-NCA"><name><text>Advice of NCA issued, for download in ADRS</text></name></place>
+      <place id="S-TSA"><name><text>Cash in the Treasury Single Account</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-NCA-BANK"><name><text>NCA balance in the MDS sub-account at the servicing bank (a limit, not cash)</text></name></place>
+      <place id="S-NCA-AGENCY"><name><text>NCA balance as recorded by the agency (registry of the accounting unit)</text></name></place>
+      <place id="S-NCA-CASH"><name><text>NCA balance per the record of checks and payment orders of the cash unit</text></name></place>
+      <place id="S-ALLOT"><name><text>Allotment available, not yet obligated</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-AWARD"><name><text>Award made</text></name></place>
+      <place id="S-OBLIGATED"><name><text>Obligation recorded: ORS with Box A and Box B, entered in the registry</text></name></place>
+      <place id="S-CONTRACT"><name><text>Contract or purchase order in force</text></name></place>
+      <place id="S-DELIVERED"><name><text>Delivery made, with delivery receipt and invoice</text></name></place>
+      <place id="S-ACCEPTED"><name><text>Delivery inspected and accepted: the obligation is due and demandable</text></name></place>
+      <place id="C-F067"><name><text>Copy of the acceptance report, with the purchase order and delivery receipt, at accounting</text></name></place>
+      <place id="S-PAYABLE"><name><text>Payable recorded in the books (JEV: asset or expense, Accounts Payable)</text></name></place>
+      <place id="C-F069-PAYABLE"><name><text>JEV of the payable, at the budget unit for part C</text></name></place>
+      <place id="S-ORS-PAYABLE"><name><text>Payable posted in part C of the ORS</text></name></place>
+      <place id="S-CLAIM-OK"><name><text>Claim examined: voucher with Box A and the accounting entry</text></name></place>
+      <place id="S-CLAIM-APPROVED"><name><text>Claim approved for payment: Box C certified and Box D approved</text></name></place>
+      <place id="S-ORDER-SIGNED"><name><text>Payment order certified, approved, signed and countersigned, with its summary list</text></name></place>
+      <place id="C-F032"><name><text>Payment order and summary list at the bank, on paper</text></name></place>
+      <place id="C-F017"><name><text>Payment order at the bank, through eMDS</text></name></place>
+      <place id="C-F018"><name><text>Payee credited by the servicing bank</text></name></place>
+      <place id="S-BANK-CLAIM"><name><text>Payments made by the bank, to be replenished</text></name></place>
+      <place id="C-F019"><name><text>Copy of the summary list and payment order at BTr, on the same day</text></name></place>
+      <place id="C-F033"><name><text>Validated copy of the payment order, back at the cash unit</text></name></place>
+      <place id="C-F061"><name><text>Report of payments made, at eTRAMS of BTr</text></name></place>
+      <place id="C-F020"><name><text>Replenishment on its way from the TSA to the bank</text></name></place>
+      <place id="S-SETTLED"><name><text>Bank replenished for the payments it made</text></name></place>
+      <place id="C-F068"><name><text>Daily report of payment orders issued, with the vouchers and validated orders, at accounting</text></name></place>
+      <place id="C-F040"><name><text>Daily report of payment orders, on the website of the agency</text></name></place>
+      <place id="S-JEV-PAID"><name><text>Payment recorded in the books (JEV: Accounts Payable, Cash-MDS, Due to BIR)</text></name></place>
+      <place id="C-F069-PAYMENT"><name><text>Copy of the daily report and JEV of the payment, at the budget unit</text></name></place>
+      <place id="C-F023"><name><text>Paid vouchers with the daily report and JEV, at the COA auditor</text></name></place>
+      <place id="C-F035"><name><text>Returns of taxes withheld and the electronic Tax Remittance Advice, at BIR</text></name></place>
+      <place id="S-ORS-PAID"><name><text>Payment posted in part C of the ORS and in the registry of disbursements</text></name></place>
+      <place id="S-AUDITED"><name><text>Audit result: no finding, or an observation, suspension, disallowance or charge</text></name></place>
+      <place id="S-MONTH-END"><name><text>End of a month</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F034"><name><text>Monthly bank statement, at accounting</text></name></place>
+      <place id="S-RECONCILED"><name><text>Books, registries and bank agree for the period</text></name></place>
+      <place id="C-F012-BED"><name><text>Budget execution documents entered in URS</text></name></place>
+      <place id="S-NBC"><name><text>Release guidelines of the year issued (National Budget Circular)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F021A-BED"><name><text>Budget execution documents at DBM for evaluation</text></name></place>
+      <place id="S-APPROP"><name><text>Appropriation available (a line of the GAA)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="S-SBR"><name><text>Special Budget Request submitted for an item that needs clearance</text></name></place>
+      <place id="S-SBR-CLEARED"><name><text>Request ready for evaluation (approved by the Office of the President where the guidelines require it)</text></name></place>
+      <place id="C-F007"><name><text>Approved release document passed to ADRS</text></name></place>
+      <place id="C-F008-SARO"><name><text>SARO or GARO available for download by the agency</text></name></place>
+      <place id="C-F009"><name><text>Record of the issued document sent to the verification record</text></name></place>
+      <place id="S-VERIFIABLE"><name><text>Fingerprint of the document stored; any copy can be checked</text></name></place>
+      <place id="C-F041"><name><text>Annual Procurement Plan and monitoring report at the GPPB</text></name></place>
+      <place id="S-NEED"><name><text>Need ready: purchase request and a line in the procurement plan</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F013-ITB"><name><text>Invitation to bid posted in PhilGEPS</text></name></place>
+      <place id="C-F014"><name><text>Opportunity visible to registered suppliers</text></name></place>
+      <place id="C-F103"><name><text>Notice and award in the open data of PhilGEPS</text></name></place>
+      <place id="S-BIDS"><name><text>Bids received and opened</text></name></place>
+      <place id="C-F013-NOA"><name><text>Award posted in PhilGEPS</text></name></place>
+      <place id="S-FEE-DUE"><name><text>A fee is due from a payer (order of payment issued)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F064"><name><text>Fee paid to the collecting officer</text></name></place>
+      <place id="S-CASH-ON-HAND"><name><text>Collections in the hands of the collecting officer</text></name></place>
+      <place id="S-OR-ISSUED"><name><text>Official receipt issued and listed</text></name></place>
+      <place id="C-F049"><name><text>Collections deposited at the depository bank</text></name></place>
+      <place id="C-F050"><name><text>Report of collections and deposits, at accounting</text></name></place>
+      <place id="S-AGDB-BAL"><name><text>Collections in the account at the depository bank</text></name></place>
+      <place id="C-F051"><name><text>Collection reports of the bank, at NGCDS</text></name></place>
+      <place id="C-F065"><name><text>Consolidated report of daily collections and credit memo, at accounting</text></name></place>
+      <place id="S-JEV-COLL"><name><text>Collections recorded in the books of the agency</text></name></place>
+      <place id="C-F052"><name><text>Balances on their way to the TSA</text></name></place>
+      <place id="C-F053"><name><text>Collections data at eTRAMS</text></name></place>
+      <place id="C-F054"><name><text>Certificate of deposited national collections, at the agency</text></name></place>
+      <place id="C-F055"><name><text>Quarterly report of revenue and other receipts (FAR 5), at BTr through URS</text></name></place>
+      <place id="S-TAX-DUE"><name><text>A tax return is due</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F042"><name><text>Return filed in eFPS or eBIRForms</text></name></place>
+      <place id="S-TO-PAY"><name><text>Tax filed and to be paid</text></name></place>
+      <place id="C-F043"><name><text>Tax paid at an agent bank or gateway</text></name></place>
+      <place id="C-F044"><name><text>Return in the internal system of BIR</text></name></place>
+      <place id="C-F045"><name><text>Report of payments received, at BIR</text></name></place>
+      <place id="S-AAB-COLL"><name><text>Collections held by the agent bank before remittance</text></name></place>
+      <place id="S-TAX-POSTED"><name><text>Payment posted to the account of the taxpayer</text></name></place>
+      <place id="C-F048"><name><text>Collections on their way to the TSA</text></name></place>
+      <place id="S-IMPORT"><name><text>Goods arrive for import</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F046"><name><text>Goods declaration in E2M</text></name></place>
+      <place id="S-ASSESSED"><name><text>Duties and taxes assessed</text></name></place>
+      <place id="C-F043-CUSTOMS"><name><text>Duties paid at an agent bank</text></name></place>
+      <place id="C-F047"><name><text>Abstract of collection, through PAS, at BOC</text></name></place>
+      <place id="S-RELEASED"><name><text>Goods released</text></name></place>
+      <place id="S-FIN-NEED"><name><text>Financing need in the borrowing program</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F056"><name><text>Bids in NRoSS</text></name></place>
+      <place id="C-F057"><name><text>Settlement instruction at the BSP settlement system</text></name></place>
+      <place id="C-F058"><name><text>Proceeds on their way to the TSA</text></name></place>
+      <place id="S-ISSUED"><name><text>Securities registered to the buyers</text></name></place>
+      <place id="C-F059"><name><text>New debt passed to the debt and accounting systems of BTr</text></name></place>
+      <place id="S-DEBT-RECORDED"><name><text>Debt recorded by BTr</text></name></place>
+      <place id="S-DEBT-DUE"><name><text>Interest or principal falls due</text></name></place>
+      <place id="C-F060"><name><text>Interest and principal paid to holders</text></name></place>
+      <place id="C-F012-REP"><name><text>Accountability reports entered in URS</text></name></place>
+      <place id="C-F021A"><name><text>Reports at DBM</text></name></place>
+      <place id="C-F021B"><name><text>Reports at COA</text></name></place>
+      <place id="C-F021C"><name><text>FAR 3, 4 and 5 at BTr</text></name></place>
+      <place id="C-F022"><name><text>Financial statements in the AFR System</text></name></place>
+      <place id="S-AFR"><name><text>Annual Financial Report of the government prepared by COA</text></name></place>
+      <place id="C-F029"><name><text>Agency submission in COMPASS</text></name></place>
+      <place id="C-F031"><name><text>Budget and spending figures visible to any person</text></name></place>
+      <place id="S-PIP-CALL"><name><text>Joint call for the PIP and TRIP issued</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F001"><name><text>Programs and projects encoded and endorsed in PIPOL</text></name></place>
+      <place id="S-PIP-ENTRY"><name><text>Entry validated in the PIP or TRIP</text></name></place>
+      <place id="S-BUDGET-CALL"><name><text>Budget Call issued</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F003"><name><text>Budget proposal forms in OSBPS</text></name></place>
+      <place id="S-POSITIONS"><name><text>Monthly update of positions due</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F004"><name><text>Updated positions in GMIS</text></name></place>
+      <place id="C-F005A"><name><text>Proposals in BPMS</text></name></place>
+      <place id="C-F005B"><name><text>Filled positions in BPMS</text></name></place>
+      <place id="S-NEP"><name><text>National Expenditure Program submitted to Congress</text></name></place>
+      <place id="S-GAA"><name><text>General Appropriations Act signed</text></name></place>
+      <place id="C-F006"><name><text>Enacted budget in the e-Budget of DBM</text></name></place>
+      <transition id="SP-01"><name><text>Issue the NCA</text></name></transition>
+      <transition id="SP-02"><name><text>Credit the NCA to the MDS sub-account</text></name></transition>
+      <transition id="SP-03"><name><text>Record the NCA received</text></name></transition>
+      <transition id="SP-05"><name><text>Obligate and sign the contract</text></name></transition>
+      <transition id="SP-06"><name><text>Deliver</text></name></transition>
+      <transition id="SP-07"><name><text>Inspect and accept</text></name></transition>
+      <transition id="SP-08"><name><text>Record the payable</text></name></transition>
+      <transition id="SP-08B"><name><text>Post the payable in part C of the ORS</text></name></transition>
+      <transition id="SP-09"><name><text>Prepare and examine the claim</text></name></transition>
+      <transition id="SP-10"><name><text>Certify cash available and approve</text></name></transition>
+      <transition id="SP-11"><name><text>Prepare and sign the payment order</text></name></transition>
+      <transition id="SP-12A"><name><text>Send the payment order on paper</text></name></transition>
+      <transition id="SP-12B"><name><text>Send the payment order through eMDS</text></name></transition>
+      <transition id="SP-13A"><name><text>Check and pay the paper order</text></name></transition>
+      <transition id="SP-13B"><name><text>Check and pay the eMDS order</text></name></transition>
+      <transition id="SP-14"><name><text>Replenish the servicing bank</text></name></transition>
+      <transition id="SP-15"><name><text>Receive the replenishment</text></name></transition>
+      <transition id="SP-16"><name><text>Receive the validated copy and prepare the daily report</text></name></transition>
+      <transition id="SP-17"><name><text>Record the payment in the books</text></name></transition>
+      <transition id="SP-18"><name><text>Post the payment in the ORS and the registry</text></name></transition>
+      <transition id="SP-19"><name><text>Audit the paid transaction</text></name></transition>
+      <transition id="SP-20"><name><text>Send the monthly bank statement</text></name></transition>
+      <transition id="SP-21"><name><text>Reconcile books, registries and bank for the month</text></name></transition>
+      <transition id="RL-01"><name><text>Submit the budget execution documents in URS</text></name></transition>
+      <transition id="RL-02"><name><text>Pass the documents to DBM</text></name></transition>
+      <transition id="RL-03A"><name><text>Release by the GAA as allotment order</text></name></transition>
+      <transition id="RL-03B"><name><text>Submit a Special Budget Request</text></name></transition>
+      <transition id="RL-04A"><name><text>Obtain the approval of the Office of the President</text></name></transition>
+      <transition id="RL-04B"><name><text>No approval of the President needed</text></name></transition>
+      <transition id="RL-05"><name><text>Evaluate and approve the SARO or GARO</text></name></transition>
+      <transition id="RL-06"><name><text>Release the document in ADRS</text></name></transition>
+      <transition id="RL-07"><name><text>Download and record the allotment</text></name></transition>
+      <transition id="RL-08"><name><text>Store the fingerprint of the document</text></name></transition>
+      <transition id="PR-01"><name><text>Submit the procurement plan and monitoring report</text></name></transition>
+      <transition id="PR-02"><name><text>Post the invitation to bid</text></name></transition>
+      <transition id="PR-03"><name><text>Show the opportunity and publish open data</text></name></transition>
+      <transition id="PR-04"><name><text>Submit and open the bids</text></name></transition>
+      <transition id="PR-05"><name><text>Evaluate, recommend and award</text></name></transition>
+      <transition id="CO-01"><name><text>Pay the fee</text></name></transition>
+      <transition id="CO-02"><name><text>Issue the official receipt</text></name></transition>
+      <transition id="CO-03"><name><text>Deposit the collections in full</text></name></transition>
+      <transition id="CO-04"><name><text>Report collections and deposits for the day</text></name></transition>
+      <transition id="CO-05"><name><text>Credit the account and report</text></name></transition>
+      <transition id="CO-06"><name><text>Record the collections</text></name></transition>
+      <transition id="CO-07"><name><text>Transfer the balances to the TSA</text></name></transition>
+      <transition id="CO-08"><name><text>Consolidate the collection reports</text></name></transition>
+      <transition id="CO-09"><name><text>Issue the certificate of deposited collections</text></name></transition>
+      <transition id="CO-10"><name><text>Report revenue and other receipts (FAR 5)</text></name></transition>
+      <transition id="TX-01"><name><text>File the return</text></name></transition>
+      <transition id="TX-02"><name><text>Pay the tax</text></name></transition>
+      <transition id="TX-03"><name><text>Pass the return to the internal system</text></name></transition>
+      <transition id="TX-04"><name><text>Confirm and report the payment</text></name></transition>
+      <transition id="TX-05"><name><text>Post the payment to the taxpayer account</text></name></transition>
+      <transition id="TX-06"><name><text>Remit the collections to the TSA</text></name></transition>
+      <transition id="TX-07"><name><text>Credit the TSA</text></name></transition>
+      <transition id="TX-11"><name><text>Declare the goods</text></name></transition>
+      <transition id="TX-12"><name><text>Assess duties and taxes</text></name></transition>
+      <transition id="TX-13"><name><text>Pay the assessed amount</text></name></transition>
+      <transition id="TX-14"><name><text>Send the abstract of collection through PAS</text></name></transition>
+      <transition id="TX-15"><name><text>Confirm the payment and release the goods</text></name></transition>
+      <transition id="DB-01"><name><text>Bid in the auction</text></name></transition>
+      <transition id="DB-02"><name><text>Award and send the settlement instruction</text></name></transition>
+      <transition id="DB-03"><name><text>Settle securities against payment</text></name></transition>
+      <transition id="DB-04"><name><text>Credit the proceeds to the TSA</text></name></transition>
+      <transition id="DB-05"><name><text>Record the new debt</text></name></transition>
+      <transition id="DB-06"><name><text>Pay interest and principal</text></name></transition>
+      <transition id="RP-01"><name><text>Prepare the accountability reports in URS</text></name></transition>
+      <transition id="RP-02"><name><text>Pass the reports to DBM, COA and BTr</text></name></transition>
+      <transition id="RP-04"><name><text>Submit the financial statements</text></name></transition>
+      <transition id="RP-05"><name><text>Prepare the Annual Financial Report</text></name></transition>
+      <transition id="RP-06"><name><text>Submit information to COMPASS</text></name></transition>
+      <transition id="RP-08"><name><text>Publish budget and spending figures</text></name></transition>
+      <transition id="PL-01"><name><text>Encode and endorse programs and projects in PIPOL</text></name></transition>
+      <transition id="PL-02"><name><text>Validate the entries against the PIP criteria</text></name></transition>
+      <transition id="PL-03"><name><text>Enter the budget proposal in OSBPS</text></name></transition>
+      <transition id="PL-04"><name><text>Update the positions in GMIS</text></name></transition>
+      <transition id="PL-05"><name><text>Build the proposed budget</text></name></transition>
+      <transition id="PL-06"><name><text>Enact the budget</text></name></transition>
+      <transition id="PL-07"><name><text>Load the enacted budget in the e-Budget of DBM</text></name></transition>
+      <transition id="PL-08"><name><text>Make the appropriation available for release</text></name></transition>
+      <arc id="a1" source="S-MDP" target="SP-01"/>
+      <arc id="a2" source="SP-01" target="C-F011"/>
+      <arc id="a3" source="SP-01" target="C-F008-NCA"/>
+      <arc id="a4" source="SP-01" target="S-MDP"/>
+      <arc id="a5" source="S-TSA" target="SP-01"/>
+      <arc id="a6" source="SP-01" target="S-TSA"/>
+      <arc id="a7" source="C-F011" target="SP-02"/>
+      <arc id="a8" source="SP-02" target="S-NCA-BANK"/>
+      <arc id="a9" source="C-F008-NCA" target="SP-03"/>
+      <arc id="a10" source="SP-03" target="S-NCA-AGENCY"/>
+      <arc id="a11" source="SP-03" target="S-NCA-CASH"/>
+      <arc id="a12" source="S-ALLOT" target="SP-05"/>
+      <arc id="a13" source="S-AWARD" target="SP-05"/>
+      <arc id="a14" source="SP-05" target="S-OBLIGATED"/>
+      <arc id="a15" source="SP-05" target="S-CONTRACT"/>
+      <arc id="a16" source="S-CONTRACT" target="SP-06"/>
+      <arc id="a17" source="SP-06" target="S-DELIVERED"/>
+      <arc id="a18" source="S-DELIVERED" target="SP-07"/>
+      <arc id="a19" source="SP-07" target="S-ACCEPTED"/>
+      <arc id="a20" source="SP-07" target="C-F067"/>
+      <arc id="a21" source="C-F067" target="SP-08"/>
+      <arc id="a22" source="SP-08" target="S-PAYABLE"/>
+      <arc id="a23" source="SP-08" target="C-F069-PAYABLE"/>
+      <arc id="a24" source="C-F069-PAYABLE" target="SP-08B"/>
+      <arc id="a25" source="SP-08B" target="S-ORS-PAYABLE"/>
+      <arc id="a26" source="S-OBLIGATED" target="SP-09"/>
+      <arc id="a27" source="S-ACCEPTED" target="SP-09"/>
+      <arc id="a28" source="SP-09" target="S-CLAIM-OK"/>
+      <arc id="a29" source="S-CLAIM-OK" target="SP-10"/>
+      <arc id="a30" source="S-NCA-AGENCY" target="SP-10"/>
+      <arc id="a31" source="SP-10" target="S-CLAIM-APPROVED"/>
+      <arc id="a32" source="S-CLAIM-APPROVED" target="SP-11"/>
+      <arc id="a33" source="S-NCA-CASH" target="SP-11"/>
+      <arc id="a34" source="SP-11" target="S-ORDER-SIGNED"/>
+      <arc id="a35" source="S-ORDER-SIGNED" target="SP-12A"/>
+      <arc id="a36" source="SP-12A" target="C-F032"/>
+      <arc id="a37" source="S-ORDER-SIGNED" target="SP-12B"/>
+      <arc id="a38" source="SP-12B" target="C-F017"/>
+      <arc id="a39" source="C-F032" target="SP-13A"/>
+      <arc id="a40" source="S-NCA-BANK" target="SP-13A"/>
+      <arc id="a41" source="SP-13A" target="C-F018"/>
+      <arc id="a42" source="SP-13A" target="S-BANK-CLAIM"/>
+      <arc id="a43" source="SP-13A" target="C-F019"/>
+      <arc id="a44" source="SP-13A" target="C-F033"/>
+      <arc id="a45" source="SP-13A" target="C-F061"/>
+      <arc id="a46" source="C-F017" target="SP-13B"/>
+      <arc id="a47" source="S-NCA-BANK" target="SP-13B"/>
+      <arc id="a48" source="SP-13B" target="C-F018"/>
+      <arc id="a49" source="SP-13B" target="S-BANK-CLAIM"/>
+      <arc id="a50" source="SP-13B" target="C-F061"/>
+      <arc id="a51" source="S-BANK-CLAIM" target="SP-14"/>
+      <arc id="a52" source="C-F061" target="SP-14"/>
+      <arc id="a53" source="S-TSA" target="SP-14"/>
+      <arc id="a54" source="SP-14" target="C-F020"/>
+      <arc id="a55" source="C-F019" target="SP-14"/>
+      <arc id="a56" source="C-F020" target="SP-15"/>
+      <arc id="a57" source="SP-15" target="S-SETTLED"/>
+      <arc id="a58" source="C-F033" target="SP-16"/>
+      <arc id="a59" source="SP-16" target="C-F068"/>
+      <arc id="a60" source="SP-16" target="C-F040"/>
+      <arc id="a61" source="C-F068" target="SP-17"/>
+      <arc id="a62" source="SP-17" target="S-JEV-PAID"/>
+      <arc id="a63" source="SP-17" target="C-F069-PAYMENT"/>
+      <arc id="a64" source="SP-17" target="C-F023"/>
+      <arc id="a65" source="SP-17" target="C-F035"/>
+      <arc id="a66" source="C-F069-PAYMENT" target="SP-18"/>
+      <arc id="a67" source="SP-18" target="S-ORS-PAID"/>
+      <arc id="a68" source="C-F023" target="SP-19"/>
+      <arc id="a69" source="SP-19" target="S-AUDITED"/>
+      <arc id="a70" source="S-MONTH-END" target="SP-20"/>
+      <arc id="a71" source="SP-20" target="C-F034"/>
+      <arc id="a72" source="C-F034" target="SP-21"/>
+      <arc id="a73" source="SP-21" target="S-RECONCILED"/>
+      <arc id="a74" source="S-JEV-PAID" target="SP-21"/>
+      <arc id="a75" source="SP-21" target="S-JEV-PAID"/>
+      <arc id="a76" source="S-NCA-AGENCY" target="SP-21"/>
+      <arc id="a77" source="SP-21" target="S-NCA-AGENCY"/>
+      <arc id="a78" source="S-NCA-CASH" target="SP-21"/>
+      <arc id="a79" source="SP-21" target="S-NCA-CASH"/>
+      <arc id="a80" source="RL-01" target="C-F012-BED"/>
+      <arc id="a81" source="S-NBC" target="RL-01"/>
+      <arc id="a82" source="RL-01" target="S-NBC"/>
+      <arc id="a83" source="C-F012-BED" target="RL-02"/>
+      <arc id="a84" source="RL-02" target="C-F021A-BED"/>
+      <arc id="a85" source="C-F021A-BED" target="RL-03A"/>
+      <arc id="a86" source="S-APPROP" target="RL-03A"/>
+      <arc id="a87" source="RL-03A" target="S-ALLOT"/>
+      <arc id="a88" source="C-F021A-BED" target="RL-03B"/>
+      <arc id="a89" source="RL-03B" target="S-SBR"/>
+      <arc id="a90" source="S-SBR" target="RL-04A"/>
+      <arc id="a91" source="RL-04A" target="S-SBR-CLEARED"/>
+      <arc id="a92" source="S-SBR" target="RL-04B"/>
+      <arc id="a93" source="RL-04B" target="S-SBR-CLEARED"/>
+      <arc id="a94" source="S-SBR-CLEARED" target="RL-05"/>
+      <arc id="a95" source="S-APPROP" target="RL-05"/>
+      <arc id="a96" source="RL-05" target="C-F007"/>
+      <arc id="a97" source="C-F007" target="RL-06"/>
+      <arc id="a98" source="RL-06" target="C-F008-SARO"/>
+      <arc id="a99" source="RL-06" target="C-F009"/>
+      <arc id="a100" source="C-F008-SARO" target="RL-07"/>
+      <arc id="a101" source="RL-07" target="S-ALLOT"/>
+      <arc id="a102" source="C-F009" target="RL-08"/>
+      <arc id="a103" source="RL-08" target="S-VERIFIABLE"/>
+      <arc id="a104" source="PR-01" target="C-F041"/>
+      <arc id="a105" source="S-NEED" target="PR-01"/>
+      <arc id="a106" source="PR-01" target="S-NEED"/>
+      <arc id="a107" source="PR-02" target="C-F013-ITB"/>
+      <arc id="a108" source="S-NEED" target="PR-02"/>
+      <arc id="a109" source="PR-02" target="S-NEED"/>
+      <arc id="a110" source="C-F013-ITB" target="PR-03"/>
+      <arc id="a111" source="PR-03" target="C-F014"/>
+      <arc id="a112" source="PR-03" target="C-F103"/>
+      <arc id="a113" source="C-F014" target="PR-04"/>
+      <arc id="a114" source="PR-04" target="S-BIDS"/>
+      <arc id="a115" source="S-BIDS" target="PR-05"/>
+      <arc id="a116" source="S-NEED" target="PR-05"/>
+      <arc id="a117" source="PR-05" target="S-AWARD"/>
+      <arc id="a118" source="PR-05" target="C-F013-NOA"/>
+      <arc id="a119" source="S-FEE-DUE" target="CO-01"/>
+      <arc id="a120" source="CO-01" target="C-F064"/>
+      <arc id="a121" source="C-F064" target="CO-02"/>
+      <arc id="a122" source="CO-02" target="S-CASH-ON-HAND"/>
+      <arc id="a123" source="CO-02" target="S-OR-ISSUED"/>
+      <arc id="a124" source="S-CASH-ON-HAND" target="CO-03"/>
+      <arc id="a125" source="CO-03" target="C-F049"/>
+      <arc id="a126" source="S-OR-ISSUED" target="CO-04"/>
+      <arc id="a127" source="CO-04" target="C-F050"/>
+      <arc id="a128" source="C-F049" target="CO-05"/>
+      <arc id="a129" source="CO-05" target="S-AGDB-BAL"/>
+      <arc id="a130" source="CO-05" target="C-F051"/>
+      <arc id="a131" source="CO-05" target="C-F065"/>
+      <arc id="a132" source="C-F050" target="CO-06"/>
+      <arc id="a133" source="C-F065" target="CO-06"/>
+      <arc id="a134" source="CO-06" target="S-JEV-COLL"/>
+      <arc id="a135" source="S-AGDB-BAL" target="CO-07"/>
+      <arc id="a136" source="CO-07" target="C-F052"/>
+      <arc id="a137" source="C-F051" target="CO-08"/>
+      <arc id="a138" source="CO-08" target="C-F053"/>
+      <arc id="a139" source="C-F053" target="CO-09"/>
+      <arc id="a140" source="CO-09" target="C-F054"/>
+      <arc id="a141" source="S-JEV-COLL" target="CO-10"/>
+      <arc id="a142" source="CO-10" target="C-F055"/>
+      <arc id="a143" source="S-TAX-DUE" target="TX-01"/>
+      <arc id="a144" source="TX-01" target="C-F042"/>
+      <arc id="a145" source="TX-01" target="S-TO-PAY"/>
+      <arc id="a146" source="S-TO-PAY" target="TX-02"/>
+      <arc id="a147" source="TX-02" target="C-F043"/>
+      <arc id="a148" source="C-F042" target="TX-03"/>
+      <arc id="a149" source="TX-03" target="C-F044"/>
+      <arc id="a150" source="C-F043" target="TX-04"/>
+      <arc id="a151" source="TX-04" target="C-F045"/>
+      <arc id="a152" source="TX-04" target="S-AAB-COLL"/>
+      <arc id="a153" source="C-F044" target="TX-05"/>
+      <arc id="a154" source="C-F045" target="TX-05"/>
+      <arc id="a155" source="TX-05" target="S-TAX-POSTED"/>
+      <arc id="a156" source="S-AAB-COLL" target="TX-06"/>
+      <arc id="a157" source="TX-06" target="C-F048"/>
+      <arc id="a158" source="C-F048" target="TX-07"/>
+      <arc id="a159" source="TX-07" target="S-TSA"/>
+      <arc id="a160" source="S-IMPORT" target="TX-11"/>
+      <arc id="a161" source="TX-11" target="C-F046"/>
+      <arc id="a162" source="C-F046" target="TX-12"/>
+      <arc id="a163" source="TX-12" target="S-ASSESSED"/>
+      <arc id="a164" source="S-ASSESSED" target="TX-13"/>
+      <arc id="a165" source="TX-13" target="C-F043-CUSTOMS"/>
+      <arc id="a166" source="C-F043-CUSTOMS" target="TX-14"/>
+      <arc id="a167" source="TX-14" target="C-F047"/>
+      <arc id="a168" source="TX-14" target="S-AAB-COLL"/>
+      <arc id="a169" source="C-F047" target="TX-15"/>
+      <arc id="a170" source="TX-15" target="S-RELEASED"/>
+      <arc id="a171" source="S-FIN-NEED" target="DB-01"/>
+      <arc id="a172" source="DB-01" target="C-F056"/>
+      <arc id="a173" source="C-F056" target="DB-02"/>
+      <arc id="a174" source="DB-02" target="C-F057"/>
+      <arc id="a175" source="C-F057" target="DB-03"/>
+      <arc id="a176" source="DB-03" target="C-F058"/>
+      <arc id="a177" source="DB-03" target="S-ISSUED"/>
+      <arc id="a178" source="C-F058" target="DB-04"/>
+      <arc id="a179" source="DB-04" target="S-TSA"/>
+      <arc id="a180" source="S-ISSUED" target="DB-05"/>
+      <arc id="a181" source="DB-05" target="C-F059"/>
+      <arc id="a182" source="DB-05" target="S-DEBT-RECORDED"/>
+      <arc id="a183" source="S-DEBT-DUE" target="DB-06"/>
+      <arc id="a184" source="S-TSA" target="DB-06"/>
+      <arc id="a185" source="DB-06" target="C-F060"/>
+      <arc id="a186" source="S-DEBT-RECORDED" target="DB-06"/>
+      <arc id="a187" source="DB-06" target="S-DEBT-RECORDED"/>
+      <arc id="a188" source="RP-01" target="C-F012-REP"/>
+      <arc id="a189" source="S-ORS-PAID" target="RP-01"/>
+      <arc id="a190" source="RP-01" target="S-ORS-PAID"/>
+      <arc id="a191" source="S-JEV-PAID" target="RP-01"/>
+      <arc id="a192" source="RP-01" target="S-JEV-PAID"/>
+      <arc id="a193" source="C-F012-REP" target="RP-02"/>
+      <arc id="a194" source="RP-02" target="C-F021A"/>
+      <arc id="a195" source="RP-02" target="C-F021B"/>
+      <arc id="a196" source="RP-02" target="C-F021C"/>
+      <arc id="a197" source="RP-04" target="C-F022"/>
+      <arc id="a198" source="S-JEV-PAID" target="RP-04"/>
+      <arc id="a199" source="RP-04" target="S-JEV-PAID"/>
+      <arc id="a200" source="C-F022" target="RP-05"/>
+      <arc id="a201" source="RP-05" target="S-AFR"/>
+      <arc id="a202" source="RP-06" target="C-F029"/>
+      <arc id="a203" source="S-ORS-PAID" target="RP-06"/>
+      <arc id="a204" source="RP-06" target="S-ORS-PAID"/>
+      <arc id="a205" source="C-F029" target="RP-08"/>
+      <arc id="a206" source="RP-08" target="C-F031"/>
+      <arc id="a207" source="S-PIP-CALL" target="PL-01"/>
+      <arc id="a208" source="PL-01" target="C-F001"/>
+      <arc id="a209" source="C-F001" target="PL-02"/>
+      <arc id="a210" source="PL-02" target="S-PIP-ENTRY"/>
+      <arc id="a211" source="S-BUDGET-CALL" target="PL-03"/>
+      <arc id="a212" source="PL-03" target="C-F003"/>
+      <arc id="a213" source="S-PIP-ENTRY" target="PL-03"/>
+      <arc id="a214" source="PL-03" target="S-PIP-ENTRY"/>
+      <arc id="a215" source="S-POSITIONS" target="PL-04"/>
+      <arc id="a216" source="PL-04" target="C-F004"/>
+      <arc id="a217" source="C-F003" target="PL-05"/>
+      <arc id="a218" source="C-F004" target="PL-05"/>
+      <arc id="a219" source="PL-05" target="C-F005A"/>
+      <arc id="a220" source="PL-05" target="C-F005B"/>
+      <arc id="a221" source="C-F005A" target="PL-06"/>
+      <arc id="a222" source="C-F005B" target="PL-06"/>
+      <arc id="a223" source="PL-06" target="S-NEP"/>
+      <arc id="a224" source="S-NEP" target="PL-07"/>
+      <arc id="a225" source="PL-07" target="S-GAA"/>
+      <arc id="a226" source="PL-07" target="C-F006"/>
+      <arc id="a227" source="C-F006" target="PL-08"/>
+      <arc id="a228" source="S-GAA" target="PL-08"/>
+      <arc id="a229" source="PL-08" target="S-APPROP"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,31 @@
+@startuml
+title UC-SP-4 Examine and approve the claim (cohort P)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "Paper forms: disbursement voucher (Box A, Box B),…" as B_SP_09
+control "SP-09 Prepare and examine the claim (by a person)" as C_SP_09
+entity "ORS: Obligation Request and Status [Agency own systems]" as E_R_ORS_SYS_AGENCY_OWN
+entity "RAOD, Registries of Allotments, Obligations… [Agency own systems]" as E_R_RAOD_SYS_AGENCY_OWN
+entity "IAR: Inspection and Acceptance Report [Agency own systems]" as E_R_IAR_SYS_AGENCY_OWN
+entity "DV: Disbursement Voucher [Agency own systems]" as E_R_DV_SYS_AGENCY_OWN
+entity "Index of Payments [Agency own systems]" as E_R_INDEXPAY_SYS_AGENCY_OWN
+boundary "Paper voucher, Box C and Box D; registry of the N…" as B_SP_10
+control "SP-10 Certify cash available and approve (by a person)" as C_SP_10
+entity "RANCA, Registry of Allotments and Notice of… [Agency own systems]" as E_R_RANCA_SYS_AGENCY_OWN
+ROLE_ACCOUNTANT -- B_SP_09
+B_SP_09 -- C_SP_09
+C_SP_09 -- E_R_ORS_SYS_AGENCY_OWN
+C_SP_09 -- E_R_RAOD_SYS_AGENCY_OWN
+C_SP_09 -- E_R_IAR_SYS_AGENCY_OWN
+C_SP_09 -- E_R_DV_SYS_AGENCY_OWN
+C_SP_09 -- E_R_INDEXPAY_SYS_AGENCY_OWN
+ROLE_ACCOUNTANT -- B_SP_10
+B_SP_10 -- C_SP_10
+C_SP_09 -- C_SP_10
+C_SP_10 -- E_R_DV_SYS_AGENCY_OWN
+C_SP_10 -- E_R_INDEXPAY_SYS_AGENCY_OWN
+C_SP_10 -- E_R_RANCA_SYS_AGENCY_OWN
+@enduml

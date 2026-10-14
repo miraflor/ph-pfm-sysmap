@@ -1,0 +1,29 @@
+@startuml
+title UC-SP-7 Reconcile with the bank (cohort E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Servicing bank" as ROLE_GSB
+boundary "Paper bank statement with paid checks and memoran…" as B_SP_20
+control "SP-20 Send the monthly bank statement (by the bank)" as C_SP_20
+entity "Monthly bank statement with paid checks and…" as E_R_BANK_STMT_
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "Bank reconciliation statement; books in eNGAS" as B_SP_21
+control "SP-21 Reconcile books, registries and bank for the mont…" as C_SP_21
+entity "Bank Reconciliation Statement [Agency own systems]" as E_R_BRS_SYS_AGENCY_OWN
+entity "JEV: Journal Entry Voucher [eNGAS]" as E_R_JEV_SYS_ENGAS
+entity "RANCA, Registry of Allotments and Notice of… [Agency own systems]" as E_R_RANCA_SYS_AGENCY_OWN
+entity "Checks and ADA Disbursements Record [Agency own systems]" as E_R_CADR_SYS_AGENCY_OWN
+ROLE_GSB -- B_SP_20
+B_SP_20 -- C_SP_20
+C_SP_20 -- E_R_BANK_STMT_
+ROLE_ACCOUNTANT -- B_SP_21
+B_SP_21 -- C_SP_21
+C_SP_20 -- C_SP_21
+C_SP_21 -- E_R_BANK_STMT_
+C_SP_21 -- E_R_BRS_SYS_AGENCY_OWN
+C_SP_21 -- E_R_JEV_SYS_ENGAS
+C_SP_21 -- E_R_RANCA_SYS_AGENCY_OWN
+C_SP_21 -- E_R_CADR_SYS_AGENCY_OWN
+@enduml

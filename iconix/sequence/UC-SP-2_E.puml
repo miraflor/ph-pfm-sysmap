@@ -1,0 +1,23 @@
+@startuml
+title UC-SP-2 Obligate and contract (cohort E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "eBudget (COA)" as B_SYS_EBUDGET_COA
+control "check by Head of the budget unit" as C_person_ROLE_BUDGET
+entity "eBudget (COA)" as E_SYS_EBUDGET_COA
+entity "PhilGEPS (modernized)" as E_SYS_PHILGEPS
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+== SP-05 Obligate and sign the contract ==
+ROLE_BUDGET -> B_SYS_EBUDGET_COA : eBudget of COA for the registry; paper ORS and purchase order
+B_SYS_EBUDGET_COA -> C_person_ROLE_BUDGET : Obligate and sign the contract
+note right of C_person_ROLE_BUDGET : R-OBL-LIMIT: No obligation above the allotment available
+note right of C_person_ROLE_BUDGET : R-FUNDS-CERT: No contract without a certificate of availability of funds
+C_person_ROLE_BUDGET -> E_SYS_EBUDGET_COA : use: Allotment available, not yet obligated
+C_person_ROLE_BUDGET -> E_SYS_PHILGEPS : use: Award made
+C_person_ROLE_BUDGET -> E_SYS_EBUDGET_COA : write: Obligation recorded: ORS with Box A and Box B, entered in t…
+C_person_ROLE_BUDGET -> E_SYS_AGENCY_OWN : write: Contract or purchase order in force
+@enduml

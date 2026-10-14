@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="SEQ-03a" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>03a Budget preparation: from the fiscal program to the President's budget (example: FY 2027 budget, prepared in 2026)</text></name>
+    <page id="page1">
+      <place id="p1"><name><text>start</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="p2"><name><text>p2</text></name></place>
+      <place id="p3"><name><text>p3</text></name></place>
+      <place id="p4"><name><text>p4</text></name></place>
+      <place id="p5"><name><text>p5</text></name></place>
+      <place id="p6"><name><text>p6</text></name></place>
+      <place id="p7"><name><text>p7</text></name></place>
+      <place id="p8"><name><text>p8</text></name></place>
+      <place id="p9"><name><text>p9</text></name></place>
+      <place id="p10"><name><text>p10</text></name></place>
+      <place id="p11"><name><text>p11</text></name></place>
+      <place id="p12"><name><text>p12</text></name></place>
+      <place id="p13"><name><text>p13</text></name></place>
+      <place id="p14"><name><text>p14</text></name></place>
+      <place id="p15"><name><text>p15</text></name></place>
+      <place id="p16"><name><text>p16</text></name></place>
+      <place id="p17"><name><text>p17</text></name></place>
+      <place id="p18"><name><text>p18</text></name></place>
+      <place id="p19"><name><text>p19</text></name></place>
+      <place id="p20"><name><text>p20</text></name></place>
+      <place id="p21"><name><text>p21</text></name></place>
+      <place id="p22"><name><text>p22</text></name></place>
+      <place id="p23"><name><text>end</text></name></place>
+      <transition id="t01"><name><text>1. DBCC to DBM: Fiscal program: revenue, spending ceiling, deficit, borrowing</text></name></transition>
+      <transition id="t02"><name><text>2. DBM to National agency: Budget Call (National Budget Memorandum No. 156): policy, budget levels, forms, calendar. Budget Forum 28-29 January 2026</text></name></transition>
+      <transition id="t03"><name><text>3. DBM to National agency: Forward Estimates for FY 2027-2029, formulated by DBM with the agency (basis of Tier 1)</text></name></transition>
+      <transition id="t04"><name><text>4. National agency to Operating units: Internal call for proposals</text></name></transition>
+      <transition id="tau1"><name><text>parallel split</text></name></transition>
+      <transition id="tau2"><name><text>parallel join</text></name></transition>
+      <transition id="t05"><name><text>5. Operating units to Regional Development Councils: Regional proposals for priority programs and projects</text></name></transition>
+      <transition id="t06"><name><text>6. Regional Development Councils to National agency: Inputs and recommendations (BP Form C). DEPDev regional offices send consolidated RDC resolutions to DBM</text></name></transition>
+      <transition id="t07"><name><text>7. National agency to Civil society: Consultation on proposed programs</text></name></transition>
+      <transition id="t08"><name><text>8. Civil society to National agency: Inputs (reported in BP Form D)</text></name></transition>
+      <transition id="t09"><name><text>9. National agency to OSBPS: TIER 1: cost of ongoing programs and commitments at the same scope and quality (BP Forms 201-A to 201-D, 204, 205, 100 series, A and B). Submission period 6 March to 28 April 2026</text></name></transition>
+      <transition id="t10"><name><text>10. National agency to OSBPS: TIER 2: new or expanded programs and projects (BP Form 202, and 203 for foreign-assisted projects), implementation-ready and endorsed</text></name></transition>
+      <transition id="t11"><name><text>11. National agency to DBM: Two printed copies. The electronic copy prevails</text></name></transition>
+      <transition id="t12"><name><text>12. OSBPS to DBM: Encoded proposals</text></name></transition>
+      <transition id="t13"><name><text>13. DBM to National agency: Technical budget hearings: the agency justifies its proposal</text></name></transition>
+      <transition id="t14"><name><text>14. DBM: Evaluation and executive review. Tier 2 proposals compete for the fiscal space (spending program minus total Tier 1)</text></name></transition>
+      <transition id="t15"><name><text>15. DBM to DBCC: Proposed budget levels</text></name></transition>
+      <transition id="t16"><name><text>16. DBCC to Cabinet: Recommended budget</text></name></transition>
+      <transition id="t17"><name><text>17. Cabinet to DBM: Approval by the President and the Cabinet</text></name></transition>
+      <transition id="t18"><name><text>18. DBM: Prepare the budget documents: National Expenditure Program (NEP), Budget of Expenditures and Sources of Financing (BESF), President's Budget Message, staffing summary</text></name></transition>
+      <transition id="t19"><name><text>19. Cabinet to Congress: Submit the budget within 30 days from the opening of the regular session (for FY 2027: by 26 August 2026. Press reports: submitted on 11 August 2026)</text></name></transition>
+      <arc id="a1" source="p1" target="t01"/>
+      <arc id="a2" source="t01" target="p2"/>
+      <arc id="a3" source="p2" target="t02"/>
+      <arc id="a4" source="t02" target="p3"/>
+      <arc id="a5" source="p3" target="t03"/>
+      <arc id="a6" source="t03" target="p4"/>
+      <arc id="a7" source="p4" target="t04"/>
+      <arc id="a8" source="t04" target="p5"/>
+      <arc id="a9" source="p5" target="tau1"/>
+      <arc id="a10" source="tau1" target="p7"/>
+      <arc id="a11" source="p7" target="t05"/>
+      <arc id="a12" source="t05" target="p8"/>
+      <arc id="a13" source="p8" target="t06"/>
+      <arc id="a14" source="t06" target="p9"/>
+      <arc id="a15" source="p9" target="tau2"/>
+      <arc id="a16" source="tau1" target="p10"/>
+      <arc id="a17" source="p10" target="t07"/>
+      <arc id="a18" source="t07" target="p11"/>
+      <arc id="a19" source="p11" target="t08"/>
+      <arc id="a20" source="t08" target="p12"/>
+      <arc id="a21" source="p12" target="tau2"/>
+      <arc id="a22" source="tau2" target="p6"/>
+      <arc id="a23" source="p6" target="t09"/>
+      <arc id="a24" source="t09" target="p13"/>
+      <arc id="a25" source="p13" target="t10"/>
+      <arc id="a26" source="t10" target="p14"/>
+      <arc id="a27" source="p14" target="t11"/>
+      <arc id="a28" source="t11" target="p15"/>
+      <arc id="a29" source="p15" target="t12"/>
+      <arc id="a30" source="t12" target="p16"/>
+      <arc id="a31" source="p16" target="t13"/>
+      <arc id="a32" source="t13" target="p17"/>
+      <arc id="a33" source="p17" target="t14"/>
+      <arc id="a34" source="t14" target="p18"/>
+      <arc id="a35" source="p18" target="t15"/>
+      <arc id="a36" source="t15" target="p19"/>
+      <arc id="a37" source="p19" target="t16"/>
+      <arc id="a38" source="t16" target="p20"/>
+      <arc id="a39" source="p20" target="t17"/>
+      <arc id="a40" source="t17" target="p21"/>
+      <arc id="a41" source="p21" target="t18"/>
+      <arc id="a42" source="t18" target="p22"/>
+      <arc id="a43" source="p22" target="t19"/>
+      <arc id="a44" source="t19" target="p23"/>
+    </page>
+  </net>
+</pnml>

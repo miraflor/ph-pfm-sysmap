@@ -1,0 +1,34 @@
+digraph D_procurement {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Procurement (7 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_EXT-PUBLIC" {
+label="Public" style="rounded,filled" fillcolor="#ffffff" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Any person: citizens, civil society, observers, journalists"
+"UNIT-PUB-ANY" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Any person" tooltip="Any person, including citizens and journalists"]
+}
+"EXT-SUPPLIER" [shape=box style="filled,rounded" fillcolor="#ffffff" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Suppliers and\npayees" tooltip="Suppliers, contractors, consultants and other payees of agencies"]
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"SYS-BTMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BTMS" tooltip="BTMS, Budget and Treasury Management System"]
+}
+subgraph "cluster_INST-GPPB" {
+label="GPPB and TSO" style="rounded,filled" fillcolor="#e2f0d6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Government Procurement Policy Board and its Technical Support Office"
+"SYS-GPPB-FORM" [shape=box style="filled,rounded" fillcolor="#e2f0d6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="GPPB online\nsubmission form" tooltip="Online form of the GPPB Technical Support Office for procurement plans and monitoring reports"]
+}
+"INST-GSB" [shape=box style="filled,rounded" fillcolor="#fdf0d5" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="Servicing banks" tooltip="Government servicing banks: Land Bank of the Philippines, Development Bank of the Philippines, Philippine Veterans Bank"]
+subgraph "cluster_INST-NGA" {
+label="National agency" style="rounded,filled" fillcolor="#eef6e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="A department or agency of the national government"
+"UNIT-NGA-BAC" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BAC and\nprocurement unit" tooltip="Bids and Awards Committee with its Secretariat, and the procurement unit"]
+}
+subgraph "cluster_INST-PSDBM" {
+label="PS-DBM" style="rounded,filled" fillcolor="#e2f0d6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Procurement Service of DBM"
+"SYS-PHILGEPS" [shape=box style="filled,rounded" fillcolor="#e2f0d6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PhilGEPS\n(modernized)" tooltip="PhilGEPS, Philippine Government Electronic Procurement System, modernized version"]
+}
+"UNIT-NGA-BAC" -> "SYS-PHILGEPS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F013: Notices and awards" label="F013" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "EXT-SUPPLIER" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F014: Opportunities" label="F014" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "SYS-BTMS" [color="#55555566" style="bold" penwidth=1.8 arrowhead=empty arrowsize=0.6 tooltip="F026: Procurement data" label="F026" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "INST-GSB" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F039A: Requests for payment after delivery, to the bank of the procuring entity" label="F039A" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "EXT-SUPPLIER" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F039B: Requests for payment after delivery, to merchants" label="F039B" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-BAC" -> "SYS-GPPB-FORM" [color="#2e6b2e" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F041: The approved Annual Procurement Plan, its update after each semester, and the Procurement Monitoring Report of each semester" label="F041" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F103: Open data on notices, awards, agencies, merchants and observers" label="F103" fontsize=7 fontcolor="#666666"]
+}

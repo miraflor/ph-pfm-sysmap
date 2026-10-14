@@ -1,0 +1,60 @@
+@startuml
+title UC-RP Report on budget execution (cohort P, E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Agency as a whole (central of…" as ROLE_AGENCY
+boundary "National agency" as B_INST_NGA
+control "check (not stated)" as C_not_stated_ROLE_AGENCY
+participant "URS" as N_SYS_URS
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+actor "DBM (bureaus and approving of…" as ROLE_DBM
+boundary "URS" as B_SYS_URS
+control "check (not stated)" as C_not_stated_ROLE_DBM
+participant "DBM" as N_INST_DBM
+participant "COA" as N_INST_COA
+participant "BTr" as N_INST_BTR
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "Accounting unit" as B_UNIT_NGA_ACC
+control "check (not stated)" as C_not_stated_ROLE_ACCOUNTANT
+participant "AFR System" as N_SYS_AFRS
+actor "COA" as ROLE_COA
+boundary "Government Accountancy Sector" as B_UNIT_COA_GAS
+control "check (not stated)" as C_not_stated_ROLE_COA
+entity "Government Accountancy Sector" as E_UNIT_COA_GAS
+participant "COMPASS portal" as N_SYS_COMPASS
+boundary "COMPASS portal" as B_SYS_COMPASS
+participant "Any person" as N_UNIT_PUB_ANY
+== RP-01 Prepare the accountability reports in URS ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Prepare the accountability reports in URS
+C_not_stated_ROLE_AGENCY -> N_SYS_URS : F012 Accountability reports entered in URS
+C_not_stated_ROLE_AGENCY -> E_SYS_AGENCY_OWN : read: Payment posted in part C of the ORS and in the registry of…
+C_not_stated_ROLE_AGENCY -> E_SYS_AGENCY_OWN : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+== RP-02 Pass the reports to DBM, COA and BTr ==
+ROLE_DBM -> B_SYS_URS : System or office where the act takes place
+B_SYS_URS -> C_not_stated_ROLE_DBM : Pass the reports to DBM, COA and BTr
+C_not_stated_ROLE_DBM -> N_INST_DBM : F021A Reports at DBM
+C_not_stated_ROLE_DBM -> N_INST_COA : F021B Reports at COA
+C_not_stated_ROLE_DBM -> N_INST_BTR : F021C FAR 3, 4 and 5 at BTr
+== RP-04 Submit the financial statements ==
+ROLE_ACCOUNTANT -> B_UNIT_NGA_ACC : System or office where the act takes place
+B_UNIT_NGA_ACC -> C_not_stated_ROLE_ACCOUNTANT : Submit the financial statements
+C_not_stated_ROLE_ACCOUNTANT -> N_SYS_AFRS : F022 Financial statements in the AFR System
+C_not_stated_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+== RP-05 Prepare the Annual Financial Report ==
+ROLE_COA -> B_UNIT_COA_GAS : System or office where the act takes place
+B_UNIT_COA_GAS -> C_not_stated_ROLE_COA : Prepare the Annual Financial Report
+C_not_stated_ROLE_COA -> E_UNIT_COA_GAS : write: Annual Financial Report of the government prepared by COA
+== RP-06 Submit information to COMPASS ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Submit information to COMPASS
+C_not_stated_ROLE_AGENCY -> N_SYS_COMPASS : F029 Agency submission in COMPASS
+C_not_stated_ROLE_AGENCY -> E_SYS_AGENCY_OWN : read: Payment posted in part C of the ORS and in the registry of…
+== RP-08 Publish budget and spending figures ==
+ROLE_DBM -> B_SYS_COMPASS : System or office where the act takes place
+B_SYS_COMPASS -> C_not_stated_ROLE_DBM : Publish budget and spending figures
+C_not_stated_ROLE_DBM -> N_UNIT_PUB_ANY : F031 Budget and spending figures visible to any person
+@enduml

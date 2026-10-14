@@ -1,0 +1,337 @@
+diagram_id,diagram_file,step,who_acts,towards_whom,what_is_done_or_passed,basis
+01b,01b_investment_programming_sequence.mmd,1,DEPDev (PIP and TRIP secretariats),Agency central office,"Joint call to update the PIP and formulate the TRIP, with guidelines and calendar",PIP-MEMO
+01b,01b_investment_programming_sequence.mmd,2,Agency regional offices,Regional Development Council,Regional priority programs and projects,NBM156
+01b,01b_investment_programming_sequence.mmd,3,Regional Development Council,Agency regional offices,"Endorsement, or recommendations",NBM156
+01b,01b_investment_programming_sequence.mmd,4,Agency central office,PIPOL system,"Reconfirm ongoing programs and projects. Encode new or updated ones: cost per year, physical and financial progress",PIP-MEMO
+01b,01b_investment_programming_sequence.mmd,5,Agency central office,PIPOL system,Head of agency endorses the submission (example window: 8 November to 6 December 2024),PIP-MEMO
+01b,01b_investment_programming_sequence.mmd,6,PIPOL system,DEPDev (PIP and TRIP secretariats),"Only submissions marked ""as endorsed"" are processed",PIP-MEMO
+01b,01b_investment_programming_sequence.mmd,7,DEPDev (PIP and TRIP secretariats),(own action),Check each entry against the PIP criteria and the scope of the TRIP,PIP-MEMO
+01b,01b_investment_programming_sequence.mmd,8,Agency central office,ICC,Project proposal with feasibility study and financing plan,GK
+01b,01b_investment_programming_sequence.mmd,9,ICC,(own action),"Technical, economic and financial appraisal",GK
+01b,01b_investment_programming_sequence.mmd,10,ICC,ED Council,Recommendation,GK
+01b,01b_investment_programming_sequence.mmd,11,ED Council,Agency central office,Approval or confirmation,GK
+01b,01b_investment_programming_sequence.mmd,12,DEPDev (PIP and TRIP secretariats),DBM,PIP and TRIP as input to budget preparation,NBM156
+01b,01b_investment_programming_sequence.mmd,13,DBM,Agency central office,Budget Call. A Tier 2 proposal must be implementation-ready and must have the required endorsements and approvals,NBM156
+01b,01b_investment_programming_sequence.mmd,14,Agency central office,DBM,Tier 2 proposals in OSBPS (a different system from PIPOL),NBM156
+01b,01b_investment_programming_sequence.mmd,15,Agency central office,PIPOL system,"After the budget is known, update yearly costs to match the GAA and the National Expenditure Program",PIP-MEMO
+03a,03a_budget_preparation_sequence.mmd,1,DBCC,DBM,"Fiscal program: revenue, spending ceiling, deficit, borrowing",PRIMER
+03a,03a_budget_preparation_sequence.mmd,2,DBM,Agency central office,"Budget Call (National Budget Memorandum No. 156): policy, budget levels, forms, calendar. Budget Forum 28-29 January 2026","NBM156, PRIMER"
+03a,03a_budget_preparation_sequence.mmd,3,DBM,Agency central office,"Forward Estimates for FY 2027-2029, formulated by DBM with the agency (basis of Tier 1)",NBM156
+03a,03a_budget_preparation_sequence.mmd,4,Agency central office,Agency regional offices and units,Internal call for proposals,GK
+03a,03a_budget_preparation_sequence.mmd,5,Agency regional offices and units,Regional Development Council,Regional proposals for priority programs and projects,NBM156
+03a,03a_budget_preparation_sequence.mmd,6,Regional Development Council,Agency central office,Inputs and recommendations (BP Form C). DEPDev regional offices send consolidated RDC resolutions to DBM,NBM156
+03a,03a_budget_preparation_sequence.mmd,7,Agency central office,Civil society organizations,Consultation on proposed programs,NBM156
+03a,03a_budget_preparation_sequence.mmd,8,Civil society organizations,Agency central office,Inputs (reported in BP Form D),NBM156
+03a,03a_budget_preparation_sequence.mmd,9,Agency central office,OSBPS v2.0,"TIER 1: cost of ongoing programs and commitments at the same scope and quality (BP Forms 201-A to 201-D, 204, 205, 100 series, A and B). Submission period 6 March to 28 April 2026",NBM156
+03a,03a_budget_preparation_sequence.mmd,10,Agency central office,OSBPS v2.0,"TIER 2: new or expanded programs and projects (BP Form 202, and 203 for foreign-assisted projects), implementation-ready and endorsed",NBM156
+03a,03a_budget_preparation_sequence.mmd,11,Agency central office,DBM,Two printed copies. The electronic copy prevails,NBM156
+03a,03a_budget_preparation_sequence.mmd,12,OSBPS v2.0,DBM,Encoded proposals,NBM156
+03a,03a_budget_preparation_sequence.mmd,13,DBM,Agency central office,Technical budget hearings: the agency justifies its proposal,PRIMER
+03a,03a_budget_preparation_sequence.mmd,14,DBM,(own action),Evaluation and executive review. Tier 2 proposals compete for the fiscal space (spending program minus total Tier 1),"PRIMER, NBM156"
+03a,03a_budget_preparation_sequence.mmd,15,DBM,DBCC,Proposed budget levels,PRIMER
+03a,03a_budget_preparation_sequence.mmd,16,DBCC,President and Cabinet,Recommended budget,PRIMER
+03a,03a_budget_preparation_sequence.mmd,17,President and Cabinet,DBM,Approval by the President and the Cabinet,PRIMER
+03a,03a_budget_preparation_sequence.mmd,18,DBM,(own action),"Prepare the budget documents: National Expenditure Program (NEP), Budget of Expenditures and Sources of Financing (BESF), President's Budget Message, staffing summary",PRIMER. Staffing summary: GK
+03a,03a_budget_preparation_sequence.mmd,19,President and Cabinet,Congress,Submit the budget within 30 days from the opening of the regular session (for FY 2027: by 26 August 2026. Press reports: submitted on 11 August 2026),CONST VII.22. Date of submission: NEP2027-NEWS
+04a,04a_legislation_sequence.mmd,1,President,House plenary,"President's budget: NEP, BESF, Budget Message, within 30 days from the opening of the regular session",CONST VII.22
+04a,04a_legislation_sequence.mmd,2,House plenary,House Committee on Appropriations,The NEP is filed as the General Appropriations Bill (GAB) and referred to the committee,PRIMER
+04a,04a_legislation_sequence.mmd,3,"DBCC, DBM and agencies",House Committee on Appropriations,Briefing on the economy and the fiscal program,NEP2027-NEWS (the House review of the FY 2027 budget opened with a briefing by the DBCC)
+04a,04a_legislation_sequence.mmd,4,House Committee on Appropriations,"DBCC, DBM and agencies","Hearings, agency by agency: plans, past performance","INQ-GUIDE, PRIMER"
+04a,04a_legislation_sequence.mmd,5,"DBCC, DBM and agencies",House Committee on Appropriations,Answers and documents,"INQ-GUIDE, PRIMER"
+04a,04a_legislation_sequence.mmd,6,Senate Committee on Finance,"DBCC, DBM and agencies","Hearings, agency by agency","INQ-GUIDE, PRIMER"
+04a,04a_legislation_sequence.mmd,7,"DBCC, DBM and agencies",Senate Committee on Finance,Answers and documents,"INQ-GUIDE, PRIMER"
+04a,04a_legislation_sequence.mmd,8,House Committee on Appropriations,House plenary,Committee report on the GAB,PRIMER
+04a,04a_legislation_sequence.mmd,9,House plenary,(own action),Plenary debates and amendments. Approval on second and third reading,INQ-GUIDE. Three readings: CONST VI.26(2)
+04a,04a_legislation_sequence.mmd,10,House plenary,Senate plenary,GAB as approved by the House,CONST VI.24
+04a,04a_legislation_sequence.mmd,11,Senate Committee on Finance,Senate plenary,Committee report with Senate amendments,PRIMER
+04a,04a_legislation_sequence.mmd,12,Senate plenary,(own action),Plenary debates and amendments. Approval on second and third reading,INQ-GUIDE. Three readings: CONST VI.26(2)
+04a,04a_legislation_sequence.mmd,13,House plenary,Bicameral Conference Committee,House conferees and House version,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,14,Senate plenary,Bicameral Conference Committee,Senate conferees and Senate version,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,15,Bicameral Conference Committee,(own action),Reconcile the two versions,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,16,Bicameral Conference Committee,House plenary,Conference report,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,17,Bicameral Conference Committee,Senate plenary,Conference report,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,18,House plenary,President,Both chambers ratify. The enrolled bill goes to the President,INQ-GUIDE
+04a,04a_legislation_sequence.mmd,19,President,(own action),Review. May veto particular items. The items not vetoed become law,CONST VI.27(2)
+04a,04a_legislation_sequence.mmd,20,President,"DBCC, DBM and agencies",Signed General Appropriations Act (GAA),INQ-GUIDE
+04a,04a_legislation_sequence.mmd,21,House plenary,President,Override by two thirds of each chamber,INQ-GUIDE
+05a,05a_release_sequence.mmd,1,DBM,Agency central office,Release guidelines for the year (National Budget Circular),NBC599
+05a,05a_release_sequence.mmd,2,Agency central office,URS,"Budget execution documents: BED 1 Financial Plan, BED 2 Physical Plan, BED 3 Monthly Disbursement Program",NBC599 s.3.9
+05a,05a_release_sequence.mmd,3,URS,DBM,Documents for evaluation,NBC599 s.3.9
+05a,05a_release_sequence.mmd,4,DBM,Regional offices and operating units,No separate document. The GAA itself is the allotment order (GAAAO). Items appropriated to a regional office or operating unit go directly to it,"NBC599 s.3.7, s.3.8"
+05a,05a_release_sequence.mmd,5,Agency central office,DBM,"Special Budget Request with details: project profile, location, cost, certifications",NBC599 s.4.1
+05a,05a_release_sequence.mmd,6,DBM,Office of the President,Request for approval,NBC599 s.4.1.1
+05a,05a_release_sequence.mmd,7,Office of the President,DBM,Approval,NBC599 s.4.1.1
+05a,05a_release_sequence.mmd,8,DBM,(own action),"Evaluate: conditions of the GAA, readiness, past spending capacity of the agency",NBC599 s.4.1.1
+05a,05a_release_sequence.mmd,9,DBM,ADRS,Approved SARO (Special Allotment Release Order) or GARO (General Allotment Release Order),"NBC599 s.3.7, ADRS"
+05a,05a_release_sequence.mmd,10,ADRS,Agency central office,Authorized users of the agency download the document,ADRS
+05a,05a_release_sequence.mmd,11,Agency central office,Regional offices and operating units,"Sub-allotment to lower units, where the central office holds the allotment",GK. Sub-allotments are listed in report FAR 1-B: JC2019-1
+05a,05a_release_sequence.mmd,12,BTr,DBM,Cash position of the national government,Inference from NBC599 s.4.2
+05a,05a_release_sequence.mmd,13,DBM,"Servicing bank (LBP, DBP or PVB)","Notice of Cash Allocation (NCA). First NCA covers the first quarter. Later NCAs follow the Monthly Disbursement Program, subject to spending performance and the fiscal position",NBC599 s.4.2.1
+05a,05a_release_sequence.mmd,14,"Servicing bank (LBP, DBP or PVB)",(own action),"Credit the limit to the MDS sub-account of the unit: regular, special accounts, trust, or foreign-assisted projects",NBC599 s.4.2.1.6
+05a,05a_release_sequence.mmd,15,DBM,ADRS,Advice of NCA Issued,ADRS
+05a,05a_release_sequence.mmd,16,ADRS,Regional offices and operating units,Agency downloads the advice,ADRS
+05a,05a_release_sequence.mmd,17,Agency central office,DBM,Request for additional NCA,NBC599 s.4.2.1
+05a,05a_release_sequence.mmd,18,DBM,"Servicing bank (LBP, DBP or PVB)",Additional NCA,NBC599 s.4.2.1
+05a,05a_release_sequence.mmd,19,Agency central office,Regional offices and operating units,"Notice of Transfer of Allocation, where the central office shares its own NCA with a lower unit",GAM-V1 Ch.3 s.3. Not mentioned in NBC599
+06b,06b_competitive_bidding_sequence.mmd,1,End-user unit,Bids and Awards Committee (BAC) with Secretariat and working group,"Purchase request, specifications, bidding documents for an item in the Annual Procurement Plan",IRR12009 s.7.8. Purchase request: GAM-V2 App.60
+06b,06b_competitive_bidding_sequence.mmd,2,Bids and Awards Committee (BAC) with Secretariat and working group,Budget and accounting units,Are appropriations available for this procurement?,IRR12009 s.49.1. Who asks whom: GK
+06b,06b_competitive_bidding_sequence.mmd,3,Budget and accounting units,Bids and Awards Committee (BAC) with Secretariat and working group,"Confirmation: the item is in the budget law, or in the proposed budget for early procurement",IRR12009 s.49.1. Who asks whom: GK
+06b,06b_competitive_bidding_sequence.mmd,4,Bids and Awards Committee (BAC) with Secretariat and working group,(own action),"Pre-procurement conference: the procurement follows the plan, appropriations are available, the award criterion is chosen","IRR12009 s.49.1, s.49.2"
+06b,06b_competitive_bidding_sequence.mmd,5,Bids and Awards Committee (BAC) with Secretariat and working group,PhilGEPS (electronic portal),"Post the invitation to bid and the bidding documents, with the budget for the contract and the source of funding. Also on the website of the entity, and 7 days at its premises","IRR12009 s.50.2, s.50.3"
+06b,06b_competitive_bidding_sequence.mmd,6,PhilGEPS (electronic portal),Bidders,Notice visible to registered suppliers,IRR12009 s.20.2.1
+06b,06b_competitive_bidding_sequence.mmd,7,Bids and Awards Committee (BAC) with Secretariat and working group,Bidders,"Pre-bid conference, at least 12 days before the deadline for bids (required from a budget of PHP 3 million)",IRR12009 s.51
+06b,06b_competitive_bidding_sequence.mmd,8,Bidders,Bids and Awards Committee (BAC) with Secretariat and working group,"Bids in two sealed envelopes: technical (with eligibility documents and bid security) and financial. Deadline: at most 45 days (goods), 50 or 65 (works), 75 (consulting) after posting","IRR12009 s.54.1, s.54.5, s.52.1, s.56.2"
+06b,06b_competitive_bidding_sequence.mmd,9,Bids and Awards Committee (BAC) with Secretariat and working group,"Observers (private sector, civil society)","Invitation to observe each stage: at least two observers, in addition to the representative of COA",IRR12009 s.43.1
+06b,06b_competitive_bidding_sequence.mmd,10,Bids and Awards Committee (BAC) with Secretariat and working group,(own action),Opening of bids immediately after the deadline. Each envelope passes or fails. A bid above the approved budget for the contract is rejected,"IRR12009 s.58, s.59, s.60.1"
+06b,06b_competitive_bidding_sequence.mmd,11,Bids and Awards Committee (BAC) with Secretariat and working group,(own action),"Bid evaluation: 7 days for the lowest calculated bid, 14 days when quality is rated with price, 21 days for consulting. Rank by the award criterion","IRR12009 s.61.2.5, s.61.7, s.62"
+06b,06b_competitive_bidding_sequence.mmd,12,Bids and Awards Committee (BAC) with Secretariat and working group,Bidders,"Post-qualification within 12 days: verify the legal, technical and financial documents, with the latest tax returns",IRR12009 s.63
+06b,06b_competitive_bidding_sequence.mmd,13,Bids and Awards Committee (BAC) with Secretariat and working group,Head of the procuring entity,"Recommendation of award, with the document that authorizes the entity to incur the obligation",IRR12009 s.66.1
+06b,06b_competitive_bidding_sequence.mmd,14,Head of the procuring entity,Bidders,"Approval within 10 days, then the notice of award immediately","IRR12009 s.66.2, s.66.3"
+06b,06b_competitive_bidding_sequence.mmd,15,Head of the procuring entity,PhilGEPS (electronic portal),Award published,GK
+06b,06b_competitive_bidding_sequence.mmd,16,Bidders,Head of the procuring entity,"Performance security, before signing: 5 percent (goods, consulting) or 10 percent (works) of the contract price, 30 percent as a surety bond",IRR12009 s.68
+06b,06b_competitive_bidding_sequence.mmd,17,Head of the procuring entity,Bidders,Contract signed within 10 days from receipt of the notice of award,IRR12009 s.66.5
+06b,06b_competitive_bidding_sequence.mmd,18,Head of the procuring entity,Bidders,Notice to proceed within 3 days from approval of the contract,RA12009 s.66
+06b,06b_competitive_bidding_sequence.mmd,19,"Observers (private sector, civil society)",Head of the procuring entity,"Observation report (also to PhilGEPS, and copies to the GPPB and the Ombudsman)",IRR12009 s.43.4
+06b,06b_competitive_bidding_sequence.mmd,20,"Observers (private sector, civil society)",COA,Observation report,IRR12009 s.43.4
+06b,06b_competitive_bidding_sequence.mmd,21,Bidders,Bids and Awards Committee (BAC) with Secretariat and working group,Request for reconsideration within 3 days. The BAC decides within 7 days,IRR12009 s.83
+06b,06b_competitive_bidding_sequence.mmd,22,Bidders,Head of the procuring entity,"Protest within 7 days, filed electronically, with a fee that is not returned. Decision within 7 days. It is final for smaller contracts. For the others: review by the Regional Trial Court",IRR12009 ss.83-85
+07a,07a_obligation_to_payment_sequence.mmd,1,Requesting office,Budget unit,"Obligation Request and Status (ORS) with the contract or purchase order. Box A: charges are necessary, lawful and under my direct supervision, and the supporting documents are valid, proper and legal","GAM-V1 Ch.3 s.11, s.15. GAM-V2 App.11"
+07a,07a_obligation_to_payment_sequence.mmd,2,Budget unit,(own action),Check the allotment in the registry. Assign the ORS number. Enter the obligation in the registry. Box B: allotment available and obligated. No journal entry,GAM-V1 Ch.3 s.15. GAM-V2 App.11
+07a,07a_obligation_to_payment_sequence.mmd,3,Accounting unit,Head of agency or authorized official,"Purchase order or contract with the certificate of the chief accountant: ""Funds Available"", and the number, date and amount of the ORS",GAM-V2 App.61. PD1445 s.86
+07a,07a_obligation_to_payment_sequence.mmd,4,Head of agency or authorized official,Supplier or contractor,Signed purchase order or contract,GAM-V2 App.61
+07a,07a_obligation_to_payment_sequence.mmd,5,Supplier or contractor,Property unit and inspection officer,"Delivery, with delivery receipt and invoice",GAM-V1 Ch.8 s.15. GAM-V2 App.62
+07a,07a_obligation_to_payment_sequence.mmd,6,Property unit and inspection officer,(own action),"Inspection and acceptance report with the numbers of the purchase order and of the invoice. Inspection officer: inspected, verified and found in order as to quantity and specifications. Property custodian: accepted, complete or partial",GAM-V1 Ch.8 s.15. GAM-V2 App.62
+07a,07a_obligation_to_payment_sequence.mmd,7,Property unit and inspection officer,Accounting unit,"Copy of the acceptance report, with the purchase order and the delivery receipt",GAM-V1 Ch.8 s.15. GAM-V2 App.62
+07a,07a_obligation_to_payment_sequence.mmd,8,Accounting unit,Budget unit,"Journal entry voucher (JEV): debit the asset or expense, credit Accounts Payable. The budget unit enters the payable in part C of the ORS","GAM-V1 Ch.8 s.15, Annex H. GAM-V2 App.11"
+07a,07a_obligation_to_payment_sequence.mmd,9,Requesting office,Accounting unit,"DV with the original acceptance report, delivery receipt, purchase order and a copy of the ORS. Box A: expenses necessary, lawful and incurred under my direct supervision","GAM-V1 Ch.6 s.12, Ch.8 s.15. GAM-V2 App.32"
+07a,07a_obligation_to_payment_sequence.mmd,10,Accounting unit,(own action),Check the documents against a list. Assign the DV number. Look into the index of payments: was this claim paid before? Compare the DV with the ORS. Box B: the accounting entry,GAM-V1 Ch.6 s.12. GAM-V2 App.32
+07a,07a_obligation_to_payment_sequence.mmd,11,Accounting unit,(own action),"Head of accounting looks into the registry of the NCA. If the balance is enough: enter the amount as used, and sign Box C: cash available, supporting documents complete, amount claimed proper. If not: keep the DV until cash is available",GAM-V1 Ch.6 s.12. GAM-V2 App.32
+07a,07a_obligation_to_payment_sequence.mmd,12,Accounting unit,Head of agency or authorized official,DV for approval,GAM-V1 Ch.6 s.12. GAM-V2 App.32
+07a,07a_obligation_to_payment_sequence.mmd,13,Head of agency or authorized official,Accounting unit,Box D: approved for payment,GAM-V1 Ch.6 s.12. GAM-V2 App.32
+07a,07a_obligation_to_payment_sequence.mmd,14,Accounting unit,Head of agency or authorized official,"LDDAP-ADA in five copies for the approved DVs. The chief accountant signs ""Certified Correct""","GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,15,Head of agency or authorized official,Cash unit,"Signs ""Approved""","GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,16,Cash unit,(own action),"Enter it in the record of checks and payment orders, with the new balance of the NCA. The cashier signs the advice to debit the account","GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,17,Cash unit,Head of agency or authorized official,LDDAP-ADA for the second signature,"GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,18,Head of agency or authorized official,Cash unit,Countersigns the advice to debit the account,"GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,19,Cash unit,(own action),"Stamp ""PAID"" on the payment order, the DVs and the documents. Prepare the summary list (SLIIE) in four copies. The cashier certifies it, the head of agency approves it","GAM-V1 Ch.6 s.51, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,20,Cash unit,Servicing bank (MDS),"Summary list and LDDAP-ADA (paper copies, or through the electronic facility of the bank)","GAM-V1 Ch.6 s.56, s.58. eMDS"
+07a,07a_obligation_to_payment_sequence.mmd,21,Servicing bank (MDS),(own action),Check the payment order and the NCA balance. Debit the MDS sub-account of the agency,CL2013-16A. What the bank checks: GK
+07a,07a_obligation_to_payment_sequence.mmd,22,Servicing bank (MDS),Supplier or contractor,"Credit the account of the payee with the net amount, not earlier than 24 hours and not later than 48 hours after receipt","GAM-V1 Ch.6 s.2, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,23,Servicing bank (MDS),BTr and BSP,One copy of the summary list and of the LDDAP-ADA on the same day,"GAM-V1 Ch.6 s.56, CL2013-16A"
+07a,07a_obligation_to_payment_sequence.mmd,24,BTr and BSP,Servicing bank (MDS),Replenishment from the Treasury Single Account,"CL2013-16A, PRIMER"
+07a,07a_obligation_to_payment_sequence.mmd,25,Servicing bank (MDS),Cash unit,Validated copy of the LDDAP-ADA. Items that could not be credited are marked as not paid,"GAM-V1 Ch.6 s.54, s.56. CL2018-14"
+07a,07a_obligation_to_payment_sequence.mmd,26,Supplier or contractor,Cash unit,"Official receipt, or other evidence that the payment was received","GAM-V1 Ch.6 s.53, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,27,Cash unit,Accounting unit,"Daily report of payment orders issued (RADAI) in four copies, with the DVs and the validated LDDAP-ADA","GAM-V1 Ch.6 s.52, s.56"
+07a,07a_obligation_to_payment_sequence.mmd,28,Accounting unit,(own action),"JEV for the payment: debit Accounts Payable, credit Cash-MDS, Regular and Due to BIR. Enter it in the journal of payment orders","GAM-V1 Ch.6 s.54, s.57"
+07a,07a_obligation_to_payment_sequence.mmd,29,Accounting unit,Budget unit,One copy of the RADAI. The budget unit enters the payment in part C of the ORS and the disbursement in the registry,"GAM-V1 Ch.6 s.56, Ch.3 ss.16-17"
+07a,07a_obligation_to_payment_sequence.mmd,30,Accounting unit,BIR,"Tax withheld: returns filed in the electronic system of BIR, paid by Tax Remittance Advice by the 10th day of the next month. No cash moves",GAM-V1 Ch.6 ss.60-62
+07a,07a_obligation_to_payment_sequence.mmd,31,Accounting unit,COA auditor,"First copy of the RADAI and of the JEV, with the original DV, its documents and the validated LDDAP-ADA",GAM-V1 Ch.6 s.56
+07a,07a_obligation_to_payment_sequence.mmd,32,COA auditor,Head of agency or authorized official,"Audit observations, or notices of suspension or disallowance (chapter 09)","COA2011-002, COA2009-006"
+07d,07d_payment_settlement_sequence.mmd,1,DBM,"Servicing bank (LBP, DBP or PVB)",NCA: limit for the MDS sub-account of the agency,NBC599
+07d,07d_payment_settlement_sequence.mmd,2,Agency (accounting and cash units),(own action),"Books: debit Cash-MDS, Regular, credit Subsidy from National Government. Registry of the NCA. No official receipt is issued for an NCA","GAM-V1 Ch.5 s.38, Ch.6 s.3"
+07d,07d_payment_settlement_sequence.mmd,3,Agency (accounting and cash units),"Servicing bank (LBP, DBP or PVB)","Payment order (LDDAP-ADA) in three copies and summary list (SLIIE) in two, on paper or through the electronic facility of the bank","GAM-V1 Ch.6 s.56, s.58. eMDS"
+07d,07d_payment_settlement_sequence.mmd,4,Agency (accounting and cash units),(own action),"Books, on the day of the daily report: credit Cash-MDS, Regular","GAM-V1 Ch.6 s.52, s.54"
+07d,07d_payment_settlement_sequence.mmd,5,"Servicing bank (LBP, DBP or PVB)",(own action),Check the payment order and the NCA balance. Debit the MDS sub-account (the NCA balance decreases),CL2013-16A. What the bank checks: GK
+07d,07d_payment_settlement_sequence.mmd,6,"Servicing bank (LBP, DBP or PVB)",Payee's bank account,"Direct credit, not earlier than 24 hours and not later than 48 hours after receipt",GAM-V1 Ch.6 s.2
+07d,07d_payment_settlement_sequence.mmd,7,"Servicing bank (LBP, DBP or PVB)",Payee's bank account,Bank transfer. The payee bears the bank charge,GAM-V1 Ch.6 s.2
+07d,07d_payment_settlement_sequence.mmd,8,"Servicing bank (LBP, DBP or PVB)",BTr,One copy of the summary list and of the payment order on the same day: notice of the amount to be replenished,"GAM-V1 Ch.6 s.56, CL2013-16A"
+07d,07d_payment_settlement_sequence.mmd,9,BTr,BSP (Treasury Single Account),Instruction to replenish the servicing bank,"PRIMER, CL2013-16A. Entries at BSP: GK"
+07d,07d_payment_settlement_sequence.mmd,10,BSP (Treasury Single Account),"Servicing bank (LBP, DBP or PVB)","Debit the Treasury account, credit the account of the bank at BSP","PRIMER, CL2013-16A. Entries at BSP: GK"
+07d,07d_payment_settlement_sequence.mmd,11,BTr,(own action),"Books of the Treasury: debit Subsidy to NGAs, credit Cash in Bank",GAM-V1 Annex H
+07d,07d_payment_settlement_sequence.mmd,12,"Servicing bank (LBP, DBP or PVB)",Agency (accounting and cash units),Validated copy of the payment order. Items that could not be credited are marked,"GAM-V1 Ch.6 s.53, s.56. CL2018-14"
+07d,07d_payment_settlement_sequence.mmd,13,Agency (accounting and cash units),(own action),"For an item not credited: journal entry to cancel it, and a new payment order. Each month: reconcile the books with the bank statement of the sub-account","GAM-V1 Ch.6 s.54, Ch.21. PD1445 s.74"
+07i,07i_advance_progress_retention.mmd,1,Contractor,Cash unit and servicing bank,"Performance security before the contract is signed. In the example: cash of 75,000. Books: Guaranty/Security Deposits Payable 75,000",IRR12009 s.68. Amount and entry: GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,2,Budget unit,(own action),"Obligation for the whole contract price: 800,000 in the registry. No journal entry",GAM-V1 Ch.10 s.47. Amount: GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,3,Contractor,Project unit and engineer of the agency,"Written request for an advance, with a letter of credit, a bank guarantee or a surety bond",IRR12009 s.71.2.5
+07i,07i_advance_progress_retention.mmd,4,Accounting unit,Contractor,"Advance of 15 percent: 120,000. Books: debit Advances to Contractors 120,000, credit Cash-MDS, Regular 120,000",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,5,Contractor,Project unit and engineer of the agency,"Statement of work accomplished: 400,000",IRR12009 s.71.2.7. Amount: GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,6,Project unit and engineer of the agency,Accounting unit,The engineer checks the statement and certifies the amount to be paid,IRR12009 s.71.2.7. Amount: GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,7,Accounting unit,(own action),"Books: debit Construction in Progress 400,000. Credit Advances to Contractors 60,000 (half of the advance is recovered) and Accounts Payable 340,000",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,8,Accounting unit,Contractor,"Payment of 282,200. Books: debit Accounts Payable 340,000. Credit Cash-MDS, Regular 282,200, Guaranty/Security Deposits Payable 34,000 (retention), Due to BIR 23,800 (tax withheld)",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,9,Contractor,Project unit and engineer of the agency,"Statement of work accomplished: 400,000. Certificate of completion",IRR12009 s.71.2.7. Certificate of completion: GAM-V1 Ch.10 s.47. Amount: GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,10,Accounting unit,(own action),"Books: debit Construction in Progress 400,000. Credit Advances to Contractors 60,000 and Accounts Payable 340,000",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,11,Contractor,Cash unit and servicing bank,"Damages for the delay: 8,000, collected in cash. Books: Miscellaneous Income 8,000",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,12,Accounting unit,Contractor,"Payment of 282,200. Retention 34,000. Tax withheld 23,800",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,13,Accounting unit,(own action),"Turn-over of the building. Books: debit Buildings 800,000, credit Construction in Progress 800,000",GAM-V1 Ch.10 s.8
+07i,07i_advance_progress_retention.mmd,14,Accounting unit,Contractor,"Release of the retention money: 68,000. Books: debit Guaranty/Security Deposits Payable 68,000, credit Cash-MDS, Regular 68,000","GAM-V1 Ch.10 s.8, IRR12009 s.71.2.8"
+07i,07i_advance_progress_retention.mmd,15,Cash unit and servicing bank,Contractor,"Return of the performance security: 75,000","GAM-V1 Ch.10 s.8, IRR12009 s.68"
+09a,09a_audit_sequence.mmd,1,Agency accounting and other units,"COA audit team (team leader, supervising auditor)","Accounts: paid vouchers with the daily reports of payments, journal entries, reports. Year-end statements by 14 February","PD1445 s.41, s.43. Vouchers with the daily reports: GAM-V1 Ch.6 s.56"
+09a,09a_audit_sequence.mmd,2,"COA audit team (team leader, supervising auditor)",(own action),"Audit: financial (are the statements fairly presented), compliance (were the rules followed), performance (were results achieved with economy)",ROADMAP2024
+09a,09a_audit_sequence.mmd,3,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,Audit Observation Memorandum on each finding,GK
+09a,09a_audit_sequence.mmd,4,Head of agency and persons liable,"COA audit team (team leader, supervising auditor)","Comments, explanations, documents",GK
+09a,09a_audit_sequence.mmd,5,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,Notice of Suspension. The amount is suspended until the requirement is met,COA2009-006. Short definitions: GK
+09a,09a_audit_sequence.mmd,6,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,"Notice of Disallowance, naming the persons liable",COA2009-006. Short definitions: GK
+09a,09a_audit_sequence.mmd,7,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,"Notice of Charge, naming the persons liable",COA2009-006. Short definitions: GK
+09a,09a_audit_sequence.mmd,8,Head of agency and persons liable,"COA audit team (team leader, supervising auditor)","Requirement met, or amount returned",COA2009-006
+09a,09a_audit_sequence.mmd,9,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,Notice of Settlement,COA2009-006
+09a,09a_audit_sequence.mmd,10,Head of agency and persons liable,COA Cluster or Regional Director,Appeal,"COA2009-006, PD1445 ss.48-50"
+09a,09a_audit_sequence.mmd,11,COA Cluster or Regional Director,Head of agency and persons liable,Decision,"COA2009-006, PD1445 ss.48-50"
+09a,09a_audit_sequence.mmd,12,Head of agency and persons liable,COA Commission Proper,Petition for review,"COA2009-006, PD1445 ss.48-50"
+09a,09a_audit_sequence.mmd,13,COA Commission Proper,Head of agency and persons liable,Decision of the Commission Proper,"COA2009-006, PD1445 ss.48-50"
+09a,09a_audit_sequence.mmd,14,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,"When a decision is final: Notice of Finality of Decision. The agency records a receivable from the persons liable. Then COA Order of Execution (for example, withholding of pay)",COA2009-006. Entry in the books: GAM-V1 Ch.6 s.46
+09a,09a_audit_sequence.mmd,15,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,"Each quarter: Statement of Audit Suspensions, Disallowances and Charges",COA2009-006
+09a,09a_audit_sequence.mmd,16,"COA audit team (team leader, supervising auditor)",Head of agency and persons liable,"Draft findings discussed. Then the audit report of the agency: opinion on the statements, observations and recommendations, status of earlier recommendations",GK
+09a,09a_audit_sequence.mmd,17,Head of agency and persons liable,"COA audit team (team leader, supervising auditor)",Action plan on the recommendations,GK
+09a,09a_audit_sequence.mmd,18,"COA audit team (team leader, supervising auditor)",President and Congress,"COA annual report on the financial condition and operation of the government, by 30 September","CONST IX-D.4, PD1445 s.41"
+10b,10b_tax_and_customs_collection_sequence.mmd,1,Taxpayer or importer,"BIR (eFPS, eBIRForms)",File the return electronically,BIR-PAY
+10b,10b_tax_and_customs_collection_sequence.mmd,2,Taxpayer or importer,"Authorized agent bank, ePay gateway, or revenue collection officer","Pay: bank debit, online gateway, at a bank branch, or to a revenue collection officer where there is no bank",BIR-PAY
+10b,10b_tax_and_customs_collection_sequence.mmd,3,"Authorized agent bank, ePay gateway, or revenue collection officer",Taxpayer or importer,Payment confirmation,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,4,"Authorized agent bank, ePay gateway, or revenue collection officer","BIR (eFPS, eBIRForms)",Report of payments received,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,5,"BIR (eFPS, eBIRForms)",(own action),Post the payment to the taxpayer account,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,6,Taxpayer or importer,BOC (customs system),Goods declaration,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,7,BOC (customs system),Taxpayer or importer,Assessment of duties and taxes,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,8,Taxpayer or importer,"Authorized agent bank, ePay gateway, or revenue collection officer",Pay the assessed amount,PAS
+10b,10b_tax_and_customs_collection_sequence.mmd,9,"Authorized agent bank, ePay gateway, or revenue collection officer",PAS (clearing house system),"Abstract of collection, encrypted and authenticated",PAS
+10b,10b_tax_and_customs_collection_sequence.mmd,10,PAS (clearing house system),BOC (customs system),Confirmed payment,PAS
+10b,10b_tax_and_customs_collection_sequence.mmd,11,BOC (customs system),Taxpayer or importer,Release of the goods,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,12,"Authorized agent bank, ePay gateway, or revenue collection officer",BSP (Treasury Single Account),"Remit collections to the account of the Treasury, daily",PEFA2025
+10b,10b_tax_and_customs_collection_sequence.mmd,13,"Authorized agent bank, ePay gateway, or revenue collection officer",BTr (eTRAMS),Report of collections to BTr,GK. The source describes NGCDS only for authorized government depository banks: BTR-SYS
+10b,10b_tax_and_customs_collection_sequence.mmd,14,BTr (eTRAMS),(own action),Monitor collections and disbursements (eTRAMS),BTR-SYS
+10b,10b_tax_and_customs_collection_sequence.mmd,15,BTr (eTRAMS),"BIR (eFPS, eBIRForms)",Compare remittances with collection reports,GK
+10b,10b_tax_and_customs_collection_sequence.mmd,16,BTr (eTRAMS),BOC (customs system),Compare remittances with collection reports,GK
+10d,10d_tax_refund_sequence.mmd,1,Taxpayer,BIR office that processes the claim,"Claim for refund with documents. Kinds: input VAT on zero-rated sales, tax collected by error, excess creditable withholding tax, conversion of a tax credit certificate into cash","GAA2025-BIR, TRIB-REFUND"
+10d,10d_tax_refund_sequence.mmd,2,BIR office that processes the claim,(own action),"Verify the claim within the time limit (180 days for regular claims, 90 days for VAT claims)",TRIB-REFUND. Period for VAT claims: GK
+10d,10d_tax_refund_sequence.mmd,3,BIR office that processes the claim,BIR approving official,Recommendation,GK
+10d,10d_tax_refund_sequence.mmd,4,BIR approving official,Taxpayer,"Decision: grant in full, grant in part, or deny. A denied claim may go to the tax court",GK
+10d,10d_tax_refund_sequence.mmd,5,BIR approving official,DBM,Request for release against the amount for tax refunds. VAT refunds: not more than 5 percent of last year's VAT collections of BIR. Other refunds: from the collections of the current year,GAA2025-BIR. The request to DBM: GK
+10d,10d_tax_refund_sequence.mmd,6,DBM,BTr and bank,Release. The amount is treated as trust receipts,GAA2025-BIR. Form of the release: GK
+10d,10d_tax_refund_sequence.mmd,7,BTr and bank,Taxpayer,Refund paid,GK
+10d,10d_tax_refund_sequence.mmd,8,BIR office that processes the claim,(own action),Collection report adjusted for the refunds of the current year and of earlier years (net collections),GAA2025-BIR
+10d,10d_tax_refund_sequence.mmd,9,BIR office that processes the claim,DBM,Quarterly financial and physical reports through URS,GAA2025-BIR
+10d,10d_tax_refund_sequence.mmd,10,COA,BIR office that processes the claim,Audit of the refunds,GAA2025-BIR
+10d,10d_tax_refund_sequence.mmd,11,BIR approving official,BTr and bank,End of year: the unused balance reverts to the unappropriated surplus of the General Fund,GAA2025-BIR
+11b,11b_cash_programming_sequence.mmd,1,DBCC,DBM,"Fiscal program of the year: revenue, disbursements, deficit, financing",DBCC-PAGE
+11b,11b_cash_programming_sequence.mmd,2,DBCC,BTr,"Same fiscal program, with the financing program",DBCC-PAGE
+11b,11b_cash_programming_sequence.mmd,3,Agencies,DBM,Monthly Disbursement Program (BED 3) through URS,NBC599 s.3.9
+11b,11b_cash_programming_sequence.mmd,4,DBM,BTr,"Disbursement program of the government, by month",GK
+11b,11b_cash_programming_sequence.mmd,5,"DOF, BIR, BOC",BTr,"Revenue forecast, by month",GK
+11b,11b_cash_programming_sequence.mmd,6,BTr,(own action),"Cash forecast for the next three months, updated regularly",BTR-SITE
+11b,11b_cash_programming_sequence.mmd,7,BTr,(own action),Plan the borrowing schedule and the placement of surplus cash,EO449. Link to the forecast: GK
+11b,11b_cash_programming_sequence.mmd,8,DBM,Servicing banks,"NCA for the quarter, per agency, by month",NBC599 s.4.2.1
+11b,11b_cash_programming_sequence.mmd,9,Servicing banks,BTr,Payments made on agency orders,CL2013-16A
+11b,11b_cash_programming_sequence.mmd,10,BTr,BSP (Treasury Single Account),Replenish the servicing banks,"PRIMER, CL2013-16A"
+11b,11b_cash_programming_sequence.mmd,11,"DOF, BIR, BOC",BSP (Treasury Single Account),Collections of BIR and BOC arrive through collecting banks,PEFA2025
+11b,11b_cash_programming_sequence.mmd,12,BTr,(own action),Check the cash balance against the forecast,GK
+11b,11b_cash_programming_sequence.mmd,13,Agencies,DBM,Monthly Report of Disbursements (FAR 4),JC2019-1
+11b,11b_cash_programming_sequence.mmd,14,DBM,(own action),Compare actual payments with the program,Inference from NBC599 s.4.2.1
+11b,11b_cash_programming_sequence.mmd,15,DBM,Agencies,Later NCAs adjusted to spending performance and to the fiscal position,NBC599 s.4.2.1
+11b,11b_cash_programming_sequence.mmd,16,Agencies,DBM,"Request for additional NCA, with justification",NBC599 s.4.2.1
+11b,11b_cash_programming_sequence.mmd,17,BTr,DBCC,"Monthly Cash Operations Report: revenue, disbursements, surplus or deficit, financing",NBC599
+11d,11d_foreign_loan_sequence.mmd,1,Implementing agency,"DEPDev, ICC, ED Council",Project proposal for ICC review,"ICC-NEWS, ODA"
+11d,11d_foreign_loan_sequence.mmd,2,"DEPDev, ICC, ED Council",Implementing agency,"ICC recommendation, ED Council approval","ICC-NEWS, ODA"
+11d,11d_foreign_loan_sequence.mmd,3,Implementing agency,DBM,Request to provide for the project in the budget,GK
+11d,11d_foreign_loan_sequence.mmd,4,DBM,DOF,Forward Obligational Authority (project loan),"ODA, MC51"
+11d,11d_foreign_loan_sequence.mmd,5,DOF,Monetary Board (BSP),Request for approval in principle of the loan terms,ODA
+11d,11d_foreign_loan_sequence.mmd,6,Monetary Board (BSP),DOF,Approval in principle,ODA
+11d,11d_foreign_loan_sequence.mmd,7,DOF,Office of the President,"Request for Special Authority, at least 10 working days before the date needed, with: agency letter, draft loan agreement, Monetary Board concurrence, statement of compliance with laws, Forward Obligational Authority",MC51
+11d,11d_foreign_loan_sequence.mmd,8,Office of the President,DOF,Special Authority (or Full Powers) to negotiate and sign,"MC51, ODA"
+11d,11d_foreign_loan_sequence.mmd,9,DOF,Lender,Negotiation. Loan documents cleared by the inter-agency committee that reviews foreign loan documents,ODA
+11d,11d_foreign_loan_sequence.mmd,10,DOF,Lender,Loan agreement signed,MC51
+11d,11d_foreign_loan_sequence.mmd,11,Monetary Board (BSP),DOF,Final approval of the loan terms,ODA
+11d,11d_foreign_loan_sequence.mmd,12,DOJ,DOF,Legal opinion on the authority of the borrower,ODA
+11d,11d_foreign_loan_sequence.mmd,13,Lender,DOF,Loan declared effective,GK
+11d,11d_foreign_loan_sequence.mmd,14,Implementing agency,Lender,"Withdrawal application, after the delivery is accepted and the bill is approved. The agency records the asset and a payable","GAM-V1 Ch.6 ss.66-68, Annex I"
+11d,11d_foreign_loan_sequence.mmd,15,Lender,(own action),Pays the supplier directly,"GAM-V1 Ch.6 ss.66-68, Annex I"
+11d,11d_foreign_loan_sequence.mmd,16,BTr,Implementing agency,Journal entry voucher of BTr: the lender has paid. BTr records the subsidy to the agency and the loan,"GAM-V1 Ch.6 ss.66-68, Annex I"
+11d,11d_foreign_loan_sequence.mmd,17,Implementing agency,DBM,Copy of that voucher and the list of suppliers paid,"GAM-V1 Ch.6 ss.66-68, Annex I"
+11d,11d_foreign_loan_sequence.mmd,18,DBM,Implementing agency,Non-Cash Availment Authority. The agency closes the payable against Subsidy from National Government,"NBC599 s.4.2.2.1, GAM-V1 Ch.6 ss.66-68"
+11d,11d_foreign_loan_sequence.mmd,19,Lender,BTr,Loan proceeds to the Treasury. BTr records cash and Loans Payable-Foreign on the credit advice of BSP,GAM-V1 Annex I
+11d,11d_foreign_loan_sequence.mmd,20,DBM,Implementing agency,NCA under the MDS sub-account for foreign-assisted projects,"NBC599 s.4.2.1.6, GAM-V1 Annex I"
+11d,11d_foreign_loan_sequence.mmd,21,BTr,Lender,"Interest and principal on the due dates, from the Treasury Single Account. Only the books of BTr record them: principal reduces the loan payable, interest is an expense","EO449, GAM-V1 Annex I"
+12a,12a_position_to_payroll_sequence.mmd,1,DBM (GMIS),Agency personnel unit,"Approved staffing pattern: positions, classification, salary grades",GK
+12a,12a_position_to_payroll_sequence.mmd,2,Agency personnel unit,DBM (GMIS),Monthly update of the plantilla of personnel in GMIS (PSIPOP): filled and vacant positions,GMIS
+12a,12a_position_to_payroll_sequence.mmd,3,Head of agency,DBM (GMIS),Approval of the update in GMIS (second approver),GMIS
+12a,12a_position_to_payroll_sequence.mmd,4,DBM (GMIS),(own action),Personnel budget of the next year computed from the FILLED positions in GMIS,GMIS
+12a,12a_position_to_payroll_sequence.mmd,5,Head of agency,Employee,"Appointment to a vacant, funded position",GK
+12a,12a_position_to_payroll_sequence.mmd,6,Agency personnel unit,Civil Service Commission,Appointment papers for attestation,GK
+12a,12a_position_to_payroll_sequence.mmd,7,Civil Service Commission,Agency personnel unit,Attested appointment,GK
+12a,12a_position_to_payroll_sequence.mmd,8,Agency personnel unit,Agency budget and accounting units,"Payroll, prepared in advance: gross pay, deductions and net pay of each employee. An authorized official certifies: services duly rendered (Box A)","GAM-V2 App.33, GAM-V1 Ch.6 s.48"
+12a,12a_position_to_payroll_sequence.mmd,9,Agency budget and accounting units,(own action),"Budget unit: obligation request. Head of accounting certifies: documents complete, cash available (Box B). Journal entry: salary expense, and the amounts due to BIR, to the insurance bodies and to the employees","GAM-V1 Ch.3 s.15, Ch.6 s.19, GAM-V2 App.33"
+12a,12a_position_to_payroll_sequence.mmd,10,Agency budget and accounting units,Head of agency,Payroll for approval,GAM-V2 App.33
+12a,12a_position_to_payroll_sequence.mmd,11,Head of agency,Agency budget and accounting units,Approved for payment (Box C),GAM-V2 App.33
+12a,12a_position_to_payroll_sequence.mmd,12,Agency budget and accounting units,Servicing bank,"Payment order for the net pay: to the accounts of the employees, or as an advance to the disbursing officer who pays in cash","GAM-V1 Ch.6 s.15, s.57"
+12a,12a_position_to_payroll_sequence.mmd,13,Servicing bank,Employee,"Net pay. For cash: each employee signs the payroll, and the disbursing officer certifies that each one was paid (Box D)","GAM-V1 Ch.6 s.18, GAM-V2 App.33"
+12a,12a_position_to_payroll_sequence.mmd,14,Employee,Agency personnel unit,"Reports of attendance, after the payroll. An overpayment for an absence without pay is demanded back",GAM-V1 Ch.6 s.48
+12a,12a_position_to_payroll_sequence.mmd,15,Agency budget and accounting units,"BIR, GSIS, PhilHealth, Pag-IBIG","Tax withheld (by Tax Remittance Advice), premiums and contributions of employee and government","GAM-V1 Ch.5 s.38, Ch.6 s.19, Annex H"
+12a,12a_position_to_payroll_sequence.mmd,16,Head of agency,Agency budget and accounting units,Advice for use of PS Allotment (APSA),NBC599 s.5.2
+14a,14a_lgu_budget_sequence.mmd,1,Local chief executive (governor or mayor),"Local finance committee (planning officer, budget officer, treasurer)",Annual investment program from the approved local development plan,GK
+14a,14a_lgu_budget_sequence.mmd,2,"Local finance committee (planning officer, budget officer, treasurer)",Local chief executive (governor or mayor),"Income estimate and recommended spending ceiling by sector, based on the approved local plans",LGC s.316
+14a,14a_lgu_budget_sequence.mmd,3,Local chief executive (governor or mayor),Heads of departments,Budget call with the ceilings,GK
+14a,14a_lgu_budget_sequence.mmd,4,"Local treasurer, accountant, budget officer",Local chief executive (governor or mayor),Statements of income and expenditures,LGC s.318
+14a,14a_lgu_budget_sequence.mmd,5,Heads of departments,Local chief executive (governor or mayor),"Budget proposals, on or before 15 July",LGC s.317
+14a,14a_lgu_budget_sequence.mmd,6,Local chief executive (governor or mayor),"Local finance committee (planning officer, budget officer, treasurer)",Review and budget hearings,GK
+14a,14a_lgu_budget_sequence.mmd,7,Local chief executive (governor or mayor),Sanggunian (local legislature),"Executive budget, not later than 16 October",LGC s.318
+14a,14a_lgu_budget_sequence.mmd,8,Sanggunian (local legislature),(own action),"Enact the appropriation ordinance on or before the end of the current fiscal year, within the legal limits (see 14b)","LGC s.319, s.324, s.325"
+14a,14a_lgu_budget_sequence.mmd,9,Sanggunian (local legislature),Local chief executive (governor or mayor),Ordinance for approval,GK
+14a,14a_lgu_budget_sequence.mmd,10,Sanggunian (local legislature),(own action),"Stay in session, with no other business. After 90 days the ordinance of the previous year is deemed reenacted, only for salaries, statutory and contractual obligations, and essential operating expenses",LGC s.323
+14a,14a_lgu_budget_sequence.mmd,11,Sanggunian (local legislature),"Reviewing authority: DBM, or the provincial sanggunian","Copy of the ordinance. DBM reviews provinces, highly urbanized cities, independent component cities, and municipalities in Metro Manila. The provincial sanggunian reviews component cities and municipalities","LGC s.326, s.327"
+14a,14a_lgu_budget_sequence.mmd,12,"Reviewing authority: DBM, or the provincial sanggunian",Sanggunian (local legislature),The ordinance is deemed reviewed and stays in full force,LGC s.327
+14a,14a_lgu_budget_sequence.mmd,13,"Reviewing authority: DBM, or the provincial sanggunian",Sanggunian (local legislature),Ordinance declared inoperative in whole or in part. The treasurer may not pay from those items,LGC s.327
+14a,14a_lgu_budget_sequence.mmd,14,"Local treasurer, accountant, budget officer",(own action),Release allotments. Collect local taxes and fees,GK
+14a,14a_lgu_budget_sequence.mmd,15,"BTr, BLGF, COA","Local treasurer, accountant, budget officer",National Tax Allotment released automatically and directly to the treasurer (BTr),"LGC s.286, GAA2026-GP, ALGU2026"
+14a,14a_lgu_budget_sequence.mmd,16,"Local treasurer, accountant, budget officer",(own action),"Before each payment: budget officer certifies the appropriation, accountant obligates it, treasurer certifies available funds",LGC s.344
+14a,14a_lgu_budget_sequence.mmd,17,Heads of departments,Local chief executive (governor or mayor),"Voucher certified and approved by the head of the department. The local chief executive also approves it, except for regularly recurring administrative expenses (payrolls, utilities, remittances)",LGC s.344
+14a,14a_lgu_budget_sequence.mmd,18,"Local treasurer, accountant, budget officer","BTr, BLGF, COA","Statement of receipts and expenditures to BLGF (eSRE), quarterly and annual. Accounts to COA",eSRE. Accounts to COA: CONST IX-D.2
+14a,14a_lgu_budget_sequence.mmd,19,"BTr, BLGF, COA",Local chief executive (governor or mayor),COA audit report,CONST IX-D.2. Form of the report: GK
+14f,14f_barangay_budget_sequence.mmd,1,Barangay treasurer,Punong barangay,"Estimate of income for the next year, and statements of income and expenditure, on or before 15 September",BB4
+14f,14f_barangay_budget_sequence.mmd,2,Punong barangay,(own action),"Prepare the budget with the treasurer. Mandatory items: 10 percent of the general fund for the youth council, at least 20 percent of the tax allotment for development, 5 percent of regular income for calamities. Personal services at most 55 percent of last year's income",BB4
+14f,14f_barangay_budget_sequence.mmd,3,Punong barangay,Sangguniang barangay,"Budget, on or before 16 October",BB4
+14f,14f_barangay_budget_sequence.mmd,4,Sangguniang barangay,(own action),"Appropriation ordinance, by a majority of all members. The punong barangay votes only when the votes are equal and has no veto",BB4
+14f,14f_barangay_budget_sequence.mmd,5,Sangguniang barangay,City or municipal budget officer,"Ordinance, within 10 days after enactment",BB4
+14f,14f_barangay_budget_sequence.mmd,6,City or municipal budget officer,Sanggunian of the city or municipality,Ordinance with findings,BB4
+14f,14f_barangay_budget_sequence.mmd,7,Sanggunian of the city or municipality,(own action),"Review within 60 days: legal requirements and limits are met, appropriations do not exceed estimated income",BB4
+14f,14f_barangay_budget_sequence.mmd,8,Sanggunian of the city or municipality,Sangguniang barangay,The ordinance is deemed to be in full force,BB4
+14f,14f_barangay_budget_sequence.mmd,9,Sanggunian of the city or municipality,Punong barangay,Returned for adjustment. The treasurer may make no further payments from the inoperative part,BB4
+14f,14f_barangay_budget_sequence.mmd,10,Barangay treasurer,(own action),Custody of the funds. Collections and payments,BB4
+14f,14f_barangay_budget_sequence.mmd,11,Barangay treasurer,City or municipal accountant,Records of transactions. The accounts are kept in the offices of the barangay treasurer and of the city or municipal accountant,BB4
+15a,15a_gocc_budget_sequence.mmd,1,GOCC management,GOCC governing board,Proposed COB,COB
+15a,15a_gocc_budget_sequence.mmd,2,GOCC governing board,GOCC management,Board approval,COB
+15a,15a_gocc_budget_sequence.mmd,3,GOCC management,DBM (Budget and Management Bureau C),"COB on or before 31 March, with DBM Forms 700, 703-A to 703-C, 705, 706",COB
+15a,15a_gocc_budget_sequence.mmd,4,DBM (Budget and Management Bureau C),(own action),"Evaluate: uses agree with the board approval, sources cover uses, national priorities, physical performance, use of last year's budget, financial ratios",COB
+15a,15a_gocc_budget_sequence.mmd,5,DBM (Budget and Management Bureau C),GOCC management,COB approval letter (within 20 working days),COB
+15a,15a_gocc_budget_sequence.mmd,6,GOCC management,DBM (Budget and Management Bureau C),Request for subsidy or equity in the national budget proposal,GK
+15a,15a_gocc_budget_sequence.mmd,7,Congress,DBM (Budget and Management Bureau C),"GAA item ""Budgetary Support to Government Corporations""",BSGC2026
+15a,15a_gocc_budget_sequence.mmd,8,GOCC management,DBM (Budget and Management Bureau C),Special Budget Request. The amount must be in the board-approved COB,BSGC2026
+15a,15a_gocc_budget_sequence.mmd,9,DBM (Budget and Management Bureau C),BTr,Release document,BSGC2026
+15a,15a_gocc_budget_sequence.mmd,10,BTr,GOCC management,Cash released directly to the corporation,BSGC2026
+15a,15a_gocc_budget_sequence.mmd,11,BTr,(own action),"Offset the release against dividends due, guarantee fees, advances and other receivables",BSGC2026
+15a,15a_gocc_budget_sequence.mmd,12,GOCC management,BTr,Dividends: at least 50 percent of annual net earnings,BSGC2026
+15a,15a_gocc_budget_sequence.mmd,13,GOCC management,DBM (Budget and Management Bureau C),"Quarterly financial and physical reports through URS, within 30 days after each quarter. Also published on its website",BSGC2026
+15a,15a_gocc_budget_sequence.mmd,14,GOCC management,Congress,Written notice that the reports were submitted and published,BSGC2026
+15a,15a_gocc_budget_sequence.mmd,15,GOCC management,COA,Year-end financial statements by 14 February,COA2015-004
+15a,15a_gocc_budget_sequence.mmd,16,COA,GOCC governing board,Audit report,GK
+15a,15a_gocc_budget_sequence.mmd,17,Governance Commission for GOCCs,GOCC governing board,Performance targets and evaluation of the corporation,GK
+15b,15b_inter_agency_transfers.mmd,1,Source agency (holds the appropriation),"Implementing body (agency, corporation or local government)","Memorandum of agreement: purpose, amount (enough for three months, or the total project cost), period, reports",GAM-V1 Ch.6 s.63
+15b,15b_inter_agency_transfers.mmd,2,Source agency (holds the appropriation),(own action),Obligation recorded against its own allotment,GAM-V1 Annex M
+15b,15b_inter_agency_transfers.mmd,3,Source agency (holds the appropriation),"Implementing body (agency, corporation or local government)",Check in the name of the implementing body. The receiver issues an official receipt,GAM-V1 Ch.6 s.63
+15b,15b_inter_agency_transfers.mmd,4,Source agency (holds the appropriation),(own action),"Books: Due from National Government Agencies (a receivable). Not yet an expense, not yet a disbursement in the budget reports",GAM-V1 Annex M. Budget reports: NBC599 s.3.4
+15b,15b_inter_agency_transfers.mmd,5,"Implementing body (agency, corporation or local government)",(own action),"Trust fund books: Due to NGAs (a liability). The money goes to a trust account, or to the Treasury, from which DBM gives an NCA for trust","GAM-V1 Ch.6 s.63, Annex M"
+15b,15b_inter_agency_transfers.mmd,6,"Implementing body (agency, corporation or local government)",Suppliers and contractors,"Procurement, contract",GAM-V1 Annex M
+15b,15b_inter_agency_transfers.mmd,7,Suppliers and contractors,"Implementing body (agency, corporation or local government)","Delivery, inspected and accepted",GAM-V1 Annex M
+15b,15b_inter_agency_transfers.mmd,8,"Implementing body (agency, corporation or local government)",Suppliers and contractors,Payment from the trust account or under the NCA for trust,GAM-V1 Annex M
+15b,15b_inter_agency_transfers.mmd,9,"Implementing body (agency, corporation or local government)",Source agency (holds the appropriation),"Within ten days after each month: reports of checks issued and of cash disbursements, approved by the head of the implementing body",GAM-V1 Ch.6 s.63
+15b,15b_inter_agency_transfers.mmd,10,Source agency (holds the appropriation),(own action),"Books: expense recorded, receivable reduced. Now reported as disbursed. The implementing body reduces its liability by the same expenses","GAM-V1 Ch.6 s.63, Annex M, NBC599 s.3.4"
+15b,15b_inter_agency_transfers.mmd,11,"Implementing body (agency, corporation or local government)",Source agency (holds the appropriation),"Unused balance returned, if the agreement says so",GAM-V1 Ch.6 s.63
+15b,15b_inter_agency_transfers.mmd,12,Source agency (holds the appropriation),DBM and COA,"FAR 1-C each quarter: obligations, disbursements, liquidations and balances of fund transfers",JC2019-1
+15b,15b_inter_agency_transfers.mmd,13,DBM and COA,Source agency (holds the appropriation),The auditor of the implementing body audits its payments. The auditor of the source agency audits the transfer,GAM-V1 Ch.6 s.63
+15f,15f_cash_aid_to_persons_sequence.mmd,1,Congress,Program agency (DSWD),"Program law: who qualifies, conditions, kinds of grant. Budget law: the amount for the year",RA11310 s.22
+15f,15f_cash_aid_to_persons_sequence.mmd,2,Program agency (DSWD),(own action),Select households with a standardized targeting system. Check the list again every three years,RA11310 s.5
+15f,15f_cash_aid_to_persons_sequence.mmd,3,Program agency (DSWD),(own action),"Amount of each grant, as fixed by the advisory council of the program and reviewed every six years","RA11310 s.7, s.10"
+15f,15f_cash_aid_to_persons_sequence.mmd,4,Program agency (DSWD),(own action),"Check that each household met the conditions (for example school attendance, health visits)",GK
+15f,15f_cash_aid_to_persons_sequence.mmd,5,Program agency (DSWD),(own action),"Payroll of beneficiaries for the period, certified and approved. Obligation recorded against the allotment",GK
+15f,15f_cash_aid_to_persons_sequence.mmd,6,DBM,Program agency (DSWD),Cash authority (NCA) for the period (chapter 05),GK
+15f,15f_cash_aid_to_persons_sequence.mmd,7,Program agency (DSWD),Government bank or remittance institution,"Payment order with the list of accounts, within the cash authority",GK
+15f,15f_cash_aid_to_persons_sequence.mmd,8,Government bank or remittance institution,Household,"Grant credited to the account of the household, or paid out by a remittance institution",RA11310 s.9
+15f,15f_cash_aid_to_persons_sequence.mmd,9,Government bank or remittance institution,Program agency (DSWD),Report of amounts credited and of amounts not credited,GK
+15f,15f_cash_aid_to_persons_sequence.mmd,10,Program agency (DSWD),(own action),Accounting entries. Amounts not credited are returned or paid again,GK
+15f,15f_cash_aid_to_persons_sequence.mmd,11,Program agency (DSWD),Congress,"Yearly report on the program, before the President's budget message",RA11310 s.18
+15f,15f_cash_aid_to_persons_sequence.mmd,12,Monitoring bodies and COA,Program agency (DSWD),"Independent monitoring committee, and audit by COA",RA11310 s.16. Audit: CONST IX-D.2
+16f,16f_document_verification_blockchain.mmd,1,DBM (approving officials),ADRS,"Approved release document (SARO, or advice of NCA)","DBM-BLOCKCHAIN, ADRS"
+16f,16f_document_verification_blockchain.mmd,2,ADRS,Blockchain application,Record of the issued document,"DBM-BLOCKCHAIN, ADRS"
+16f,16f_document_verification_blockchain.mmd,3,Blockchain application,(own action),Store a fingerprint of the document (a hash) with date and document number. The record cannot be changed later,GK
+16f,16f_document_verification_blockchain.mmd,4,ADRS,Agency,"Document for download, with a QR code","ADRS, DBM-BLOCKCHAIN"
+16f,16f_document_verification_blockchain.mmd,5,Agency,"Any person (citizen, auditor, bank)",Copy of the document (for example to a contractor or a bank),GK
+16f,16f_document_verification_blockchain.mmd,6,"Any person (citizen, auditor, bank)",Verification page,"Scan the QR code, or enter the document reference",DBM-BLOCKCHAIN
+16f,16f_document_verification_blockchain.mmd,7,Verification page,Blockchain application,Retrieve the record,GK
+16f,16f_document_verification_blockchain.mmd,8,Blockchain application,Verification page,Stored record,DBM-BLOCKCHAIN. Method: GK
+16f,16f_document_verification_blockchain.mmd,9,Verification page,"Any person (citizen, auditor, bank)","Result: the copy matches the issued document, or it does not",DBM-BLOCKCHAIN. Method: GK

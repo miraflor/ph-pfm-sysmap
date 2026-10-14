@@ -1,0 +1,50 @@
+digraph D_reporting {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Reports to DBM, COA, BTr and the public (15 flows)" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_EXT-PUBLIC" {
+label="Public" style="rounded,filled" fillcolor="#ffffff" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Any person: citizens, civil society, observers, journalists"
+"UNIT-PUB-ANY" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Any person" tooltip="Any person, including citizens and journalists"]
+}
+"INST-BTR" [shape=box style="filled,rounded" fillcolor="#fbe0c4" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="BTr" tooltip="Bureau of the Treasury"]
+subgraph "cluster_INST-COA" {
+label="COA" style="rounded,filled" fillcolor="#e6e3fb" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Commission on Audit"
+"INST-COA" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="COA" tooltip="Commission on Audit" label="COA (as a whole)" fillcolor="#ffffff"]
+"SYS-AFRS" [shape=box style="filled,rounded" fillcolor="#e6e3fb" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="AFR System" tooltip="AFR System (AFRS)"]
+"UNIT-COA-AUDIT" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="COA audit team" tooltip="COA audit team of the agency (team leader, supervising auditor)"]
+}
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"INST-DBM" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="DBM" tooltip="Department of Budget and Management" label="DBM (as a whole)" fillcolor="#ffffff"]
+"SYS-BTMS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="BTMS" tooltip="BTMS, Budget and Treasury Management System"]
+"SYS-COMPASS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="COMPASS portal" tooltip="COMPASS portal, Centralized Open Monitoring Platform for Appropriations and Spending Statistics"]
+"SYS-DIME" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="DIME" tooltip="DIME"]
+"SYS-URS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="URS" tooltip="URS, Unified Reporting System"]
+}
+subgraph "cluster_INST-NGA" {
+label="National agency" style="rounded,filled" fillcolor="#eef6e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="A department or agency of the national government"
+"INST-NGA" [shape=box style="filled,rounded" fillcolor="#eef6e6" color="#333333" penwidth=1.6 fontname="Helvetica-Bold" fontsize=10 label="National agency" tooltip="A department or agency of the national government" label="National agency\n(as a whole)" fillcolor="#ffffff"]
+"SYS-AGENCY-WEB" [shape=tab style="filled" fillcolor="#eef6e6" color="#888888" penwidth=1 fontname="Helvetica" fontsize=10 label="Agency website" tooltip="Website of the agency"]
+"UNIT-NGA-ACC" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Accounting unit" tooltip="Accounting unit of the agency, headed by the chief accountant"]
+"UNIT-NGA-CASH" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Cash unit" tooltip="Cash unit of the agency, with the cashier and disbursing officers"]
+}
+subgraph "cluster_INST-PSDBM" {
+label="PS-DBM" style="rounded,filled" fillcolor="#e2f0d6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Procurement Service of DBM"
+"SYS-PHILGEPS" [shape=box style="filled,rounded" fillcolor="#e2f0d6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="PhilGEPS\n(modernized)" tooltip="PhilGEPS, Philippine Government Electronic Procurement System, modernized version"]
+}
+"INST-NGA" -> "SYS-URS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F012: Execution plans, then accountability reports" label="F012" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021A: The plans and reports" label="F021A" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-COA" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021B: The reports" label="F021B" fontsize=7 fontcolor="#666666"]
+"SYS-URS" -> "INST-BTR" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F021C: FAR 3, 4 and 5" label="F021C" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-AFRS" [color="#555555" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F022: Financial statements" label="F022" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-ACC" -> "UNIT-COA-AUDIT" [color="#2e6b2e" style="dotted" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F023: Daily reports of checks and of payment orders issued, with the paid vouchers, their documents and the journal entry vouchers" label="F023" fontsize=7 fontcolor="#666666"]
+"INST-NGA" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F029: Financial and program performance, status of projects, procurement information" label="F029" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F030: Not stated" label="F030" fontsize=7 fontcolor="#666666"]
+"SYS-COMPASS" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F031: Budget, allotments, obligations and disbursements" label="F031" fontsize=7 fontcolor="#666666"]
+"UNIT-NGA-CASH" -> "SYS-AGENCY-WEB" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F040: Daily report of payment orders issued" label="F040" fontsize=7 fontcolor="#666666"]
+"SYS-PHILGEPS" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F104: Procurement information (content not stated)" label="F104" fontsize=7 fontcolor="#666666"]
+"SYS-DIME" -> "SYS-COMPASS" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F105: Project monitoring information (content not stated)" label="F105" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-DBM" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F124: Reports produced from the records of BTMS: FAR 1 to 6, BAR 1, registry of allotments, NCA listings" label="F124" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-COA" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F125: Reports produced from the records of BTMS" label="F125" fontsize=7 fontcolor="#666666"]
+"SYS-BTMS" -> "INST-BTR" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F126: Reports produced from the records of BTMS" label="F126" fontsize=7 fontcolor="#666666"]
+}

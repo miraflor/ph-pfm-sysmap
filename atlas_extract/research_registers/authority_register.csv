@@ -1,0 +1,24 @@
+﻿authority_id,authority_name,role_summary,source_code,jurisdiction,evidence_state
+CONGRESS,Congress,"enact appropriation, tax and borrowing statutes",Constitution,national,atlas_source_reviewed_not_transaction_tested
+PRES,President,"propose budget, approve or veto legislation, lawful executive decisions",Constitution,national,atlas_source_reviewed_not_transaction_tested
+DBCC,DBCC,recommend fiscal program and aggregates,DBCC-PAGE,national,atlas_source_reviewed_not_transaction_tested
+DBM,Department of Budget and Management,"budget proposal, release and accountability administration",NBC599,national,atlas_source_reviewed_not_transaction_tested
+AGENCY,National government agency / authorized official,"budget request, valid commitment, claim approval, reports",PD1445,national,atlas_source_reviewed_not_transaction_tested
+BAC,Agency Bids and Awards Committee,procurement steps and recommendation subject to head of agency action,RA12009,national,atlas_source_reviewed_not_transaction_tested
+DOF,Department of Finance,"revenue, financing and fiscal policy",ROADMAP2024,national,atlas_source_reviewed_not_transaction_tested
+BIR,Bureau of Internal Revenue,internal revenue tax administration,PEFA2025,national,atlas_source_reviewed_not_transaction_tested
+BOC,Bureau of Customs,customs / border revenue administration,PEFA2025,national,atlas_source_reviewed_not_transaction_tested
+BTR,Bureau of the Treasury,"cash, government borrowing and debt operations",BTR-SITE,national,atlas_source_reviewed_not_transaction_tested
+BSP,Bangko Sentral ng Pilipinas,banker and financial infrastructure roles,ROADMAP2024,national,atlas_source_reviewed_not_transaction_tested
+BANK,Government servicing / authorized agent banks,"collection, payment and banking services as applicable",NBC599,national,atlas_source_reviewed_not_transaction_tested
+COA,Commission on Audit,"public accounting framework, independent external audit",CONST,all,atlas_source_reviewed_not_transaction_tested
+DEPDEV,"Department of Economy, Planning and Development","planning, investment programming and appraisal",AO37,national,atlas_source_reviewed_not_transaction_tested
+RDC,Regional Development Council,regional priorities and endorsement in applicable process,NBM156,regional,atlas_source_reviewed_not_transaction_tested
+LOCAL_EXEC,LGU local chief executive and finance offices,local budget proposal and treasury operations,LGC,local,atlas_source_reviewed_not_transaction_tested
+SANG,Sanggunian,local appropriation ordinance and oversight,LGC,local,atlas_source_reviewed_not_transaction_tested
+BLGF,Bureau of Local Government Finance,local fiscal reporting and oversight,eSRE,local,atlas_source_reviewed_not_transaction_tested
+GOCC,GOCC / governing board,"corporate budget, expenditure, reports subject to charter",COB,corporate,atlas_source_reviewed_not_transaction_tested
+GCG,Governance Commission for GOCCs,GOCC governance within scope of law,COB,corporate,atlas_source_reviewed_not_transaction_tested
+LENDER,Lender / bond investor,provide borrowing proceeds or receive debt service,BTR-SITE,external,atlas_source_reviewed_not_transaction_tested
+SUPPLIER,Supplier / contractor / beneficiary,"contract performance, billing or benefit receipt",RA12009,external,atlas_source_reviewed_not_transaction_tested
+TREAS_LOCAL,Local treasurer,"local collections, deposits, receipts and payment controls",LGC,local,atlas_source_reviewed_not_transaction_tested

@@ -1,0 +1,59 @@
+@startuml
+title UC-PR Procure up to the award (cohort P, E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "BAC, its Secretariat and technical work…" as ROLE_BAC
+boundary "System or office where the act takes place" as B_PR_01
+control "PR-01 Submit the procurement plan and monitoring report…" as C_PR_01
+entity "APP: Annual Procurement Plan , indicative a…" as E_R_APP_
+entity "Procurement Monitoring Report" as E_R_PMR_
+entity "Purchase Request [Agency own systems]" as E_R_PR_SYS_AGENCY_OWN
+boundary "System or office where the act takes place" as B_PR_02
+control "PR-02 Post the invitation to bid (check not stated)" as C_PR_02
+entity "Invitation to bid and bidding documents" as E_R_ITB_
+entity "APP: Annual Procurement Plan , indicative a… [Agency own systems]" as E_R_APP_SYS_AGENCY_OWN
+actor "Procurement Service of DBM" as ROLE_PSDBM
+boundary "System or office where the act takes place" as B_PR_03
+control "PR-03 Show the opportunity and publish open data (check…" as C_PR_03
+entity "Notice of award" as E_R_NOA_
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "System or office where the act takes place" as B_PR_04
+control "PR-04 Submit and open the bids (check not stated)" as C_PR_04
+entity "Bid [PhilGEPS (modernized): Electronic bidding]" as E_R_BID_MOD_PG_EBID
+actor "Head of agency or authorized official" as ROLE_HEAD
+boundary "System or office where the act takes place" as B_PR_05
+control "PR-05 Evaluate, recommend and award (check not stated)" as C_PR_05
+entity "Notice of award [PhilGEPS (modernized)]" as E_R_NOA_SYS_PHILGEPS
+entity "Resolution of the BAC recommending award [PhilGEPS (modernized)]" as E_R_BACRES_SYS_PHILGEPS
+ROLE_BAC -- B_PR_01
+B_PR_01 -- C_PR_01
+C_PR_01 -- E_R_APP_
+C_PR_01 -- E_R_PMR_
+C_PR_01 -- E_R_PR_SYS_AGENCY_OWN
+ROLE_BAC -- B_PR_02
+B_PR_02 -- C_PR_02
+C_PR_01 -- C_PR_02
+C_PR_02 -- E_R_ITB_
+C_PR_02 -- E_R_PR_SYS_AGENCY_OWN
+C_PR_02 -- E_R_APP_SYS_AGENCY_OWN
+ROLE_PSDBM -- B_PR_03
+B_PR_03 -- C_PR_03
+C_PR_02 -- C_PR_03
+C_PR_03 -- E_R_ITB_
+C_PR_03 -- E_R_NOA_
+ROLE_SUPPLIER -- B_PR_04
+B_PR_04 -- C_PR_04
+C_PR_03 -- C_PR_04
+C_PR_04 -- E_R_ITB_
+C_PR_04 -- E_R_BID_MOD_PG_EBID
+ROLE_HEAD -- B_PR_05
+B_PR_05 -- C_PR_05
+C_PR_04 -- C_PR_05
+C_PR_05 -- E_R_BID_MOD_PG_EBID
+C_PR_05 -- E_R_PR_SYS_AGENCY_OWN
+C_PR_05 -- E_R_APP_SYS_AGENCY_OWN
+C_PR_05 -- E_R_NOA_SYS_PHILGEPS
+C_PR_05 -- E_R_BACRES_SYS_PHILGEPS
+@enduml

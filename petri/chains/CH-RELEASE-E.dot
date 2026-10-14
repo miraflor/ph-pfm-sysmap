@@ -1,0 +1,49 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-RELEASE-E: Release of allotments (cohort E)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"C-F012-BED" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F012: Budget execution\ndocuments entered in URS" tooltip="C-F012-BED"]
+"S-NBC" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Release guidelines of\nthe year issued\n(National Budget\nCircular) ●" tooltip="S-NBC"]
+"C-F021A-BED" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F021A: Budget execution\ndocuments at DBM for\nevaluation" tooltip="C-F021A-BED"]
+"S-APPROP" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Appropriation available\n(a line of the GAA) ●" tooltip="S-APPROP"]
+"S-ALLOT" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Allotment available, not\nyet obligated ●" tooltip="S-ALLOT"]
+"S-SBR" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Special Budget Request\nsubmitted for an item\nthat needs clearance" tooltip="S-SBR"]
+"S-SBR-CLEARED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Request ready for\nevaluation (approved by\nthe Office of the\nPresident where the\nguidelines require it)" tooltip="S-SBR-CLEARED"]
+"C-F007" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F007: Approved release\ndocument passed to ADRS" tooltip="C-F007"]
+"C-F008-SARO" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="F008: SARO or GARO\navailable for download\nby the agency" tooltip="C-F008-SARO"]
+"C-F009" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F009: Record of the\nissued document sent to\nthe verification record" tooltip="C-F009"]
+"S-VERIFIABLE" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Fingerprint of the\ndocument stored; any\ncopy can be checked" tooltip="S-VERIFIABLE"]
+"RL-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-01\nSubmit the budget\nexecution documents in\nURS" tooltip="Agency as a whole (central office)"]
+"RL-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-02\nPass the documents to\nDBM" tooltip="DBM (bureaus and approving officials)"]
+"RL-03A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-03A\nRelease by the GAA as\nallotment order" tooltip="DBM (bureaus and approving officials)"]
+"RL-03B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-03B\nSubmit a Special Budget\nRequest" tooltip="Agency as a whole (central office)"]
+"RL-04A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-04A\nObtain the approval of\nthe Office of the\nPresident" tooltip="Office of the President"]
+"RL-04B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-04B\nNo approval of the\nPresident needed" tooltip="DBM (bureaus and approving officials)"]
+"RL-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-05\nEvaluate and approve the\nSARO or GARO" tooltip="DBM (bureaus and approving officials)"]
+"RL-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-06\nRelease the document in\nADRS" tooltip="DBM (bureaus and approving officials)"]
+"RL-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-07\nDownload and record the\nallotment" tooltip="Head of the budget unit"]
+"RL-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="RL-08\nStore the fingerprint of\nthe document" tooltip="DBM (bureaus and approving officials)"]
+"RL-01" -> "C-F012-BED"
+"S-NBC" -> "RL-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F012-BED" -> "RL-02"
+"RL-02" -> "C-F021A-BED"
+"C-F021A-BED" -> "RL-03A"
+"S-APPROP" -> "RL-03A" [label="amount" fontsize=7]
+"RL-03A" -> "S-ALLOT"
+"C-F021A-BED" -> "RL-03B"
+"RL-03B" -> "S-SBR"
+"S-SBR" -> "RL-04A"
+"RL-04A" -> "S-SBR-CLEARED"
+"S-SBR" -> "RL-04B"
+"RL-04B" -> "S-SBR-CLEARED"
+"S-SBR-CLEARED" -> "RL-05"
+"S-APPROP" -> "RL-05" [label="amount" fontsize=7]
+"RL-05" -> "C-F007"
+"C-F007" -> "RL-06"
+"RL-06" -> "C-F008-SARO"
+"RL-06" -> "C-F009"
+"C-F008-SARO" -> "RL-07"
+"RL-07" -> "S-ALLOT"
+"C-F009" -> "RL-08"
+"RL-08" -> "S-VERIFIABLE"
+}

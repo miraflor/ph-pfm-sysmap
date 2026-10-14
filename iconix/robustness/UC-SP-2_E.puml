@@ -1,0 +1,26 @@
+@startuml
+title UC-SP-2 Obligate and contract (cohort E)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "eBudget of COA for the registry; paper ORS and pu…" as B_SP_05
+control "SP-05 Obligate and sign the contract (by a person)" as C_SP_05
+entity "SARO: Special Allotment Release Order [eBudget (COA)]" as E_R_SARO_SYS_EBUDGET_COA
+entity "GAAAO: GAA as allotment order [eBudget (COA)]" as E_R_GAAAO_SYS_EBUDGET_COA
+entity "RAOD, Registries of Allotments, Obligations… [eBudget (COA)]" as E_R_RAOD_SYS_EBUDGET_COA
+entity "Notice of award [PhilGEPS (modernized)]" as E_R_NOA_SYS_PHILGEPS
+entity "Resolution of the BAC recommending award [PhilGEPS (modernized)]" as E_R_BACRES_SYS_PHILGEPS
+entity "ORS: Obligation Request and Status [eBudget (COA)]" as E_R_ORS_SYS_EBUDGET_COA
+entity "Contract or Purchase Order [Agency own systems]" as E_R_PO_SYS_AGENCY_OWN
+ROLE_BUDGET -- B_SP_05
+B_SP_05 -- C_SP_05
+C_SP_05 -- E_R_SARO_SYS_EBUDGET_COA
+C_SP_05 -- E_R_GAAAO_SYS_EBUDGET_COA
+C_SP_05 -- E_R_RAOD_SYS_EBUDGET_COA
+C_SP_05 -- E_R_NOA_SYS_PHILGEPS
+C_SP_05 -- E_R_BACRES_SYS_PHILGEPS
+C_SP_05 -- E_R_ORS_SYS_EBUDGET_COA
+C_SP_05 -- E_R_PO_SYS_AGENCY_OWN
+@enduml

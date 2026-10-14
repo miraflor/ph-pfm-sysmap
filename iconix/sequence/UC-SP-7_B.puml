@@ -1,0 +1,22 @@
+@startuml
+title UC-SP-7 Reconcile with the bank (cohort B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "BTMS: 2 Payments" as B_MOD_BTMS_PAY
+control "check by BTMS: 2 Payments" as C_software_MOD_BTMS_PAY
+entity "BTMS: 2 Payments" as E_MOD_BTMS_PAY
+entity "BTMS: 5 Accounting and report…" as E_MOD_BTMS_ACC
+entity "BTMS" as E_SYS_BTMS
+== SP-21B Reconcile each day from electronic statements ==
+ROLE_ACCOUNTANT -> B_MOD_BTMS_PAY : BTMS: bank reconciliation from electronic bank statements
+B_MOD_BTMS_PAY -> C_software_MOD_BTMS_PAY : Reconcile each day from electronic statements
+note right of C_software_MOD_BTMS_PAY : R-BOOKS-BANK: The books agree with the bank
+note right of C_software_MOD_BTMS_PAY : R-NCA-EQUAL: Reconciliation objective: the NCA balances in agency accoun…
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_PAY : write: Books, registries and bank agree for the period
+C_software_MOD_BTMS_PAY -> E_MOD_BTMS_ACC : read: Payment recorded in the books (JEV: Accounts Payable, Cash-…
+C_software_MOD_BTMS_PAY -> E_SYS_BTMS : read: NCA balance as recorded by the agency (registry of the acco…
+@enduml

@@ -1,0 +1,143 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-SPEND-E: Spending: from an allotment to a settled payment and its records (cohort E)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"S-MDP" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Monthly disbursement\nprogram of the agency\n(BED 3) ●" tooltip="S-MDP"]
+"C-F011" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F011: NCA on its way to\nthe bank" tooltip="C-F011"]
+"C-F008-NCA" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F008: Advice of NCA\nissued, for download in\nADRS" tooltip="C-F008-NCA"]
+"S-TSA" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="Cash in the Treasury\nSingle Account ●" tooltip="S-TSA"]
+"S-NCA-BANK" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="NCA balance in the MDS\nsub-account at the\nservicing bank (a limit,\nnot cash)" tooltip="S-NCA-BANK"]
+"S-NCA-AGENCY" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="NCA balance as recorded\nby the agency (registry\nof the accounting unit)" tooltip="S-NCA-AGENCY"]
+"S-NCA-CASH" [shape=ellipse style="filled" peripheries=2 fillcolor="#fde0c2" color="#a35200" label="NCA balance per the\nrecord of checks and\npayment orders of the\ncash unit" tooltip="S-NCA-CASH"]
+"S-ALLOT" [shape=ellipse style="filled" peripheries=2 fillcolor="#d6e4f7" color="#1f4e8c" label="Allotment available, not\nyet obligated ●" tooltip="S-ALLOT"]
+"S-AWARD" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Award made" tooltip="S-AWARD"]
+"S-OBLIGATED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Obligation recorded: ORS\nwith Box A and Box B,\nentered in the registry" tooltip="S-OBLIGATED"]
+"S-CONTRACT" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Contract or purchase\norder in force" tooltip="S-CONTRACT"]
+"S-DELIVERED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Delivery made, with\ndelivery receipt and\ninvoice" tooltip="S-DELIVERED"]
+"S-ACCEPTED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Delivery inspected and\naccepted: the obligation\nis due and demandable" tooltip="S-ACCEPTED"]
+"C-F067" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F067: Copy of the\nacceptance report, with\nthe purchase order and\ndelivery receipt, at\naccounting" tooltip="C-F067"]
+"S-PAYABLE" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payable recorded in the\nbooks (JEV: asset or\nexpense, Accounts\nPayable)" tooltip="S-PAYABLE"]
+"C-F069-PAYABLE" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F069: JEV of the\npayable, at the budget\nunit for part C" tooltip="C-F069-PAYABLE"]
+"S-ORS-PAYABLE" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payable posted in part C\nof the ORS" tooltip="S-ORS-PAYABLE"]
+"S-CLAIM-OK" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Claim examined: voucher\nwith Box A and the\naccounting entry" tooltip="S-CLAIM-OK"]
+"S-CLAIM-APPROVED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d6e4f7" color="#1f4e8c" label="Claim approved for\npayment: Box C certified\nand Box D approved" tooltip="S-CLAIM-APPROVED"]
+"S-ORDER-SIGNED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Payment order certified,\napproved, signed and\ncountersigned, with its\nsummary list" tooltip="S-ORDER-SIGNED"]
+"C-F032" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F032: Payment order and\nsummary list at the\nbank, on paper" tooltip="C-F032"]
+"C-F017" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F017: Payment order at\nthe bank, through eMDS" tooltip="C-F017"]
+"C-F018" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F018: Payee credited by\nthe servicing bank" tooltip="C-F018"]
+"S-BANK-CLAIM" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Payments made by the\nbank, to be replenished" tooltip="S-BANK-CLAIM"]
+"C-F019" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F019: Copy of the\nsummary list and payment\norder at BTr, on the\nsame day" tooltip="C-F019"]
+"C-F033" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F033: Validated copy of\nthe payment order, back\nat the cash unit" tooltip="C-F033"]
+"C-F061" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F061: Report of payments\nmade, at eTRAMS of BTr" tooltip="C-F061"]
+"C-F020" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="F020: Replenishment on\nits way from the TSA to\nthe bank" tooltip="C-F020"]
+"S-SETTLED" [shape=ellipse style="filled" peripheries=1 fillcolor="#fde0c2" color="#a35200" label="Bank replenished for the\npayments it made" tooltip="S-SETTLED"]
+"C-F068" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F068: Daily report of\npayment orders issued,\nwith the vouchers and\nvalidated orders, at\naccounting" tooltip="C-F068"]
+"C-F040" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F040: Daily report of\npayment orders, on the\nwebsite of the agency" tooltip="C-F040"]
+"S-JEV-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment recorded in the\nbooks (JEV: Accounts\nPayable, Cash-MDS, Due\nto BIR)" tooltip="S-JEV-PAID"]
+"C-F069-PAYMENT" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F069: Copy of the daily\nreport and JEV of the\npayment, at the budget\nunit" tooltip="C-F069-PAYMENT"]
+"C-F023" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F023: Paid vouchers with\nthe daily report and\nJEV, at the COA auditor" tooltip="C-F023"]
+"C-F035" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F035: Returns of taxes\nwithheld and the\nelectronic Tax\nRemittance Advice, at\nBIR" tooltip="C-F035"]
+"S-ORS-PAID" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Payment posted in part C\nof the ORS and in the\nregistry of\ndisbursements" tooltip="S-ORS-PAID"]
+"S-AUDITED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Audit result: no\nfinding, or an\nobservation, suspension,\ndisallowance or charge" tooltip="S-AUDITED"]
+"S-MONTH-END" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="End of a month ●" tooltip="S-MONTH-END"]
+"C-F034" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="F034: Monthly bank\nstatement, at accounting" tooltip="C-F034"]
+"S-RECONCILED" [shape=ellipse style="filled" peripheries=1 fillcolor="#e6e6e6" color="#555555" label="Books, registries and\nbank agree for the\nperiod" tooltip="S-RECONCILED"]
+"SP-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-01\nIssue the NCA" tooltip="DBM (bureaus and approving officials)"]
+"SP-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-02\nCredit the NCA to the\nMDS sub-account" tooltip="Servicing bank"]
+"SP-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-03\nRecord the NCA received" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-05\nObligate and sign the\ncontract" tooltip="Head of the budget unit"]
+"SP-06" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-06\nDeliver" tooltip="Supplier or contractor"]
+"SP-07" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-07\nInspect and accept" tooltip="Inspection officer and property custodian"]
+"SP-08" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-08\nRecord the payable" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-08B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-08B\nPost the payable in part\nC of the ORS" tooltip="Head of the budget unit"]
+"SP-09" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-09\nPrepare and examine the\nclaim" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-10" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-10\nCertify cash available\nand approve" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-11" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-11\nPrepare and sign the\npayment order" tooltip="Cashier or disbursing officer"]
+"SP-12A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-12A\nSend the payment order\non paper" tooltip="Cashier or disbursing officer"]
+"SP-12B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-12B\nSend the payment order\nthrough eMDS" tooltip="Cashier or disbursing officer"]
+"SP-13A" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-13A\nCheck and pay the paper\norder" tooltip="Servicing bank"]
+"SP-13B" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-13B\nCheck and pay the eMDS\norder" tooltip="Servicing bank"]
+"SP-14" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-14\nReplenish the servicing\nbank" tooltip="Bureau of the Treasury"]
+"SP-15" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-15\nReceive the\nreplenishment" tooltip="Servicing bank"]
+"SP-16" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-16\nReceive the validated\ncopy and prepare the\ndaily report" tooltip="Cashier or disbursing officer"]
+"SP-17" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-17\nRecord the payment in\nthe books" tooltip="Chief accountant (head of the accounting unit)"]
+"SP-18" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-18\nPost the payment in the\nORS and the registry" tooltip="Head of the budget unit"]
+"SP-19" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-19\nAudit the paid\ntransaction" tooltip="COA audit team"]
+"SP-20" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-20\nSend the monthly bank\nstatement" tooltip="Servicing bank"]
+"SP-21" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="SP-21\nReconcile books,\nregistries and bank for\nthe month" tooltip="Chief accountant (head of the accounting unit)"]
+"S-MDP" -> "SP-01"
+"SP-01" -> "C-F011"
+"SP-01" -> "C-F008-NCA"
+"SP-01" -> "S-MDP"
+"S-TSA" -> "SP-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F011" -> "SP-02"
+"SP-02" -> "S-NCA-BANK"
+"C-F008-NCA" -> "SP-03"
+"SP-03" -> "S-NCA-AGENCY"
+"SP-03" -> "S-NCA-CASH"
+"S-ALLOT" -> "SP-05" [label="amount" fontsize=7]
+"S-AWARD" -> "SP-05"
+"SP-05" -> "S-OBLIGATED"
+"SP-05" -> "S-CONTRACT"
+"S-CONTRACT" -> "SP-06"
+"SP-06" -> "S-DELIVERED"
+"S-DELIVERED" -> "SP-07"
+"SP-07" -> "S-ACCEPTED"
+"SP-07" -> "C-F067"
+"C-F067" -> "SP-08"
+"SP-08" -> "S-PAYABLE"
+"SP-08" -> "C-F069-PAYABLE"
+"C-F069-PAYABLE" -> "SP-08B"
+"SP-08B" -> "S-ORS-PAYABLE"
+"S-OBLIGATED" -> "SP-09"
+"S-ACCEPTED" -> "SP-09"
+"SP-09" -> "S-CLAIM-OK"
+"S-CLAIM-OK" -> "SP-10"
+"S-NCA-AGENCY" -> "SP-10" [label="amount" fontsize=7]
+"SP-10" -> "S-CLAIM-APPROVED"
+"S-CLAIM-APPROVED" -> "SP-11"
+"S-NCA-CASH" -> "SP-11" [label="amount" fontsize=7]
+"SP-11" -> "S-ORDER-SIGNED"
+"S-ORDER-SIGNED" -> "SP-12A"
+"SP-12A" -> "C-F032"
+"S-ORDER-SIGNED" -> "SP-12B"
+"SP-12B" -> "C-F017"
+"C-F032" -> "SP-13A"
+"S-NCA-BANK" -> "SP-13A" [label="amount" fontsize=7]
+"SP-13A" -> "C-F018"
+"SP-13A" -> "S-BANK-CLAIM"
+"SP-13A" -> "C-F019"
+"SP-13A" -> "C-F033"
+"SP-13A" -> "C-F061"
+"C-F017" -> "SP-13B"
+"S-NCA-BANK" -> "SP-13B" [label="amount" fontsize=7]
+"SP-13B" -> "C-F018"
+"SP-13B" -> "S-BANK-CLAIM"
+"SP-13B" -> "C-F061"
+"S-BANK-CLAIM" -> "SP-14"
+"C-F061" -> "SP-14"
+"S-TSA" -> "SP-14" [label="amount" fontsize=7]
+"SP-14" -> "C-F020"
+"C-F019" -> "SP-14"
+"C-F020" -> "SP-15"
+"SP-15" -> "S-SETTLED"
+"C-F033" -> "SP-16"
+"SP-16" -> "C-F068"
+"SP-16" -> "C-F040"
+"C-F068" -> "SP-17"
+"SP-17" -> "S-JEV-PAID"
+"SP-17" -> "C-F069-PAYMENT"
+"SP-17" -> "C-F023"
+"SP-17" -> "C-F035"
+"C-F069-PAYMENT" -> "SP-18"
+"SP-18" -> "S-ORS-PAID"
+"C-F023" -> "SP-19"
+"SP-19" -> "S-AUDITED"
+"S-MONTH-END" -> "SP-20"
+"SP-20" -> "C-F034"
+"C-F034" -> "SP-21"
+"SP-21" -> "S-RECONCILED"
+"S-JEV-PAID" -> "SP-21" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-NCA-AGENCY" -> "SP-21" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"S-NCA-CASH" -> "SP-21" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+}

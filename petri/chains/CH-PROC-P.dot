@@ -1,0 +1,31 @@
+digraph net {
+graph [rankdir=TB nodesep=0.3 ranksep=0.35 fontname="Helvetica" label="CH-PROC-P: Procurement in PhilGEPS up to the award (cohort P)" labelloc=t fontsize=12]
+node [fontname="Helvetica" fontsize=9]
+edge [arrowsize=0.6]
+"C-F041" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F041: Annual Procurement\nPlan and monitoring\nreport at the GPPB" tooltip="C-F041"]
+"S-NEED" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Need ready: purchase\nrequest and a line in\nthe procurement plan ●" tooltip="S-NEED"]
+"C-F013-ITB" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F013: Invitation to bid\nposted in PhilGEPS" tooltip="C-F013-ITB"]
+"C-F014" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F014: Opportunity\nvisible to registered\nsuppliers" tooltip="C-F014"]
+"C-F103" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F103: Notice and award\nin the open data of\nPhilGEPS" tooltip="C-F103"]
+"S-BIDS" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Bids received and opened" tooltip="S-BIDS"]
+"S-AWARD" [shape=ellipse style="filled" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="Award made" tooltip="S-AWARD"]
+"C-F013-NOA" [shape=ellipse style="filled,dashed" peripheries=1 fillcolor="#d5ecd5" color="#2e6b2e" label="F013: Award posted in\nPhilGEPS" tooltip="C-F013-NOA"]
+"PR-01" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-01\nSubmit the procurement\nplan and monitoring\nreport" tooltip="BAC, its Secretariat and technical working group"]
+"PR-02" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-02\nPost the invitation to\nbid" tooltip="BAC, its Secretariat and technical working group"]
+"PR-03" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-03\nShow the opportunity and\npublish open data" tooltip="Procurement Service of DBM"]
+"PR-04" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-04\nSubmit and open the bids" tooltip="Supplier or contractor"]
+"PR-05" [shape=box style="filled" fillcolor="#ffffff" penwidth=1.6 label="PR-05\nEvaluate, recommend and\naward" tooltip="Head of agency or authorized official"]
+"PR-01" -> "C-F041"
+"S-NEED" -> "PR-01" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"PR-02" -> "C-F013-ITB"
+"S-NEED" -> "PR-02" [style=dotted arrowhead=none color="#777777" label="read" fontsize=7]
+"C-F013-ITB" -> "PR-03"
+"PR-03" -> "C-F014"
+"PR-03" -> "C-F103"
+"C-F014" -> "PR-04"
+"PR-04" -> "S-BIDS"
+"S-BIDS" -> "PR-05"
+"S-NEED" -> "PR-05"
+"PR-05" -> "S-AWARD"
+"PR-05" -> "C-F013-NOA"
+}

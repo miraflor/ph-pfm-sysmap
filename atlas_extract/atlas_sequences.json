@@ -1,0 +1,3656 @@
+{
+ "01b": {
+  "title": "01b  Investment programming: how a project enters the PIP and TRIP and reaches the budget",
+  "participants": {
+   "DEP": "DEPDev (PIP and TRIP secretariats)",
+   "RO": "Agency regional offices",
+   "RDC": "Regional Development Council",
+   "CO": "Agency central office",
+   "PIPOL": "PIPOL system",
+   "ICC": "ICC",
+   "EDC": "ED Council",
+   "DBM": "DBM"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DEP",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Joint call to update the PIP and formulate the TRIP, with guidelines and calendar"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "RO",
+     "to": "RDC",
+     "arrow": "->>",
+     "text": "Regional priority programs and projects"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "RDC",
+     "to": "RO",
+     "arrow": "-->>",
+     "text": "Endorsement, or recommendations"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "CO",
+     "to": "PIPOL",
+     "arrow": "->>",
+     "text": "Reconfirm ongoing programs and projects. Encode new or updated ones: cost per year, physical and financial progress"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "CO",
+     "to": "PIPOL",
+     "arrow": "->>",
+     "text": "Head of agency endorses the submission (example window: 8 November to 6 December 2024)"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "PIPOL",
+     "to": "DEP",
+     "arrow": "-->>",
+     "text": "Only submissions marked \"as endorsed\" are processed"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "DEP",
+     "to": "DEP",
+     "arrow": "->>",
+     "text": "Check each entry against the PIP criteria and the scope of the TRIP"
+    },
+    {
+     "type": "note",
+     "over": "CO,EDC",
+     "text": "ICC REVIEW applies to projects of PHP 5 billion or more funded by the national budget, to PPP projects, and to every project funded by a foreign loan"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Project needs ICC review",
+       "items": [
+        {
+         "type": "msg",
+         "n": 8,
+         "from": "CO",
+         "to": "ICC",
+         "arrow": "->>",
+         "text": "Project proposal with feasibility study and financing plan"
+        },
+        {
+         "type": "msg",
+         "n": 9,
+         "from": "ICC",
+         "to": "ICC",
+         "arrow": "->>",
+         "text": "Technical, economic and financial appraisal"
+        },
+        {
+         "type": "msg",
+         "n": 10,
+         "from": "ICC",
+         "to": "EDC",
+         "arrow": "->>",
+         "text": "Recommendation"
+        },
+        {
+         "type": "msg",
+         "n": 11,
+         "from": "EDC",
+         "to": "CO",
+         "arrow": "-->>",
+         "text": "Approval or confirmation"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "DEP",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "PIP and TRIP as input to budget preparation"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "DBM",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Budget Call. A Tier 2 proposal must be implementation-ready and must have the required endorsements and approvals"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "CO",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Tier 2 proposals in OSBPS (a different system from PIPOL)"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "CO",
+     "to": "PIPOL",
+     "arrow": "->>",
+     "text": "After the budget is known, update yearly costs to match the GAA and the National Expenditure Program"
+    },
+    {
+     "type": "note",
+     "over": "PIPOL,DBM",
+     "text": "GAP REPORTED BY THE PFM REFORMS ROADMAP AND ITS ACTION PLAN: PIPOL and OSBPS are separate systems, and no standard project identifier connects an entry with a line of the budget proposal. A working group of DEPDev and DBM was created to link them. An integrated planning and budgeting tool is planned."
+    }
+   ]
+  },
+  "messages": 15,
+  "file": "01b_investment_programming_sequence.mmd"
+ },
+ "03a": {
+  "title": "03a  Budget preparation: from the fiscal program to the President's budget (example: FY 2027 budget, prepared in 2026)",
+  "participants": {
+   "DBCC": "DBCC",
+   "DBM": "DBM",
+   "CO": "Agency central office",
+   "RO": "Agency regional offices and units",
+   "RDC": "Regional Development Council",
+   "CSO": "Civil society organizations",
+   "OSBPS": "OSBPS v2.0",
+   "PRES": "President and Cabinet",
+   "CONG": "Congress"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBCC",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Fiscal program: revenue, spending ceiling, deficit, borrowing"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "DBM",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Budget Call (National Budget Memorandum No. 156): policy, budget levels, forms, calendar. Budget Forum 28-29 January 2026"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "DBM",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Forward Estimates for FY 2027-2029, formulated by DBM with the agency (basis of Tier 1)"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "CO",
+     "to": "RO",
+     "arrow": "->>",
+     "text": "Internal call for proposals"
+    },
+    {
+     "type": "par",
+     "branches": [
+      {
+       "label": "Regional consultation",
+       "items": [
+        {
+         "type": "msg",
+         "n": 5,
+         "from": "RO",
+         "to": "RDC",
+         "arrow": "->>",
+         "text": "Regional proposals for priority programs and projects"
+        },
+        {
+         "type": "msg",
+         "n": 6,
+         "from": "RDC",
+         "to": "CO",
+         "arrow": "-->>",
+         "text": "Inputs and recommendations (BP Form C). DEPDev regional offices send consolidated RDC resolutions to DBM"
+        }
+       ]
+      },
+      {
+       "label": "Civil society consultation",
+       "items": [
+        {
+         "type": "msg",
+         "n": 7,
+         "from": "CO",
+         "to": "CSO",
+         "arrow": "->>",
+         "text": "Consultation on proposed programs"
+        },
+        {
+         "type": "msg",
+         "n": 8,
+         "from": "CSO",
+         "to": "CO",
+         "arrow": "-->>",
+         "text": "Inputs (reported in BP Form D)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "CO",
+     "to": "OSBPS",
+     "arrow": "->>",
+     "text": "TIER 1: cost of ongoing programs and commitments at the same scope and quality (BP Forms 201-A to 201-D, 204, 205, 100 series, A and B). Submission period 6 March to 28 April 2026"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "CO",
+     "to": "OSBPS",
+     "arrow": "->>",
+     "text": "TIER 2: new or expanded programs and projects (BP Form 202, and 203 for foreign-assisted projects), implementation-ready and endorsed"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "CO",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Two printed copies. The electronic copy prevails"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "OSBPS",
+     "to": "DBM",
+     "arrow": "-->>",
+     "text": "Encoded proposals"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "DBM",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Technical budget hearings: the agency justifies its proposal"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "DBM",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Evaluation and executive review. Tier 2 proposals compete for the fiscal space (spending program minus total Tier 1)"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "DBM",
+     "to": "DBCC",
+     "arrow": "->>",
+     "text": "Proposed budget levels"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "DBCC",
+     "to": "PRES",
+     "arrow": "->>",
+     "text": "Recommended budget"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "PRES",
+     "to": "DBM",
+     "arrow": "-->>",
+     "text": "Approval by the President and the Cabinet"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "DBM",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Prepare the budget documents: National Expenditure Program (NEP), Budget of Expenditures and Sources of Financing (BESF), President's Budget Message, staffing summary"
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "PRES",
+     "to": "CONG",
+     "arrow": "->>",
+     "text": "Submit the budget within 30 days from the opening of the regular session (for FY 2027: by 26 August 2026. Press reports: submitted on 11 August 2026)"
+    },
+    {
+     "type": "note",
+     "over": "DBCC,CONG",
+     "text": "LIMIT SET BY THE CONSTITUTION: Congress may not increase the appropriations recommended by the President for the operation of the government as specified in the budget."
+    }
+   ]
+  },
+  "messages": 19,
+  "file": "03a_budget_preparation_sequence.mmd"
+ },
+ "04a": {
+  "title": "04a  Budget legislation: from the President's budget to the General Appropriations Act (GAA)",
+  "participants": {
+   "PRES": "President",
+   "EXE": "DBCC, DBM and agencies",
+   "HCA": "House Committee on Appropriations",
+   "HP": "House plenary",
+   "SCF": "Senate Committee on Finance",
+   "SP": "Senate plenary",
+   "BCC": "Bicameral Conference Committee"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "PRES",
+     "to": "HP",
+     "arrow": "->>",
+     "text": "President's budget: NEP, BESF, Budget Message, within 30 days from the opening of the regular session"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "HP",
+     "to": "HCA",
+     "arrow": "->>",
+     "text": "The NEP is filed as the General Appropriations Bill (GAB) and referred to the committee"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "EXE",
+     "to": "HCA",
+     "arrow": "->>",
+     "text": "Briefing on the economy and the fiscal program"
+    },
+    {
+     "type": "par",
+     "branches": [
+      {
+       "label": "House committee stage",
+       "items": [
+        {
+         "type": "msg",
+         "n": 4,
+         "from": "HCA",
+         "to": "EXE",
+         "arrow": "->>",
+         "text": "Hearings, agency by agency: plans, past performance"
+        },
+        {
+         "type": "msg",
+         "n": 5,
+         "from": "EXE",
+         "to": "HCA",
+         "arrow": "-->>",
+         "text": "Answers and documents"
+        }
+       ]
+      },
+      {
+       "label": "Senate committee stage, at the same time",
+       "items": [
+        {
+         "type": "msg",
+         "n": 6,
+         "from": "SCF",
+         "to": "EXE",
+         "arrow": "->>",
+         "text": "Hearings, agency by agency"
+        },
+        {
+         "type": "msg",
+         "n": 7,
+         "from": "EXE",
+         "to": "SCF",
+         "arrow": "-->>",
+         "text": "Answers and documents"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "HCA",
+     "to": "HP",
+     "arrow": "->>",
+     "text": "Committee report on the GAB"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "HP",
+     "to": "HP",
+     "arrow": "->>",
+     "text": "Plenary debates and amendments. Approval on second and third reading"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "HP",
+     "to": "SP",
+     "arrow": "->>",
+     "text": "GAB as approved by the House"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "SCF",
+     "to": "SP",
+     "arrow": "->>",
+     "text": "Committee report with Senate amendments"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "SP",
+     "to": "SP",
+     "arrow": "->>",
+     "text": "Plenary debates and amendments. Approval on second and third reading"
+    },
+    {
+     "type": "note",
+     "over": "HCA,SP",
+     "text": "LIMITS ON CONGRESS: it may not increase the appropriations recommended by the President. Every provision must relate to a specific appropriation in the bill (no rider)."
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "HP",
+     "to": "BCC",
+     "arrow": "->>",
+     "text": "House conferees and House version"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "SP",
+     "to": "BCC",
+     "arrow": "->>",
+     "text": "Senate conferees and Senate version"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "BCC",
+     "to": "BCC",
+     "arrow": "->>",
+     "text": "Reconcile the two versions"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "BCC",
+     "to": "HP",
+     "arrow": "-->>",
+     "text": "Conference report"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "BCC",
+     "to": "SP",
+     "arrow": "-->>",
+     "text": "Conference report"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "HP",
+     "to": "PRES",
+     "arrow": "->>",
+     "text": "Both chambers ratify. The enrolled bill goes to the President"
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "PRES",
+     "to": "PRES",
+     "arrow": "->>",
+     "text": "Review. May veto particular items. The items not vetoed become law"
+    },
+    {
+     "type": "msg",
+     "n": 20,
+     "from": "PRES",
+     "to": "EXE",
+     "arrow": "-->>",
+     "text": "Signed General Appropriations Act (GAA)"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Congress disagrees with a veto",
+       "items": [
+        {
+         "type": "msg",
+         "n": 21,
+         "from": "HP",
+         "to": "PRES",
+         "arrow": "->>",
+         "text": "Override by two thirds of each chamber"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "PRES,BCC",
+     "text": "IF NO GAA IS PASSED BY THE END OF THE FISCAL YEAR: the GAA of the previous year is deemed re-enacted and stays in force until the new bill is passed. Example: the FY 2025 GAA was re-enacted from 1 to 4 January 2026. The FY 2026 GAA (Republic Act No. 12314) took effect on 5 January 2026."
+    }
+   ]
+  },
+  "messages": 21,
+  "file": "04a_legislation_sequence.mmd"
+ },
+ "05a": {
+  "title": "05a  Release of funds: two separate authorities, allotment (to commit) and cash authority (to pay). Example: FY 2026",
+  "participants": {
+   "OP": "Office of the President",
+   "DBM": "DBM",
+   "URS": "URS",
+   "ADRS": "ADRS",
+   "CO": "Agency central office",
+   "OU": "Regional offices and operating units",
+   "BTR": "BTr",
+   "GSB": "Servicing bank (LBP, DBP or PVB)"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "DBM,OU",
+     "text": "START OF THE YEAR"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBM",
+     "to": "CO",
+     "arrow": "->>",
+     "text": "Release guidelines for the year (National Budget Circular)"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "CO",
+     "to": "URS",
+     "arrow": "->>",
+     "text": "Budget execution documents: BED 1 Financial Plan, BED 2 Physical Plan, BED 3 Monthly Disbursement Program"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "URS",
+     "to": "DBM",
+     "arrow": "-->>",
+     "text": "Documents for evaluation"
+    },
+    {
+     "type": "note",
+     "over": "OP,OU",
+     "text": "AUTHORITY TO COMMIT = ALLOTMENT"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "Item without pre-conditions (Schedule I). Example: salaries of filled positions",
+       "items": [
+        {
+         "type": "msg",
+         "n": 4,
+         "from": "DBM",
+         "to": "OU",
+         "arrow": "-->>",
+         "text": "No separate document. The GAA itself is the allotment order (GAAAO). Items appropriated to a regional office or operating unit go directly to it"
+        }
+       ]
+      },
+      {
+       "label": "Item that needs clearance (Schedule II). Examples: lump sums, new items, special purpose funds",
+       "items": [
+        {
+         "type": "msg",
+         "n": 5,
+         "from": "CO",
+         "to": "DBM",
+         "arrow": "->>",
+         "text": "Special Budget Request with details: project profile, location, cost, certifications"
+        },
+        {
+         "type": "opt",
+         "branches": [
+          {
+           "label": "Item for which the guidelines require it",
+           "items": [
+            {
+             "type": "msg",
+             "n": 6,
+             "from": "DBM",
+             "to": "OP",
+             "arrow": "->>",
+             "text": "Request for approval"
+            },
+            {
+             "type": "msg",
+             "n": 7,
+             "from": "OP",
+             "to": "DBM",
+             "arrow": "-->>",
+             "text": "Approval"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "type": "msg",
+         "n": 8,
+         "from": "DBM",
+         "to": "DBM",
+         "arrow": "->>",
+         "text": "Evaluate: conditions of the GAA, readiness, past spending capacity of the agency"
+        },
+        {
+         "type": "msg",
+         "n": 9,
+         "from": "DBM",
+         "to": "ADRS",
+         "arrow": "->>",
+         "text": "Approved SARO (Special Allotment Release Order) or GARO (General Allotment Release Order)"
+        },
+        {
+         "type": "msg",
+         "n": 10,
+         "from": "ADRS",
+         "to": "CO",
+         "arrow": "-->>",
+         "text": "Authorized users of the agency download the document"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "CO",
+     "to": "OU",
+     "arrow": "->>",
+     "text": "Sub-allotment to lower units, where the central office holds the allotment"
+    },
+    {
+     "type": "note",
+     "over": "DBM,GSB",
+     "text": "AUTHORITY TO PAY = CASH AUTHORITY"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "BTR",
+     "to": "DBM",
+     "arrow": "-->>",
+     "text": "Cash position of the national government"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "DBM",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Notice of Cash Allocation (NCA). First NCA covers the first quarter. Later NCAs follow the Monthly Disbursement Program, subject to spending performance and the fiscal position"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "GSB",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Credit the limit to the MDS sub-account of the unit: regular, special accounts, trust, or foreign-assisted projects"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "DBM",
+     "to": "ADRS",
+     "arrow": "->>",
+     "text": "Advice of NCA Issued"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "ADRS",
+     "to": "OU",
+     "arrow": "-->>",
+     "text": "Agency downloads the advice"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Cash need above the program",
+       "items": [
+        {
+         "type": "msg",
+         "n": 17,
+         "from": "CO",
+         "to": "DBM",
+         "arrow": "->>",
+         "text": "Request for additional NCA"
+        },
+        {
+         "type": "msg",
+         "n": 18,
+         "from": "DBM",
+         "to": "GSB",
+         "arrow": "->>",
+         "text": "Additional NCA"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "CO",
+     "to": "OU",
+     "arrow": "->>",
+     "text": "Notice of Transfer of Allocation, where the central office shares its own NCA with a lower unit"
+    },
+    {
+     "type": "note",
+     "over": "DBM,GSB",
+     "text": "OTHER CASH AUTHORITIES: Non-Cash Availment Authority (NCAA) when a lender pays a supplier directly. Cash Disbursement Ceiling (CDC) for foreign service posts that use retained income. Both are downloaded from ADRS."
+    },
+    {
+     "type": "note",
+     "over": "DBM,GSB",
+     "text": "END OF PERIOD: an unused regular NCA lapses on the last working day of the quarter. An unused allotment reverts to the General Fund when the validity of the appropriation ends."
+    }
+   ]
+  },
+  "messages": 19,
+  "file": "05a_release_sequence.mmd"
+ },
+ "06b": {
+  "title": "06b  Competitive bidding under the New Government Procurement Act (RA 12009): who does what, with the time limits",
+  "participants": {
+   "EU": "End-user unit",
+   "BAC": "Bids and Awards Committee (BAC) with Secretariat and working group",
+   "FIN": "Budget and accounting units",
+   "HOPE": "Head of the procuring entity",
+   "PG": "PhilGEPS (electronic portal)",
+   "BID": "Bidders",
+   "OBS": "Observers (private sector, civil society)",
+   "COA": "COA"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "EU",
+     "to": "BAC",
+     "arrow": "->>",
+     "text": "Purchase request, specifications, bidding documents for an item in the Annual Procurement Plan"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "BAC",
+     "to": "FIN",
+     "arrow": "->>",
+     "text": "Are appropriations available for this procurement?"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "FIN",
+     "to": "BAC",
+     "arrow": "-->>",
+     "text": "Confirmation: the item is in the budget law, or in the proposed budget for early procurement"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "BAC",
+     "to": "BAC",
+     "arrow": "->>",
+     "text": "Pre-procurement conference: the procurement follows the plan, appropriations are available, the award criterion is chosen"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "BAC",
+     "to": "PG",
+     "arrow": "->>",
+     "text": "Post the invitation to bid and the bidding documents, with the budget for the contract and the source of funding. Also on the website of the entity, and 7 days at its premises"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "PG",
+     "to": "BID",
+     "arrow": "-->>",
+     "text": "Notice visible to registered suppliers"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "BAC",
+     "to": "BID",
+     "arrow": "->>",
+     "text": "Pre-bid conference, at least 12 days before the deadline for bids (required from a budget of PHP 3 million)"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "BID",
+     "to": "BAC",
+     "arrow": "->>",
+     "text": "Bids in two sealed envelopes: technical (with eligibility documents and bid security) and financial. Deadline: at most 45 days (goods), 50 or 65 (works), 75 (consulting) after posting"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "BAC",
+     "to": "OBS",
+     "arrow": "->>",
+     "text": "Invitation to observe each stage: at least two observers, in addition to the representative of COA"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "BAC",
+     "to": "BAC",
+     "arrow": "->>",
+     "text": "Opening of bids immediately after the deadline. Each envelope passes or fails. A bid above the approved budget for the contract is rejected"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "BAC",
+     "to": "BAC",
+     "arrow": "->>",
+     "text": "Bid evaluation: 7 days for the lowest calculated bid, 14 days when quality is rated with price, 21 days for consulting. Rank by the award criterion"
+    },
+    {
+     "type": "loop",
+     "branches": [
+      {
+       "label": "Until one bidder passes, starting from the first in rank",
+       "items": [
+        {
+         "type": "msg",
+         "n": 12,
+         "from": "BAC",
+         "to": "BID",
+         "arrow": "->>",
+         "text": "Post-qualification within 12 days: verify the legal, technical and financial documents, with the latest tax returns"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "BAC",
+     "to": "HOPE",
+     "arrow": "->>",
+     "text": "Recommendation of award, with the document that authorizes the entity to incur the obligation"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "HOPE",
+     "to": "BID",
+     "arrow": "-->>",
+     "text": "Approval within 10 days, then the notice of award immediately"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "HOPE",
+     "to": "PG",
+     "arrow": "->>",
+     "text": "Award published"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "BID",
+     "to": "HOPE",
+     "arrow": "->>",
+     "text": "Performance security, before signing: 5 percent (goods, consulting) or 10 percent (works) of the contract price, 30 percent as a surety bond"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "HOPE",
+     "to": "BID",
+     "arrow": "->>",
+     "text": "Contract signed within 10 days from receipt of the notice of award"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "HOPE",
+     "to": "BID",
+     "arrow": "->>",
+     "text": "Notice to proceed within 3 days from approval of the contract"
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "OBS",
+     "to": "HOPE",
+     "arrow": "-->>",
+     "text": "Observation report (also to PhilGEPS, and copies to the GPPB and the Ombudsman)"
+    },
+    {
+     "type": "msg",
+     "n": 20,
+     "from": "OBS",
+     "to": "COA",
+     "arrow": "-->>",
+     "text": "Observation report"
+    },
+    {
+     "type": "note",
+     "over": "BAC,BID",
+     "text": "TOTAL TIME: from the opening of bids to the award, not more than 60 days. The period does not run while an early procurement waits for the budget law. FOUR AWARD CRITERIA: lowest calculated responsive bid (goods, works), most economically advantageous responsive bid (quality and price), most advantageous responsive bid (highest quality), highest rated responsive bid (consulting services). All days are calendar days."
+    },
+    {
+     "type": "note",
+     "over": "EU,HOPE",
+     "text": "EARLY PROCUREMENT: all steps up to the recommendation may be done before the budget law, once the proposed budget is submitted. No award until the funding is approved and in effect and the final procurement plan is approved."
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "A losing bidder objects",
+       "items": [
+        {
+         "type": "msg",
+         "n": 21,
+         "from": "BID",
+         "to": "BAC",
+         "arrow": "->>",
+         "text": "Request for reconsideration within 3 days. The BAC decides within 7 days"
+        },
+        {
+         "type": "msg",
+         "n": 22,
+         "from": "BID",
+         "to": "HOPE",
+         "arrow": "->>",
+         "text": "Protest within 7 days, filed electronically, with a fee that is not returned. Decision within 7 days. It is final for smaller contracts. For the others: review by the Regional Trial Court"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "messages": 22,
+  "file": "06b_competitive_bidding_sequence.mmd"
+ },
+ "07a": {
+  "title": "07a  From obligation to payment: who certifies what, and which record each step writes (goods bought by a national agency, paid by payment order)",
+  "participants": {
+   "EU": "Requesting office",
+   "BUD": "Budget unit",
+   "SUP": "Supplier or contractor",
+   "INS": "Property unit and inspection officer",
+   "ACC": "Accounting unit",
+   "HEAD": "Head of agency or authorized official",
+   "CASH": "Cash unit",
+   "GSB": "Servicing bank (MDS)",
+   "BTR": "BTr and BSP",
+   "BIR": "BIR",
+   "COA": "COA auditor"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "EU,HEAD",
+     "text": "COMMIT. The supplier is chosen (chapter 06). The agency records the obligation and certifies that funds are available."
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "EU",
+     "to": "BUD",
+     "arrow": "->>",
+     "text": "Obligation Request and Status (ORS) with the contract or purchase order. Box A: charges are necessary, lawful and under my direct supervision, and the supporting documents are valid, proper and legal"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "BUD",
+     "to": "BUD",
+     "arrow": "->>",
+     "text": "Check the allotment in the registry. Assign the ORS number. Enter the obligation in the registry. Box B: allotment available and obligated. No journal entry"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "ACC",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "Purchase order or contract with the certificate of the chief accountant: \"Funds Available\", and the number, date and amount of the ORS"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "HEAD",
+     "to": "SUP",
+     "arrow": "-->>",
+     "text": "Signed purchase order or contract"
+    },
+    {
+     "type": "note",
+     "over": "SUP,ACC",
+     "text": "VERIFY. The amount becomes a payable only after delivery and acceptance."
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "SUP",
+     "to": "INS",
+     "arrow": "->>",
+     "text": "Delivery, with delivery receipt and invoice"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "INS",
+     "to": "INS",
+     "arrow": "->>",
+     "text": "Inspection and acceptance report with the numbers of the purchase order and of the invoice. Inspection officer: inspected, verified and found in order as to quantity and specifications. Property custodian: accepted, complete or partial"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "INS",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Copy of the acceptance report, with the purchase order and the delivery receipt"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "ACC",
+     "to": "BUD",
+     "arrow": "->>",
+     "text": "Journal entry voucher (JEV): debit the asset or expense, credit Accounts Payable. The budget unit enters the payable in part C of the ORS"
+    },
+    {
+     "type": "note",
+     "over": "EU,HEAD",
+     "text": "APPROVE THE CLAIM. One disbursement voucher (DV) in four copies."
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "EU",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "DV with the original acceptance report, delivery receipt, purchase order and a copy of the ORS. Box A: expenses necessary, lawful and incurred under my direct supervision"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Check the documents against a list. Assign the DV number. Look into the index of payments: was this claim paid before? Compare the DV with the ORS. Box B: the accounting entry"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Head of accounting looks into the registry of the NCA. If the balance is enough: enter the amount as used, and sign Box C: cash available, supporting documents complete, amount claimed proper. If not: keep the DV until cash is available"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "ACC",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "DV for approval"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "HEAD",
+     "to": "ACC",
+     "arrow": "-->>",
+     "text": "Box D: approved for payment"
+    },
+    {
+     "type": "note",
+     "over": "ACC,BIR",
+     "text": "PAY. The payment order is the LDDAP-ADA: a list of payees with bank account, ORS number, gross amount, tax and net amount, and an advice to the bank."
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "ACC",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "LDDAP-ADA in five copies for the approved DVs. The chief accountant signs \"Certified Correct\""
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "HEAD",
+     "to": "CASH",
+     "arrow": "-->>",
+     "text": "Signs \"Approved\""
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "CASH",
+     "to": "CASH",
+     "arrow": "->>",
+     "text": "Enter it in the record of checks and payment orders, with the new balance of the NCA. The cashier signs the advice to debit the account"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "CASH",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "LDDAP-ADA for the second signature"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "HEAD",
+     "to": "CASH",
+     "arrow": "-->>",
+     "text": "Countersigns the advice to debit the account"
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "CASH",
+     "to": "CASH",
+     "arrow": "->>",
+     "text": "Stamp \"PAID\" on the payment order, the DVs and the documents. Prepare the summary list (SLIIE) in four copies. The cashier certifies it, the head of agency approves it"
+    },
+    {
+     "type": "msg",
+     "n": 20,
+     "from": "CASH",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Summary list and LDDAP-ADA (paper copies, or through the electronic facility of the bank)"
+    },
+    {
+     "type": "msg",
+     "n": 21,
+     "from": "GSB",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Check the payment order and the NCA balance. Debit the MDS sub-account of the agency"
+    },
+    {
+     "type": "msg",
+     "n": 22,
+     "from": "GSB",
+     "to": "SUP",
+     "arrow": "->>",
+     "text": "Credit the account of the payee with the net amount, not earlier than 24 hours and not later than 48 hours after receipt"
+    },
+    {
+     "type": "msg",
+     "n": 23,
+     "from": "GSB",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "One copy of the summary list and of the LDDAP-ADA on the same day"
+    },
+    {
+     "type": "msg",
+     "n": 24,
+     "from": "BTR",
+     "to": "GSB",
+     "arrow": "-->>",
+     "text": "Replenishment from the Treasury Single Account"
+    },
+    {
+     "type": "msg",
+     "n": 25,
+     "from": "GSB",
+     "to": "CASH",
+     "arrow": "-->>",
+     "text": "Validated copy of the LDDAP-ADA. Items that could not be credited are marked as not paid"
+    },
+    {
+     "type": "msg",
+     "n": 26,
+     "from": "SUP",
+     "to": "CASH",
+     "arrow": "-->>",
+     "text": "Official receipt, or other evidence that the payment was received"
+    },
+    {
+     "type": "msg",
+     "n": 27,
+     "from": "CASH",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Daily report of payment orders issued (RADAI) in four copies, with the DVs and the validated LDDAP-ADA"
+    },
+    {
+     "type": "msg",
+     "n": 28,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "JEV for the payment: debit Accounts Payable, credit Cash-MDS, Regular and Due to BIR. Enter it in the journal of payment orders"
+    },
+    {
+     "type": "msg",
+     "n": 29,
+     "from": "ACC",
+     "to": "BUD",
+     "arrow": "->>",
+     "text": "One copy of the RADAI. The budget unit enters the payment in part C of the ORS and the disbursement in the registry"
+    },
+    {
+     "type": "msg",
+     "n": 30,
+     "from": "ACC",
+     "to": "BIR",
+     "arrow": "->>",
+     "text": "Tax withheld: returns filed in the electronic system of BIR, paid by Tax Remittance Advice by the 10th day of the next month. No cash moves"
+    },
+    {
+     "type": "note",
+     "over": "ACC,COA",
+     "text": "AFTER PAYMENT"
+    },
+    {
+     "type": "msg",
+     "n": 31,
+     "from": "ACC",
+     "to": "COA",
+     "arrow": "->>",
+     "text": "First copy of the RADAI and of the JEV, with the original DV, its documents and the validated LDDAP-ADA"
+    },
+    {
+     "type": "msg",
+     "n": 32,
+     "from": "COA",
+     "to": "HEAD",
+     "arrow": "-->>",
+     "text": "Audit observations, or notices of suspension or disallowance (chapter 09)"
+    },
+    {
+     "type": "note",
+     "over": "EU,COA",
+     "text": "IN AGENCIES THAT USE BTMS: obligation request, purchase order, goods received note, voucher and journal entry are records in one system. The system refuses an obligation above the allotment and a payment above the cash allocation, and it creates the journal entry from the voucher."
+    }
+   ]
+  },
+  "messages": 32,
+  "file": "07a_obligation_to_payment_sequence.mmd"
+ },
+ "07d": {
+  "title": "07d  Payment and settlement: how money moves from the Treasury Single Account to the payee (Modified Disbursement System)",
+  "participants": {
+   "DBM": "DBM",
+   "AGY": "Agency (accounting and cash units)",
+   "GSB": "Servicing bank (LBP, DBP or PVB)",
+   "PB": "Payee's bank account",
+   "BTR": "BTr",
+   "BSP": "BSP (Treasury Single Account)"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBM",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "NCA: limit for the MDS sub-account of the agency"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "AGY",
+     "to": "AGY",
+     "arrow": "->>",
+     "text": "Books: debit Cash-MDS, Regular, credit Subsidy from National Government. Registry of the NCA. No official receipt is issued for an NCA"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AGY",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Payment order (LDDAP-ADA) in three copies and summary list (SLIIE) in two, on paper or through the electronic facility of the bank"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "AGY",
+     "to": "AGY",
+     "arrow": "->>",
+     "text": "Books, on the day of the daily report: credit Cash-MDS, Regular"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "GSB",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Check the payment order and the NCA balance. Debit the MDS sub-account (the NCA balance decreases)"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "Payee has an account in the same bank",
+       "items": [
+        {
+         "type": "msg",
+         "n": 6,
+         "from": "GSB",
+         "to": "PB",
+         "arrow": "->>",
+         "text": "Direct credit, not earlier than 24 hours and not later than 48 hours after receipt"
+        }
+       ]
+      },
+      {
+       "label": "Payee has an account in another bank",
+       "items": [
+        {
+         "type": "msg",
+         "n": 7,
+         "from": "GSB",
+         "to": "PB",
+         "arrow": "->>",
+         "text": "Bank transfer. The payee bears the bank charge"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "GSB",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "One copy of the summary list and of the payment order on the same day: notice of the amount to be replenished"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "BTR",
+     "to": "BSP",
+     "arrow": "->>",
+     "text": "Instruction to replenish the servicing bank"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "BSP",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Debit the Treasury account, credit the account of the bank at BSP"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "BTR",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Books of the Treasury: debit Subsidy to NGAs, credit Cash in Bank"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "GSB",
+     "to": "AGY",
+     "arrow": "-->>",
+     "text": "Validated copy of the payment order. Items that could not be credited are marked"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "AGY",
+     "to": "AGY",
+     "arrow": "->>",
+     "text": "For an item not credited: journal entry to cancel it, and a new payment order. Each month: reconcile the books with the bank statement of the sub-account"
+    },
+    {
+     "type": "note",
+     "over": "DBM,BSP",
+     "text": "PAYMENT BY CHECK (exception): an MDS check is drawn on the account of the Treasurer of the Philippines. The agency sends the bank an Advice of Checks Issued and Cancelled at least daily, so that the payees can cash the checks. The bank treats a check as stale after six months."
+    },
+    {
+     "type": "note",
+     "over": "DBM,BSP",
+     "text": "END OF QUARTER: the unused balance of a regular NCA lapses. Books of the agency: debit Subsidy from National Government, credit Cash-MDS, Regular. IN AGENCIES THAT USE BTMS: payments are made by electronic transfer (PESONet, InstaPay) or check, and the system reconciles with electronic bank statements each day."
+    }
+   ]
+  },
+  "messages": 13,
+  "file": "07d_payment_settlement_sequence.mmd"
+ },
+ "07i": {
+  "title": "07i  A works contract with an advance, progress billings and retention money (example of the Manual)",
+  "participants": {
+   "CON": "Contractor",
+   "ENG": "Project unit and engineer of the agency",
+   "BUD": "Budget unit",
+   "ACC": "Accounting unit",
+   "CSH": "Cash unit and servicing bank"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "CON,CSH",
+     "text": "BEFORE THE WORK"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "CON",
+     "to": "CSH",
+     "arrow": "->>",
+     "text": "Performance security before the contract is signed. In the example: cash of 75,000. Books: Guaranty/Security Deposits Payable 75,000"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "BUD",
+     "to": "BUD",
+     "arrow": "->>",
+     "text": "Obligation for the whole contract price: 800,000 in the registry. No journal entry"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "CON",
+     "to": "ENG",
+     "arrow": "->>",
+     "text": "Written request for an advance, with a letter of credit, a bank guarantee or a surety bond"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "ACC",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Advance of 15 percent: 120,000. Books: debit Advances to Contractors 120,000, credit Cash-MDS, Regular 120,000"
+    },
+    {
+     "type": "note",
+     "over": "CON,CSH",
+     "text": "FIRST PROGRESS BILLING: 50 percent of the work"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "CON",
+     "to": "ENG",
+     "arrow": "->>",
+     "text": "Statement of work accomplished: 400,000"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "ENG",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "The engineer checks the statement and certifies the amount to be paid"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Books: debit Construction in Progress 400,000. Credit Advances to Contractors 60,000 (half of the advance is recovered) and Accounts Payable 340,000"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "ACC",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Payment of 282,200. Books: debit Accounts Payable 340,000. Credit Cash-MDS, Regular 282,200, Guaranty/Security Deposits Payable 34,000 (retention), Due to BIR 23,800 (tax withheld)"
+    },
+    {
+     "type": "note",
+     "over": "CON,CSH",
+     "text": "FINAL BILLING: the other 50 percent, completed late"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "CON",
+     "to": "ENG",
+     "arrow": "->>",
+     "text": "Statement of work accomplished: 400,000. Certificate of completion"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Books: debit Construction in Progress 400,000. Credit Advances to Contractors 60,000 and Accounts Payable 340,000"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "CON",
+     "to": "CSH",
+     "arrow": "->>",
+     "text": "Damages for the delay: 8,000, collected in cash. Books: Miscellaneous Income 8,000"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "ACC",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Payment of 282,200. Retention 34,000. Tax withheld 23,800"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "ACC",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Turn-over of the building. Books: debit Buildings 800,000, credit Construction in Progress 800,000"
+    },
+    {
+     "type": "note",
+     "over": "CON,CSH",
+     "text": "AFTER FINAL ACCEPTANCE"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "ACC",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Release of the retention money: 68,000. Books: debit Guaranty/Security Deposits Payable 68,000, credit Cash-MDS, Regular 68,000"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "CSH",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Return of the performance security: 75,000"
+    }
+   ]
+  },
+  "messages": 15,
+  "file": "07i_advance_progress_retention.mmd"
+ },
+ "09a": {
+  "title": "09a  External audit by COA: from submission of accounts to the annual reports",
+  "participants": {
+   "ACC": "Agency accounting and other units",
+   "HEAD": "Head of agency and persons liable",
+   "AT": "COA audit team (team leader, supervising auditor)",
+   "DIR": "COA Cluster or Regional Director",
+   "CP": "COA Commission Proper",
+   "PC": "President and Congress"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "ACC",
+     "to": "AT",
+     "arrow": "->>",
+     "text": "Accounts: paid vouchers with the daily reports of payments, journal entries, reports. Year-end statements by 14 February"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "AT",
+     "to": "AT",
+     "arrow": "->>",
+     "text": "Audit: financial (are the statements fairly presented), compliance (were the rules followed), performance (were results achieved with economy)"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AT",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "Audit Observation Memorandum on each finding"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "HEAD",
+     "to": "AT",
+     "arrow": "-->>",
+     "text": "Comments, explanations, documents"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "Finding on a transaction: a requirement is missing",
+       "items": [
+        {
+         "type": "msg",
+         "n": 5,
+         "from": "AT",
+         "to": "HEAD",
+         "arrow": "->>",
+         "text": "Notice of Suspension. The amount is suspended until the requirement is met"
+        }
+       ]
+      },
+      {
+       "label": "Finding on a transaction: illegal, irregular, unnecessary, excessive or extravagant expense",
+       "items": [
+        {
+         "type": "msg",
+         "n": 6,
+         "from": "AT",
+         "to": "HEAD",
+         "arrow": "->>",
+         "text": "Notice of Disallowance, naming the persons liable"
+        }
+       ]
+      },
+      {
+       "label": "Finding on revenue: under-assessment or under-collection",
+       "items": [
+        {
+         "type": "msg",
+         "n": 7,
+         "from": "AT",
+         "to": "HEAD",
+         "arrow": "->>",
+         "text": "Notice of Charge, naming the persons liable"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "Persons liable comply",
+       "items": [
+        {
+         "type": "msg",
+         "n": 8,
+         "from": "HEAD",
+         "to": "AT",
+         "arrow": "->>",
+         "text": "Requirement met, or amount returned"
+        },
+        {
+         "type": "msg",
+         "n": 9,
+         "from": "AT",
+         "to": "HEAD",
+         "arrow": "-->>",
+         "text": "Notice of Settlement"
+        }
+       ]
+      },
+      {
+       "label": "Persons liable contest",
+       "items": [
+        {
+         "type": "msg",
+         "n": 10,
+         "from": "HEAD",
+         "to": "DIR",
+         "arrow": "->>",
+         "text": "Appeal"
+        },
+        {
+         "type": "msg",
+         "n": 11,
+         "from": "DIR",
+         "to": "HEAD",
+         "arrow": "-->>",
+         "text": "Decision"
+        },
+        {
+         "type": "msg",
+         "n": 12,
+         "from": "HEAD",
+         "to": "CP",
+         "arrow": "->>",
+         "text": "Petition for review"
+        },
+        {
+         "type": "msg",
+         "n": 13,
+         "from": "CP",
+         "to": "HEAD",
+         "arrow": "-->>",
+         "text": "Decision of the Commission Proper"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "AT",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "When a decision is final: Notice of Finality of Decision. The agency records a receivable from the persons liable. Then COA Order of Execution (for example, withholding of pay)"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "AT",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "Each quarter: Statement of Audit Suspensions, Disallowances and Charges"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "AT",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "Draft findings discussed. Then the audit report of the agency: opinion on the statements, observations and recommendations, status of earlier recommendations"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "HEAD",
+     "to": "AT",
+     "arrow": "-->>",
+     "text": "Action plan on the recommendations"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "AT",
+     "to": "PC",
+     "arrow": "->>",
+     "text": "COA annual report on the financial condition and operation of the government, by 30 September"
+    },
+    {
+     "type": "note",
+     "over": "ACC,PC",
+     "text": "REPORTED WEAKNESS: the legislature has no formal scrutiny of the audit reports on the annual financial reports (PEFA assessment 2025, indicator 31, score D)."
+    }
+   ]
+  },
+  "messages": 18,
+  "file": "09a_audit_sequence.mmd"
+ },
+ "10b": {
+  "title": "10b  Collection of taxes and customs duties: from the taxpayer to the Treasury Single Account",
+  "participants": {
+   "TP": "Taxpayer or importer",
+   "BIR": "BIR (eFPS, eBIRForms)",
+   "BOC": "BOC (customs system)",
+   "AAB": "Authorized agent bank, ePay gateway, or revenue collection officer",
+   "PAS": "PAS (clearing house system)",
+   "BTR": "BTr (eTRAMS)",
+   "BSP": "BSP (Treasury Single Account)"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "TP,AAB",
+     "text": "INTERNAL REVENUE TAXES (BIR)"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "TP",
+     "to": "BIR",
+     "arrow": "->>",
+     "text": "File the return electronically"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "TP",
+     "to": "AAB",
+     "arrow": "->>",
+     "text": "Pay: bank debit, online gateway, at a bank branch, or to a revenue collection officer where there is no bank"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AAB",
+     "to": "TP",
+     "arrow": "-->>",
+     "text": "Payment confirmation"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "AAB",
+     "to": "BIR",
+     "arrow": "->>",
+     "text": "Report of payments received"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "BIR",
+     "to": "BIR",
+     "arrow": "->>",
+     "text": "Post the payment to the taxpayer account"
+    },
+    {
+     "type": "note",
+     "over": "TP,PAS",
+     "text": "CUSTOMS DUTIES AND TAXES ON IMPORTS (BOC)"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "TP",
+     "to": "BOC",
+     "arrow": "->>",
+     "text": "Goods declaration"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "BOC",
+     "to": "TP",
+     "arrow": "-->>",
+     "text": "Assessment of duties and taxes"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "TP",
+     "to": "AAB",
+     "arrow": "->>",
+     "text": "Pay the assessed amount"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "AAB",
+     "to": "PAS",
+     "arrow": "->>",
+     "text": "Abstract of collection, encrypted and authenticated"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "PAS",
+     "to": "BOC",
+     "arrow": "->>",
+     "text": "Confirmed payment"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "BOC",
+     "to": "TP",
+     "arrow": "-->>",
+     "text": "Release of the goods"
+    },
+    {
+     "type": "note",
+     "over": "AAB,BSP",
+     "text": "REMITTANCE TO THE TREASURY"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "AAB",
+     "to": "BSP",
+     "arrow": "->>",
+     "text": "Remit collections to the account of the Treasury, daily"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "AAB",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Report of collections to BTr"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "BTR",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Monitor collections and disbursements (eTRAMS)"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "BTR",
+     "to": "BIR",
+     "arrow": "-->>",
+     "text": "Compare remittances with collection reports"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "BTR",
+     "to": "BOC",
+     "arrow": "-->>",
+     "text": "Compare remittances with collection reports"
+    },
+    {
+     "type": "note",
+     "over": "TP,BSP",
+     "text": "TAXES WITHHELD BY GOVERNMENT AGENCIES from their own payments are recorded by Tax Remittance Advice. BIR records a collection, but no cash passes through a bank."
+    }
+   ]
+  },
+  "messages": 16,
+  "file": "10b_tax_and_customs_collection_sequence.mmd"
+ },
+ "10d": {
+  "title": "10d  A tax refund: how money collected as tax is paid back",
+  "participants": {
+   "TP": "Taxpayer",
+   "BO": "BIR office that processes the claim",
+   "BA": "BIR approving official",
+   "DBM": "DBM",
+   "BTR": "BTr and bank",
+   "COA": "COA"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "TP,BA",
+     "text": "CLAIM"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "TP",
+     "to": "BO",
+     "arrow": "->>",
+     "text": "Claim for refund with documents. Kinds: input VAT on zero-rated sales, tax collected by error, excess creditable withholding tax, conversion of a tax credit certificate into cash"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "BO",
+     "to": "BO",
+     "arrow": "->>",
+     "text": "Verify the claim within the time limit (180 days for regular claims, 90 days for VAT claims)"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "BO",
+     "to": "BA",
+     "arrow": "->>",
+     "text": "Recommendation"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "BA",
+     "to": "TP",
+     "arrow": "-->>",
+     "text": "Decision: grant in full, grant in part, or deny. A denied claim may go to the tax court"
+    },
+    {
+     "type": "note",
+     "over": "BA,BTR",
+     "text": "PAYMENT FROM THE AMOUNT \"TAX REFUND\" IN THE BIR BUDGET"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "BA",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Request for release against the amount for tax refunds. VAT refunds: not more than 5 percent of last year's VAT collections of BIR. Other refunds: from the collections of the current year"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "DBM",
+     "to": "BTR",
+     "arrow": "-->>",
+     "text": "Release. The amount is treated as trust receipts"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "BTR",
+     "to": "TP",
+     "arrow": "->>",
+     "text": "Refund paid"
+    },
+    {
+     "type": "note",
+     "over": "BO,COA",
+     "text": "RECORDS AND AUDIT"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "BO",
+     "to": "BO",
+     "arrow": "->>",
+     "text": "Collection report adjusted for the refunds of the current year and of earlier years (net collections)"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "BO",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Quarterly financial and physical reports through URS"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "COA",
+     "to": "BO",
+     "arrow": "->>",
+     "text": "Audit of the refunds"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "BA",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "End of year: the unused balance reverts to the unappropriated surplus of the General Fund"
+    }
+   ]
+  },
+  "messages": 11,
+  "file": "10d_tax_refund_sequence.mmd"
+ },
+ "11b": {
+  "title": "11b  Cash programming: how the amount of cash authority for a period is decided",
+  "participants": {
+   "AGY": "Agencies",
+   "DBM": "DBM",
+   "DBCC": "DBCC",
+   "REV": "DOF, BIR, BOC",
+   "BTR": "BTr",
+   "GSB": "Servicing banks",
+   "BSP": "BSP (Treasury Single Account)"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "AGY,BSP",
+     "text": "BEFORE AND AT THE START OF THE YEAR"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBCC",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Fiscal program of the year: revenue, disbursements, deficit, financing"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "DBCC",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Same fiscal program, with the financing program"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AGY",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Monthly Disbursement Program (BED 3) through URS"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "DBM",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Disbursement program of the government, by month"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "REV",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Revenue forecast, by month"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "BTR",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Cash forecast for the next three months, updated regularly"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "BTR",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Plan the borrowing schedule and the placement of surplus cash"
+    },
+    {
+     "type": "note",
+     "over": "AGY,BSP",
+     "text": "DURING THE YEAR"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "DBM",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "NCA for the quarter, per agency, by month"
+    },
+    {
+     "type": "loop",
+     "branches": [
+      {
+       "label": "Every working day",
+       "items": [
+        {
+         "type": "msg",
+         "n": 9,
+         "from": "GSB",
+         "to": "BTR",
+         "arrow": "->>",
+         "text": "Payments made on agency orders"
+        },
+        {
+         "type": "msg",
+         "n": 10,
+         "from": "BTR",
+         "to": "BSP",
+         "arrow": "->>",
+         "text": "Replenish the servicing banks"
+        },
+        {
+         "type": "msg",
+         "n": 11,
+         "from": "REV",
+         "to": "BSP",
+         "arrow": "->>",
+         "text": "Collections of BIR and BOC arrive through collecting banks"
+        },
+        {
+         "type": "msg",
+         "n": 12,
+         "from": "BTR",
+         "to": "BTR",
+         "arrow": "->>",
+         "text": "Check the cash balance against the forecast"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "AGY",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Monthly Report of Disbursements (FAR 4)"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "DBM",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Compare actual payments with the program"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Agency spends slower than its program, or cash is not sufficient",
+       "items": [
+        {
+         "type": "msg",
+         "n": 15,
+         "from": "DBM",
+         "to": "AGY",
+         "arrow": "-->>",
+         "text": "Later NCAs adjusted to spending performance and to the fiscal position"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Agency needs more cash than its program",
+       "items": [
+        {
+         "type": "msg",
+         "n": 16,
+         "from": "AGY",
+         "to": "DBM",
+         "arrow": "->>",
+         "text": "Request for additional NCA, with justification"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "BTR",
+     "to": "DBCC",
+     "arrow": "->>",
+     "text": "Monthly Cash Operations Report: revenue, disbursements, surplus or deficit, financing"
+    },
+    {
+     "type": "note",
+     "over": "AGY,BSP",
+     "text": "END OF EACH QUARTER: the unused balance of a regular NCA lapses. Cash that was not used stays in the Treasury Single Account."
+    }
+   ]
+  },
+  "messages": 17,
+  "file": "11b_cash_programming_sequence.mmd"
+ },
+ "11d": {
+  "title": "11d  One foreign project loan: approvals, signing, use of the loan and repayment",
+  "participants": {
+   "AGY": "Implementing agency",
+   "DEP": "DEPDev, ICC, ED Council",
+   "DBM": "DBM",
+   "DOF": "DOF",
+   "MB": "Monetary Board (BSP)",
+   "OP": "Office of the President",
+   "LEN": "Lender",
+   "DOJ": "DOJ",
+   "BTR": "BTr"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "AGY,OP",
+     "text": "BEFORE SIGNING"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "AGY",
+     "to": "DEP",
+     "arrow": "->>",
+     "text": "Project proposal for ICC review"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "DEP",
+     "to": "AGY",
+     "arrow": "-->>",
+     "text": "ICC recommendation, ED Council approval"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AGY",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Request to provide for the project in the budget"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "DBM",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Forward Obligational Authority (project loan)"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "DOF",
+     "to": "MB",
+     "arrow": "->>",
+     "text": "Request for approval in principle of the loan terms"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "MB",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Approval in principle"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "DOF",
+     "to": "OP",
+     "arrow": "->>",
+     "text": "Request for Special Authority, at least 10 working days before the date needed, with: agency letter, draft loan agreement, Monetary Board concurrence, statement of compliance with laws, Forward Obligational Authority"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "OP",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Special Authority (or Full Powers) to negotiate and sign"
+    },
+    {
+     "type": "note",
+     "over": "DOF,DOJ",
+     "text": "SIGNING"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "DOF",
+     "to": "LEN",
+     "arrow": "->>",
+     "text": "Negotiation. Loan documents cleared by the inter-agency committee that reviews foreign loan documents"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "DOF",
+     "to": "LEN",
+     "arrow": "->>",
+     "text": "Loan agreement signed"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "MB",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Final approval of the loan terms"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "DOJ",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Legal opinion on the authority of the borrower"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "LEN",
+     "to": "DOF",
+     "arrow": "-->>",
+     "text": "Loan declared effective"
+    },
+    {
+     "type": "note",
+     "over": "AGY,BTR",
+     "text": "USE OF THE LOAN. The project also needs an appropriation and an allotment like any other spending."
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "Direct payment",
+       "items": [
+        {
+         "type": "msg",
+         "n": 14,
+         "from": "AGY",
+         "to": "LEN",
+         "arrow": "->>",
+         "text": "Withdrawal application, after the delivery is accepted and the bill is approved. The agency records the asset and a payable"
+        },
+        {
+         "type": "msg",
+         "n": 15,
+         "from": "LEN",
+         "to": "LEN",
+         "arrow": "->>",
+         "text": "Pays the supplier directly"
+        },
+        {
+         "type": "msg",
+         "n": 16,
+         "from": "BTR",
+         "to": "AGY",
+         "arrow": "-->>",
+         "text": "Journal entry voucher of BTr: the lender has paid. BTr records the subsidy to the agency and the loan"
+        },
+        {
+         "type": "msg",
+         "n": 17,
+         "from": "AGY",
+         "to": "DBM",
+         "arrow": "->>",
+         "text": "Copy of that voucher and the list of suppliers paid"
+        },
+        {
+         "type": "msg",
+         "n": 18,
+         "from": "DBM",
+         "to": "AGY",
+         "arrow": "-->>",
+         "text": "Non-Cash Availment Authority. The agency closes the payable against Subsidy from National Government"
+        }
+       ]
+      },
+      {
+       "label": "Cash through the Treasury",
+       "items": [
+        {
+         "type": "msg",
+         "n": 19,
+         "from": "LEN",
+         "to": "BTR",
+         "arrow": "->>",
+         "text": "Loan proceeds to the Treasury. BTr records cash and Loans Payable-Foreign on the credit advice of BSP"
+        },
+        {
+         "type": "msg",
+         "n": 20,
+         "from": "DBM",
+         "to": "AGY",
+         "arrow": "-->>",
+         "text": "NCA under the MDS sub-account for foreign-assisted projects"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "DOF,BTR",
+     "text": "REPAYMENT"
+    },
+    {
+     "type": "msg",
+     "n": 21,
+     "from": "BTR",
+     "to": "LEN",
+     "arrow": "->>",
+     "text": "Interest and principal on the due dates, from the Treasury Single Account. Only the books of BTr record them: principal reduces the loan payable, interest is an expense"
+    }
+   ]
+  },
+  "messages": 21,
+  "file": "11d_foreign_loan_sequence.mmd"
+ },
+ "12a": {
+  "title": "12a  Personnel spending: from an authorized position to the monthly payroll and the remittances",
+  "participants": {
+   "DBM": "DBM (GMIS)",
+   "HR": "Agency personnel unit",
+   "HEAD": "Head of agency",
+   "CSC": "Civil Service Commission",
+   "EMP": "Employee",
+   "FIN": "Agency budget and accounting units",
+   "GSB": "Servicing bank",
+   "REM": "BIR, GSIS, PhilHealth, Pag-IBIG"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "DBM,HEAD",
+     "text": "POSITIONS. A salary can be paid only for a position that DBM has authorized."
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBM",
+     "to": "HR",
+     "arrow": "->>",
+     "text": "Approved staffing pattern: positions, classification, salary grades"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "HR",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Monthly update of the plantilla of personnel in GMIS (PSIPOP): filled and vacant positions"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "HEAD",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Approval of the update in GMIS (second approver)"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "DBM",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Personnel budget of the next year computed from the FILLED positions in GMIS"
+    },
+    {
+     "type": "note",
+     "over": "HR,EMP",
+     "text": "APPOINTMENT"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "HEAD",
+     "to": "EMP",
+     "arrow": "->>",
+     "text": "Appointment to a vacant, funded position"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "HR",
+     "to": "CSC",
+     "arrow": "->>",
+     "text": "Appointment papers for attestation"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "CSC",
+     "to": "HR",
+     "arrow": "-->>",
+     "text": "Attested appointment"
+    },
+    {
+     "type": "note",
+     "over": "EMP,REM",
+     "text": "PAYROLL OF EACH PERIOD"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "HR",
+     "to": "FIN",
+     "arrow": "->>",
+     "text": "Payroll, prepared in advance: gross pay, deductions and net pay of each employee. An authorized official certifies: services duly rendered (Box A)"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "FIN",
+     "to": "FIN",
+     "arrow": "->>",
+     "text": "Budget unit: obligation request. Head of accounting certifies: documents complete, cash available (Box B). Journal entry: salary expense, and the amounts due to BIR, to the insurance bodies and to the employees"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "FIN",
+     "to": "HEAD",
+     "arrow": "->>",
+     "text": "Payroll for approval"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "HEAD",
+     "to": "FIN",
+     "arrow": "-->>",
+     "text": "Approved for payment (Box C)"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "FIN",
+     "to": "GSB",
+     "arrow": "->>",
+     "text": "Payment order for the net pay: to the accounts of the employees, or as an advance to the disbursing officer who pays in cash"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "GSB",
+     "to": "EMP",
+     "arrow": "->>",
+     "text": "Net pay. For cash: each employee signs the payroll, and the disbursing officer certifies that each one was paid (Box D)"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "EMP",
+     "to": "HR",
+     "arrow": "->>",
+     "text": "Reports of attendance, after the payroll. An overpayment for an absence without pay is demanded back"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "FIN",
+     "to": "REM",
+     "arrow": "->>",
+     "text": "Tax withheld (by Tax Remittance Advice), premiums and contributions of employee and government"
+    },
+    {
+     "type": "note",
+     "over": "DBM,FIN",
+     "text": "WHERE THE ALLOTMENT COMES FROM: filled positions = agency budget, released by the GAA as allotment order. New or newly filled positions and some benefits = Miscellaneous Personnel Benefits Fund, by SARO. Government share of retirement and life insurance premiums = automatic appropriation, by GARO. Retirement benefits = Pension and Gratuity Fund, by SARO."
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Shortage in one personnel benefit",
+       "items": [
+        {
+         "type": "msg",
+         "n": 16,
+         "from": "HEAD",
+         "to": "FIN",
+         "arrow": "->>",
+         "text": "Advice for use of PS Allotment (APSA)"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "messages": 16,
+  "file": "12a_position_to_payroll_sequence.mmd"
+ },
+ "14a": {
+  "title": "14a  Budget cycle of a local government unit (province, city or municipality) under the Local Government Code",
+  "participants": {
+   "LCE": "Local chief executive (governor or mayor)",
+   "LFC": "Local finance committee (planning officer, budget officer, treasurer)",
+   "DEP": "Heads of departments",
+   "SAN": "Sanggunian (local legislature)",
+   "REV": "Reviewing authority: DBM, or the provincial sanggunian",
+   "TRE": "Local treasurer, accountant, budget officer",
+   "NAT": "BTr, BLGF, COA"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "LCE,DEP",
+     "text": "PREPARATION (the year before)"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "LCE",
+     "to": "LFC",
+     "arrow": "->>",
+     "text": "Annual investment program from the approved local development plan"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "LFC",
+     "to": "LCE",
+     "arrow": "-->>",
+     "text": "Income estimate and recommended spending ceiling by sector, based on the approved local plans"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "LCE",
+     "to": "DEP",
+     "arrow": "->>",
+     "text": "Budget call with the ceilings"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "TRE",
+     "to": "LCE",
+     "arrow": "-->>",
+     "text": "Statements of income and expenditures"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "DEP",
+     "to": "LCE",
+     "arrow": "->>",
+     "text": "Budget proposals, on or before 15 July"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "LCE",
+     "to": "LFC",
+     "arrow": "->>",
+     "text": "Review and budget hearings"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "LCE",
+     "to": "SAN",
+     "arrow": "->>",
+     "text": "Executive budget, not later than 16 October"
+    },
+    {
+     "type": "note",
+     "over": "LCE,SAN",
+     "text": "AUTHORIZATION"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "SAN",
+     "to": "SAN",
+     "arrow": "->>",
+     "text": "Enact the appropriation ordinance on or before the end of the current fiscal year, within the legal limits (see 14b)"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "SAN",
+     "to": "LCE",
+     "arrow": "->>",
+     "text": "Ordinance for approval"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "No ordinance at the start of the fiscal year",
+       "items": [
+        {
+         "type": "msg",
+         "n": 10,
+         "from": "SAN",
+         "to": "SAN",
+         "arrow": "->>",
+         "text": "Stay in session, with no other business. After 90 days the ordinance of the previous year is deemed reenacted, only for salaries, statutory and contractual obligations, and essential operating expenses"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "SAN,REV",
+     "text": "REVIEW BY A HIGHER AUTHORITY"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "SAN",
+     "to": "REV",
+     "arrow": "->>",
+     "text": "Copy of the ordinance. DBM reviews provinces, highly urbanized cities, independent component cities, and municipalities in Metro Manila. The provincial sanggunian reviews component cities and municipalities"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "No action within 90 days",
+       "items": [
+        {
+         "type": "msg",
+         "n": 12,
+         "from": "REV",
+         "to": "SAN",
+         "arrow": "-->>",
+         "text": "The ordinance is deemed reviewed and stays in full force"
+        }
+       ]
+      },
+      {
+       "label": "Items exceed the legal limits",
+       "items": [
+        {
+         "type": "msg",
+         "n": 13,
+         "from": "REV",
+         "to": "SAN",
+         "arrow": "-->>",
+         "text": "Ordinance declared inoperative in whole or in part. The treasurer may not pay from those items"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "LCE,NAT",
+     "text": "EXECUTION"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "TRE",
+     "to": "TRE",
+     "arrow": "->>",
+     "text": "Release allotments. Collect local taxes and fees"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "NAT",
+     "to": "TRE",
+     "arrow": "->>",
+     "text": "National Tax Allotment released automatically and directly to the treasurer (BTr)"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "TRE",
+     "to": "TRE",
+     "arrow": "->>",
+     "text": "Before each payment: budget officer certifies the appropriation, accountant obligates it, treasurer certifies available funds"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "DEP",
+     "to": "LCE",
+     "arrow": "->>",
+     "text": "Voucher certified and approved by the head of the department. The local chief executive also approves it, except for regularly recurring administrative expenses (payrolls, utilities, remittances)"
+    },
+    {
+     "type": "note",
+     "over": "TRE,NAT",
+     "text": "ACCOUNTABILITY"
+    },
+    {
+     "type": "msg",
+     "n": 18,
+     "from": "TRE",
+     "to": "NAT",
+     "arrow": "->>",
+     "text": "Statement of receipts and expenditures to BLGF (eSRE), quarterly and annual. Accounts to COA"
+    },
+    {
+     "type": "msg",
+     "n": 19,
+     "from": "NAT",
+     "to": "LCE",
+     "arrow": "-->>",
+     "text": "COA audit report"
+    }
+   ]
+  },
+  "messages": 19,
+  "file": "14a_lgu_budget_sequence.mmd"
+ },
+ "14f": {
+  "title": "14f  The budget of a barangay: who prepares, who enacts, who reviews",
+  "participants": {
+   "BT": "Barangay treasurer",
+   "PB": "Punong barangay",
+   "SB": "Sangguniang barangay",
+   "CBO": "City or municipal budget officer",
+   "SP": "Sanggunian of the city or municipality",
+   "ACC": "City or municipal accountant"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "BT,SB",
+     "text": "PREPARATION AND ENACTMENT"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "BT",
+     "to": "PB",
+     "arrow": "->>",
+     "text": "Estimate of income for the next year, and statements of income and expenditure, on or before 15 September"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "PB",
+     "to": "PB",
+     "arrow": "->>",
+     "text": "Prepare the budget with the treasurer. Mandatory items: 10 percent of the general fund for the youth council, at least 20 percent of the tax allotment for development, 5 percent of regular income for calamities. Personal services at most 55 percent of last year's income"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "PB",
+     "to": "SB",
+     "arrow": "->>",
+     "text": "Budget, on or before 16 October"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "SB",
+     "to": "SB",
+     "arrow": "->>",
+     "text": "Appropriation ordinance, by a majority of all members. The punong barangay votes only when the votes are equal and has no veto"
+    },
+    {
+     "type": "note",
+     "over": "SB,SP",
+     "text": "REVIEW"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "SB",
+     "to": "CBO",
+     "arrow": "->>",
+     "text": "Ordinance, within 10 days after enactment"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "CBO",
+     "to": "SP",
+     "arrow": "->>",
+     "text": "Ordinance with findings"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "SP",
+     "to": "SP",
+     "arrow": "->>",
+     "text": "Review within 60 days: legal requirements and limits are met, appropriations do not exceed estimated income"
+    },
+    {
+     "type": "alt",
+     "branches": [
+      {
+       "label": "No action within 60 days",
+       "items": [
+        {
+         "type": "msg",
+         "n": 8,
+         "from": "SP",
+         "to": "SB",
+         "arrow": "-->>",
+         "text": "The ordinance is deemed to be in full force"
+        }
+       ]
+      },
+      {
+       "label": "Found inoperative, in whole or in part",
+       "items": [
+        {
+         "type": "msg",
+         "n": 9,
+         "from": "SP",
+         "to": "PB",
+         "arrow": "-->>",
+         "text": "Returned for adjustment. The treasurer may make no further payments from the inoperative part"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "BT,ACC",
+     "text": "EXECUTION AND ACCOUNTS"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "BT",
+     "to": "BT",
+     "arrow": "->>",
+     "text": "Custody of the funds. Collections and payments"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "BT",
+     "to": "ACC",
+     "arrow": "->>",
+     "text": "Records of transactions. The accounts are kept in the offices of the barangay treasurer and of the city or municipal accountant"
+    },
+    {
+     "type": "note",
+     "over": "BT,ACC",
+     "text": "If no ordinance is enacted, the ordinance of the earlier year is deemed re-enacted, for salaries, obligations fixed by law or contract, and essential operating expenses only"
+    }
+   ]
+  },
+  "messages": 11,
+  "file": "14f_barangay_budget_sequence.mmd"
+ },
+ "15a": {
+  "title": "15a  Government corporations (GOCCs): corporate operating budget, budgetary support and reports",
+  "participants": {
+   "MG": "GOCC management",
+   "BD": "GOCC governing board",
+   "DBM": "DBM (Budget and Management Bureau C)",
+   "BTR": "BTr",
+   "GCG": "Governance Commission for GOCCs",
+   "COA": "COA",
+   "CON": "Congress"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "MG,DBM",
+     "text": "CORPORATE OPERATING BUDGET (every corporation, with or without national support)"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "MG",
+     "to": "BD",
+     "arrow": "->>",
+     "text": "Proposed COB"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "BD",
+     "to": "MG",
+     "arrow": "-->>",
+     "text": "Board approval"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "MG",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "COB on or before 31 March, with DBM Forms 700, 703-A to 703-C, 705, 706"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "DBM",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Evaluate: uses agree with the board approval, sources cover uses, national priorities, physical performance, use of last year's budget, financial ratios"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "DBM",
+     "to": "MG",
+     "arrow": "-->>",
+     "text": "COB approval letter (within 20 working days)"
+    },
+    {
+     "type": "note",
+     "over": "MG,CON",
+     "text": "BUDGETARY SUPPORT FROM THE NATIONAL GOVERNMENT (only some corporations)"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "MG",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Request for subsidy or equity in the national budget proposal"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "CON",
+     "to": "DBM",
+     "arrow": "-->>",
+     "text": "GAA item \"Budgetary Support to Government Corporations\""
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "MG",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Special Budget Request. The amount must be in the board-approved COB"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "DBM",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Release document"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "BTR",
+     "to": "MG",
+     "arrow": "->>",
+     "text": "Cash released directly to the corporation"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "The corporation owes the Treasury",
+       "items": [
+        {
+         "type": "msg",
+         "n": 11,
+         "from": "BTR",
+         "to": "BTR",
+         "arrow": "->>",
+         "text": "Offset the release against dividends due, guarantee fees, advances and other receivables"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "note",
+     "over": "MG,CON",
+     "text": "WHAT THE CORPORATION RETURNS"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "MG",
+     "to": "BTR",
+     "arrow": "->>",
+     "text": "Dividends: at least 50 percent of annual net earnings"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "MG",
+     "to": "DBM",
+     "arrow": "->>",
+     "text": "Quarterly financial and physical reports through URS, within 30 days after each quarter. Also published on its website"
+    },
+    {
+     "type": "msg",
+     "n": 14,
+     "from": "MG",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Written notice that the reports were submitted and published"
+    },
+    {
+     "type": "msg",
+     "n": 15,
+     "from": "MG",
+     "to": "COA",
+     "arrow": "->>",
+     "text": "Year-end financial statements by 14 February"
+    },
+    {
+     "type": "msg",
+     "n": 16,
+     "from": "COA",
+     "to": "BD",
+     "arrow": "-->>",
+     "text": "Audit report"
+    },
+    {
+     "type": "msg",
+     "n": 17,
+     "from": "GCG",
+     "to": "BD",
+     "arrow": "->>",
+     "text": "Performance targets and evaluation of the corporation"
+    }
+   ]
+  },
+  "messages": 17,
+  "file": "15a_gocc_budget_sequence.mmd"
+ },
+ "15b": {
+  "title": "15b  Transfer of funds from one agency to another body that will implement",
+  "participants": {
+   "SRC": "Source agency (holds the appropriation)",
+   "IMP": "Implementing body (agency, corporation or local government)",
+   "SUP": "Suppliers and contractors",
+   "OV": "DBM and COA"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "SRC",
+     "to": "IMP",
+     "arrow": "->>",
+     "text": "Memorandum of agreement: purpose, amount (enough for three months, or the total project cost), period, reports"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "SRC",
+     "to": "SRC",
+     "arrow": "->>",
+     "text": "Obligation recorded against its own allotment"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "SRC",
+     "to": "IMP",
+     "arrow": "->>",
+     "text": "Check in the name of the implementing body. The receiver issues an official receipt"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "SRC",
+     "to": "SRC",
+     "arrow": "->>",
+     "text": "Books: Due from National Government Agencies (a receivable). Not yet an expense, not yet a disbursement in the budget reports"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "IMP",
+     "to": "IMP",
+     "arrow": "->>",
+     "text": "Trust fund books: Due to NGAs (a liability). The money goes to a trust account, or to the Treasury, from which DBM gives an NCA for trust"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "IMP",
+     "to": "SUP",
+     "arrow": "->>",
+     "text": "Procurement, contract"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "SUP",
+     "to": "IMP",
+     "arrow": "-->>",
+     "text": "Delivery, inspected and accepted"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "IMP",
+     "to": "SUP",
+     "arrow": "->>",
+     "text": "Payment from the trust account or under the NCA for trust"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "IMP",
+     "to": "SRC",
+     "arrow": "->>",
+     "text": "Within ten days after each month: reports of checks issued and of cash disbursements, approved by the head of the implementing body"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "SRC",
+     "to": "SRC",
+     "arrow": "->>",
+     "text": "Books: expense recorded, receivable reduced. Now reported as disbursed. The implementing body reduces its liability by the same expenses"
+    },
+    {
+     "type": "opt",
+     "branches": [
+      {
+       "label": "Money remains at the end of the project or of the validity period",
+       "items": [
+        {
+         "type": "msg",
+         "n": 11,
+         "from": "IMP",
+         "to": "SRC",
+         "arrow": "->>",
+         "text": "Unused balance returned, if the agreement says so"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "SRC",
+     "to": "OV",
+     "arrow": "->>",
+     "text": "FAR 1-C each quarter: obligations, disbursements, liquidations and balances of fund transfers"
+    },
+    {
+     "type": "msg",
+     "n": 13,
+     "from": "OV",
+     "to": "SRC",
+     "arrow": "-->>",
+     "text": "The auditor of the implementing body audits its payments. The auditor of the source agency audits the transfer"
+    },
+    {
+     "type": "note",
+     "over": "SRC,OV",
+     "text": "REPORTED WEAKNESS: a part of the advances, in particular advances to government corporations, was not liquidated at the end of 2023 (PEFA 2025, indicator 27.3, score C)."
+    }
+   ]
+  },
+  "messages": 13,
+  "file": "15b_inter_agency_transfers.mmd"
+ },
+ "15f": {
+  "title": "15f  Cash aid to persons: from the list of beneficiaries to the credit in each account",
+  "participants": {
+   "CON": "Congress",
+   "AG": "Program agency (DSWD)",
+   "DBM": "DBM",
+   "BANK": "Government bank or remittance institution",
+   "HH": "Household",
+   "MON": "Monitoring bodies and COA"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "note",
+     "over": "CON,AG",
+     "text": "WHO HAS A RIGHT TO THE MONEY"
+    },
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "CON",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Program law: who qualifies, conditions, kinds of grant. Budget law: the amount for the year"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "AG",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Select households with a standardized targeting system. Check the list again every three years"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "AG",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Amount of each grant, as fixed by the advisory council of the program and reviewed every six years"
+    },
+    {
+     "type": "note",
+     "over": "AG,HH",
+     "text": "EACH PAYMENT PERIOD"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "AG",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Check that each household met the conditions (for example school attendance, health visits)"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "AG",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Payroll of beneficiaries for the period, certified and approved. Obligation recorded against the allotment"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "DBM",
+     "to": "AG",
+     "arrow": "-->>",
+     "text": "Cash authority (NCA) for the period (chapter 05)"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "AG",
+     "to": "BANK",
+     "arrow": "->>",
+     "text": "Payment order with the list of accounts, within the cash authority"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "BANK",
+     "to": "HH",
+     "arrow": "->>",
+     "text": "Grant credited to the account of the household, or paid out by a remittance institution"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "BANK",
+     "to": "AG",
+     "arrow": "-->>",
+     "text": "Report of amounts credited and of amounts not credited"
+    },
+    {
+     "type": "note",
+     "over": "AG,MON",
+     "text": "RECORDS AND REVIEW"
+    },
+    {
+     "type": "msg",
+     "n": 10,
+     "from": "AG",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Accounting entries. Amounts not credited are returned or paid again"
+    },
+    {
+     "type": "msg",
+     "n": 11,
+     "from": "AG",
+     "to": "CON",
+     "arrow": "->>",
+     "text": "Yearly report on the program, before the President's budget message"
+    },
+    {
+     "type": "msg",
+     "n": 12,
+     "from": "MON",
+     "to": "AG",
+     "arrow": "->>",
+     "text": "Independent monitoring committee, and audit by COA"
+    },
+    {
+     "type": "note",
+     "over": "AG,HH",
+     "text": "The books of the agency show one payment for many persons. The evidence that each person was paid is in the records of the bank."
+    }
+   ]
+  },
+  "messages": 12,
+  "file": "15f_cash_aid_to_persons_sequence.mmd"
+ },
+ "16f": {
+  "title": "16f  Public verification of DBM release documents with a blockchain record",
+  "participants": {
+   "DBM": "DBM (approving officials)",
+   "ADRS": "ADRS",
+   "BC": "Blockchain application",
+   "AGY": "Agency",
+   "CIT": "Any person (citizen, auditor, bank)",
+   "POR": "Verification page"
+  },
+  "tree": {
+   "type": "seq",
+   "items": [
+    {
+     "type": "msg",
+     "n": 1,
+     "from": "DBM",
+     "to": "ADRS",
+     "arrow": "->>",
+     "text": "Approved release document (SARO, or advice of NCA)"
+    },
+    {
+     "type": "msg",
+     "n": 2,
+     "from": "ADRS",
+     "to": "BC",
+     "arrow": "->>",
+     "text": "Record of the issued document"
+    },
+    {
+     "type": "msg",
+     "n": 3,
+     "from": "BC",
+     "to": "BC",
+     "arrow": "->>",
+     "text": "Store a fingerprint of the document (a hash) with date and document number. The record cannot be changed later"
+    },
+    {
+     "type": "msg",
+     "n": 4,
+     "from": "ADRS",
+     "to": "AGY",
+     "arrow": "-->>",
+     "text": "Document for download, with a QR code"
+    },
+    {
+     "type": "msg",
+     "n": 5,
+     "from": "AGY",
+     "to": "CIT",
+     "arrow": "->>",
+     "text": "Copy of the document (for example to a contractor or a bank)"
+    },
+    {
+     "type": "msg",
+     "n": 6,
+     "from": "CIT",
+     "to": "POR",
+     "arrow": "->>",
+     "text": "Scan the QR code, or enter the document reference"
+    },
+    {
+     "type": "msg",
+     "n": 7,
+     "from": "POR",
+     "to": "BC",
+     "arrow": "->>",
+     "text": "Retrieve the record"
+    },
+    {
+     "type": "msg",
+     "n": 8,
+     "from": "BC",
+     "to": "POR",
+     "arrow": "-->>",
+     "text": "Stored record"
+    },
+    {
+     "type": "msg",
+     "n": 9,
+     "from": "POR",
+     "to": "CIT",
+     "arrow": "-->>",
+     "text": "Result: the copy matches the issued document, or it does not"
+    },
+    {
+     "type": "note",
+     "over": "DBM,POR",
+     "text": "WHAT A MATCH PROVES: DBM issued this document with this content. WHAT IT DOES NOT PROVE: that the release was correct, that the agency obligated or paid the amount, or that anything was delivered."
+    },
+    {
+     "type": "note",
+     "over": "DBM,POR",
+     "text": "RELATED BILL: the CADENA bill would require wider publication of budget data on a digital ledger. The Senate passed it in December 2025. In early October 2026 it was still pending in the House of Representatives."
+    },
+    {
+     "type": "note",
+     "over": "DBM,POR",
+     "text": "RELATED ORDER: Executive Order No. 126 of 28 September 2026 makes the COMPASS portal the platform for budget disclosures. The order allows the portal to use distributed ledger technology such as a blockchain. It does not require it."
+    }
+   ]
+  },
+  "messages": 9,
+  "file": "16f_document_verification_blockchain.mmd"
+ }
+}

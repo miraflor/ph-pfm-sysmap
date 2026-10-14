@@ -1,0 +1,55 @@
+no,side,from,to,what_passes,state,basis
+1,spending,Planning and budget units of an agency,PIPOL,Programs and projects,Electronic,PIP-MEMO
+2,spending,PIPOL,OSBPS,Nothing,None,ROADMAP2024
+3,spending,Planning and budget units of an agency,OSBPS,Budget forms,Electronic,NBM156
+4,spending,Personnel unit of an agency,GMIS,Monthly update of positions,Electronic,GMIS
+5,spending,OSBPS and GMIS,BPMS,Proposals and filled positions,GK,GK
+6,spending,BPMS,e-Budget of DBM,The enacted budget,GK,GK
+7,spending,e-Budget of DBM,ADRS,Approved release documents,GK,GK
+8,spending,ADRS,Agency,"SARO, GARO, advice of NCA issued, by download",Electronic,"ADRS, NBC599"
+9,spending,ADRS,Document verification record,A record of each issued document,Electronic,DBM-BLOCKCHAIN
+10,spending,Document verification record,Public,Result of a check by QR code,Electronic,DBM-BLOCKCHAIN
+11,spending,DBM,Servicing bank,Notice of Cash Allocation,Not described,NBC599
+12,spending,Agency,URS,"Execution plans, then accountability reports",Electronic,"NBC599 s.3.9, JC2019-1"
+13,spending,Procurement unit of an agency,PhilGEPS,Notices and awards,Electronic,RA12009 s.20
+14,spending,PhilGEPS,Suppliers and bidders,Opportunities,Electronic,RA12009 s.20
+15,spending,Budget unit of an agency,"eBudget of COA, or own registry","Obligations, entered by agency staff",GK,System: COA-GAS. Manual entry: GK
+16,spending,Accounting unit of an agency,eNGAS or other software,"Journal entries, entered by agency staff",GK,System: COA-GAS. Manual entry: GK
+17,spending,Agency,"Facility of the servicing bank, for example eMDS","Payment orders, advice of checks issued and cancelled",Electronic,eMDS
+18,spending,Servicing bank,Payees,Payments,Money,"CL2013-16A, CL2018-14"
+19,spending,Servicing bank,BTr,"A copy of the summary list of payment orders, on the same day",Not described,CL2013-16A
+20,spending,Treasury Single Account,Servicing bank,Replenishment for the payments made,Money,"CL2013-16A, PRIMER"
+21,spending,URS,"DBM, COA, BTr","The reports. FAR 3, 4 and 5 also go to BTr",Electronic,JC2019-1
+22,spending,Agency,AFR System of COA,Financial statements,Electronic,COA-GAS
+23,spending,Agency,COA audit team,"Vouchers and documents, on paper",GK,GK
+24,spending,Agency,National Asset Registry System,Data on important assets,Not described,BTR-SYS
+25,spending,Agency in the rollout,BTMS,"Execution records: obligations, vouchers, receipts, assets",Electronic,"CL2025-8, INQ-BTMS"
+26,spending,PhilGEPS,BTMS,Procurement data,Planned,CL2025-8
+27,spending,BTMS,"PESONet and InstaPay, through the banks",Electronic payments,Electronic,"CL2025-8, BTMS-SITE"
+28,spending,Servicing bank,BTMS,Electronic bank statements for the daily reconciliation,Electronic,BTMS-SITE
+29,spending,Agency,COMPASS portal,"Financial and program performance, status of projects, procurement information",Not described,EO126
+30,spending,BTMS,COMPASS portal,Not stated,Planned,EO126
+31,spending,COMPASS portal,Public,"Budget, allotments, obligations and disbursements",Electronic,COMPASS-LAUNCH
+32,revenue and treasury,Taxpayer,"eFPS, eBIRForms",Tax returns,Electronic,BIR-PAY
+33,revenue and treasury,Taxpayer,"Authorized agent bank, payment gateway or revenue collection officer",Tax payments,Money,BIR-PAY
+34,revenue and treasury,"eFPS, eBIRForms",Internal tax system of BIR,Returns,GK,GK
+35,revenue and treasury,Authorized agent bank,BIR,Report of payments received,GK,GK
+36,revenue and treasury,Importer,E2M customs system,Goods declaration,GK,Name of the system: BOC-MOD. The flow: GK
+37,revenue and treasury,Authorized agent bank,"BOC, through Payment Application Secure","Abstracts of customs collections, encrypted and authenticated",Electronic,PAS
+38,revenue and treasury,Authorized agent banks,Treasury Single Account,"Collections of BIR and BOC, daily",Money,PEFA2025
+39,revenue and treasury,Collecting officer of an agency,Authorized government depository bank,"Collections, deposited intact and daily",Money,"PD1445 s.69, EO449"
+40,revenue and treasury,Collecting officer of an agency,Accounting unit of the agency,Report of collections and deposits,GK,GK
+41,revenue and treasury,Authorized government depository bank,NGCDS of BTr,"Daily and monthly collection reports, by upload",Electronic,BTR-SYS
+42,revenue and treasury,Authorized government depository bank,Treasury Single Account,Transfer of the balances,Money,BTR-SITE. How and when: not described
+43,revenue and treasury,NGCDS,eTRAMS,Collections,GK,GK
+44,revenue and treasury,BTr,Agency,Certificate of deposited national collections,Not described,BTR-SYS
+45,revenue and treasury,"Agency, through URS",BTr,Quarterly report of revenue and other receipts (FAR 5),Electronic,JC2019-1
+46,revenue and treasury,Dealers in government securities,NRoSS of BTr,Bids,Electronic,"NRoSS, BTR-SYS"
+47,revenue and treasury,NRoSS,Settlement system of BSP,Settlement instruction,Electronic,NRoSS
+48,revenue and treasury,Dealers and lenders,Treasury Single Account,Proceeds of securities and loans,Money,"NRoSS, NBC599"
+49,revenue and treasury,NRoSS,Debt and accounting systems of BTr,New debt,GK,GK
+50,revenue and treasury,Treasury Single Account,Dealers and lenders,Interest and principal,Money,NBC599 for interest. Principal: GK
+51,revenue and treasury,Servicing banks,eTRAMS of BTr,Report of payments made,Not described,CL2013-16A
+52,revenue and treasury,Treasury Single Account,"Local governments, through servicing banks",National Tax Allotment and other shares,Money,ALGU2026
+53,revenue and treasury,Local treasurer,eSRE of BLGF,Statements of receipts and expenditures,Electronic,eSRE
+54,revenue and treasury,Payers of fees,Collecting officer of an agency,"Fees, against an official receipt",Money,PD1445 s.68

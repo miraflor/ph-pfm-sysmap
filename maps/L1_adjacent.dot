@@ -1,0 +1,28 @@
+digraph ADJ {
+graph [rankdir=LR newrank=true compound=true nodesep=0.25 ranksep=0.7 fontname="Helvetica" splines=spline label="Level 1. Flows that touch systems adjacent to PFM" labelloc=t fontsize=12]
+node [margin="0.08,0.04"]
+edge [fontname="Helvetica"]
+subgraph "cluster_EXT-PUBLIC" {
+label="Public" style="rounded,filled" fillcolor="#ffffff" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Any person: citizens, civil society, observers, journalists"
+"UNIT-PUB-ANY" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Any person" tooltip="Any person, including citizens and journalists"]
+}
+subgraph "cluster_INST-DBM" {
+label="DBM" style="rounded,filled" fillcolor="#dde9f7" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Budget and Management"
+"SYS-COMPASS" [shape=box style="filled,rounded" fillcolor="#dde9f7" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="COMPASS portal" tooltip="COMPASS portal, Centralized Open Monitoring Platform for Appropriations and Spending Statistics"]
+}
+subgraph "cluster_INST-DICT" {
+label="DICT" style="rounded,filled" fillcolor="#dceff3" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of Information and Communications Technology"
+"SYS-EGOVPH" [shape=box style="filled,rounded" fillcolor="#dceff3" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="eGovPH application" tooltip="eGovPH super application of DICT"]
+}
+subgraph "cluster_INST-DILG" {
+label="DILG" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Department of the Interior and Local Government"
+"SYS-FDPP" [shape=box style="filled,rounded" fillcolor="#d8f0e6" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Full Disclosure\nPolicy Portal" tooltip="Full Disclosure Policy Portal of DILG"]
+}
+subgraph "cluster_INST-LGU" {
+label="Local government" style="rounded,filled" fillcolor="#d8f0e6" color="#999999" fontname="Helvetica-Bold" fontsize=10 tooltip="Local government units: provinces, cities, municipalities, barangays"
+"UNIT-LGU-TREAS" [shape=box style="filled" fillcolor="#ffffff" color="#333333" penwidth=1 fontname="Helvetica" fontsize=10 label="Local treasurer" tooltip="Local treasurer (with the accountant and budget officer)"]
+}
+"SYS-COMPASS" -> "SYS-EGOVPH" [color="#55555599" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F106: Budget and spending information (content not stated)" label="F106" fontsize=7 fontcolor="#666666"]
+"UNIT-LGU-TREAS" -> "SYS-FDPP" [color="#2e6b2e" style="dashed" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F130: Budget, procurement and fund reports of the local government" label="F130" fontsize=7 fontcolor="#666666"]
+"SYS-FDPP" -> "UNIT-PUB-ANY" [color="#555555" style="solid" penwidth=1 arrowhead=normal arrowsize=0.6 tooltip="F131: Published local government reports" label="F131" fontsize=7 fontcolor="#666666"]
+}

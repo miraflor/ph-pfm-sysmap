@@ -1,0 +1,47 @@
+@startuml
+title UC-SP-3 Accept the delivery and record the payable (cohort E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Supplier or contractor" as ROLE_SUPPLIER
+boundary "Delivery receipt and invoice of t…" as B_SP_06
+control "check by Supplier or contractor" as C_person_ROLE_SUPPLIER
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+entity "record" as E_S_DELIVERED
+actor "Inspection officer and proper…" as ROLE_INSPECTOR
+boundary "Paper form: inspection and accept…" as B_SP_07
+control "check by Inspection officer and pr…" as C_person_ROLE_INSPECTOR
+participant "Accounting unit" as N_UNIT_NGA_ACC
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "eNGAS" as B_SYS_ENGAS
+control "check by Chief accountant (head of…" as C_person_ROLE_ACCOUNTANT
+entity "eNGAS" as E_SYS_ENGAS
+participant "Budget unit" as N_UNIT_NGA_BUD
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "eBudget (COA)" as B_SYS_EBUDGET_COA
+control "check by Head of the budget unit" as C_person_ROLE_BUDGET
+entity "eBudget (COA)" as E_SYS_EBUDGET_COA
+== SP-06 Deliver ==
+ROLE_SUPPLIER -> B_SP_06 : Delivery receipt and invoice of the supplier
+B_SP_06 -> C_person_ROLE_SUPPLIER : Deliver
+C_person_ROLE_SUPPLIER -> E_SYS_AGENCY_OWN : use: Contract or purchase order in force
+C_person_ROLE_SUPPLIER -> E_S_DELIVERED : write: Delivery made, with delivery receipt and invoice
+== SP-07 Inspect and accept ==
+ROLE_INSPECTOR -> B_SP_07 : Paper form: inspection and acceptance report
+B_SP_07 -> C_person_ROLE_INSPECTOR : Inspect and accept
+note right of C_person_ROLE_INSPECTOR : R-ACCEPT: Inspection and acceptance by two different signers
+C_person_ROLE_INSPECTOR -> E_S_DELIVERED : use: Delivery made, with delivery receipt and invoice
+C_person_ROLE_INSPECTOR -> E_SYS_AGENCY_OWN : write: Delivery inspected and accepted: the obligation is due and…
+C_person_ROLE_INSPECTOR -> N_UNIT_NGA_ACC : F067 Copy of the acceptance report, with the purchase order and…
+== SP-08 Record the payable ==
+ROLE_ACCOUNTANT -> B_SYS_ENGAS : eNGAS: journal entry
+B_SYS_ENGAS -> C_person_ROLE_ACCOUNTANT : Record the payable
+C_person_ROLE_ACCOUNTANT -> E_SYS_ENGAS : write: Payable recorded in the books (JEV: asset or expense, Accou…
+C_person_ROLE_ACCOUNTANT -> N_UNIT_NGA_BUD : F069 JEV of the payable, at the budget unit for part C
+== SP-08B Post the payable in part C of the ORS ==
+ROLE_BUDGET -> B_SYS_EBUDGET_COA : eBudget of COA
+B_SYS_EBUDGET_COA -> C_person_ROLE_BUDGET : Post the payable in part C of the ORS
+C_person_ROLE_BUDGET -> E_SYS_EBUDGET_COA : write: Payable posted in part C of the ORS
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+title UC-PL From the investment program to the enacted budget (cohort P, E, B)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Planning and budget officer o…" as ROLE_PLANNER
+boundary "Planning and budget units" as B_UNIT_NGA_PLAN
+control "check (not stated)" as C_not_stated_ROLE_PLANNER
+entity "record" as E_S_PIP_CALL
+participant "PIPOL" as N_SYS_PIPOL
+actor "DEPDev PIP and TRIP secretari…" as ROLE_DEPDEV
+boundary "PIP and TRIP secretariats" as B_UNIT_DEPDEV_PIP
+control "check (not stated)" as C_not_stated_ROLE_DEPDEV
+entity "PIPOL" as E_SYS_PIPOL
+entity "record" as E_S_BUDGET_CALL
+participant "OSBPS: Tier 2 forms" as N_MOD_OSBPS_T2
+actor "Personnel officer" as ROLE_PERSONNEL
+boundary "Personnel unit" as B_UNIT_NGA_PERS
+control "check (not stated)" as C_not_stated_ROLE_PERSONNEL
+participant "GMIS: PSIPOP" as N_MOD_GMIS_PSIPOP
+actor "DBM (bureaus and approving of…" as ROLE_DBM
+boundary "BPMS" as B_SYS_BPMS
+control "check (not stated)" as C_not_stated_ROLE_DBM
+participant "BPMS" as N_SYS_BPMS
+actor "Congress" as ROLE_CONGRESS
+boundary "Congress" as B_INST_CONGRESS
+control "check (not stated)" as C_not_stated_ROLE_CONGRESS
+entity "BPMS" as E_SYS_BPMS
+boundary "e-Budget (DBM)" as B_SYS_EBUDGET_DBM
+entity "record" as E_S_GAA
+participant "e-Budget (DBM)" as N_SYS_EBUDGET_DBM
+entity "e-Budget (DBM)" as E_SYS_EBUDGET_DBM
+== PL-01 Encode and endorse programs and projects in PIPOL ==
+ROLE_PLANNER -> B_UNIT_NGA_PLAN : System or office where the act takes place
+B_UNIT_NGA_PLAN -> C_not_stated_ROLE_PLANNER : Encode and endorse programs and projects in PIPOL
+C_not_stated_ROLE_PLANNER -> E_S_PIP_CALL : use: Joint call for the PIP and TRIP issued
+C_not_stated_ROLE_PLANNER -> N_SYS_PIPOL : F001 Programs and projects encoded and endorsed in PIPOL
+== PL-02 Validate the entries against the PIP criteria ==
+ROLE_DEPDEV -> B_UNIT_DEPDEV_PIP : System or office where the act takes place
+B_UNIT_DEPDEV_PIP -> C_not_stated_ROLE_DEPDEV : Validate the entries against the PIP criteria
+C_not_stated_ROLE_DEPDEV -> E_SYS_PIPOL : write: Entry validated in the PIP or TRIP
+== PL-03 Enter the budget proposal in OSBPS ==
+ROLE_PLANNER -> B_UNIT_NGA_PLAN : System or office where the act takes place
+B_UNIT_NGA_PLAN -> C_not_stated_ROLE_PLANNER : Enter the budget proposal in OSBPS
+C_not_stated_ROLE_PLANNER -> E_S_BUDGET_CALL : use: Budget Call issued
+C_not_stated_ROLE_PLANNER -> N_MOD_OSBPS_T2 : F003 Budget proposal forms in OSBPS
+C_not_stated_ROLE_PLANNER -> E_SYS_PIPOL : read: Entry validated in the PIP or TRIP
+== PL-04 Update the positions in GMIS ==
+ROLE_PERSONNEL -> B_UNIT_NGA_PERS : System or office where the act takes place
+B_UNIT_NGA_PERS -> C_not_stated_ROLE_PERSONNEL : Update the positions in GMIS
+C_not_stated_ROLE_PERSONNEL -> N_MOD_GMIS_PSIPOP : F004 Updated positions in GMIS
+== PL-05 Build the proposed budget ==
+ROLE_DBM -> B_SYS_BPMS : System or office where the act takes place
+B_SYS_BPMS -> C_not_stated_ROLE_DBM : Build the proposed budget
+C_not_stated_ROLE_DBM -> N_SYS_BPMS : F005A Proposals in BPMS
+C_not_stated_ROLE_DBM -> N_SYS_BPMS : F005B Filled positions in BPMS
+== PL-06 Enact the budget ==
+ROLE_CONGRESS -> B_INST_CONGRESS : System or office where the act takes place
+B_INST_CONGRESS -> C_not_stated_ROLE_CONGRESS : Enact the budget
+C_not_stated_ROLE_CONGRESS -> E_SYS_BPMS : write: National Expenditure Program submitted to Congress
+== PL-07 Load the enacted budget in the e-Budget of DBM ==
+ROLE_DBM -> B_SYS_EBUDGET_DBM : System or office where the act takes place
+B_SYS_EBUDGET_DBM -> C_not_stated_ROLE_DBM : Load the enacted budget in the e-Budget of DBM
+C_not_stated_ROLE_DBM -> E_SYS_BPMS : use: National Expenditure Program submitted to Congress
+C_not_stated_ROLE_DBM -> E_S_GAA : write: General Appropriations Act signed
+C_not_stated_ROLE_DBM -> N_SYS_EBUDGET_DBM : F006 Enacted budget in the e-Budget of DBM
+== PL-08 Make the appropriation available for release ==
+ROLE_DBM -> B_SYS_EBUDGET_DBM : System or office where the act takes place
+B_SYS_EBUDGET_DBM -> C_not_stated_ROLE_DBM : Make the appropriation available for release
+C_not_stated_ROLE_DBM -> E_S_GAA : use: General Appropriations Act signed
+C_not_stated_ROLE_DBM -> E_SYS_EBUDGET_DBM : write: Appropriation available (a line of the GAA)
+@enduml

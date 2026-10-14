@@ -1,0 +1,111 @@
+@startuml
+title System use cases of the curated chains
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+actor "DBM (bureaus and approving official…" as ROLE_DBM
+actor "Servicing bank" as ROLE_GSB
+actor "Chief accountant (head of the accou…" as ROLE_ACCOUNTANT
+actor "Head of the budget unit" as ROLE_BUDGET
+actor "Supplier or contractor" as ROLE_SUPPLIER
+actor "Inspection officer and property cus…" as ROLE_INSPECTOR
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+actor "Bureau of the Treasury" as ROLE_BTR
+actor "COA audit team" as ROLE_COA_AUDIT
+actor "Agency as a whole (central office)" as ROLE_AGENCY
+actor "Office of the President" as ROLE_OP
+actor "BAC, its Secretariat and technical…" as ROLE_BAC
+actor "Procurement Service of DBM" as ROLE_PSDBM
+actor "Head of agency or authorized offici…" as ROLE_HEAD
+actor "Collecting officer" as ROLE_COLLECTOR
+actor "Authorized government depository ba…" as ROLE_AGDB
+actor "Taxpayer or importer" as ROLE_TAXPAYER
+actor "BIR office or approving official" as ROLE_BIR
+actor "Authorized agent bank or payment ga…" as ROLE_AAB
+actor "BSP" as ROLE_BSP
+actor "BOC" as ROLE_BOC
+actor "Dealer or lender" as ROLE_DEALER
+actor "COA" as ROLE_COA
+actor "Planning and budget officer of the…" as ROLE_PLANNER
+actor "DEPDev PIP and TRIP secretariats" as ROLE_DEPDEV
+actor "Personnel officer" as ROLE_PERSONNEL
+actor "Congress" as ROLE_CONGRESS
+rectangle "Spending: from an allotment to a settled payment and its records" {
+  usecase "UC-SP-1 Receive the cash authority (NCA)" as UC_SP_1
+  usecase "UC-SP-2 Obligate and contract" as UC_SP_2
+  usecase "UC-SP-3 Accept the delivery and record the payable" as UC_SP_3
+  usecase "UC-SP-4 Examine and approve the claim" as UC_SP_4
+  usecase "UC-SP-5 Pay the payee" as UC_SP_5
+  usecase "UC-SP-6 Record, report and audit the payment" as UC_SP_6
+  usecase "UC-SP-7 Reconcile with the bank" as UC_SP_7
+}
+rectangle "Release of allotments" {
+  usecase "UC-RL Release an allotment" as UC_RL
+}
+rectangle "Procurement in PhilGEPS up to the award" {
+  usecase "UC-PR Procure up to the award" as UC_PR
+}
+rectangle "Collections of an agency to the Treasury" {
+  usecase "UC-CO Collect a fee and deposit it" as UC_CO
+}
+rectangle "Tax and customs collections" {
+  usecase "UC-TX Collect taxes and duties" as UC_TX
+}
+rectangle "Borrowing through government securities" {
+  usecase "UC-DB Borrow through government securities" as UC_DB
+}
+rectangle "Reporting" {
+  usecase "UC-RP Report on budget execution" as UC_RP
+}
+rectangle "From the investment program to the enacted budget in the systems" {
+  usecase "UC-PL From the investment program to the enacted budget" as UC_PL
+}
+ROLE_DBM -- UC_PL
+ROLE_DBM -- UC_RL
+ROLE_DBM -- UC_RP
+ROLE_DBM -- UC_SP_1
+ROLE_GSB -- UC_SP_1
+ROLE_GSB -- UC_SP_5
+ROLE_GSB -- UC_SP_7
+ROLE_ACCOUNTANT -- UC_CO
+ROLE_ACCOUNTANT -- UC_RP
+ROLE_ACCOUNTANT -- UC_SP_1
+ROLE_ACCOUNTANT -- UC_SP_3
+ROLE_ACCOUNTANT -- UC_SP_4
+ROLE_ACCOUNTANT -- UC_SP_6
+ROLE_ACCOUNTANT -- UC_SP_7
+ROLE_BUDGET -- UC_RL
+ROLE_BUDGET -- UC_SP_2
+ROLE_BUDGET -- UC_SP_3
+ROLE_BUDGET -- UC_SP_6
+ROLE_SUPPLIER -- UC_PR
+ROLE_SUPPLIER -- UC_SP_3
+ROLE_INSPECTOR -- UC_SP_3
+ROLE_CASHIER -- UC_SP_5
+ROLE_CASHIER -- UC_SP_6
+ROLE_BTR -- UC_CO
+ROLE_BTR -- UC_DB
+ROLE_BTR -- UC_SP_5
+ROLE_COA_AUDIT -- UC_SP_6
+ROLE_AGENCY -- UC_CO
+ROLE_AGENCY -- UC_RL
+ROLE_AGENCY -- UC_RP
+ROLE_OP -- UC_RL
+ROLE_BAC -- UC_PR
+ROLE_PSDBM -- UC_PR
+ROLE_HEAD -- UC_PR
+ROLE_COLLECTOR -- UC_CO
+ROLE_AGDB -- UC_CO
+ROLE_TAXPAYER -- UC_TX
+ROLE_BIR -- UC_TX
+ROLE_AAB -- UC_TX
+ROLE_BSP -- UC_DB
+ROLE_BSP -- UC_TX
+ROLE_BOC -- UC_TX
+ROLE_DEALER -- UC_DB
+ROLE_COA -- UC_RP
+ROLE_PLANNER -- UC_PL
+ROLE_DEPDEV -- UC_PL
+ROLE_PERSONNEL -- UC_PL
+ROLE_CONGRESS -- UC_PL
+@enduml

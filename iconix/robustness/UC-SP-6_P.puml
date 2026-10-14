@@ -1,0 +1,64 @@
+@startuml
+title UC-SP-6 Record, report and audit the payment (cohort P)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Cashier or disbursing officer" as ROLE_CASHIER
+boundary "Paper forms: validated LDDAP-ADA, official receip…" as B_SP_16
+control "SP-16 Receive the validated copy and prepare the daily…" as C_SP_16
+entity "LDDAP-ADA: List of Due and Demandable Accou…" as E_R_LDDAP_
+entity "RCI: Report of Checks Issued" as E_R_RADAI_
+entity "DV: Disbursement Voucher" as E_R_DV_
+actor "Chief accountant (head of the accountin…" as ROLE_ACCOUNTANT
+boundary "Paper form: journal entry voucher; eFPS for taxes…" as B_SP_17
+control "SP-17 Record the payment in the books (by a person)" as C_SP_17
+entity "JEV: Journal Entry Voucher [Agency own systems]" as E_R_JEV_SYS_AGENCY_OWN
+entity "Tax return (including returns of taxes with…" as E_R_TAX_RETURN_
+entity "TRA: Tax Remittance Advice" as E_R_TRA_
+actor "Head of the budget unit" as ROLE_BUDGET
+boundary "Paper ORS, part C; registry of disbursements" as B_SP_18
+control "SP-18 Post the payment in the ORS and the registry (by…" as C_SP_18
+entity "JEV: Journal Entry Voucher" as E_R_JEV_
+entity "ORS: Obligation Request and Status [Agency own systems]" as E_R_ORS_SYS_AGENCY_OWN
+entity "RAOD, Registries of Allotments, Obligations… [Agency own systems]" as E_R_RAOD_SYS_AGENCY_OWN
+actor "COA audit team" as ROLE_COA_AUDIT
+boundary "Paid vouchers and their documents, on paper" as B_SP_19
+control "SP-19 Audit the paid transaction (by a person)" as C_SP_19
+entity "Audit Observation Memorandum [COA audit team]" as E_R_AOM_UNIT_COA_AUDIT
+entity "Notice of Suspension [COA audit team]" as E_R_NS_UNIT_COA_AUDIT
+entity "Notice of Disallowance [COA audit team]" as E_R_ND_UNIT_COA_AUDIT
+entity "Notice of Charge [COA audit team]" as E_R_NC_UNIT_COA_AUDIT
+ROLE_CASHIER -- B_SP_16
+B_SP_16 -- C_SP_16
+C_SP_16 -- E_R_LDDAP_
+C_SP_16 -- E_R_RADAI_
+C_SP_16 -- E_R_DV_
+ROLE_ACCOUNTANT -- B_SP_17
+B_SP_17 -- C_SP_17
+C_SP_16 -- C_SP_17
+C_SP_17 -- E_R_RADAI_
+C_SP_17 -- E_R_DV_
+C_SP_17 -- E_R_LDDAP_
+C_SP_17 -- E_R_JEV_SYS_AGENCY_OWN
+C_SP_17 -- E_R_TAX_RETURN_
+C_SP_17 -- E_R_TRA_
+ROLE_BUDGET -- B_SP_18
+B_SP_18 -- C_SP_18
+C_SP_17 -- C_SP_18
+C_SP_18 -- E_R_RADAI_
+C_SP_18 -- E_R_JEV_
+C_SP_18 -- E_R_ORS_SYS_AGENCY_OWN
+C_SP_18 -- E_R_RAOD_SYS_AGENCY_OWN
+ROLE_COA_AUDIT -- B_SP_19
+B_SP_19 -- C_SP_19
+C_SP_18 -- C_SP_19
+C_SP_19 -- E_R_RADAI_
+C_SP_19 -- E_R_DV_
+C_SP_19 -- E_R_JEV_
+C_SP_19 -- E_R_LDDAP_
+C_SP_19 -- E_R_AOM_UNIT_COA_AUDIT
+C_SP_19 -- E_R_NS_UNIT_COA_AUDIT
+C_SP_19 -- E_R_ND_UNIT_COA_AUDIT
+C_SP_19 -- E_R_NC_UNIT_COA_AUDIT
+@enduml

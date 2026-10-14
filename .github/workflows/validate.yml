@@ -1,0 +1,24 @@
+name: Reproduce site and validate model
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install diagram renderers
+        run: sudo apt-get update && sudo apt-get install -y graphviz plantuml
+      - name: Build and compile PlantUML diagrams
+        env:
+          PLANTUML_JAR: /usr/share/plantuml/plantuml.jar
+        run: python tools/build.py
+      - name: Validate diagrams, references and reproducibility
+        run: python tools/verify.py
+      - name: Explain renderer-sensitive outputs
+        run: echo "Graphviz and PlantUML SVG layouts may vary by tool version; tests assert a successful deterministic local rebuild."

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="CH-PLAN-E" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name><text>CH-PLAN-E: From the investment program to the enacted budget in the systems (cohort E)</text></name>
+    <page id="page1">
+      <place id="S-PIP-CALL"><name><text>Joint call for the PIP and TRIP issued</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F001"><name><text>Programs and projects encoded and endorsed in PIPOL</text></name></place>
+      <place id="S-PIP-ENTRY"><name><text>Entry validated in the PIP or TRIP</text></name></place>
+      <place id="S-BUDGET-CALL"><name><text>Budget Call issued</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F003"><name><text>Budget proposal forms in OSBPS</text></name></place>
+      <place id="S-POSITIONS"><name><text>Monthly update of positions due</text></name><initialMarking><text>1</text></initialMarking></place>
+      <place id="C-F004"><name><text>Updated positions in GMIS</text></name></place>
+      <place id="C-F005A"><name><text>Proposals in BPMS</text></name></place>
+      <place id="C-F005B"><name><text>Filled positions in BPMS</text></name></place>
+      <place id="S-NEP"><name><text>National Expenditure Program submitted to Congress</text></name></place>
+      <place id="S-GAA"><name><text>General Appropriations Act signed</text></name></place>
+      <place id="C-F006"><name><text>Enacted budget in the e-Budget of DBM</text></name></place>
+      <place id="S-APPROP"><name><text>Appropriation available (a line of the GAA)</text></name><initialMarking><text>1</text></initialMarking></place>
+      <transition id="PL-01"><name><text>Encode and endorse programs and projects in PIPOL</text></name></transition>
+      <transition id="PL-02"><name><text>Validate the entries against the PIP criteria</text></name></transition>
+      <transition id="PL-03"><name><text>Enter the budget proposal in OSBPS</text></name></transition>
+      <transition id="PL-04"><name><text>Update the positions in GMIS</text></name></transition>
+      <transition id="PL-05"><name><text>Build the proposed budget</text></name></transition>
+      <transition id="PL-06"><name><text>Enact the budget</text></name></transition>
+      <transition id="PL-07"><name><text>Load the enacted budget in the e-Budget of DBM</text></name></transition>
+      <transition id="PL-08"><name><text>Make the appropriation available for release</text></name></transition>
+      <arc id="a1" source="S-PIP-CALL" target="PL-01"/>
+      <arc id="a2" source="PL-01" target="C-F001"/>
+      <arc id="a3" source="C-F001" target="PL-02"/>
+      <arc id="a4" source="PL-02" target="S-PIP-ENTRY"/>
+      <arc id="a5" source="S-BUDGET-CALL" target="PL-03"/>
+      <arc id="a6" source="PL-03" target="C-F003"/>
+      <arc id="a7" source="S-PIP-ENTRY" target="PL-03"/>
+      <arc id="a8" source="PL-03" target="S-PIP-ENTRY"/>
+      <arc id="a9" source="S-POSITIONS" target="PL-04"/>
+      <arc id="a10" source="PL-04" target="C-F004"/>
+      <arc id="a11" source="C-F003" target="PL-05"/>
+      <arc id="a12" source="C-F004" target="PL-05"/>
+      <arc id="a13" source="PL-05" target="C-F005A"/>
+      <arc id="a14" source="PL-05" target="C-F005B"/>
+      <arc id="a15" source="C-F005A" target="PL-06"/>
+      <arc id="a16" source="C-F005B" target="PL-06"/>
+      <arc id="a17" source="PL-06" target="S-NEP"/>
+      <arc id="a18" source="S-NEP" target="PL-07"/>
+      <arc id="a19" source="PL-07" target="S-GAA"/>
+      <arc id="a20" source="PL-07" target="C-F006"/>
+      <arc id="a21" source="C-F006" target="PL-08"/>
+      <arc id="a22" source="S-GAA" target="PL-08"/>
+      <arc id="a23" source="PL-08" target="S-APPROP"/>
+    </page>
+  </net>
+</pnml>

@@ -1,0 +1,116 @@
+atlas_actor,node_id,role_id,note
+ADRS,SYS-ADRS,,
+Accounting unit,UNIT-NGA-ACC,ROLE-ACCOUNTANT,
+Agencies,INST-NGA,ROLE-AGENCY,
+Agency,INST-NGA,ROLE-AGENCY,
+Agency (accounting and cash units),UNIT-NGA-ACC,ROLE-ACCOUNTANT,Two units; mapped to the accounting unit.
+Agency accounting and other units,UNIT-NGA-ACC,ROLE-ACCOUNTANT,
+Agency budget and accounting units,UNIT-NGA-BUD,ROLE-BUDGET,Two units; mapped to the budget unit.
+Agency central office,INST-NGA,ROLE-AGENCY,
+Agency personnel unit,UNIT-NGA-PERS,ROLE-PERSONNEL,
+Agency regional offices,UNIT-NGA-OU,ROLE-OPUNIT,
+Agency regional offices and units,UNIT-NGA-OU,ROLE-OPUNIT,
+"Any person (citizen, auditor, bank)",UNIT-PUB-ANY,ROLE-PUBLIC,
+"Authorized agent bank, ePay gateway, or revenue collection officer",INST-AAB,ROLE-AAB,
+BIR,INST-BIR,ROLE-BIR,
+"BIR (eFPS, eBIRForms)",SYS-BIR-EFILING,,
+BIR approving official,INST-BIR,ROLE-BIR,
+BIR office that processes the claim,INST-BIR,ROLE-BIR,
+"BIR, GSIS, PhilHealth, Pag-IBIG",INST-SSF,ROLE-SSF,BIR is also a receiver; mapped to the group of funds.
+BOC (customs system),SYS-E2M,,
+BSP (Treasury Single Account),ACC-TSA,ROLE-BSP,Mapped to the Treasury Single Account.
+BTr,INST-BTR,ROLE-BTR,
+BTr (eTRAMS),SYS-ETRAMS,,
+BTr and BSP,INST-BTR,ROLE-BTR,Two bodies; mapped to BTr.
+BTr and bank,INST-BTR,ROLE-BTR,Two bodies; mapped to BTr.
+"BTr, BLGF, COA",INST-BTR,ROLE-BTR,Three bodies; mapped to BTr.
+Barangay treasurer,UNIT-LGU-BRGY,ROLE-BRGY,Mapped to the barangay.
+Bicameral Conference Committee,UNIT-BICAM,ROLE-BICAM,
+Bidders,EXT-SUPPLIER,ROLE-SUPPLIER,
+Bids and Awards Committee (BAC) with Secretariat and working group,UNIT-NGA-BAC,ROLE-BAC,
+Blockchain application,SYS-DOCVERIFY,,
+Budget and accounting units,UNIT-NGA-BUD,ROLE-BUDGET,Two units; mapped to the budget unit.
+Budget unit,UNIT-NGA-BUD,ROLE-BUDGET,
+COA,INST-COA,ROLE-COA,
+COA Cluster or Regional Director,UNIT-COA-DIR,ROLE-COA-DIR,
+COA Commission Proper,UNIT-COA-CP,ROLE-COA-CP,
+"COA audit team (team leader, supervising auditor)",UNIT-COA-AUDIT,ROLE-COA-AUDIT,
+COA auditor,UNIT-COA-AUDIT,ROLE-COA-AUDIT,
+Cash unit,UNIT-NGA-CASH,ROLE-CASHIER,
+Cash unit and servicing bank,UNIT-NGA-CASH,ROLE-CASHIER,Two bodies; mapped to the cash unit.
+City or municipal accountant,UNIT-LGU-TREAS,ROLE-LGU-FIN,Mapped to the local finance officers.
+City or municipal budget officer,UNIT-LGU-TREAS,ROLE-LGU-FIN,Mapped to the local finance officers.
+Civil Service Commission,INST-CSC,ROLE-CSC,
+Civil society organizations,UNIT-PUB-CSO,ROLE-CSO,
+Congress,INST-CONGRESS,ROLE-CONGRESS,
+Contractor,EXT-SUPPLIER,ROLE-SUPPLIER,
+DBCC,UNIT-DBCC,ROLE-DBCC,
+"DBCC, DBM and agencies",UNIT-DBCC,ROLE-DBCC,Several bodies; mapped to the DBCC.
+DBM,INST-DBM,ROLE-DBM,
+DBM (Budget and Management Bureau C),INST-DBM,ROLE-DBM,
+DBM (GMIS),SYS-GMIS,,
+DBM (approving officials),INST-DBM,ROLE-DBM,
+DBM and COA,INST-DBM,ROLE-DBM,Two bodies; mapped to DBM.
+DEPDev (PIP and TRIP secretariats),UNIT-DEPDEV-PIP,ROLE-DEPDEV,
+"DEPDev, ICC, ED Council",UNIT-ICC,ROLE-ICC,Three bodies; mapped to the ICC.
+DOF,INST-DOF,ROLE-DOF,
+"DOF, BIR, BOC",INST-DOF,ROLE-DOF,Three bodies; mapped to DOF.
+DOJ,INST-DOJ,ROLE-DOJ,
+ED Council,UNIT-EDC,ROLE-EDC,
+Employee,EXT-EMPLOYEE,ROLE-EMPLOYEE,
+End-user unit,UNIT-NGA-REQ,ROLE-REQ,
+GOCC governing board,UNIT-GOCC-BOARD,ROLE-GOCC-BOARD,
+GOCC management,UNIT-GOCC-MGMT,ROLE-GOCC-MGMT,
+Governance Commission for GOCCs,INST-GCG,ROLE-GCG,
+Government bank or remittance institution,INST-PAYAGENT,ROLE-PAYAGENT,
+Head of agency,UNIT-NGA-HEAD,ROLE-HEAD,
+Head of agency and persons liable,UNIT-NGA-HEAD,ROLE-HEAD,
+Head of agency or authorized official,UNIT-NGA-HEAD,ROLE-HEAD,
+Head of the procuring entity,UNIT-NGA-HEAD,ROLE-HEAD,
+Heads of departments,INST-NGA,ROLE-AGENCY,Mapped to the agency.
+House Committee on Appropriations,UNIT-HOUSE-COMM,ROLE-HOUSE-COMM,
+House plenary,UNIT-HOUSE-PLEN,ROLE-HOUSE-PLEN,
+Household,EXT-BENEF,ROLE-BENEF,
+ICC,UNIT-ICC,ROLE-ICC,
+Implementing agency,INST-NGA,ROLE-AGENCY,Mapped to the agency.
+"Implementing body (agency, corporation or local government)",INST-IMPL,ROLE-IMPL,
+Lender,EXT-DEALER,ROLE-DEALER,
+Local chief executive (governor or mayor),UNIT-LGU-LCE,ROLE-LCE,
+"Local finance committee (planning officer, budget officer, treasurer)",UNIT-LGU-LFC,ROLE-LFC,
+"Local treasurer, accountant, budget officer",UNIT-LGU-TREAS,ROLE-LGU-FIN,
+Monetary Board (BSP),UNIT-BSP-MB,ROLE-MB,
+Monitoring bodies and COA,INST-COA,ROLE-COA,Mapped to COA.
+OSBPS v2.0,SYS-OSBPS,,
+"Observers (private sector, civil society)",UNIT-PUB-OBS,ROLE-OBSERVER,
+Office of the President,UNIT-OP,ROLE-OP,
+PAS (clearing house system),SYS-PAS,,
+PIPOL system,SYS-PIPOL,,
+Payee's bank account,EXT-SUPPLIER,ROLE-SUPPLIER,An account of the payee; mapped to the payee.
+PhilGEPS (electronic portal),SYS-PHILGEPS,,
+President,UNIT-PRES,ROLE-PRESIDENT,
+President and Cabinet,UNIT-CABINET,ROLE-CABINET,
+President and Congress,UNIT-PRES,ROLE-PRESIDENT,Two bodies; mapped to the President.
+Program agency (DSWD),UNIT-NGA-PROG,ROLE-PROGRAM,
+Project unit and engineer of the agency,UNIT-NGA-PROJ,ROLE-ENGINEER,
+Property unit and inspection officer,UNIT-NGA-PROP,ROLE-INSPECTOR,
+Punong barangay,UNIT-LGU-BRGY,ROLE-BRGY,Mapped to the barangay.
+Regional Development Council,UNIT-RDC,ROLE-RDC,
+Regional offices and operating units,UNIT-NGA-OU,ROLE-OPUNIT,
+Requesting office,UNIT-NGA-REQ,ROLE-REQ,
+"Reviewing authority: DBM, or the provincial sanggunian",UNIT-LGU-SANG,ROLE-SANG,Mapped to the sanggunian; DBM reviews in some cases.
+Sanggunian (local legislature),UNIT-LGU-SANG,ROLE-SANG,
+Sanggunian of the city or municipality,UNIT-LGU-SANG,ROLE-SANG,
+Sangguniang barangay,UNIT-LGU-BRGY,ROLE-BRGY,Mapped to the barangay.
+Senate Committee on Finance,UNIT-SENATE-COMM,ROLE-SENATE-COMM,
+Senate plenary,UNIT-SENATE-PLEN,ROLE-SENATE-PLEN,
+Servicing bank,INST-GSB,ROLE-GSB,
+"Servicing bank (LBP, DBP or PVB)",INST-GSB,ROLE-GSB,
+Servicing bank (MDS),INST-GSB,ROLE-GSB,
+Servicing banks,INST-GSB,ROLE-GSB,
+Source agency (holds the appropriation),INST-NGA,ROLE-AGENCY,
+Supplier or contractor,EXT-SUPPLIER,ROLE-SUPPLIER,
+Suppliers and contractors,EXT-SUPPLIER,ROLE-SUPPLIER,
+Taxpayer,EXT-TAXPAYER,ROLE-TAXPAYER,
+Taxpayer or importer,EXT-TAXPAYER,ROLE-TAXPAYER,
+URS,SYS-URS,,
+Verification page,SYS-DOCVERIFY,,

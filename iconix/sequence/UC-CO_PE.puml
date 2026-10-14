@@ -1,0 +1,86 @@
+@startuml
+title UC-CO Collect a fee and deposit it (cohort P, E)
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 10
+skinparam sequenceMessageAlign left
+autonumber
+actor "Collecting officer" as ROLE_COLLECTOR
+boundary "Collecting officer" as B_UNIT_NGA_COLL
+control "check (not stated)" as C_not_stated_ROLE_COLLECTOR
+entity "record" as E_S_FEE_DUE
+participant "Collecting officer" as N_UNIT_NGA_COLL
+entity "record" as E_S_CASH_ON_HAND
+entity "Agency own systems" as E_SYS_AGENCY_OWN
+participant "Depository banks" as N_INST_AGDB
+participant "Accounting unit" as N_UNIT_NGA_ACC
+actor "Authorized government deposit…" as ROLE_AGDB
+boundary "Depository banks" as B_INST_AGDB
+control "check (not stated)" as C_not_stated_ROLE_AGDB
+entity "record" as E_S_AGDB_BAL
+participant "NGCDS" as N_SYS_NGCDS
+actor "Chief accountant (head of the…" as ROLE_ACCOUNTANT
+boundary "Accounting unit" as B_UNIT_NGA_ACC
+control "check (not stated)" as C_not_stated_ROLE_ACCOUNTANT
+participant "Treasury Single Account" as N_ACC_TSA
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "NGCDS" as B_SYS_NGCDS
+control "check (not stated)" as C_not_stated_ROLE_BTR
+participant "eTRAMS" as N_SYS_ETRAMS
+boundary "BTr" as B_INST_BTR
+participant "National agency" as N_INST_NGA
+actor "Agency as a whole (central of…" as ROLE_AGENCY
+boundary "National agency" as B_INST_NGA
+control "check (not stated)" as C_not_stated_ROLE_AGENCY
+participant "BTr" as N_INST_BTR
+== CO-01 Pay the fee ==
+ROLE_COLLECTOR -> B_UNIT_NGA_COLL : System or office where the act takes place
+B_UNIT_NGA_COLL -> C_not_stated_ROLE_COLLECTOR : Pay the fee
+C_not_stated_ROLE_COLLECTOR -> E_S_FEE_DUE : use: A fee is due from a payer (order of payment issued)
+C_not_stated_ROLE_COLLECTOR -> N_UNIT_NGA_COLL : F064 Fee paid to the collecting officer
+== CO-02 Issue the official receipt ==
+ROLE_COLLECTOR -> B_UNIT_NGA_COLL : System or office where the act takes place
+B_UNIT_NGA_COLL -> C_not_stated_ROLE_COLLECTOR : Issue the official receipt
+note right of C_not_stated_ROLE_COLLECTOR : R-OR-IMMEDIATE: A numbered official receipt is issued immediately for each…
+C_not_stated_ROLE_COLLECTOR -> E_S_CASH_ON_HAND : write: Collections in the hands of the collecting officer
+C_not_stated_ROLE_COLLECTOR -> E_SYS_AGENCY_OWN : write: Official receipt issued and listed
+== CO-03 Deposit the collections in full ==
+ROLE_COLLECTOR -> B_UNIT_NGA_COLL : System or office where the act takes place
+B_UNIT_NGA_COLL -> C_not_stated_ROLE_COLLECTOR : Deposit the collections in full
+note right of C_not_stated_ROLE_COLLECTOR : R-DEPOSIT-NEXT-DAY: Collections are deposited in full not later than the next b…
+C_not_stated_ROLE_COLLECTOR -> E_S_CASH_ON_HAND : use: Collections in the hands of the collecting officer
+C_not_stated_ROLE_COLLECTOR -> N_INST_AGDB : F049 Collections deposited at the depository bank
+== CO-04 Report collections and deposits for the day ==
+ROLE_COLLECTOR -> B_UNIT_NGA_COLL : System or office where the act takes place
+B_UNIT_NGA_COLL -> C_not_stated_ROLE_COLLECTOR : Report collections and deposits for the day
+C_not_stated_ROLE_COLLECTOR -> E_SYS_AGENCY_OWN : use: Official receipt issued and listed
+C_not_stated_ROLE_COLLECTOR -> N_UNIT_NGA_ACC : F050 Report of collections and deposits, at accounting
+== CO-05 Credit the account and report ==
+ROLE_AGDB -> B_INST_AGDB : System or office where the act takes place
+B_INST_AGDB -> C_not_stated_ROLE_AGDB : Credit the account and report
+C_not_stated_ROLE_AGDB -> E_S_AGDB_BAL : write: Collections in the account at the depository bank
+C_not_stated_ROLE_AGDB -> N_SYS_NGCDS : F051 Collection reports of the bank, at NGCDS
+C_not_stated_ROLE_AGDB -> N_UNIT_NGA_ACC : F065 Consolidated report of daily collections and credit memo, a…
+== CO-06 Record the collections ==
+ROLE_ACCOUNTANT -> B_UNIT_NGA_ACC : System or office where the act takes place
+B_UNIT_NGA_ACC -> C_not_stated_ROLE_ACCOUNTANT : Record the collections
+C_not_stated_ROLE_ACCOUNTANT -> E_SYS_AGENCY_OWN : write: Collections recorded in the books of the agency
+== CO-07 Transfer the balances to the TSA ==
+ROLE_AGDB -> B_INST_AGDB : System or office where the act takes place
+B_INST_AGDB -> C_not_stated_ROLE_AGDB : Transfer the balances to the TSA
+C_not_stated_ROLE_AGDB -> E_S_AGDB_BAL : use: Collections in the account at the depository bank
+C_not_stated_ROLE_AGDB -> N_ACC_TSA : F052 Balances on their way to the TSA
+== CO-08 Consolidate the collection reports ==
+ROLE_BTR -> B_SYS_NGCDS : System or office where the act takes place
+B_SYS_NGCDS -> C_not_stated_ROLE_BTR : Consolidate the collection reports
+C_not_stated_ROLE_BTR -> N_SYS_ETRAMS : F053 Collections data at eTRAMS
+== CO-09 Issue the certificate of deposited collections ==
+ROLE_BTR -> B_INST_BTR : System or office where the act takes place
+B_INST_BTR -> C_not_stated_ROLE_BTR : Issue the certificate of deposited collections
+C_not_stated_ROLE_BTR -> N_INST_NGA : F054 Certificate of deposited national collections, at the agency
+== CO-10 Report revenue and other receipts (FAR 5) ==
+ROLE_AGENCY -> B_INST_NGA : System or office where the act takes place
+B_INST_NGA -> C_not_stated_ROLE_AGENCY : Report revenue and other receipts (FAR 5)
+C_not_stated_ROLE_AGENCY -> E_SYS_AGENCY_OWN : use: Collections recorded in the books of the agency
+C_not_stated_ROLE_AGENCY -> N_INST_BTR : F055 Quarterly report of revenue and other receipts (FAR 5), at…
+@enduml

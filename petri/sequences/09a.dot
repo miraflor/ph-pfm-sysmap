@@ -1,0 +1,95 @@
+digraph seq {
+graph [rankdir=TB nodesep=0.25 ranksep=0.3 fontname="Helvetica" label="09a  External audit by COA: from submission of accounts to the annual reports" labelloc=t fontsize=11]
+node [fontname="Helvetica" fontsize=8]
+edge [arrowsize=0.5]
+"p1" [shape=circle width=0.25 fixedsize=true label="start" fontsize=6 style=filled fillcolor="#333333"]
+"p2" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p3" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p4" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p5" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p6" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p7" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p8" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p9" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p10" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p11" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p12" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p13" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p14" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p15" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p16" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p17" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p18" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p19" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p20" [shape=circle width=0.25 fixedsize=true label="" fontsize=6 style=filled fillcolor="#ffffff"]
+"p21" [shape=circle width=0.25 fixedsize=true label="end" fontsize=6 style=filled fillcolor="#ffffff"]
+"t01" [shape=box style=rounded label="1. Accounting unit to COA audit team:\nAccounts: paid vouchers with the daily reports\nof payments, journal entries, reports. Year-\nend statements by 14 February" tooltip="09a-01"]
+"t02" [shape=box style=rounded label="2. COA audit team: Audit: financial (are the\nstatements fairly presented), compliance (were\nthe rules followed), performance (were results\nachieved with economy)" tooltip="09a-02"]
+"t03" [shape=box style=rounded label="3. COA audit team to Head of agency: Audit\nObservation Memorandum on each finding" tooltip="09a-03"]
+"t04" [shape=box style=rounded label="4. Head of agency to COA audit team: Comments,\nexplanations, documents" tooltip="09a-04"]
+"t05" [shape=box style=rounded label="5. COA audit team to Head of agency: Notice of\nSuspension. The amount is suspended until the\nrequirement is met" tooltip="09a-05"]
+"tau1" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Finding on a transaction: a requirement is missing"]
+"t06" [shape=box style=rounded label="6. COA audit team to Head of agency: Notice of\nDisallowance, naming the persons liable" tooltip="09a-06"]
+"tau2" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Finding on a transaction: illegal, irregular, unnecessary, excessive or extravagant expense"]
+"t07" [shape=box style=rounded label="7. COA audit team to Head of agency: Notice of\nCharge, naming the persons liable" tooltip="09a-07"]
+"tau3" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Finding on revenue: under-assessment or under-collection"]
+"t08" [shape=box style=rounded label="8. Head of agency to COA audit team:\nRequirement met, or amount returned" tooltip="09a-08"]
+"t09" [shape=box style=rounded label="9. COA audit team to Head of agency: Notice of\nSettlement" tooltip="09a-09"]
+"tau4" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Persons liable comply"]
+"t10" [shape=box style=rounded label="10. Head of agency to COA directors: Appeal" tooltip="09a-10"]
+"t11" [shape=box style=rounded label="11. COA directors to Head of agency: Decision" tooltip="09a-11"]
+"t12" [shape=box style=rounded label="12. Head of agency to COA Commission Proper:\nPetition for review" tooltip="09a-12"]
+"t13" [shape=box style=rounded label="13. COA Commission Proper to Head of agency:\nDecision of the Commission Proper" tooltip="09a-13"]
+"tau5" [shape=box width=0.15 height=0.15 style=filled fillcolor="#444444" label="" tooltip="end of: Persons liable contest"]
+"t14" [shape=box style=rounded label="14. COA audit team to Head of agency: When a\ndecision is final: Notice of Finality of\nDecision. The agency records a receivable from\nthe persons liable. Then COA Order of\nExecution (for example, withholding of pay)" tooltip="09a-14"]
+"t15" [shape=box style=rounded label="15. COA audit team to Head of agency: Each\nquarter: Statement of Audit Suspensions,\nDisallowances and Charges" tooltip="09a-15"]
+"t16" [shape=box style=rounded label="16. COA audit team to Head of agency: Draft\nfindings discussed. Then the audit report of\nthe agency: opinion on the statements,\nobservations and recommendations, status of\nearlier recommendations" tooltip="09a-16"]
+"t17" [shape=box style=rounded label="17. Head of agency to COA audit team: Action\nplan on the recommendations" tooltip="09a-17"]
+"t18" [shape=box style=rounded label="18. COA audit team to President: COA annual\nreport on the financial condition and\noperation of the government, by 30 September" tooltip="09a-18"]
+"p1" -> "t01"
+"t01" -> "p2"
+"p2" -> "t02"
+"t02" -> "p3"
+"p3" -> "t03"
+"t03" -> "p4"
+"p4" -> "t04"
+"t04" -> "p5"
+"p5" -> "t05"
+"t05" -> "p7"
+"p7" -> "tau1"
+"tau1" -> "p6"
+"p5" -> "t06"
+"t06" -> "p8"
+"p8" -> "tau2"
+"tau2" -> "p6"
+"p5" -> "t07"
+"t07" -> "p9"
+"p9" -> "tau3"
+"tau3" -> "p6"
+"p6" -> "t08"
+"t08" -> "p11"
+"p11" -> "t09"
+"t09" -> "p12"
+"p12" -> "tau4"
+"tau4" -> "p10"
+"p6" -> "t10"
+"t10" -> "p13"
+"p13" -> "t11"
+"t11" -> "p14"
+"p14" -> "t12"
+"t12" -> "p15"
+"p15" -> "t13"
+"t13" -> "p16"
+"p16" -> "tau5"
+"tau5" -> "p10"
+"p10" -> "t14"
+"t14" -> "p17"
+"p17" -> "t15"
+"t15" -> "p18"
+"p18" -> "t16"
+"t16" -> "p19"
+"p19" -> "t17"
+"t17" -> "p20"
+"p20" -> "t18"
+"t18" -> "p21"
+}

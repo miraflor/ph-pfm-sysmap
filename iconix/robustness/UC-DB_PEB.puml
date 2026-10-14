@@ -1,0 +1,52 @@
+@startuml
+title UC-DB Borrow through government securities (cohort P, E, B)
+left to right direction
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+actor "Dealer or lender" as ROLE_DEALER
+boundary "System or office where the act takes place" as B_DB_01
+control "DB-01 Bid in the auction (check not stated)" as C_DB_01
+entity "Bid in an auction of government securities" as E_R_SEC_BID_
+actor "Bureau of the Treasury" as ROLE_BTR
+boundary "System or office where the act takes place" as B_DB_02
+control "DB-02 Award and send the settlement instruction (check…" as C_DB_02
+entity "Settlement instruction for securities" as E_R_SETTLE_INSTR_
+actor "BSP" as ROLE_BSP
+boundary "System or office where the act takes place" as B_DB_03
+control "DB-03 Settle securities against payment (check not stat…" as C_DB_03
+entity "Proceeds of securities and loans (money)" as E_R_M_PROCEEDS_
+boundary "System or office where the act takes place" as B_DB_04
+control "DB-04 Credit the proceeds to the TSA (check not stated)" as C_DB_04
+boundary "System or office where the act takes place" as B_DB_05
+control "DB-05 Record the new debt (check not stated)" as C_DB_05
+entity "Record of new debt" as E_R_NEW_DEBT_
+boundary "System or office where the act takes place" as B_DB_06
+control "DB-06 Pay interest and principal (check not stated)" as C_DB_06
+entity "Interest and principal (money)" as E_R_M_DEBT_SERVICE_
+ROLE_DEALER -- B_DB_01
+B_DB_01 -- C_DB_01
+C_DB_01 -- E_R_SEC_BID_
+ROLE_BTR -- B_DB_02
+B_DB_02 -- C_DB_02
+C_DB_01 -- C_DB_02
+C_DB_02 -- E_R_SEC_BID_
+C_DB_02 -- E_R_SETTLE_INSTR_
+ROLE_BSP -- B_DB_03
+B_DB_03 -- C_DB_03
+C_DB_02 -- C_DB_03
+C_DB_03 -- E_R_SETTLE_INSTR_
+C_DB_03 -- E_R_M_PROCEEDS_
+ROLE_BSP -- B_DB_04
+B_DB_04 -- C_DB_04
+C_DB_03 -- C_DB_04
+C_DB_04 -- E_R_M_PROCEEDS_
+ROLE_BTR -- B_DB_05
+B_DB_05 -- C_DB_05
+C_DB_04 -- C_DB_05
+C_DB_05 -- E_R_NEW_DEBT_
+ROLE_BTR -- B_DB_06
+B_DB_06 -- C_DB_06
+C_DB_05 -- C_DB_06
+C_DB_06 -- E_R_M_DEBT_SERVICE_
+@enduml
