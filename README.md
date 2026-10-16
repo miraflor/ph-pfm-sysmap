@@ -8,13 +8,24 @@ Source register and targeted review current to 13 October 2026. Deployment and i
 
 **Theme:** light mode is the default even on computers using dark mode. Dark mode is available via a clearly labelled toggle in the header; the explicit preference is remembered in the browser.
 
+## The web site
+
+If GitHub Pages serves the folder `docs/`, the site has two pages, both made from the registers of `model/`:
+
+- `docs/index.html`, the research portal. It has seven parts: Overview; Systems map (the interactive map, inside the page); Processes (the curated chains for each cohort, and the twenty workflows of the atlas); Formal models (the Petri nets, the ICONIX diagrams and the static maps, each with its source file); Records & data; Evidence (sources, reviewed claims and open questions); and Method.
+- `docs/visualizer.html`, the interactive map described below. Its address can name one flow, box or record, for example `visualizer.html#find=F032`.
+
+The drawings that the portal shows are copies in `docs/assets/`, because GitHub Pages serves only `docs/`. An ICONIX drawing is shown only when the SVG holds the same PlantUML source as the current `.puml` file; otherwise the portal shows the source and says why. See [docs/SITE_GUIDE.md](docs/SITE_GUIDE.md). The portal adds no claim about the agencies.
+
+**Website update (v3):** Source back-references now cover all basis-bearing registers; record pages show the modelled holder in each agency cohort, and workflow pages show the atlas actor mappings. Existing links to `/#map`, `/#nets`, `/#lists` and `/#about` go to the original visualizer. This repository documents Python 3.9+, and the installer fixes the Python 3.9-incompatible f-string in the Petri writer.
+
 ## Open the map
 
-Open `docs/index.html` in a web browser. The page works without a network connection, because the drawing library (Cytoscape.js) is in `docs/vendor/`. The fonts come from Google Fonts when a connection exists; without one, the page uses the fonts of the computer.
+Open `docs/visualizer.html` in a web browser for the map, or `docs/index.html` for the research portal. Both work without a network connection, because the drawing library (Cytoscape.js) is in `docs/vendor/`. The fonts come from Google Fonts when a connection exists; without one, the page uses the fonts of the computer.
 
-If GitHub Pages is turned on for the folder `docs/` of this repository, the same page is the web site of the repository.
+If GitHub Pages is turned on for the folder `docs/` of this repository, the research portal is the home page of the site, and the map is the page `visualizer.html`.
 
-The page has four tabs:
+The map has four tabs:
 
 | Tab | What it shows |
 |---|---|
@@ -34,7 +45,7 @@ See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for build commands, semantic limits
 | `maps/` | Static maps made with Graphviz, as SVG (to look at) and DOT (to change). |
 | `petri/` | The Petri nets as PNML (to open in Petri net tools), DOT and SVG, and `petri/ANALYSIS.md`. |
 | `iconix/` | The ICONIX models as PlantUML files with SVG drawings, and `iconix/USE_CASES.md`. |
-| `docs/` | The interactive page, evidence review and description of the data model. |
+| `docs/` | The research portal, the interactive map, copies of the drawings, evidence review and description of the data model. |
 | `audit/` | Targeted public-source claim reviews, with dates and links. |
 | `exports/` | Reproducible GraphML network for graph analysis. |
 | `tools/` | The programs that check the registers and build everything. |
@@ -130,8 +141,8 @@ You need Python 3.9 or later (the programs use the standard library only) and Gr
 | Command | What it does |
 |---|---|
 | `python tools/check.py` | Checks the registers: identifiers, allowed values, cohorts, and sources. It prints every problem and ends with the number of problems. |
-| `python tools/build.py` | Checks, then writes `maps/`, `petri/`, `iconix/`, `docs/index.html`, `docs/DATA_MODEL.md` and `REPORT.md`. It stops if the check finds a problem. |
-| `python tools/build.py --page-only` | Checks, then writes the page only. |
+| `python tools/build.py` | Checks, then writes `maps/`, `petri/`, `iconix/`, `docs/index.html` (the portal), `docs/visualizer.html` (the map), `docs/assets/`, `docs/DATA_MODEL.md` and `REPORT.md`. It stops if the check finds a problem. |
+| `python tools/build.py --page-only` | Checks, then writes the two pages and the drawing copies in `docs/assets/` only. |
 | `python tools/import_atlas.py PATH` | Reads a copy of the atlas at PATH again and writes `atlas_extract/`. |
 
 To change the map, change the CSV files of `model/` and build again. For example, a new system is one row of `nodes.csv` (with its parent, level, status and sources), and a new flow is one row of `flows.csv`. A new source is one row of `sources.csv`. The check says what is missing.

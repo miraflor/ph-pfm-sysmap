@@ -22,6 +22,8 @@ LINE_FILL = {"authority": "#d6e4f7", "claim": "#d5ecd5", "cash": "#fde0c2", "rec
 LINE_STROKE = {"authority": "#1f4e8c", "claim": "#2e6b2e", "cash": "#a35200", "records": "#555555"}
 
 
+DOT_NEWLINE = "\\n"  # escaped line break in a DOT label; Python 3.9 compatible
+
 def wrap(text, width=22):
     return "\\n".join(textwrap.wrap(text, width)) or text
 
@@ -88,7 +90,7 @@ def chain_dot(m, net, title):
         kind = b["controller_kind"] if b else ""
         fill = "#ffffff" if kind != "software" else "#eaeaea"
         lines.append(f'{q(t["transition_id"])} [shape=box style="filled" fillcolor="{fill}" penwidth=1.6 '
-                     f'label={q(t["transition_id"] + "\\n" + wrap(t["name"], 24))} tooltip={q(m.ix["roles"][t["role_id"]]["name"])}]')
+                     f'label={q(t["transition_id"] + DOT_NEWLINE + wrap(t["name"], 24))} tooltip={q(m.ix["roles"][t["role_id"]]["name"])}]')
     for a in net["arcs"]:
         if a["direction"] == "in":
             lines.append(f'{q(a["place_id"])} -> {q(a["transition_id"])}' + (' [label="amount" fontsize=7]' if a["weight"] == "amount" else ""))

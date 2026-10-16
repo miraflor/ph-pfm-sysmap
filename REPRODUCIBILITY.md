@@ -15,7 +15,7 @@ python tools/verify.py           # PNML/XML, DOT/SVG, generated-net soundness, r
 
 If Graphviz is missing, install it from <https://graphviz.org/download/> and start a fresh terminal. If you have a local PlantUML jar, set `$env:PLANTUML_JAR = 'C:\path\to\plantuml.jar'` and have Java on `PATH` **before** the full build. The build writes `.puml` files either way, but without a configured JAR it cannot confirm its PlantUML renderings. Existing SVGs may be stale if a JAR is not configured. `tools/verify.py` checks `.puml` wrappers but does not replace an actual PlantUML compilation.
 
-For a quick HTML-only edit, `python tools/build.py --page-only` refreshes the self-contained `docs/index.html` without modifying other outputs. Open `docs/index.html` directly in the browser or publish `docs/` via GitHub Pages. The local copy of Cytoscape.js is included; fonts have offline fallbacks.
+For a quick HTML-only edit, `python tools/build.py --page-only` refreshes `docs/index.html` (the research portal), `docs/visualizer.html` (the interactive map and process nets) and the drawing copies in `docs/assets/`, without drawing anything again. Open either page directly in a browser, or publish `docs/` via GitHub Pages. The portal publishes an ICONIX SVG only when the PlantUML source stored inside the SVG equals the current `.puml` file, when this build drew it, or when `docs/assets/iconix-render-manifest.json` records an earlier checked drawing of the same source. This check needs no Java. The local copy of Cytoscape.js is included; fonts have offline fallbacks.
 
 ## Linux / macOS
 
@@ -31,7 +31,8 @@ python3 tools/verify.py
 | Artifact | Source | Reproducible transformation |
 |---|---|---|
 | System map: static `.dot` + `.svg` | `model/nodes.csv`, `model/flows.csv`, supporting sources | `tools/pfmmap/maps.py` via Graphviz |
-| Interactive map and process nets | All registers; `atlas_extract/atlas_sequences.json`; layouts from Graphviz | `tools/pfmmap/site.py` + `tools/site/` via `tools/build.py` |
+| Interactive map and process nets | All registers; `atlas_extract/atlas_sequences.json`; layouts from Graphviz | `tools/pfmmap/site.py` + `tools/site/` → `docs/visualizer.html` |
+| Research portal | CSV registers, audit reviews, generated diagram inventory | `tools/portal.py` + `tools/portal_site/` → `docs/index.html` |
 | Curated Petri nets `.pnml`, `.dot`, `.svg` | Places, arcs, transitions, bindings, cohorts | `tools/pfmmap/petri.py` |
 | Generated workflow nets | The twenty source sequence trees and steps | `petri.build_seq` + exhaustive `petri.soundness` (generated models only) |
 | ICONIX `.puml` + optionally `.svg` | Roles, records, fields, use cases and sequences | `tools/pfmmap/iconix.py`; PlantUML renderer optional |
@@ -42,10 +43,12 @@ For an exhaustive **review queue** (not a claim that every fact is verified), ru
 
 For external graph analysis (Gephi, NetworkX, and similar tools), `python tools/export_graphml.py` produces `exports/pfm_flows.graphml` from the same registers. A registered flow with an intermediary becomes two directed segments with the same original `flow_id`; neither proves a live application interface.
 
-`docs/index.html` embeds model data and scripts. Commit it along with any input changes so GitHub Pages displays the updated map. The sources in `model/sources.csv` give provenance, not an immutable snapshot of a public page. Some references have no online URL and some web links may later move.
+`docs/index.html` and `docs/visualizer.html` each embed model data and scripts. Commit them and `docs/assets/` along with any input changes, so that GitHub Pages shows the updated site. The sources in `model/sources.csv` give provenance, not an immutable snapshot of a public page. Some references have no online URL and some web links may later move.
 
 ## What the automated tests can and cannot establish
 
-The checks validate CSV relationships; 47 PNML diagrams' bipartite structure and 20 generated sequence nets' soundness; 62 PlantUML source wrappers; DOT parsing and generated SVG structure; a build of the HTML page that reproduces the committed bytes; theme default; and independently reviewed claim IDs with source codes. **They do not validate legal interpretations, production integration, procurement compliance, asset or cash balances, nationwide deployment, or the correctness of the source sequence diagrams.** For numeric cash controls, add a coloured/timed/net-with-amounts formalization and transaction evidence rather than interpreting plain PNML tokens as money.
+The checks validate CSV relationships; 47 PNML diagrams' bipartite structure and 20 generated sequence nets' soundness; 62 PlantUML source wrappers; that each ICONIX drawing in the portal was made from its current PlantUML source; DOT parsing and generated SVG structure; a build of the HTML page that reproduces the committed bytes; theme default; and independently reviewed claim IDs with source codes. **They do not validate legal interpretations, production integration, procurement compliance, asset or cash balances, nationwide deployment, or the correctness of the source sequence diagrams.** For numeric cash controls, add a coloured/timed/net-with-amounts formalization and transaction evidence rather than interpreting plain PNML tokens as money.
 
 See `EVIDENCE_REVIEW.md` for review scope and limits. Each audit row is *not* a guarantee about all fields of the corresponding system or flow.
+
+**Published asset integrity.** When using a full build, commit the regenerated SVGs in `maps/` and `petri/` **together with** their copies in `docs/assets/`, even if a difference appears to be only a Graphviz version comment. Otherwise `tools/verify.py` may fail on a fresh checkout because the mirrored drawings differ byte-for-byte. If the changes are verified to be solely disposable local Graphviz output, you may restore `maps/` and `petri/` first, then run `python tools/build.py --page-only` to mirror the restored originals, and rerun `python tools/verify.py`. Do not restore any intended new diagrams.

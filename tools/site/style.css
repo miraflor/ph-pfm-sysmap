@@ -201,3 +201,9 @@ table.grid tbody tr:hover { background: var(--raise); }
 .review-note { border-inline-start: 3px solid var(--accent); padding: 7px 10px; margin: 8px 0; background: var(--raise); font-size: .9rem; }
 .review-note.needs_evidence { border-color: var(--warn); }
 .review-note.model_inference { border-color: var(--records); }
+
+/* Research portal navigation */
+.hub-link { align-self:center; margin-left:auto; font-size:.85rem; font-weight:600; white-space:nowrap; text-decoration:none; padding:5px 8px; }
+
+/* Research portal: inside the portal, the portal gives the navigation and the theme */
+.embedded .hub-link, .embedded #theme-toggle { display: none; }

@@ -132,19 +132,29 @@ def graphml(m):
     print(f"OK: GraphML exported {count_nodes} nodes and {count_edges} flow segments")
 
 def consistency(m):
-    doc = (ROOT/'docs/index.html').read_text(encoding='utf-8')
+    doc = (ROOT/'docs/visualizer.html').read_text(encoding='utf-8')
+    portal = (ROOT/'docs/index.html').read_text(encoding='utf-8')
+    ensure('id="portal-payload"' in portal and 'Systems &amp; process models' in portal, 'research homepage missing')
+    ensure('visualizer.html#map' in portal and 'data-view="processes"' in portal, 'portal sections missing')
+    from portal import audit_site
+    site_problems, withheld = audit_site(ROOT)
+    ensure(not site_problems, 'portal drawings: ' + '; '.join(site_problems[:5]))
+    if withheld:
+        print(f'NOTE: {len(withheld)} ICONIX drawings not published (source changed or unverified): ' + ', '.join(withheld[:6]))
     ensure('<!doctype html>' in doc and 'window.PFM = ' in doc, 'site build missing')
     ensure('id="theme-toggle"' in doc and 'theme-button' in doc, 'theme control missing in compiled page')
     ensure('prefers-color-scheme: dark' not in doc, 'system dark preference still controls page')
     ensure('claim_reviews' in doc and 'Public source corroborates' in doc, 'claim review not integrated in published page')
     ensure('color-scheme: light;' in doc, 'light palette not explicitly default')
     ensure((ROOT/'docs/EVIDENCE_REVIEW.md').read_bytes() == (ROOT/'EVIDENCE_REVIEW.md').read_bytes(), 'site audit summary stale')
-    baseline = hashlib.sha256((ROOT/'docs/index.html').read_bytes()).hexdigest()
+    baseline = (hashlib.sha256((ROOT/'docs/index.html').read_bytes()).hexdigest(),
+                hashlib.sha256((ROOT/'docs/visualizer.html').read_bytes()).hexdigest())
     out = subprocess.run([sys.executable, str(HERE/'build.py'), '--page-only'], cwd=ROOT, capture_output=True, text=True,timeout=150)
     ensure(out.returncode == 0, f'page rebuild failed: {out.stderr[-800:]} {out.stdout[-800:]}')
-    again = hashlib.sha256((ROOT/'docs/index.html').read_bytes()).hexdigest()
-    ensure(baseline == again, 'page not reproducible: rebuilt SHA differs from checked-in output')
-    print('OK: light-default UI, review panel, and deterministic GitHub Pages output (' + baseline[:16] + '…)')
+    again = (hashlib.sha256((ROOT/'docs/index.html').read_bytes()).hexdigest(),
+             hashlib.sha256((ROOT/'docs/visualizer.html').read_bytes()).hexdigest())
+    ensure(baseline == again, 'site not reproducible: rebuilt homepage/visualizer SHA differs from checked-in output')
+    print('OK: light-default UI, review panel, and deterministic portal/visualizer output (' + baseline[0][:16] + '…)')
 
 
 def main():

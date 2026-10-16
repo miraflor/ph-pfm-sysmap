@@ -2,6 +2,8 @@
 <meta name="color-scheme" content="light dark">
 <script>/* The light palette is the default, even on dark-system devices. */
 try { if (localStorage.getItem("pfm-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+/* Inside the research portal the map hides its own header controls (see style.css). */
+try { if (window.self !== window.top) document.documentElement.classList.add("embedded"); } catch (e) { document.documentElement.classList.add("embedded"); }
 </script>
 <meta name="description" content="Interactive map of the information systems of Philippine public financial management, their flows, records and process nets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +16,7 @@ try { if (localStorage.getItem("pfm-theme") === "dark") document.documentElement
       <h1>Philippine PFM Systems Map</h1>
       <p class="sub" id="sub">Systems, flows, records and process nets of public financial management.</p>
     </div>
+    <a href="index.html" class="hub-link" target="_top" title="Open the research portal">Research portal ↗</a>
     <button type="button" class="theme-button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">Dark mode</button>
     <nav class="tabs" role="tablist" aria-label="Views">
       <button role="tab" id="t-map" aria-selected="true" aria-controls="tab-map">Map</button>

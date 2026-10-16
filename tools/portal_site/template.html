@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Philippine public financial management: the systems and flows map, process chains, Petri nets, ICONIX models, records and sources, made from one set of registers.">
+<title>Philippine PFM systems and process models</title>
+<script>/* Preserve links made before the research portal became the homepage. */
+if (/^#(?:map|nets|lists|about)$/.test(location.hash)) {
+  location.replace('visualizer.html' + location.hash);
+}</script>
+<script>/* Light is the default. The key is shared with visualizer.html, so both pages keep one choice. */
+try { if (localStorage.getItem('pfm-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}</script>
+<style>/* PORTAL_STYLE */</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div id="app">
+<header class="topbar">
+  <a class="identity" href="#view=overview" aria-label="Philippine PFM: overview">
+    <span class="brand-icon" aria-hidden="true">PFM</span>
+    <span><strong>Philippine PFM</strong><small>Systems &amp; process models</small></span>
+  </a>
+  <div class="head-right">
+    <a class="github" href="__REPO_HOME__" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+    <button type="button" class="theme" id="theme" aria-pressed="false">Dark mode</button>
+  </div>
+</header>
+<nav class="nav" aria-label="Parts of the site">
+  <button type="button" data-view="overview">Overview</button>
+  <button type="button" data-view="architecture">Systems map</button>
+  <button type="button" data-view="processes">Processes</button>
+  <button type="button" data-view="models">Formal models</button>
+  <button type="button" data-view="records">Records &amp; data</button>
+  <button type="button" data-view="evidence">Evidence</button>
+  <button type="button" data-view="methods">Method</button>
+</nav>
+<main id="content" tabindex="-1"><div id="main">
+<noscript><div class="layout"><h1>Philippine PFM systems and process models</h1><p>This page needs JavaScript. Without it, open the <a href="visualizer.html">interactive map</a> (it also needs JavaScript), or read the registers and drawings in the <a href="__REPO_HOME__">repository</a>.</p></div></noscript>
+</div></main>
+<footer class="footer"><span>Independent reference. Not an official publication of the Philippine government.</span><span id="stamp"></span></footer>
+</div>
+<div id="live" class="visually-hidden" role="status" aria-live="polite"></div>
+<dialog id="drawing" aria-labelledby="drawing-title"><div class="modal-head"><strong id="drawing-title"></strong><div class="modal-actions"><button id="drawing-size" type="button">Actual size</button><a id="drawing-link" target="_blank" rel="noopener noreferrer">Open the image ↗</a><button id="drawing-close" type="button">Close ✕</button></div></div><div id="drawing-body"></div></dialog>
+<script id="portal-payload" type="application/json">/* PORTAL_DATA */</script>
+<script>/* PORTAL_APP */</script>
+</body>
+</html>

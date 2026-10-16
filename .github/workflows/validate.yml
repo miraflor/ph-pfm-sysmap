@@ -22,3 +22,24 @@ jobs:
         run: python tools/verify.py
       - name: Explain renderer-sensitive outputs
         run: echo "Graphviz and PlantUML SVG layouts may vary by tool version; tests assert a successful deterministic local rebuild."
+      - name: Upload generated website for GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    name: Publish GitHub Pages
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy generated website
+        id: deployment
+        uses: actions/deploy-pages@v4

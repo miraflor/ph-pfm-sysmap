@@ -1,8 +1,9 @@
 """Build every output of the repository from the registers of model/.
 
 Usage:
-  python tools/build.py                 check the registers, then write maps/, petri/, iconix/, docs/index.html and REPORT.md
-  python tools/build.py --page-only     check, then write docs/index.html only
+  python tools/build.py                 check the registers, then write maps/, petri/, iconix/, docs/index.html (research portal),
+                                        docs/visualizer.html (interactive map), docs/assets/ and REPORT.md
+  python tools/build.py --page-only     check, then write docs/index.html, docs/visualizer.html and docs/assets/ only
   python tools/build.py --cdn PATH      also write a copy of the page that loads Cytoscape.js from a CDN instead of docs/vendor/,
                                         without the document skeleton (for a host that adds it, such as a published artifact)
 
@@ -252,7 +253,7 @@ def build_iconix(m, out):
 
 # ===================================================================== page
 
-def build_page(m, cdn_path=None):
+def build_page(m, cdn_path=None, fresh_iconix_svg=False):
     from verification_inventory import build as build_review_queue
     build_review_queue()
     # Published evidence notes must follow the source review, not an old manual copy.
@@ -261,11 +262,14 @@ def build_page(m, cdn_path=None):
     vendor = ROOT / "docs" / "vendor"
     if not (vendor / "cytoscape.min.js").exists():
         print("  docs/vendor/cytoscape.min.js is missing. Get it with: npm pack cytoscape@" + CYTOSCAPE_VERSION)
-    size = site.write_page(data, ROOT / "tools" / "site", ROOT / "docs" / "index.html", ["vendor/cytoscape.min.js"])
-    out = [("docs/index.html", size)]
+    size = site.write_page(data, ROOT / "tools" / "site", ROOT / "docs" / "visualizer.html", ["vendor/cytoscape.min.js"])
+    out = [("docs/visualizer.html", size)]
     if cdn_path:
         size2 = site.write_page(data, ROOT / "tools" / "site", Path(cdn_path), [CYTOSCAPE_CDN], standalone=False)
         out.append((str(cdn_path), size2))
+    from portal import build as build_portal
+    homepage_size = build_portal(ROOT, AS_OF, fresh_iconix_svg=fresh_iconix_svg)
+    out.append(("docs/index.html", homepage_size))
     return data, out
 
 
@@ -315,7 +319,9 @@ def report_md(m, made_maps, chains, seqs, windows, ico, page):
     L += ["", "## Page", ""]
     for p, size in page:
         if p == "docs/index.html":
-            L.append(f"- {p}: {size / 1024:.0f} KB, with the data of all the registers inside")
+            L.append(f"- {p}: {size / 1024:.0f} KB, standalone research portal with the source registers")
+        if p == "docs/visualizer.html":
+            L.append(f"- {p}: {size / 1024:.0f} KB, original map and process-net viewer")
     L.append("")
     return "\n".join(L)
 
@@ -350,7 +356,7 @@ def main():
     print(f"iconix: {ico['puml']} PlantUML files, rule breaks {len(ico['bad_links'])}, rendered {ico['rendered']}")
     for name, line in ico["bad_links"]:
         print("  robustness rule broken in", name, ":", line)
-    _, page = build_page(m, a.cdn)
+    _, page = build_page(m, a.cdn, fresh_iconix_svg=ico["rendered"])
     for p, size in page:
         print(f"page: {p} ({size / 1024:.0f} KB)")
     write(ROOT / "docs" / "DATA_MODEL.md", schema.data_model_md(m))

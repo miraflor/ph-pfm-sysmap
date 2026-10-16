@@ -865,6 +865,19 @@
     panelOverview();
     const h = (location.hash || "").replace("#", "");
     if (["nets", "lists", "about"].includes(h)) showTab(h);
+    // Link from the research portal: visualizer.html#find=F032 shows that flow, box or record on the map.
+    const findFromHash = () => {
+      const m = /^find=(.+)$/.exec((location.hash || "").replace("#", ""));
+      if (!m) return;
+      const v = decodeURIComponent(m[1]);
+      showTab("map");
+      $("q").value = v;
+      runSearch(v);
+      // showTab() replaces the hash with #map; keep the shareable identifier.
+      try { history.replaceState(null, "", "#find=" + encodeURIComponent(v)); } catch (e) { /* ignore */ }
+    };
+    findFromHash();
+    window.addEventListener("hashchange", findFromHash);
     try {
       new MutationObserver(restyle).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     } catch (e) { /* ignore */ }
